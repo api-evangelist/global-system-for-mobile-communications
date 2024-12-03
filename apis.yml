@@ -1,0 +1,38 @@
+aid: global-system-for-mobile-communications
+name: Global System for Mobile Communications
+description: >-
+  The API request contains the location to be checked and an accuracy range in
+  km (between 2km and 200km). The API response indicates whether the location is
+  within the accuracy range of the last known location of the MSISDN. In its
+  simplest version, the API can be used to verify a location expressed as
+  latitude, longitude, and a radius.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - API
+created: '2024-12-03'
+modified: '2024-12-03'
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/global-system-for-mobile-communications/refs/heads/main/apis.yml
+specificationVersion: '0.19'
+apis:
+  - aid: >-
+      global-system-for-mobile-communications:global-system-for-mobile-communications
+    name: Global System for Mobile Communications
+    description: >-
+      The API request contains the location to be checked and an accuracy range
+      in km (between 2km and 200km). The API response indicates whether the
+      location is within the accuracy range of the last known location of the
+      MSISDN. In its simplest version, the API can be used to verify a location
+      expressed as latitude, longitude, and a radius.
+    humanURL: https://www.gsma.com
+    tags:
+      - API
+    properties:
+      - type: Documentation
+        url: https://www.gsma.com
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com
