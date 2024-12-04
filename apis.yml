@@ -351,8 +351,7 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/ConnectivityInsights/r1.2/code/API_definitions/connectivity-insights-subscriptions.yaml&nocors
         type: Documentation
-      - url: >-
-          https://raw.githubusercontent.com/camaraproject/ConnectivityInsights/r1.2/code/API_definitions/connectivity-insights-subscriptions.yaml
+      - url: properties/connectivity-insights-subscriptions-api-openapi.yml
         type: OpenAPI
     description: >-
       The Connectivity Insights API allows an application developer to ask the
