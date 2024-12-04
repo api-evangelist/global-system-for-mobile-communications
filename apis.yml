@@ -540,7 +540,7 @@ apis:
       Edge Application Management API allows API consumers to manage the Life
       Cycle of an Application and to Discover Edge Cloud Zones.
   - aid: global-system-for-mobile-communications:carrier-billing-api
-    name: Carrier Billing API
+    name: Carrier Billing
     tags:
       - Mobile
       - Payments
@@ -556,13 +556,14 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/CarrierBillingCheckOut/r1.3/code/API_definitions/carrier-billing.yaml&nocors
         type: Documentation
-      - url: >-
-          https://github.com/camaraproject/CarrierBillingCheckOut/blob/r1.3/code/API_definitions/carrier-billing.yaml
+      - url: properties/carrier-billing-api-openapi.yml
         type: OpenAPI
     description: >-
-      Carrier Billing API allows an online merchant to enable the purchase of
-      third-party digital goods and to request payment against the user Mobile
-      Operator billing system.
+      The Carrier Billing API provides programmable interface for developers and
+      other users (capabilities consumers) to charge an amount on a mobile line.
+      It can be easily integrated and allows end-users to buy digital content in
+      an easy &amp; secured way. The API provides management of a payment entity
+      and its associated lifecycle.
 name: Global System for Mobile Communications (GSMA)
 tags:
   - Telecommunications
