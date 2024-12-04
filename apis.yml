@@ -90,11 +90,7 @@ apis:
       information and provide a specific service to the mobile phone user.
   - *ref_0
   - aid: global-system-for-mobile-communications:number-verification-api
-    name: Number Verification API
-    description: >-
-      Number Verification API enables the seamless authentication of a mobile
-      device by verifying that the provided mobile phone number is the one used
-      in the device.
+    name: Number Verification
     tags:
       - Anti Fraud
       - Subscribers
@@ -104,14 +100,20 @@ apis:
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
-      - type: GitHubRepository
-        url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
-      - type: Documentation
-        url: >-
+      - url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
+        type: GitHubRepository
+      - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/NumberVerification/r1.3/code/API_definitions/number-verification.yaml&nocors
-      - type: OpenAPI
-        url: >-
-          https://github.com/camaraproject/NumberVerification/blob/r1.3/code/API_definitions/number-verification.yaml
+        type: Documentation
+      - url: properties/number-verification-api-openapi.yml
+        type: OpenAPI
+    description: >-
+      Service Enabling Network Function API to verify that the provided **mobile
+      phone number** is the one used in the device. It verifies that the user is
+      using a device with the same *mobile phone number* as it is declared. It
+      also makes it possible for a Service provider to verify the number itself
+      by returning the phone number associated to the authenticated user's
+      access token.
   - aid: global-system-for-mobile-communications:one-time-password-api
     name: One Time Password API
     description: >-
