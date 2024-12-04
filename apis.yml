@@ -429,8 +429,7 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
         type: Documentation
-      - url: >-
-          https://github.com/camaraproject/HomeDevicesQoD/blob/r1.2/code/API_definitions/home-devices-qod.yaml
+      - url: properties/home-devices-qod-api-openapi.yml
         type: OpenAPI
     description: >-
       Home Devices QoD API enables application developers to control the network
