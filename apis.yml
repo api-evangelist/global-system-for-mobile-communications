@@ -479,8 +479,7 @@ apis:
       - url: >-
           https://github.com/camaraproject/EdgeCloud/blob/main/documentation/API_documentation/Simple_Edge_Discovery_API_Readiness_Checklist.md
         type: Documentation
-      - url: >-
-          https://github.com/camaraproject/EdgeCloud/blob/main/code/API_definitions/Traffic_Influence.yaml
+      - url: properties/traffic-influence-api-openapi.yml
         type: OpenAPI
     description: >-
       The Traffic Influence API provides the capability to establish the optimal
