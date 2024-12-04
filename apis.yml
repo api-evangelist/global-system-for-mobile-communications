@@ -1,23 +1,4 @@
-specificationVersion: '0.19'
 aid: global-system-for-mobile-communications
-name: Global System for Mobile Communications (GSMA)
-description: >-
-  We unite over 1000 mobile operators and businesses across the ecosystem and
-  related industries to advance innovation and reduce inequalities around the
-  world.
-tags:
-  - Telecommunications
-  - Telco
-  - Standards
-  - Networks
-  - Networking
-  - Mobile
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-type: Index
-access: 3rd-Party
-position: Consuming
-created: '2024-12-03T00:00:00.000Z'
-modified: '2024-12-04'
 url: >-
   https://raw.githubusercontent.com/api-evangelist/global-system-for-mobile-communications/refs/heads/main/apis.yml
 apis:
@@ -36,13 +17,12 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/CallForwardingSignal/r1.3/code/API_definitions/call-forwarding-signal.yaml&nocors
         type: Documentation
-      - url: properties/call-forwarding-signal-api-openapi.yml
+      - url: >-
+          https://github.com/camaraproject/CallForwardingSignal/blob/r1.3/code/API_definitions/call-forwarding-signal.yaml
         type: OpenAPI
     description: >-
-      The Call Forwarding Signal (CFS) API provides the API Consumer with
-      information about the status of the Call Forwading Service on a specific
-      phone number. The main scope of the CFS API is "anti Fraud" to avoid
-      fraudsters to use the Call Forwarding Service to carry on a scam.
+      Call Forwarding Signal API can be used to determine if a specific mobile
+      Phone Number has an active call forwarding setup.
   - aid: global-system-for-mobile-communications:device-roaming-status-api
     name: Device Roaming Status API
     tags:
@@ -59,14 +39,14 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/DeviceStatus/r1.3/code/API_definitions/device-roaming-status.yaml&nocors
         type: Documentation
-      - url: properties/device-roaming-status-api-openapi.yml
+      - url: >-
+          https://github.com/camaraproject/DeviceStatus/blob/r1.3/code/API_definitions/device-roaming-status.yaml
         type: OpenAPI
     description: >-
       Device Roaming Status API checks whether a certain user device is roaming
       and if so, the country it is in.
-  - &ref_0
-    aid: global-system-for-mobile-communications:kyc-fill-in-api
-    name: Know Your Customer Match
+  - aid: global-system-for-mobile-communications:kyc-fill-in-api
+    name: KYC Fill-In API
     tags:
       - Anti Fraud
       - Subscribers
@@ -80,17 +60,38 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
         type: Documentation
-      - url: properties/kyc-fill-in-api-openapi.yml
+      - url: >-
+          https://github.com/camaraproject/KnowYourCustomer/blob/r1.3/code/API_definitions/kyc-match.yaml
         type: OpenAPI
     description: >-
-      This API provides the customer with the ability to compare the information
-      it (Service Provider, SP) has for a particular mobile phone user with that
-      on file (and verified) by the mobile phone user's Operator in their own
-      KYC records, in order for the SP to confirm the accuracy of the
-      information and provide a specific service to the mobile phone user.
-  - *ref_0
+      KYC Fill-In API is used to request and receive information that has been
+      verified by the end users Mobile Operator in their KYC records. The
+      information can include mobile phone number, name, postal code, address,
+      birthdate, email address etc.
+  - aid: global-system-for-mobile-communications:kyc-fill-in-api
+    name: KYC Match API
+    tags:
+      - Anti Fraud
+      - Subscribers
+      - Identity
+      - KYC
+    humanURL: >-
+      https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
+    properties:
+      - url: https://github.com/camaraproject/KnowYourCustomer/releases/tag/r1.3
+        type: GitHubRepository
+      - url: >-
+          https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
+        type: Documentation
+      - url: >-
+          https://github.com/camaraproject/KnowYourCustomer/blob/r1.3/code/API_definitions/kyc-match.yaml
+        type: OpenAPI
+    description: >-
+      KYC Match API provides the ability to compare the information the API
+      customer has for a particular user with that on file and verified by the
+      users Mobile Network Operator in their own KYC records.
   - aid: global-system-for-mobile-communications:number-verification-api
-    name: Number Verification
+    name: Number Verification API
     tags:
       - Anti Fraud
       - Subscribers
@@ -105,17 +106,15 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/NumberVerification/r1.3/code/API_definitions/number-verification.yaml&nocors
         type: Documentation
-      - url: properties/number-verification-api-openapi.yml
+      - url: >-
+          https://github.com/camaraproject/NumberVerification/blob/r1.3/code/API_definitions/number-verification.yaml
         type: OpenAPI
     description: >-
-      Service Enabling Network Function API to verify that the provided **mobile
-      phone number** is the one used in the device. It verifies that the user is
-      using a device with the same *mobile phone number* as it is declared. It
-      also makes it possible for a Service provider to verify the number itself
-      by returning the phone number associated to the authenticated user's
-      access token.
+      Number Verification API enables the seamless authentication of a mobile
+      device by verifying that the provided mobile phone number is the one used
+      in the device.
   - aid: global-system-for-mobile-communications:one-time-password-api
-    name: One Time Password SMS
+    name: One Time Password API
     tags:
       - Anti Fraud
       - Subscribers
@@ -129,12 +128,13 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r1.2/code/API_definitions/one-time-password-sms.yaml&nocors
         type: Documentation
-      - url: properties/one-time-password-api-openapi.yml
+      - url: >-
+          https://github.com/camaraproject/OTPValidation/blob/r1.2/code/API_definitions/one-time-password-sms.yaml
         type: OpenAPI
     description: >-
-      Service Enabling Network Function API to send short-lived OTPs (one time
-      passwords) to a phone number via SMS and validate it afterwards, in order
-      to verify the phone number as a proof of possession.
+      One Time Password API delivers a short-lived one-time password to a mobile
+      phone number via SMS. The API then validates the code as input by the
+      end-user into the service, to verify proof of possession.
   - aid: global-system-for-mobile-communications:sim-swap-api
     name: SIM Swap API
     tags:
@@ -150,14 +150,14 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/SimSwap/r1.3/code/API_definitions/sim-swap.yaml&nocors
         type: Documentation
-      - url: properties/sim-swap-api-openapi.yml
+      - url: >-
+          https://github.com/camaraproject/SimSwap/blob/r1.3/code/API_definitions/sim-swap.yaml
         type: OpenAPI
     description: >-
       SIM Swap API checks the last date that the SIM card associated with a
       mobile phone number has changed. The response may be a timestamp or a
       yes/no for a defined period (e.g. last 24h).
-  - &ref_1
-    aid: >-
+  - aid: >-
       global-system-for-mobile-communications:sim-swap-notification-subscription-api
     name: SIM Swap Notification Subscription API
     tags:
@@ -173,7 +173,8 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/SimSwap/r1.3/code/API_definitions/sim-swap.yaml&nocors
         type: Documentation
-      - url: properties/sim-swap-notification-subscription-api-openapi.yml
+      - url: >-
+          https://github.com/camaraproject/SimSwap/blob/r1.3/code/API_definitions/sim-swap.yaml
         type: OpenAPI
     description: >-
       SIM Swap Notification Subscription enables subscription to notifications
@@ -181,15 +182,20 @@ apis:
       with a mobile phone number. A SIM Swap event often responds to legitimate
       device upgrades or replacements but is also susceptible to abuse through
       fraudulent activities.
-  - *ref_1
+  - aid: global-system-for-mobile-communications:scam-signal-api
+    name: Scam Signal API
+    tags:
+      - Anti Fraud
+      - Subscribers
+      - Scams
+      - Signals
+    humanURL: >-
+      https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
+    description: >-
+      Scam Signal API allows businesses to protect their customers from
+      impersonation scams, particularly Authorized Pushed Payment (APP) fraud.
   - aid: global-system-for-mobile-communications:device-location-verification-api
     name: Device Location Verification API
-    description: >-
-      Device Location Verification API checks if a mobile device is in proximity
-      of a given location. The API request contains the location to be checked
-      and an accuracy range in km (between 2km and 200km). The API response
-      indicates whether the location is within the accuracy range of the last
-      known location of the MSISDN.
     tags:
       - Mobile
       - Connectivity
@@ -198,22 +204,22 @@ apis:
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
-      - type: GitHubRepository
-        url: https://github.com/camaraproject/DeviceLocation
-      - type: Documentation
-        url: >-
+      - url: https://github.com/camaraproject/DeviceLocation
+        type: GitHubRepository
+      - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/DeviceLocation/r1.2/code/API_definitions/location-verification.yaml&nocors
-      - type: OpenAPI
-        url: >-
+        type: Documentation
+      - url: >-
           https://github.com/camaraproject/DeviceLocation/blob/r1.2/code/API_definitions/location-verification.yaml
+        type: OpenAPI
+    description: >-
+      Device Location Verification API checks if a mobile device is in proximity
+      of a given location. The API request contains the location to be checked
+      and an accuracy range in km (between 2km and 200km). The API response
+      indicates whether the location is within the accuracy range of the last
+      known location of the MSISDN.
   - aid: global-system-for-mobile-communications:device-location-verification-api
     name: Device Geofencing Subscriptions API
-    description: >-
-      Device Geofencing Subscriptions API enables the subscription to
-      geographical position changes. With this API, customers can create
-      subscriptions for their devices to receive notifications when a device
-      enters or exits a specified area. If the geofencing-state of a device
-      changes, the event subscriber will be notified back.
     tags:
       - Mobile
       - Connectivity
@@ -224,20 +230,22 @@ apis:
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
-      - type: GitHubRepository
-        url: https://github.com/camaraproject/DeviceLocation
-      - type: Documentation
-        url: >-
+      - url: https://github.com/camaraproject/DeviceLocation
+        type: GitHubRepository
+      - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/DeviceLocation/r1.2/code/API_definitions/geofencing-subscriptions.yaml&nocors
-      - type: OpenAPI
-        url: >-
+        type: Documentation
+      - url: >-
           https://github.com/camaraproject/DeviceLocation/blob/r1.2/code/API_definitions/geofencing-subscriptions.yaml
+        type: OpenAPI
+    description: >-
+      Device Geofencing Subscriptions API enables the subscription to
+      geographical position changes. With this API, customers can create
+      subscriptions for their devices to receive notifications when a device
+      enters or exits a specified area. If the geofencing-state of a device
+      changes, the event subscriber will be notified back.
   - aid: global-system-for-mobile-communications:device-location-retrieval-api
     name: Device Location Retrieval API
-    description: >-
-      Device Location Retrieval API provides the ability to retrieve the
-      location of a device. The retrieved area depends on the network conditions
-      at the subscribers location.
     tags:
       - Mobile
       - Connectivity
@@ -247,48 +255,45 @@ apis:
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
-      - type: GitHubRepository
-        url: https://github.com/camaraproject/DeviceLocation
-      - type: Documentation
-        url: >-
+      - url: https://github.com/camaraproject/DeviceLocation
+        type: GitHubRepository
+      - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/DeviceLocation/r1.2/code/API_definitions/location-retrieval.yaml&nocors
-      - type: OpenAPI
-        url: >-
+        type: Documentation
+      - url: >-
           https://github.com/camaraproject/DeviceLocation/blob/r1.2/code/API_definitions/location-retrieval.yaml
+        type: OpenAPI
+    description: >-
+      Device Location Retrieval API provides the ability to retrieve the
+      location of a device. The retrieved area depends on the network conditions
+      at the subscribers location.
   - aid: global-system-for-mobile-communications:population-density-api
     name: Population Density Data API
+    tags:
+      - Mobile
+      - Connectivity
+      - Location
+      - Retrieval
+      - Devices
+    humanURL: >-
+      https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
+    properties:
+      - url: >-
+          https://github.com/camaraproject/PopulationDensityData/releases/tag/r1.2
+        type: GitHubRepository
+      - url: >-
+          https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/PopulationDensityData/r1.2/code/API_definitions/population-density-data.yaml&nocors
+        type: Documentation
+      - url: >-
+          https://github.com/camaraproject/PopulationDensityData/blob/r1.2/code/API_definitions/population-density-data.yaml
+        type: OpenAPI
     description: >-
       Population Density Data API enables the retrieval of population density
       estimations for a specific area at a future date and time, considering
       historical anonymised information of the network connected devices in the
       requested area.
-    tags:
-      - Mobile
-      - Connectivity
-      - Location
-      - Retrieval
-      - Devices
-    humanURL: >-
-      https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
-    properties:
-      - type: GitHubRepository
-        url: >-
-          https://github.com/camaraproject/PopulationDensityData/releases/tag/r1.2
-      - type: Documentation
-        url: >-
-          https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/PopulationDensityData/r1.2/code/API_definitions/population-density-data.yaml&nocors
-      - type: OpenAPI
-        url: >-
-          https://github.com/camaraproject/PopulationDensityData/blob/r1.2/code/API_definitions/population-density-data.yaml
   - aid: global-system-for-mobile-communications:quality-on-demand-api
     name: Quality on Demand API
-    description: >-
-      Quality on Demand API offers the application developer the capability to
-      request stable latency (reduced jitter) or minimum throughput for
-      specified application data flows between application clients (within a
-      user device) and Application Servers (backend services). The developer has
-      a pre-defined set of Quality of Service (QoS) profiles which they could
-      choose from depending on their latency or throughput requirements.
     tags:
       - Network
       - Quality
@@ -297,20 +302,23 @@ apis:
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
-      - type: GitHubRepository
-        url: https://github.com/camaraproject/QualityOnDemand/releases/tag/r1.2
-      - type: Documentation
-        url: >-
+      - url: https://github.com/camaraproject/QualityOnDemand/releases/tag/r1.2
+        type: GitHubRepository
+      - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/QualityOnDemand/r1.2/code/API_definitions/quality-on-demand.yaml&nocors
-      - type: OpenAPI
-        url: >-
+        type: Documentation
+      - url: >-
           https://github.com/camaraproject/QualityOnDemand/blob/r1.2/code/API_definitions/quality-on-demand.yaml
+        type: OpenAPI
+    description: >-
+      Quality on Demand API offers the application developer the capability to
+      request stable latency (reduced jitter) or minimum throughput for
+      specified application data flows between application clients (within a
+      user device) and Application Servers (backend services). The developer has
+      a pre-defined set of Quality of Service (QoS) profiles which they could
+      choose from depending on their latency or throughput requirements.
   - aid: global-system-for-mobile-communications:connectivity-insights-api
     name: Connectivity Insights API
-    description: >-
-      The Connectivity Insights API allows an application developer to ask the
-      network the likelihood that an application's networking requirements can
-      be met for a given end user session.
     tags:
       - Network
       - Connectivity
@@ -318,22 +326,22 @@ apis:
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
-      - type: GitHub Repository
-        url: >-
+      - url: >-
           https://github.com/camaraproject/ConnectivityInsights/releases/tag/r1.2
-      - type: Documentation
-        url: >-
+        type: GitHub Repository
+      - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/ConnectivityInsights/r1.2/code/API_definitions/connectivity-insights.yaml&nocors
-      - type: OpenAPI
-        url: >-
+        type: Documentation
+      - url: >-
           https://raw.githubusercontent.com/camaraproject/ConnectivityInsights/r1.2/code/API_definitions/connectivity-insights.yaml
+        type: OpenAPI
+    description: >-
+      The Connectivity Insights API allows an application developer to ask the
+      network the likelihood that an application's networking requirements can
+      be met for a given end user session.
   - aid: >-
       global-system-for-mobile-communications:connectivity-insights-subscriptions-api
     name: Connectivity Insights Subscriptions API
-    description: >-
-      The Connectivity Insights API allows an application developer to ask the
-      network the likelihood that an application's networking requirements can
-      be met for a given end user session.
     tags:
       - Network
       - Connectivity
@@ -341,21 +349,21 @@ apis:
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
-      - type: GitHub Repository
-        url: >-
+      - url: >-
           https://github.com/camaraproject/ConnectivityInsights/releases/tag/r1.2
-      - type: Documentation
-        url: >-
+        type: GitHub Repository
+      - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/ConnectivityInsights/r1.2/code/API_definitions/connectivity-insights-subscriptions.yaml&nocors
-      - type: OpenAPI
-        url: >-
+        type: Documentation
+      - url: >-
           https://raw.githubusercontent.com/camaraproject/ConnectivityInsights/r1.2/code/API_definitions/connectivity-insights-subscriptions.yaml
+        type: OpenAPI
+    description: >-
+      The Connectivity Insights API allows an application developer to ask the
+      network the likelihood that an application's networking requirements can
+      be met for a given end user session.
   - aid: global-system-for-mobile-communications:application-profiles-api
     name: Application Profiles API
-    description: >-
-      Application profiles allows application developers to share all the
-      information about their application which would be relevant for network/
-      CAMARA APIs related decision making.
     tags:
       - Network
       - Applications
@@ -363,15 +371,18 @@ apis:
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
-      - type: GitHub Repository
-        url: >-
+      - url: >-
           https://github.com/camaraproject/ConnectivityInsights/releases/tag/r1.2
-      - type: Documentation
-        url: >-
+        type: GitHub Repository
+      - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/ConnectivityInsights/r1.2/code/API_definitions/application-profiles.yaml&nocors
+        type: Documentation
+    description: >-
+      Application profiles allows application developers to share all the
+      information about their application which would be relevant for network/
+      CAMARA APIs related decision making.
   - aid: global-system-for-mobile-communications:sms-api
     name: SMS API
-    description: "SMS API provides the customer with the ability to send an SMS to a mobile phone number in use on a mobile phone device. There are 3 different categories of SMS, namely Service SMS, Promotional SMS and Transactional SMS.  The SMS API can also be used to send a binary message to a mobile phone number which is being used on an (IoT) device.\v "
     tags:
       - Mobile
       - Communication
@@ -379,17 +390,15 @@ apis:
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
-      - type: GitHubRepository
-        url: https://github.com/camaraproject/ShortMessageService/tree/main
-      - type: OpenAPI
-        url: >-
+      - url: https://github.com/camaraproject/ShortMessageService/tree/main
+        type: GitHubRepository
+      - url: >-
           https://github.com/camaraproject/ShortMessageService/blob/6fd0ff0e79a3e26244e5f026c8e40260b0a47494/code/API_definitions/SMS.yaml
+        type: OpenAPI
+    description: "SMS API provides the customer with the ability to send an SMS to a mobile phone number in use on a mobile phone device. There are 3 different categories of SMS, namely Service SMS, Promotional SMS and Transactional SMS.  The SMS API can also be used to send a binary message to a mobile phone number which is being used on an (IoT) device.\v "
   - aid: >-
       global-system-for-mobile-communications:sms-delivery-notification-subscription-api
     name: SMS Delivery Notification Subscription API
-    description: >-
-      API to create, retrieve and delete event subscriptions related to a sms
-      delivery operation performed on an associated phone number.
     tags:
       - Mobile
       - Communication
@@ -397,22 +406,19 @@ apis:
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
-      - type: GitHubRepository
-        url: https://github.com/camaraproject/ShortMessageService/tree/main
-      - type: Documentation
-        url: >-
+      - url: https://github.com/camaraproject/ShortMessageService/tree/main
+        type: GitHubRepository
+      - url: >-
           https://github.com/camaraproject/ShortMessageService/blob/6fd0ff0e79a3e26244e5f026c8e40260b0a47494/documentation/API_documentation/Text_SMS_User_Story.md
-      - type: OpenAPI
-        url: >-
+        type: Documentation
+      - url: >-
           https://github.com/camaraproject/ShortMessageService/blob/6fd0ff0e79a3e26244e5f026c8e40260b0a47494/code/API_definitions/sms-delivery-notification-subscription.yaml
+        type: OpenAPI
+    description: >-
+      API to create, retrieve and delete event subscriptions related to a sms
+      delivery operation performed on an associated phone number.
   - aid: global-system-for-mobile-communications:home-devices-qod-api
     name: Home Devices QoD API
-    description: >-
-      Home Devices QoD API enables application developers to control the network
-      configuration of their End Users devices when they are connected through
-      the WiFi access point provided by a telco fixed line. Developers can
-      request to change, on demand, the desired QoS behaviour for the IP traffic
-      corresponding to a specific user home device.
     tags:
       - Fixed Connectivity
       - Networks
@@ -423,20 +429,22 @@ apis:
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
-      - type: GitHubRepository
-        url: https://github.com/camaraproject/HomeDevicesQoD/releases/tag/r1.2
-      - type: Documentation
-        url: >-
+      - url: https://github.com/camaraproject/HomeDevicesQoD/releases/tag/r1.2
+        type: GitHubRepository
+      - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
-      - type: OpenAPI
-        url: >-
+        type: Documentation
+      - url: >-
           https://github.com/camaraproject/HomeDevicesQoD/blob/r1.2/code/API_definitions/home-devices-qod.yaml
+        type: OpenAPI
+    description: >-
+      Home Devices QoD API enables application developers to control the network
+      configuration of their End Users devices when they are connected through
+      the WiFi access point provided by a telco fixed line. Developers can
+      request to change, on demand, the desired QoS behaviour for the IP traffic
+      corresponding to a specific user home device.
   - aid: global-system-for-mobile-communications:simple-edge-discovery-api
     name: Simple Edge Discovery API
-    description: >-
-      Simple Edge Discovery API allows an application to discover the nearest
-      Edge-Cloud zone for it to connect to, specifically the API will calculate
-      the Edge Cloud Zone with the shortest network path to the application.
     tags:
       - Cloud
       - Edge
@@ -448,16 +456,39 @@ apis:
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
-      - type: GitHubRepository
-        url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
-      - type: Documentation
-        url: >-
+      - url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
+        type: GitHubRepository
+      - url: >-
           https://github.com/camaraproject/SimpleEdgeDiscovery/blob/main/documentation/API_documentation/SimpleEdgeDiscovery_User_Story.md
-      - type: OpenAPI
-        url: >-
+        type: Documentation
+      - url: >-
           https://github.com/camaraproject/SimpleEdgeDiscovery/blob/main/code/API_definitions/simple-edge-discovery.yaml
+        type: OpenAPI
+    description: >-
+      Simple Edge Discovery API allows an application to discover the nearest
+      Edge-Cloud zone for it to connect to, specifically the API will calculate
+      the Edge Cloud Zone with the shortest network path to the application.
   - aid: global-system-for-mobile-communications:traffic-influence-api
     name: Traffic Influence API
+    tags:
+      - Cloud
+      - Edge
+      - Mobile
+      - Optimization
+      - Home
+      - Devices
+      - Discovery
+    humanURL: >-
+      https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
+    properties:
+      - url: https://github.com/camaraproject/EdgeCloud
+        type: GitHubRepository
+      - url: >-
+          https://github.com/camaraproject/EdgeCloud/blob/main/documentation/API_documentation/Simple_Edge_Discovery_API_Readiness_Checklist.md
+        type: Documentation
+      - url: >-
+          https://github.com/camaraproject/EdgeCloud/blob/main/code/API_definitions/Traffic_Influence.yaml
+        type: OpenAPI
     description: >-
       The Traffic Influence API provides the capability to establish the optimal
       routing, in terms of latency, in a specific geographical area, between the
@@ -466,32 +497,8 @@ apis:
       developer to have moved into a different geographical location, the
       Traffic Influence API can be invoked again to get the optimal routing in
       the new location.
-    tags:
-      - Cloud
-      - Edge
-      - Mobile
-      - Optimization
-      - Home
-      - Devices
-      - Discovery
-    humanURL: >-
-      https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
-    properties:
-      - type: GitHubRepository
-        url: https://github.com/camaraproject/EdgeCloud
-      - type: Documentation
-        url: >-
-          https://github.com/camaraproject/EdgeCloud/blob/main/documentation/API_documentation/Simple_Edge_Discovery_API_Readiness_Checklist.md
-      - type: OpenAPI
-        url: >-
-          https://github.com/camaraproject/EdgeCloud/blob/main/code/API_definitions/Traffic_Influence.yaml
   - aid: global-system-for-mobile-communications:application-endpoint-discovery-api
     name: Application Endpoint Discovery API
-    description: >-
-      The Application Discovery API extends beyond the capabilities of the
-      Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone
-      but also directly linking to the application endpoints within those Edge
-      Cloud Zones.
     tags:
       - Cloud
       - Edge
@@ -502,16 +509,18 @@ apis:
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
-      - type: GitHubRepository
-        url: https://github.com/camaraproject/EdgeCloud
-      - type: OpenAPI
-        url: >-
+      - url: https://github.com/camaraproject/EdgeCloud
+        type: GitHubRepository
+      - url: >-
           https://github.com/camaraproject/EdgeCloud/blob/main/code/API_definitions/Application_Endpoint_Discovery_API.yaml
+        type: OpenAPI
+    description: >-
+      The Application Discovery API extends beyond the capabilities of the
+      Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone
+      but also directly linking to the application endpoints within those Edge
+      Cloud Zones.
   - aid: global-system-for-mobile-communications:edge-application-management-api
     name: Edge Application Management API
-    description: >-
-      Edge Application Management API allows API consumers to manage the Life
-      Cycle of an Application and to Discover Edge Cloud Zones.
     tags:
       - Cloud
       - Edge
@@ -521,17 +530,16 @@ apis:
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
-      - type: GitHubRepository
-        url: https://github.com/camaraproject/EdgeCloud
-      - type: OpenAPI
-        url: >-
+      - url: https://github.com/camaraproject/EdgeCloud
+        type: GitHubRepository
+      - url: >-
           https://github.com/camaraproject/EdgeCloud/blob/main/code/API_definitions/Edge-Application-Management.yaml
+        type: OpenAPI
+    description: >-
+      Edge Application Management API allows API consumers to manage the Life
+      Cycle of an Application and to Discover Edge Cloud Zones.
   - aid: global-system-for-mobile-communications:edge-application-management-api
     name: Carrier Billing API
-    description: >-
-      Carrier Billing API allows an online merchant to enable the purchase of
-      third-party digital goods and to request payment against the user Mobile
-      Operator billing system.
     tags:
       - Mobile
       - Payments
@@ -541,15 +549,38 @@ apis:
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
-      - type: GitHubRepository
-        url: >-
+      - url: >-
           https://github.com/camaraproject/CarrierBillingCheckOut/releases/tag/r1.3
-      - type: Documentation
-        url: >-
+        type: GitHubRepository
+      - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/CarrierBillingCheckOut/r1.3/code/API_definitions/carrier-billing.yaml&nocors
-      - type: OpenAPI
-        url: >-
+        type: Documentation
+      - url: >-
           https://github.com/camaraproject/CarrierBillingCheckOut/blob/r1.3/code/API_definitions/carrier-billing.yaml
+        type: OpenAPI
+    description: >-
+      Carrier Billing API allows an online merchant to enable the purchase of
+      third-party digital goods and to request payment against the user Mobile
+      Operator billing system.
+name: Global System for Mobile Communications (GSMA)
+tags:
+  - Telecommunications
+  - Telco
+  - Standards
+  - Networks
+  - Networking
+  - Mobile
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+access: 3rd-Party
+created: '2024-12-03T00:00:00.000Z'
+modified: '2024-12-04'
+position: Consuming
+description: >-
+  We unite over 1000 mobile operators and businesses across the ecosystem and
+  related industries to advance innovation and reduce inequalities around the
+  world.
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
+specificationVersion: '0.19'
