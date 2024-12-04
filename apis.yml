@@ -236,8 +236,7 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/DeviceLocation/r1.2/code/API_definitions/geofencing-subscriptions.yaml&nocors
         type: Documentation
-      - url: >-
-          https://github.com/camaraproject/DeviceLocation/blob/r1.2/code/API_definitions/geofencing-subscriptions.yaml
+      - url: properties/device-geofencing-subscriptions-api-openapi.yml
         type: OpenAPI
     description: >-
       Device Geofencing Subscriptions API enables the subscription to
