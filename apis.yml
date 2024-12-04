@@ -156,15 +156,10 @@ apis:
       SIM Swap API checks the last date that the SIM card associated with a
       mobile phone number has changed. The response may be a timestamp or a
       yes/no for a defined period (e.g. last 24h).
-  - aid: >-
+  - &ref_1
+    aid: >-
       global-system-for-mobile-communications:sim-swap-notification-subscription-api
     name: SIM Swap Notification Subscription API
-    description: >-
-      SIM Swap Notification Subscription enables subscription to notifications
-      related to SIM Swap events, reporting a change in the SIM card associated
-      with a mobile phone number. A SIM Swap event often responds to legitimate
-      device upgrades or replacements but is also susceptible to abuse through
-      fraudulent activities.
     tags:
       - Anti Fraud
       - Subscribers
@@ -173,27 +168,20 @@ apis:
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
-      - type: GitHubRepository
-        url: https://github.com/camaraproject/SimSwap/releases/tag/r1.3
-      - type: Documentation
-        url: >-
+      - url: https://github.com/camaraproject/SimSwap/releases/tag/r1.3
+        type: GitHubRepository
+      - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/SimSwap/r1.3/code/API_definitions/sim-swap.yaml&nocors
-      - type: OpenAPI
-        url: >-
-          https://github.com/camaraproject/SimSwap/blob/r1.3/code/API_definitions/sim-swap.yaml
-  - aid: >-
-      global-system-for-mobile-communications:sim-swap-notification-subscription-api
-    name: Scam Signal API
+        type: Documentation
+      - url: properties/sim-swap-notification-subscription-api-openapi.yml
+        type: OpenAPI
     description: >-
-      Scam Signal API allows businesses to protect their customers from
-      impersonation scams, particularly Authorized Pushed Payment (APP) fraud.
-    tags:
-      - Anti Fraud
-      - Subscribers
-      - Scams
-      - Signals
-    humanURL: >-
-      https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
+      SIM Swap Notification Subscription enables subscription to notifications
+      related to SIM Swap events, reporting a change in the SIM card associated
+      with a mobile phone number. A SIM Swap event often responds to legitimate
+      device upgrades or replacements but is also susceptible to abuse through
+      fraudulent activities.
+  - *ref_1
   - aid: global-system-for-mobile-communications:device-location-verification-api
     name: Device Location Verification API
     description: >-
