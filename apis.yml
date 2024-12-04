@@ -455,8 +455,7 @@ apis:
       - url: >-
           https://github.com/camaraproject/SimpleEdgeDiscovery/blob/main/documentation/API_documentation/SimpleEdgeDiscovery_User_Story.md
         type: Documentation
-      - url: >-
-          https://github.com/camaraproject/SimpleEdgeDiscovery/blob/main/code/API_definitions/simple-edge-discovery.yaml
+      - url: properties/simple-edge-discovery-api-openapi.yml
         type: OpenAPI
     description: >-
       Simple Edge Discovery API allows an application to discover the nearest
