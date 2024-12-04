@@ -194,7 +194,8 @@ apis:
     description: >-
       Scam Signal API allows businesses to protect their customers from
       impersonation scams, particularly Authorized Pushed Payment (APP) fraud.
-  - aid: global-system-for-mobile-communications:device-location-verification-api
+  - &ref_0
+    aid: global-system-for-mobile-communications:device-location-verification-api
     name: Device Location Verification API
     tags:
       - Mobile
@@ -209,8 +210,7 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/DeviceLocation/r1.2/code/API_definitions/location-verification.yaml&nocors
         type: Documentation
-      - url: >-
-          https://github.com/camaraproject/DeviceLocation/blob/r1.2/code/API_definitions/location-verification.yaml
+      - url: properties/device-location-verification-api-openapi.yml
         type: OpenAPI
     description: >-
       Device Location Verification API checks if a mobile device is in proximity
@@ -218,32 +218,7 @@ apis:
       and an accuracy range in km (between 2km and 200km). The API response
       indicates whether the location is within the accuracy range of the last
       known location of the MSISDN.
-  - aid: global-system-for-mobile-communications:device-location-verification-api
-    name: Device Geofencing Subscriptions API
-    tags:
-      - Mobile
-      - Connectivity
-      - Location
-      - Geofencing
-      - Devices
-      - Subscriptions
-    humanURL: >-
-      https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
-    properties:
-      - url: https://github.com/camaraproject/DeviceLocation
-        type: GitHubRepository
-      - url: >-
-          https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/DeviceLocation/r1.2/code/API_definitions/geofencing-subscriptions.yaml&nocors
-        type: Documentation
-      - url: >-
-          https://github.com/camaraproject/DeviceLocation/blob/r1.2/code/API_definitions/geofencing-subscriptions.yaml
-        type: OpenAPI
-    description: >-
-      Device Geofencing Subscriptions API enables the subscription to
-      geographical position changes. With this API, customers can create
-      subscriptions for their devices to receive notifications when a device
-      enters or exits a specified area. If the geofencing-state of a device
-      changes, the event subscriber will be notified back.
+  - *ref_0
   - aid: global-system-for-mobile-communications:device-location-retrieval-api
     name: Device Location Retrieval API
     tags:
