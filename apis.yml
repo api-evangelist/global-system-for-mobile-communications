@@ -305,8 +305,7 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/QualityOnDemand/r1.2/code/API_definitions/quality-on-demand.yaml&nocors
         type: Documentation
-      - url: >-
-          https://github.com/camaraproject/QualityOnDemand/blob/r1.2/code/API_definitions/quality-on-demand.yaml
+      - url: properties/quality-on-demand-api-openapi.yml
         type: OpenAPI
     description: >-
       Quality on Demand API offers the application developer the capability to
