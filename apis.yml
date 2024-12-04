@@ -64,13 +64,9 @@ apis:
     description: >-
       Device Roaming Status API checks whether a certain user device is roaming
       and if so, the country it is in.
-  - aid: global-system-for-mobile-communications:kyc-fill-in-api
-    name: KYC Fill-In API
-    description: >-
-      KYC Fill-In API is used to request and receive information that has been
-      verified by the end users Mobile Operator in their KYC records. The
-      information can include mobile phone number, name, postal code, address,
-      birthdate, email address etc.
+  - &ref_0
+    aid: global-system-for-mobile-communications:kyc-fill-in-api
+    name: Know Your Customer Match
     tags:
       - Anti Fraud
       - Subscribers
@@ -79,36 +75,20 @@ apis:
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
-      - type: GitHubRepository
-        url: https://github.com/camaraproject/KnowYourCustomer/releases/tag/r1.3
-      - type: Documentation
-        url: >-
+      - url: https://github.com/camaraproject/KnowYourCustomer/releases/tag/r1.3
+        type: GitHubRepository
+      - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
-      - type: OpenAPI
-        url: >-
-          https://github.com/camaraproject/KnowYourCustomer/blob/r1.3/code/API_definitions/kyc-match.yaml
-  - aid: global-system-for-mobile-communications:kyc-fill-in-api
-    name: KYC Match API
+        type: Documentation
+      - url: properties/kyc-fill-in-api-openapi.yml
+        type: OpenAPI
     description: >-
-      KYC Match API provides the ability to compare the information the API
-      customer has for a particular user with that on file and verified by the
-      users Mobile Network Operator in their own KYC records.
-    tags:
-      - Anti Fraud
-      - Subscribers
-      - Identity
-      - KYC
-    humanURL: >-
-      https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
-    properties:
-      - type: GitHubRepository
-        url: https://github.com/camaraproject/KnowYourCustomer/releases/tag/r1.3
-      - type: Documentation
-        url: >-
-          https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
-      - type: OpenAPI
-        url: >-
-          https://github.com/camaraproject/KnowYourCustomer/blob/r1.3/code/API_definitions/kyc-match.yaml
+      This API provides the customer with the ability to compare the information
+      it (Service Provider, SP) has for a particular mobile phone user with that
+      on file (and verified) by the mobile phone user's Operator in their own
+      KYC records, in order for the SP to confirm the accuracy of the
+      information and provide a specific service to the mobile phone user.
+  - *ref_0
   - aid: global-system-for-mobile-communications:number-verification-api
     name: Number Verification API
     description: >-
