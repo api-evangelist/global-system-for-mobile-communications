@@ -389,8 +389,7 @@ apis:
     properties:
       - url: https://github.com/camaraproject/ShortMessageService/tree/main
         type: GitHubRepository
-      - url: >-
-          https://github.com/camaraproject/ShortMessageService/blob/6fd0ff0e79a3e26244e5f026c8e40260b0a47494/code/API_definitions/SMS.yaml
+      - url: properties/sms-api-openapi.yml
         type: OpenAPI
     description: "SMS API provides the customer with the ability to send an SMS to a mobile phone number in use on a mobile phone device. There are 3 different categories of SMS, namely Service SMS, Promotional SMS and Transactional SMS.  The SMS API can also be used to send a binary message to a mobile phone number which is being used on an (IoT) device.\v "
   - aid: >-
