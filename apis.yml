@@ -372,6 +372,8 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/ConnectivityInsights/r1.2/code/API_definitions/application-profiles.yaml&nocors
         type: Documentation
+      - type: OpenAPI
+        url: properties/application-profiles-api-openapi.yml
     description: >-
       Application profiles allows application developers to share all the
       information about their application which would be relevant for network/
