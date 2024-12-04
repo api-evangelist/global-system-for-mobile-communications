@@ -236,7 +236,8 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/DeviceLocation/r1.2/code/API_definitions/geofencing-subscriptions.yaml&nocors
         type: Documentation
-      - url: properties/device-geofencing-subscriptions-api-openapi.yml
+      - url: >-
+          https://github.com/camaraproject/DeviceLocation/blob/r1.2/code/API_definitions/geofencing-subscriptions.yaml
         type: OpenAPI
     description: >-
       Device Geofencing Subscriptions API enables the subscription to
@@ -260,7 +261,8 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/DeviceLocation/r1.2/code/API_definitions/location-retrieval.yaml&nocors
         type: Documentation
-      - url: properties/device-location-retrieval-api-openapi.yml
+      - url: >-
+          https://github.com/camaraproject/DeviceLocation/blob/r1.2/code/API_definitions/location-retrieval.yaml
         type: OpenAPI
     description: >-
       Device Location Retrieval API provides the ability to retrieve the
@@ -283,7 +285,8 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/PopulationDensityData/r1.2/code/API_definitions/population-density-data.yaml&nocors
         type: Documentation
-      - url: properties/population-density-api-openapi.yml
+      - url: >-
+          https://github.com/camaraproject/PopulationDensityData/blob/r1.2/code/API_definitions/population-density-data.yaml
         type: OpenAPI
     description: >-
       Population Density Data API enables the retrieval of population density
@@ -305,7 +308,8 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/QualityOnDemand/r1.2/code/API_definitions/quality-on-demand.yaml&nocors
         type: Documentation
-      - url: properties/quality-on-demand-api-openapi.yml
+      - url: >-
+          https://github.com/camaraproject/QualityOnDemand/blob/r1.2/code/API_definitions/quality-on-demand.yaml
         type: OpenAPI
     description: >-
       Quality on Demand API offers the application developer the capability to
@@ -329,7 +333,8 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/ConnectivityInsights/r1.2/code/API_definitions/connectivity-insights.yaml&nocors
         type: Documentation
-      - url: properties/connectivity-insights-api-openapi.yml
+      - url: >-
+          https://raw.githubusercontent.com/camaraproject/ConnectivityInsights/r1.2/code/API_definitions/connectivity-insights.yaml
         type: OpenAPI
     description: >-
       The Connectivity Insights API allows an application developer to ask the
@@ -351,7 +356,8 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/ConnectivityInsights/r1.2/code/API_definitions/connectivity-insights-subscriptions.yaml&nocors
         type: Documentation
-      - url: properties/connectivity-insights-subscriptions-api-openapi.yml
+      - url: >-
+          https://raw.githubusercontent.com/camaraproject/ConnectivityInsights/r1.2/code/API_definitions/connectivity-insights-subscriptions.yaml
         type: OpenAPI
     description: >-
       The Connectivity Insights API allows an application developer to ask the
@@ -372,8 +378,6 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/ConnectivityInsights/r1.2/code/API_definitions/application-profiles.yaml&nocors
         type: Documentation
-      - type: OpenAPI
-        url: properties/application-profiles-api-openapi.yml
     description: >-
       Application profiles allows application developers to share all the
       information about their application which would be relevant for network/
@@ -389,7 +393,8 @@ apis:
     properties:
       - url: https://github.com/camaraproject/ShortMessageService/tree/main
         type: GitHubRepository
-      - url: properties/sms-api-openapi.yml
+      - url: >-
+          https://github.com/camaraproject/ShortMessageService/blob/6fd0ff0e79a3e26244e5f026c8e40260b0a47494/code/API_definitions/SMS.yaml
         type: OpenAPI
     description: "SMS API provides the customer with the ability to send an SMS to a mobile phone number in use on a mobile phone device. There are 3 different categories of SMS, namely Service SMS, Promotional SMS and Transactional SMS.  The SMS API can also be used to send a binary message to a mobile phone number which is being used on an (IoT) device.\v "
   - aid: >-
@@ -407,7 +412,8 @@ apis:
       - url: >-
           https://github.com/camaraproject/ShortMessageService/blob/6fd0ff0e79a3e26244e5f026c8e40260b0a47494/documentation/API_documentation/Text_SMS_User_Story.md
         type: Documentation
-      - url: properties/sms-delivery-notification-subscription-api-openapi.yml
+      - url: >-
+          https://github.com/camaraproject/ShortMessageService/blob/6fd0ff0e79a3e26244e5f026c8e40260b0a47494/code/API_definitions/sms-delivery-notification-subscription.yaml
         type: OpenAPI
     description: >-
       API to create, retrieve and delete event subscriptions related to a sms
@@ -429,7 +435,8 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
         type: Documentation
-      - url: properties/home-devices-qod-api-openapi.yml
+      - url: >-
+          https://github.com/camaraproject/HomeDevicesQoD/blob/r1.2/code/API_definitions/home-devices-qod.yaml
         type: OpenAPI
     description: >-
       Home Devices QoD API enables application developers to control the network
@@ -455,7 +462,8 @@ apis:
       - url: >-
           https://github.com/camaraproject/SimpleEdgeDiscovery/blob/main/documentation/API_documentation/SimpleEdgeDiscovery_User_Story.md
         type: Documentation
-      - url: properties/simple-edge-discovery-api-openapi.yml
+      - url: >-
+          https://github.com/camaraproject/SimpleEdgeDiscovery/blob/main/code/API_definitions/simple-edge-discovery.yaml
         type: OpenAPI
     description: >-
       Simple Edge Discovery API allows an application to discover the nearest
@@ -479,7 +487,8 @@ apis:
       - url: >-
           https://github.com/camaraproject/EdgeCloud/blob/main/documentation/API_documentation/Simple_Edge_Discovery_API_Readiness_Checklist.md
         type: Documentation
-      - url: properties/traffic-influence-api-openapi.yml
+      - url: >-
+          https://github.com/camaraproject/EdgeCloud/blob/main/code/API_definitions/Traffic_Influence.yaml
         type: OpenAPI
     description: >-
       The Traffic Influence API provides the capability to establish the optimal
@@ -503,15 +512,15 @@ apis:
     properties:
       - url: https://github.com/camaraproject/EdgeCloud
         type: GitHubRepository
-      - url: properties/application-endpoint-discovery-api-openapi.yml
+      - url: >-
+          https://github.com/camaraproject/EdgeCloud/blob/main/code/API_definitions/Application_Endpoint_Discovery_API.yaml
         type: OpenAPI
     description: >-
       The Application Discovery API extends beyond the capabilities of the
       Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone
       but also directly linking to the application endpoints within those Edge
       Cloud Zones.
-  - &ref_0
-    aid: global-system-for-mobile-communications:edge-application-management-api
+  - aid: global-system-for-mobile-communications:edge-application-management-api
     name: Edge Application Management API
     tags:
       - Cloud
@@ -524,12 +533,36 @@ apis:
     properties:
       - url: https://github.com/camaraproject/EdgeCloud
         type: GitHubRepository
-      - url: properties/edge-application-management-api-openapi.yml
+      - url: >-
+          https://github.com/camaraproject/EdgeCloud/blob/main/code/API_definitions/Edge-Application-Management.yaml
         type: OpenAPI
     description: >-
       Edge Application Management API allows API consumers to manage the Life
       Cycle of an Application and to Discover Edge Cloud Zones.
-  - *ref_0
+  - aid: global-system-for-mobile-communications:carrier-billing-api
+    name: Carrier Billing API
+    tags:
+      - Mobile
+      - Payments
+      - Charging
+      - Carrier
+      - Billing
+    humanURL: >-
+      https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
+    properties:
+      - url: >-
+          https://github.com/camaraproject/CarrierBillingCheckOut/releases/tag/r1.3
+        type: GitHubRepository
+      - url: >-
+          https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/CarrierBillingCheckOut/r1.3/code/API_definitions/carrier-billing.yaml&nocors
+        type: Documentation
+      - url: >-
+          https://github.com/camaraproject/CarrierBillingCheckOut/blob/r1.3/code/API_definitions/carrier-billing.yaml
+        type: OpenAPI
+    description: >-
+      Carrier Billing API allows an online merchant to enable the purchase of
+      third-party digital goods and to request payment against the user Mobile
+      Operator billing system.
 name: Global System for Mobile Communications (GSMA)
 tags:
   - Telecommunications
