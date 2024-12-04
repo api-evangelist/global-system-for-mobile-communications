@@ -20,9 +20,10 @@ apis:
       - url: properties/call-forwarding-signal-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Call Forwarding Signal API/bruno.json
-        type: BrunoCollection    
-      - url: https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/35240-bd9acd12-585e-4c28-ba61-6ee7a91f55d0
-        type: PostmanCollection              
+        type: BrunoCollection
+      - url: >-
+          https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/35240-bd9acd12-585e-4c28-ba61-6ee7a91f55d0
+        type: PostmanCollection
     description: >-
       Call Forwarding Signal API can be used to determine if a specific mobile
       Phone Number has an active call forwarding setup.
@@ -45,9 +46,10 @@ apis:
       - url: properties/device-roaming-status-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Device Roaming Status/bruno.json
-        type: BrunoCollection    
-      - url: https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/wgatuug/gsma-camara-project-device-roaming-status
-        type: PostmanCollection          
+        type: BrunoCollection
+      - url: >-
+          https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/wgatuug/gsma-camara-project-device-roaming-status
+        type: PostmanCollection
     description: >-
       Device Roaming Status API checks whether a certain user device is roaming
       and if so, the country it is in.
@@ -67,7 +69,7 @@ apis:
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
         type: Documentation
       - url: properties/kyc-fill-in-api-openapi.yml
-        type: OpenAPI       
+        type: OpenAPI
     description: >-
       KYC Fill-In API is used to request and receive information that has been
       verified by the end users Mobile Operator in their KYC records. The
@@ -91,9 +93,9 @@ apis:
       - url: properties/kyc-match-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-        type: BrunoCollection    
+        type: BrunoCollection
       - url: none
-        type: PostmanCollection          
+        type: PostmanCollection
     description: >-
       KYC Match API provides the ability to compare the information the API
       customer has for a particular user with that on file and verified by the
@@ -117,9 +119,10 @@ apis:
       - url: properties/number-verification-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Number Verification/bruno.json
-        type: BrunoCollection    
-      - url: https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/lvrdn91/gsma-camara-project-number-verification
-        type: PostmanCollection          
+        type: BrunoCollection
+      - url: >-
+          https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/lvrdn91/gsma-camara-project-number-verification
+        type: PostmanCollection
     description: >-
       Number Verification API enables the seamless authentication of a mobile
       device by verifying that the provided mobile phone number is the one used
@@ -142,9 +145,10 @@ apis:
       - url: properties/one-time-password-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project One Time Password SMS/bruno.json
-        type: BrunoCollection    
-      - url: https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/lm2bnug/gsma-camara-project-one-time-password-sms
-        type: PostmanCollection          
+        type: BrunoCollection
+      - url: >-
+          https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/lm2bnug/gsma-camara-project-one-time-password-sms
+        type: PostmanCollection
     description: >-
       One Time Password API delivers a short-lived one-time password to a mobile
       phone number via SMS. The API then validates the code as input by the
@@ -167,9 +171,10 @@ apis:
       - url: properties/sim-swap-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project SIM Swap API/bruno.json
-        type: BrunoCollection    
-      - url: https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/1ohhvf0/gsma-camara-project-sim-swap-api
-        type: PostmanCollection          
+        type: BrunoCollection
+      - url: >-
+          https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/1ohhvf0/gsma-camara-project-sim-swap-api
+        type: PostmanCollection
     description: >-
       SIM Swap API checks the last date that the SIM card associated with a
       mobile phone number has changed. The response may be a timestamp or a
@@ -192,10 +197,13 @@ apis:
         type: Documentation
       - url: properties/sim-swap-notification-subscription-api-openapi.yml
         type: OpenAPI
-      - url: bruno/GSMA Camara Project SIM Swap Notification Subscription API/bruno.json
-        type: BrunoCollection    
-      - url: https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/t35i4sr/gsma-camara-project-sms-delivery-notification-subscription-api
-        type: PostmanCollection          
+      - url: >-
+          bruno/GSMA Camara Project SIM Swap Notification Subscription
+          API/bruno.json
+        type: BrunoCollection
+      - url: >-
+          https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/t35i4sr/gsma-camara-project-sms-delivery-notification-subscription-api
+        type: PostmanCollection
     description: >-
       SIM Swap Notification Subscription enables subscription to notifications
       related to SIM Swap events, reporting a change in the SIM card associated
@@ -232,9 +240,10 @@ apis:
       - url: properties/device-location-verification-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Device Location Verification API/bruno.json
-        type: BrunoCollection    
-      - url: https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/35240-23a17d7b-07a0-405e-896b-6c4f3f4cc8c6
-        type: PostmanCollection          
+        type: BrunoCollection
+      - url: >-
+          https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/35240-23a17d7b-07a0-405e-896b-6c4f3f4cc8c6
+        type: PostmanCollection
     description: >-
       Device Location Verification API checks if a mobile device is in proximity
       of a given location. The API request contains the location to be checked
@@ -261,10 +270,13 @@ apis:
         type: Documentation
       - url: properties/device-geofencing-subscriptions-api-openapi.yml
         type: OpenAPI
-      - url: bruno/GSMA Camara Project Device Geofencing Subscriptions API/bruno.json
-        type: BrunoCollection    
-      - url: https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/lddca5b/gsma-camara-project-device-geofencing-subscriptions-api
-        type: PostmanCollection          
+      - url: >-
+          bruno/GSMA Camara Project Device Geofencing Subscriptions
+          API/bruno.json
+        type: BrunoCollection
+      - url: >-
+          https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/lddca5b/gsma-camara-project-device-geofencing-subscriptions-api
+        type: PostmanCollection
     description: >-
       Device Geofencing Subscriptions API enables the subscription to
       geographical position changes. With this API, customers can create
@@ -290,9 +302,10 @@ apis:
       - url: properties/device-location-retrieval-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Device Location Retrieval API/bruno.json
-        type: BrunoCollection    
-      - url: https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/2un0g1u/gsma-camara-project-device-location-retrieval-api
-        type: PostmanCollection          
+        type: BrunoCollection
+      - url: >-
+          https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/2un0g1u/gsma-camara-project-device-location-retrieval-api
+        type: PostmanCollection
     description: >-
       Device Location Retrieval API provides the ability to retrieve the
       location of a device. The retrieved area depends on the network conditions
@@ -317,9 +330,10 @@ apis:
       - url: properties/population-density-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Population Density Data/bruno.json
-        type: BrunoCollection    
-      - url: https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/lwfh4b3/gsma-camara-project-population-density-data
-        type: PostmanCollection          
+        type: BrunoCollection
+      - url: >-
+          https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/lwfh4b3/gsma-camara-project-population-density-data
+        type: PostmanCollection
     description: >-
       Population Density Data API enables the retrieval of population density
       estimations for a specific area at a future date and time, considering
@@ -343,9 +357,10 @@ apis:
       - url: properties/quality-on-demand-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Quality on Demand API/bruno.json
-        type: BrunoCollection    
-      - url: https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/35240-a139bda5-4882-455b-83a2-2e3ea7bcb16f
-        type: PostmanCollection          
+        type: BrunoCollection
+      - url: >-
+          https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/35240-a139bda5-4882-455b-83a2-2e3ea7bcb16f
+        type: PostmanCollection
     description: >-
       Quality on Demand API offers the application developer the capability to
       request stable latency (reduced jitter) or minimum throughput for
@@ -371,9 +386,10 @@ apis:
       - url: properties/connectivity-insights-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Connectivity Insights API/bruno.json
-        type: BrunoCollection    
-      - url: https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/0jyjgn6/gsma-camara-project-connectivity-insights-api
-        type: PostmanCollection          
+        type: BrunoCollection
+      - url: >-
+          https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/0jyjgn6/gsma-camara-project-connectivity-insights-api
+        type: PostmanCollection
     description: >-
       The Connectivity Insights API allows an application developer to ask the
       network the likelihood that an application's networking requirements can
@@ -396,10 +412,13 @@ apis:
         type: Documentation
       - url: properties/connectivity-insights-subscriptions-api-openapi.yml
         type: OpenAPI
-      - url: bruno/GSMA Camara Project Connectivity Insights Subscriptions API/bruno.json
-        type: BrunoCollection    
-      - url: https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/odjfucf/gsma-camara-project-connectivity-insights-subscriptions-api
-        type: PostmanCollection          
+      - url: >-
+          bruno/GSMA Camara Project Connectivity Insights Subscriptions
+          API/bruno.json
+        type: BrunoCollection
+      - url: >-
+          https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/odjfucf/gsma-camara-project-connectivity-insights-subscriptions-api
+        type: PostmanCollection
     description: >-
       The Connectivity Insights API allows an application developer to ask the
       network the likelihood that an application's networking requirements can
@@ -419,9 +438,10 @@ apis:
       - url: properties/application-profiles-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Application Profiles API/bruno.json
-        type: BrunoCollection    
-      - url: https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/ryw6hox/gsma-camara-project-application-profiles-api
-        type: PostmanCollection          
+        type: BrunoCollection
+      - url: >-
+          https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/ryw6hox/gsma-camara-project-application-profiles-api
+        type: PostmanCollection
     description: >-
       Application profiles allows application developers to share all the
       information about their application which would be relevant for network/
@@ -440,9 +460,10 @@ apis:
       - url: properties/sms-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project SMS API/bruno.json
-        type: BrunoCollection    
-      - url: https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/im7p4j1/gsma-camara-project-sms-api
-        type: PostmanCollection          
+        type: BrunoCollection
+      - url: >-
+          https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/im7p4j1/gsma-camara-project-sms-api
+        type: PostmanCollection
     description: "SMS API provides the customer with the ability to send an SMS to a mobile phone number in use on a mobile phone device. There are 3 different categories of SMS, namely Service SMS, Promotional SMS and Transactional SMS.  The SMS API can also be used to send a binary message to a mobile phone number which is being used on an (IoT) device.\v "
   - aid: >-
       global-system-for-mobile-communications:sms-delivery-notification-subscription-api
@@ -461,10 +482,13 @@ apis:
         type: Documentation
       - url: properties/sms-delivery-notification-subscription-api-openapi.yml
         type: OpenAPI
-      - url: bruno/GSMA Camara Project SMS Delivery Notification Subscription API/bruno.json
-        type: BrunoCollection    
-      - url: https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/t35i4sr/gsma-camara-project-sms-delivery-notification-subscription-api
-        type: PostmanCollection          
+      - url: >-
+          bruno/GSMA Camara Project SMS Delivery Notification Subscription
+          API/bruno.json
+        type: BrunoCollection
+      - url: >-
+          https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/t35i4sr/gsma-camara-project-sms-delivery-notification-subscription-api
+        type: PostmanCollection
     description: >-
       API to create, retrieve and delete event subscriptions related to a sms
       delivery operation performed on an associated phone number.
@@ -488,9 +512,10 @@ apis:
       - url: properties/home-devices-qod-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-        type: BrunoCollection    
-      - url: nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
-        type: PostmanCollection          
+        type: BrunoCollection
+      - url: >-
+          nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
+        type: PostmanCollection
     description: >-
       Home Devices QoD API enables application developers to control the network
       configuration of their End Users devices when they are connected through
@@ -518,9 +543,10 @@ apis:
       - url: properties/simple-edge-discovery-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Simple Edge Discovery/bruno.json
-        type: BrunoCollection    
-      - url: https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/5ze8wkz/gsma-camara-project-simple-edge-discovery
-        type: PostmanCollection          
+        type: BrunoCollection
+      - url: >-
+          https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/5ze8wkz/gsma-camara-project-simple-edge-discovery
+        type: PostmanCollection
     description: >-
       Simple Edge Discovery API allows an application to discover the nearest
       Edge-Cloud zone for it to connect to, specifically the API will calculate
@@ -546,9 +572,10 @@ apis:
       - url: properties/traffic-influence-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Traffic Influence API/bruno.json
-        type: BrunoCollection    
-      - url: https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/1tmj16r/gsma-camara-project-traffic-influence-api
-        type: PostmanCollection          
+        type: BrunoCollection
+      - url: >-
+          https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/1tmj16r/gsma-camara-project-traffic-influence-api
+        type: PostmanCollection
     description: >-
       The Traffic Influence API provides the capability to establish the optimal
       routing, in terms of latency, in a specific geographical area, between the
@@ -571,12 +598,15 @@ apis:
     properties:
       - url: https://github.com/camaraproject/EdgeCloud
         type: GitHubRepository
-      - url:properties/application-endpoint-discovery-api-openapi.yml
+      - url: properties/application-endpoint-discovery-api-openapi.yml
         type: OpenAPI
-      - url: bruno/GSMA Camara Project Application Endpoint Discovery API/bruno.json
-        type: BrunoCollection    
-      - url: https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/tomzja8/gsma-camara-project-application-endpoint-discovery-api
-        type: PostmanCollection          
+      - url: >-
+          bruno/GSMA Camara Project Application Endpoint Discovery
+          API/bruno.json
+        type: BrunoCollection
+      - url: >-
+          https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/tomzja8/gsma-camara-project-application-endpoint-discovery-api
+        type: PostmanCollection
     description: >-
       The Application Discovery API extends beyond the capabilities of the
       Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone
@@ -598,9 +628,10 @@ apis:
       - url: properties/edge-application-management-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Edge Application Management API/bruno.json
-        type: BrunoCollection    
-      - url: https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/35240-981545ec-b150-47da-a448-59c92b127a05
-        type: PostmanCollection          
+        type: BrunoCollection
+      - url: >-
+          https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/35240-981545ec-b150-47da-a448-59c92b127a05
+        type: PostmanCollection
     description: >-
       Edge Application Management API allows API consumers to manage the Life
       Cycle of an Application and to Discover Edge Cloud Zones. The reference
@@ -627,9 +658,10 @@ apis:
       - url: properties/carrier-billing-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Carrier Billing/bruno.json
-        type: BrunoCollection    
-      - url: https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/0m2sok6/gsma-camara-project-carrier-billing
-        type: PostmanCollection          
+        type: BrunoCollection
+      - url: >-
+          https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/0m2sok6/gsma-camara-project-carrier-billing
+        type: PostmanCollection
     description: >-
       The Carrier Billing API provides programmable interface for developers and
       other users (capabilities consumers) to charge an amount on a mobile line.
@@ -645,6 +677,10 @@ tags:
   - Networking
   - Mobile
 type: Index
+common:
+  - url: >-
+      https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/overview
+    type: PostmanWorkspace
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2024-12-03T00:00:00.000Z'
