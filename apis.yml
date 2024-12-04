@@ -503,8 +503,7 @@ apis:
     properties:
       - url: https://github.com/camaraproject/EdgeCloud
         type: GitHubRepository
-      - url: >-
-          https://github.com/camaraproject/EdgeCloud/blob/main/code/API_definitions/Application_Endpoint_Discovery_API.yaml
+      - url: properties/application-endpoint-discovery-api-openapi.yml
         type: OpenAPI
     description: >-
       The Application Discovery API extends beyond the capabilities of the
