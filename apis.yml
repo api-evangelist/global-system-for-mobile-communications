@@ -36,8 +36,7 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/CallForwardingSignal/r1.3/code/API_definitions/call-forwarding-signal.yaml&nocors
         type: Documentation
-      - url: >-
-          https://github.com/camaraproject/CallForwardingSignal/blob/r1.3/code/API_definitions/call-forwarding-signal.yaml
+      - url: properties/call-forwarding-signal-api-openapi.yml
         type: OpenAPI
     description: >
       # Overview
