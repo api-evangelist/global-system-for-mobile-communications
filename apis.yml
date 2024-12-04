@@ -137,10 +137,6 @@ apis:
       to verify the phone number as a proof of possession.
   - aid: global-system-for-mobile-communications:sim-swap-api
     name: SIM Swap API
-    description: >-
-      SIM Swap API checks the last date that the SIM card associated with a
-      mobile phone number has changed. The response may be a timestamp or a
-      yes/no for a defined period (e.g. last 24h).
     tags:
       - Anti Fraud
       - Subscribers
@@ -149,14 +145,17 @@ apis:
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
-      - type: GitHubRepository
-        url: https://github.com/camaraproject/SimSwap/releases/tag/r1.3
-      - type: Documentation
-        url: >-
+      - url: https://github.com/camaraproject/SimSwap/releases/tag/r1.3
+        type: GitHubRepository
+      - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/SimSwap/r1.3/code/API_definitions/sim-swap.yaml&nocors
-      - type: OpenAPI
-        url: >-
-          https://github.com/camaraproject/SimSwap/blob/r1.3/code/API_definitions/sim-swap.yaml
+        type: Documentation
+      - url: properties/sim-swap-api-openapi.yml
+        type: OpenAPI
+    description: >-
+      SIM Swap API checks the last date that the SIM card associated with a
+      mobile phone number has changed. The response may be a timestamp or a
+      yes/no for a defined period (e.g. last 24h).
   - aid: >-
       global-system-for-mobile-communications:sim-swap-notification-subscription-api
     name: SIM Swap Notification Subscription API
