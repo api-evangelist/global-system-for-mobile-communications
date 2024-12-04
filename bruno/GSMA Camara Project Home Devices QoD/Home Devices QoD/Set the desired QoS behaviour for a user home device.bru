@@ -1,0 +1,22 @@
+meta {
+  name: Set the desired QoS behaviour for a user home device
+  type: http
+  seq: 1
+}
+
+put {
+  url: {{baseUrl}}/qos
+  body: json
+  auth: none
+}
+
+headers {
+  ~x-correlator: 
+}
+
+body:json {
+  {
+    "serviceClass": "",
+    "ipAddress": ""
+  }
+}

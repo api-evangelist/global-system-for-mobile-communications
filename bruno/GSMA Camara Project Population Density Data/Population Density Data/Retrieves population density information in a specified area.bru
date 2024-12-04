@@ -1,0 +1,28 @@
+meta {
+  name: Retrieves population density information in a specified area
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/retrieve
+  body: json
+  auth: none
+}
+
+headers {
+  ~x-correlator: 
+}
+
+body:json {
+  {
+    "area": {
+      "areaType": ""
+    },
+    "startDate": "",
+    "endDate": "",
+    "precision": "",
+    "sink": "",
+    "sinkCredential": ""
+  }
+}

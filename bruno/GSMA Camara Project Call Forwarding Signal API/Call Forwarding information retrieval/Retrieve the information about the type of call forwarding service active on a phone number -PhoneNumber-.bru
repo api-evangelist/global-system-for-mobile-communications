@@ -1,0 +1,11 @@
+meta {
+  name: Retrieve the information about the type of call forwarding service active on a phone number -PhoneNumber-
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/call-forwardings
+  body: json
+  auth: none
+}

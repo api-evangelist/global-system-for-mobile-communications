@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: Call Forwarding Signal API
+  title: GSMA Camara Project Call Forwarding Signal API
   description: >-
     The Call Forwarding Signal (CFS) API provides the API Consumer with
     information about the status of the Call Forwading Service on a specific

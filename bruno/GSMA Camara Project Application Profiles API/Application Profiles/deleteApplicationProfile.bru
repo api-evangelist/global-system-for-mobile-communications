@@ -1,0 +1,15 @@
+meta {
+  name: deleteApplicationProfile
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{baseUrl}}/application-profiles/:applicationProfileId
+  body: none
+  auth: none
+}
+
+params:path {
+  applicationProfileId: 
+}

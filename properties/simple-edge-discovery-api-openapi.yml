@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: Simple Edge Discovery
+  title: GSMA Camara Project Simple Edge Discovery
   version: 1.0.0
   x-camara-commonalities: 0.4.0
   description: >

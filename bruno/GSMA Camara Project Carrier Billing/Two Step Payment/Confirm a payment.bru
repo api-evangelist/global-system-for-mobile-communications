@@ -1,0 +1,21 @@
+meta {
+  name: Confirm a payment
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/payments/:paymentId/confirm
+  body: json
+  auth: none
+}
+
+params:path {
+  paymentId: 
+}
+
+body:json {
+  {
+    "phoneNumber": ""
+  }
+}

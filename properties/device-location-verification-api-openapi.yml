@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: Device Location Verification API
+  title: GSMA Camara Project Device Location Verification API
   description: >-
     Device Location Verification API checks if a mobile device is in proximity
     of a given location. The API request contains the location to be checked and

@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: SMS Delivery Notification Subscription API
+  title: GSMA Camara Project SMS Delivery Notification Subscription API
   description: >-
     API to create, retrieve and delete event subscriptions related to a sms
     delivery operation performed on an associated phone number.

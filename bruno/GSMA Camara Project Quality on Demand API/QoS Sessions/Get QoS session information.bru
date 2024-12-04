@@ -1,0 +1,15 @@
+meta {
+  name: Get QoS session information
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/sessions/:sessionId
+  body: none
+  auth: none
+}
+
+params:path {
+  sessionId: 
+}

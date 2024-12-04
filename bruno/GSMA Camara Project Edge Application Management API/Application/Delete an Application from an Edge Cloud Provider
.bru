@@ -1,0 +1,16 @@
+meta {
+  name: Delete an Application from an Edge Cloud Provider
+
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{baseUrl}}/apps/:appId
+  body: none
+  auth: none
+}
+
+params:path {
+  appId: 
+}

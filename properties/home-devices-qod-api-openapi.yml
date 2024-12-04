@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: Home Devices QoD
+  title: GSMA Camara Project Home Devices QoD
   description: >
     Service Enabling Network Function API for *QoS-on-demand* (QoD) control
     applied to devices connected to the user's home network. API clients can

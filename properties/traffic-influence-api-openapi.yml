@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: Traffic Influence API
+  title: GSMA Camara Project Traffic Influence API
   version: wip
   description: >-
     The Traffic Influence API provides the capability to establish the optimal
@@ -559,7 +559,7 @@ components:
     Protocol:
       description: >-
         The protocol for the influeced flow. It can be specified and it is
-        identified by a string according to the column Keyword as defined by
+        identified by a string according to the column Keyword as defined by
         IANA (https://www.iana.org/assignments/protocol-numbers/\
         protocol-numbers.xhtml), e.g. UDP or TCP.
       type: string

@@ -1,0 +1,26 @@
+meta {
+  name: Returns the Endpoint of the closest App Instance to user device
+identified in the request-
+
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/app-endpoints
+  body: none
+  auth: none
+}
+
+params:query {
+  filter: 
+}
+
+headers {
+  Phone-Number: 
+  AppId: 
+  ~IPv4-Address: 
+  ~IPv6-Address: 
+  ~Network-Access-Identifier: 
+  ~X-Correlator: 
+}

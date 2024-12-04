@@ -1,0 +1,17 @@
+meta {
+  name: Get QoS session information for a device
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/retrieve-sessions
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "device": ""
+  }
+}

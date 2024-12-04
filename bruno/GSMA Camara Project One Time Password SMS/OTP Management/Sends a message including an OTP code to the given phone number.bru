@@ -1,0 +1,22 @@
+meta {
+  name: Sends a message including an OTP code to the given phone number
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/send-code
+  body: json
+  auth: none
+}
+
+headers {
+  ~x-correlator: 
+}
+
+body:json {
+  {
+    "phoneNumber": "",
+    "message": ""
+  }
+}

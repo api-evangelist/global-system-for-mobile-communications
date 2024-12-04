@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: Device Location Retrieval API
+  title: GSMA Camara Project Device Location Retrieval API
   description: >-
     Device Location Retrieval API provides the ability to retrieve the location
     of a device. The retrieved area depends on the network conditions at the

@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: Application Profiles API
+  title: GSMA Camara Project Application Profiles API
   version: 0.3.0
   license:
     name: Apache 2.0

@@ -1,0 +1,22 @@
+meta {
+  name: Verifies if the received hashed-plain text phone number matches the phone number associated with the access token
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/verify
+  body: json
+  auth: none
+}
+
+headers {
+  ~x-correlator: 
+}
+
+body:json {
+  {
+    "phoneNumber": "",
+    "hashedPhoneNumber": ""
+  }
+}

@@ -1,0 +1,26 @@
+meta {
+  name: Returns the name of the Edge Cloud Zone closest to user device
+identified in the request-
+
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/edge-cloud-zones
+  body: none
+  auth: none
+}
+
+params:query {
+  filter: 
+}
+
+headers {
+  ~IPv4-Address: 
+  ~Public-port: 
+  ~IPv6-Address: 
+  ~Network-Access-Identifier: 
+  ~Phone-Number: 
+  ~x-correlator: 
+}

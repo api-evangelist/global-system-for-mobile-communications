@@ -1,0 +1,21 @@
+meta {
+  name: Retrieve the information about the status of the unconditional call forwarding service on a phone number -PhoneNumber-
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/unconditional-call-forwardings
+  body: json
+  auth: none
+}
+
+headers {
+  ~x-correlator: 
+}
+
+body:json {
+  {
+    "phoneNumber": ""
+  }
+}

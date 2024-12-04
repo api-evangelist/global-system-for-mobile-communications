@@ -1,0 +1,15 @@
+meta {
+  name: Cancel a payment
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/payments/:paymentId/cancel
+  body: json
+  auth: none
+}
+
+params:path {
+  paymentId: 
+}

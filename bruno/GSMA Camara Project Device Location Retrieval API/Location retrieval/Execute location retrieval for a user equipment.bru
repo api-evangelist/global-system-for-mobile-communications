@@ -1,0 +1,31 @@
+meta {
+  name: Execute location retrieval for a user equipment
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/retrieve
+  body: json
+  auth: none
+}
+
+headers {
+  ~x-correlator: 
+}
+
+body:json {
+  {
+    "device": {
+      "phoneNumber": "",
+      "networkAccessIdentifier": "",
+      "ipv4Address": {
+        "publicAddress": "",
+        "privateAddress": "",
+        "publicPort": ""
+      },
+      "ipv6Address": ""
+    },
+    "maxAge": ""
+  }
+}

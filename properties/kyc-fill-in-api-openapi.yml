@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: Know Your Customer Match
+  title: GSMA Camara Project Know Your Customer Match
   description: >-
     This API provides the customer with the ability to compare the information
     it (Service Provider, SP) has for a particular mobile phone user with that
@@ -40,40 +40,6 @@ paths:
         the request body, at least one of the other fields must be provided,
         otherwise a `HTTP 400 - KNOW_YOUR_CUSTOMER.INVALID_PARAM_COMBINATION`
         error will be returned.
-
-
-        In order to proceed with the match check, some Operators may have the
-        requirement to perform an additional level of validation based on the
-        `idDocument` property. This means that, in those cases, the `idDocument`
-        is required and the provided value needs to match the one stored in the
-        Operator system associated with the indicated `phoneNumber`. This
-        validation will be done before proceeding with the match check of the
-        rest of the properties. The following two rules apply only in the cases
-        where the Operator have the requirement to validate the `idDocument`:
-
-        - If no `idDocument` is provided, then a `HTTP 403 -
-        KNOW_YOUR_CUSTOMER.ID_DOCUMENT_REQUIRED` error will be returned.
-
-        - If the provided `idDocument` does not match the one stored in the
-        Operator systems, then a `HTTP 403 -
-        KNOW_YOUR_CUSTOMER.ID_DOCUMENT_MISMATCH` error will be returned.
-
-        - There is a corner case where the Operator requires the `idDocument` to
-        perform the match validation for the rest of the properties, but it also
-        needs to be able to perform the validation only for the `idDocument`
-        itself. In this case, if only the `idDocument` is provided along with
-        the phoneNumber (either in the request body or extracted from the access
-        token) then the match will be performed as with any other attribute and
-        the response will contain the result of the match operation.
-
-
-        The API will return the result of the matching process for each
-        requested attribute. This means that the response will **only** contain
-        the attributes for which validation has been requested. Possible values
-        are:
-          - **true**: the attribute provided matches with the one in the Operator systems.
-          - **false**: the attribute provided does not match with the one in the Operator systems.
-          - **not_available**: the attribute is not available to validate.
       operationId: KYC_Match
       security:
         - openId:

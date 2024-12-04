@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: Application Endpoint Discovery API
+  title: GSMA Camara Project Application Endpoint Discovery API
   version: 0.1.0-wip
   description: >-
     The Application Discovery API extends beyond the capabilities of the Simple

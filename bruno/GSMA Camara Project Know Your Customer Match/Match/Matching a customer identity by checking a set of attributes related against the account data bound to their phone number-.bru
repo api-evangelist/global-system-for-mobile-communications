@@ -1,0 +1,40 @@
+meta {
+  name: Matching a customer identity by checking a set of attributes related against the account data bound to their phone number-
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/match
+  body: json
+  auth: none
+}
+
+headers {
+  ~x-correlator: 
+}
+
+body:json {
+  {
+    "phoneNumber": "",
+    "idDocument": "",
+    "name": "",
+    "givenName": "",
+    "familyName": "",
+    "nameKanaHankaku": "",
+    "nameKanaZenkaku": "",
+    "middleNames": "",
+    "familyNameAtBirth": "",
+    "address": "",
+    "streetName": "",
+    "streetNumber": "",
+    "postalCode": "",
+    "region": "",
+    "locality": "",
+    "country": "",
+    "houseNumberExtension": "",
+    "birthdate": "",
+    "email": "",
+    "gender": ""
+  }
+}

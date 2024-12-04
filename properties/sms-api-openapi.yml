@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: SMS API
+  title: GSMA Camara Project SMS API
   description: "SMS API provides the customer with the ability to send an SMS to a mobile phone number in use on a mobile phone device. There are 3 different categories of SMS, namely Service SMS, Promotional SMS and Transactional SMS.  The SMS API can also be used to send a binary message to a mobile phone number which is being used on an (IoT) device.\v "
   version: 0.1.0-alpha.1
   termsOfService: http://example.com/terms/

@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: Population Density Data
+  title: GSMA Camara Project Population Density Data
   description: >-
     Population Density Data API exposes population density estimations for a
     specified area for a specified time interval.

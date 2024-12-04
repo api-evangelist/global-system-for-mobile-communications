@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: Device Geofencing Subscriptions API
+  title: GSMA Camara Project Device Geofencing Subscriptions API
   description: >-
     Device Geofencing Subscriptions API enables the subscription to geographical
     position changes. With this API, customers can create subscriptions for

@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: Quality on Demand API
+  title: GSMA Camara Project Quality on Demand API
   description: >-
     Quality on Demand API offers the application developer the capability to
     request stable latency (reduced jitter) or minimum throughput for specified

@@ -1,0 +1,30 @@
+meta {
+  name: Create a sms delivery event subscription for a given consumer
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/subscriptions
+  body: json
+  auth: none
+}
+
+headers {
+  ~x-correlator: 
+}
+
+body:json {
+  {
+    "subscriptionDetail": {
+      "senderId": "",
+      "type": ""
+    },
+    "subscriptionExpireTime": "",
+    "subscriptionMaxEvents": "",
+    "webhook": {
+      "notificationUrl": "",
+      "notificationAuthToken": ""
+    }
+  }
+}

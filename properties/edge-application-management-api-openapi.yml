@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: Edge Application Management API
+  title: GSMA Camara Project Edge Application Management API
   version: 0.9.3-wip
   description: >-
     Edge Application Management API allows API consumers to manage the Life

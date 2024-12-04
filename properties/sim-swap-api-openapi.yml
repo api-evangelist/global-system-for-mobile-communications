@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: SIM Swap API
+  title: GSMA Camara Project SIM Swap API
   description: >-
     SIM Swap API checks the last date that the SIM card associated with a mobile
     phone number has changed. The response may be a timestamp or a yes/no for a

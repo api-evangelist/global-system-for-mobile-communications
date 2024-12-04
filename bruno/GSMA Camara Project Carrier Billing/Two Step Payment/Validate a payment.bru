@@ -1,0 +1,22 @@
+meta {
+  name: Validate a payment
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/payments/:paymentId/validate
+  body: json
+  auth: none
+}
+
+params:path {
+  paymentId: 
+}
+
+body:json {
+  {
+    "authorizationId": "",
+    "code": ""
+  }
+}

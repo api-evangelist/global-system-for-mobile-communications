@@ -1,0 +1,21 @@
+meta {
+  name: Get a list of payments
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/payments
+  body: none
+  auth: none
+}
+
+params:query {
+  ~page: 
+  ~perPage: 
+  ~paymentCreationDate.gte: 
+  ~paymentCreationDate.lte: 
+  ~order: 
+  ~paymentStatus: 
+  ~merchantIdentifier: 
+}

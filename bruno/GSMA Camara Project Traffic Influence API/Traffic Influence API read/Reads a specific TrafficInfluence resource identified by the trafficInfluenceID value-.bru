@@ -1,0 +1,11 @@
+meta {
+  name: Reads a specific TrafficInfluence resource identified by the trafficInfluenceID value-
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/traffic-influences/:trafficInfluenceID
+  body: none
+  auth: none
+}

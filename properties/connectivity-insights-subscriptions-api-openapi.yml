@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: Connectivity Insights Subscriptions API
+  title: GSMA Camara Project Connectivity Insights Subscriptions API
   version: 0.4.0
   x-camara-commonalities: 0.4.0
   description: >-

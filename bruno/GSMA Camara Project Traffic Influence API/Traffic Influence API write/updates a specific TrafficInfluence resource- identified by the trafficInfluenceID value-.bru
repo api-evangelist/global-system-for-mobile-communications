@@ -1,0 +1,11 @@
+meta {
+  name: updates a specific TrafficInfluence resource- identified by the trafficInfluenceID value-
+  type: http
+  seq: 2
+}
+
+patch {
+  url: {{baseUrl}}/traffic-influences/:trafficInfluenceID
+  body: json
+  auth: none
+}

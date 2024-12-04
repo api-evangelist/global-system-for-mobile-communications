@@ -1,0 +1,24 @@
+meta {
+  name: Send SMS
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/short-message
+  body: json
+  auth: none
+}
+
+headers {
+  ~x-correlator: 
+}
+
+body:json {
+  {
+    "to": [],
+    "from": "",
+    "category": "",
+    "message": ""
+  }
+}

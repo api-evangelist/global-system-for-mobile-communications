@@ -1,0 +1,17 @@
+meta {
+  name: Retrieve the information of Application Instances for a given App
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/appinstances
+  body: none
+  auth: none
+}
+
+params:query {
+  ~appId: 
+  ~appInstanceId: 
+  ~region: 
+}

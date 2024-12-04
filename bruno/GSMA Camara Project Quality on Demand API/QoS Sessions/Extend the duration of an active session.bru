@@ -1,0 +1,21 @@
+meta {
+  name: Extend the duration of an active session
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/sessions/:sessionId/extend
+  body: json
+  auth: none
+}
+
+params:path {
+  sessionId: 
+}
+
+body:json {
+  {
+    "requestedAdditionalDuration": ""
+  }
+}

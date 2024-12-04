@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: Device Roaming Status
+  title: GSMA Camara Project Device Roaming Status
   description: >
     This API provides the API consumer with the ability to query device roaming
     Status

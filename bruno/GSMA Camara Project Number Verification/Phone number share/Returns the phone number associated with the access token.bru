@@ -1,0 +1,15 @@
+meta {
+  name: Returns the phone number associated with the access token
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/device-phone-number
+  body: none
+  auth: none
+}
+
+headers {
+  ~x-correlator: 
+}

@@ -1,0 +1,24 @@
+meta {
+  name: create a profile which represents an application-s networking demands-
+
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/application-profiles
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "networkQualityThresholds": {
+      "packetDelayBudget": "",
+      "targetMinDownstreamRate": "",
+      "targetMinUpstreamRate": "",
+      "packetlossErrorRate": "",
+      "jitter": ""
+    }
+  }
+}

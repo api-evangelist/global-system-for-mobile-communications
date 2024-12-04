@@ -1,0 +1,28 @@
+meta {
+  name: Prepare -reserve- a payment
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/payments/prepare
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "amountTransaction": {
+      "phoneNumber": "",
+      "clientCorrelator": "",
+      "paymentAmount": {
+        "chargingInformation": "",
+        "chargingMetaData": "",
+        "paymentDetails": ""
+      },
+      "referenceCode": ""
+    },
+    "sink": "",
+    "sinkCredential": ""
+  }
+}

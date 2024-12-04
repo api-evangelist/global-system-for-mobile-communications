@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: Number Verification
+  title: GSMA Camara Project Number Verification
   description: >-
     Service Enabling Network Function API to verify that the provided **mobile
     phone number** is the one used in the device. It verifies that the user is

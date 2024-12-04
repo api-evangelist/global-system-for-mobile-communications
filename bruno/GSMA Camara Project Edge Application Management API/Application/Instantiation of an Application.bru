@@ -1,0 +1,29 @@
+meta {
+  name: Instantiation of an Application
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/appinstances
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "appId": "",
+    "appZones": [
+      {
+        "kubernetesClusterRef": "",
+        "EdgeCloudZone": {
+          "edgeCloudZoneId": "",
+          "edgeCloudZoneName": "",
+          "edgeCloudZoneStatus": "",
+          "edgeCloudProvider": "",
+          "edgeCloudRegion": ""
+        }
+      }
+    ]
+  }
+}

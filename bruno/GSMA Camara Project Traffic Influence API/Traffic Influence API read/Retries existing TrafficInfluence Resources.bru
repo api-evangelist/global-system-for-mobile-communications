@@ -1,0 +1,19 @@
+meta {
+  name: Retries existing TrafficInfluence Resources
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/traffic-influences
+  body: none
+  auth: none
+}
+
+params:query {
+  ~appId: 
+}
+
+headers {
+  ~x-correlator: 
+}
