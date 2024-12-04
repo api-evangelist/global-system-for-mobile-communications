@@ -283,8 +283,7 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/PopulationDensityData/r1.2/code/API_definitions/population-density-data.yaml&nocors
         type: Documentation
-      - url: >-
-          https://github.com/camaraproject/PopulationDensityData/blob/r1.2/code/API_definitions/population-density-data.yaml
+      - url: properties/population-density-api-openapi.yml
         type: OpenAPI
     description: >-
       Population Density Data API enables the retrieval of population density
