@@ -510,7 +510,8 @@ apis:
       Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone
       but also directly linking to the application endpoints within those Edge
       Cloud Zones.
-  - aid: global-system-for-mobile-communications:edge-application-management-api
+  - &ref_0
+    aid: global-system-for-mobile-communications:edge-application-management-api
     name: Edge Application Management API
     tags:
       - Cloud
@@ -523,36 +524,12 @@ apis:
     properties:
       - url: https://github.com/camaraproject/EdgeCloud
         type: GitHubRepository
-      - url: >-
-          https://github.com/camaraproject/EdgeCloud/blob/main/code/API_definitions/Edge-Application-Management.yaml
+      - url: properties/edge-application-management-api-openapi.yml
         type: OpenAPI
     description: >-
       Edge Application Management API allows API consumers to manage the Life
       Cycle of an Application and to Discover Edge Cloud Zones.
-  - aid: global-system-for-mobile-communications:edge-application-management-api
-    name: Carrier Billing API
-    tags:
-      - Mobile
-      - Payments
-      - Charging
-      - Carrier
-      - Billing
-    humanURL: >-
-      https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
-    properties:
-      - url: >-
-          https://github.com/camaraproject/CarrierBillingCheckOut/releases/tag/r1.3
-        type: GitHubRepository
-      - url: >-
-          https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/CarrierBillingCheckOut/r1.3/code/API_definitions/carrier-billing.yaml&nocors
-        type: Documentation
-      - url: >-
-          https://github.com/camaraproject/CarrierBillingCheckOut/blob/r1.3/code/API_definitions/carrier-billing.yaml
-        type: OpenAPI
-    description: >-
-      Carrier Billing API allows an online merchant to enable the purchase of
-      third-party digital goods and to request payment against the user Mobile
-      Operator billing system.
+  - *ref_0
 name: Global System for Mobile Communications (GSMA)
 tags:
   - Telecommunications
