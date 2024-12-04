@@ -115,11 +115,7 @@ apis:
       by returning the phone number associated to the authenticated user's
       access token.
   - aid: global-system-for-mobile-communications:one-time-password-api
-    name: One Time Password API
-    description: >-
-      One Time Password API delivers a short-lived one-time password to a mobile
-      phone number via SMS. The API then validates the code as input by the
-      end-user into the service, to verify proof of possession.
+    name: One Time Password SMS
     tags:
       - Anti Fraud
       - Subscribers
@@ -128,14 +124,17 @@ apis:
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
-      - type: GitHubRepository
-        url: https://github.com/camaraproject/OTPValidation/releases/tag/r1.2
-      - type: Documentation
-        url: >-
+      - url: https://github.com/camaraproject/OTPValidation/releases/tag/r1.2
+        type: GitHubRepository
+      - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r1.2/code/API_definitions/one-time-password-sms.yaml&nocors
-      - type: OpenAPI
-        url: >-
-          https://github.com/camaraproject/OTPValidation/blob/r1.2/code/API_definitions/one-time-password-sms.yaml
+        type: Documentation
+      - url: properties/one-time-password-api-openapi.yml
+        type: OpenAPI
+    description: >-
+      Service Enabling Network Function API to send short-lived OTPs (one time
+      passwords) to a phone number via SMS and validate it afterwards, in order
+      to verify the phone number as a proof of possession.
   - aid: global-system-for-mobile-communications:sim-swap-api
     name: SIM Swap API
     description: >-
