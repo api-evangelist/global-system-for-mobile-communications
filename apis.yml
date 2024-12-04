@@ -407,8 +407,7 @@ apis:
       - url: >-
           https://github.com/camaraproject/ShortMessageService/blob/6fd0ff0e79a3e26244e5f026c8e40260b0a47494/documentation/API_documentation/Text_SMS_User_Story.md
         type: Documentation
-      - url: >-
-          https://github.com/camaraproject/ShortMessageService/blob/6fd0ff0e79a3e26244e5f026c8e40260b0a47494/code/API_definitions/sms-delivery-notification-subscription.yaml
+      - url: properties/sms-delivery-notification-subscription-api-openapi.yml
         type: OpenAPI
     description: >-
       API to create, retrieve and delete event subscriptions related to a sms
