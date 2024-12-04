@@ -1,4 +1,4 @@
-executed: '2024-12-04T19:38:18.060Z'
+executed: '2024-12-04T19:38:38.539Z'
 results:
   - code: openapi-info-contact-error
     message: Info MUST Have Contact Object
