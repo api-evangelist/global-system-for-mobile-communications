@@ -533,12 +533,17 @@ apis:
     properties:
       - url: https://github.com/camaraproject/EdgeCloud
         type: GitHubRepository
-      - url: >-
-          https://github.com/camaraproject/EdgeCloud/blob/main/code/API_definitions/Edge-Application-Management.yaml
+      - url: properties/edge-application-management-api-openapi.yml
         type: OpenAPI
     description: >-
       Edge Application Management API allows API consumers to manage the Life
-      Cycle of an Application and to Discover Edge Cloud Zones.
+      Cycle of an Application and to Discover Edge Cloud Zones. The reference
+      scenario foresees a distributed Telco Edge Cloud where any Application
+      Delevoper, known as an Application Provider, can host and deploy their
+      application according to their specifications and operational criteria
+      (e.g. within an specific geographical zone for data protection
+
+      purposes, ensure a minimum QoS for the application clients, etc).
   - aid: global-system-for-mobile-communications:carrier-billing-api
     name: Carrier Billing
     tags:
