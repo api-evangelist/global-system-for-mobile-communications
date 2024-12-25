@@ -17,7 +17,7 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/CallForwardingSignal/r1.3/code/API_definitions/call-forwarding-signal.yaml&nocors
         type: Documentation
-      - url: openapicall-forwarding-signal-api-openapi.yml
+      - url: openapi/call-forwarding-signal-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Call Forwarding Signal API/bruno.json
         type: BrunoCollection
@@ -43,7 +43,7 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/DeviceStatus/r1.3/code/API_definitions/device-roaming-status.yaml&nocors
         type: Documentation
-      - url: openapidevice-roaming-status-api-openapi.yml
+      - url: openapi/device-roaming-status-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Device Roaming Status/bruno.json
         type: BrunoCollection
@@ -68,7 +68,7 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
         type: Documentation
-      - url: openapikyc-fill-in-api-openapi.yml
+      - url: openapi/kyc-fill-in-api-openapi.yml
         type: OpenAPI
     description: >-
       KYC Fill-In API is used to request and receive information that has been
@@ -90,7 +90,7 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
         type: Documentation
-      - url: openapikyc-match-openapi.yml
+      - url: openapi/kyc-match-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
         type: BrunoCollection
@@ -116,7 +116,7 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/NumberVerification/r1.3/code/API_definitions/number-verification.yaml&nocors
         type: Documentation
-      - url: openapinumber-verification-api-openapi.yml
+      - url: openapi/number-verification-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Number Verification/bruno.json
         type: BrunoCollection
@@ -142,7 +142,7 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r1.2/code/API_definitions/one-time-password-sms.yaml&nocors
         type: Documentation
-      - url: openapione-time-password-api-openapi.yml
+      - url: openapi/one-time-password-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project One Time Password SMS/bruno.json
         type: BrunoCollection
@@ -168,7 +168,7 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/SimSwap/r1.3/code/API_definitions/sim-swap.yaml&nocors
         type: Documentation
-      - url: openapisim-swap-api-openapi.yml
+      - url: openapi/sim-swap-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project SIM Swap API/bruno.json
         type: BrunoCollection
@@ -195,7 +195,7 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/SimSwap/r1.3/code/API_definitions/sim-swap.yaml&nocors
         type: Documentation
-      - url: openapisim-swap-notification-subscription-api-openapi.yml
+      - url: openapi/sim-swap-notification-subscription-api-openapi.yml
         type: OpenAPI
       - url: >-
           bruno/GSMA Camara Project SIM Swap Notification Subscription
@@ -237,7 +237,7 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/DeviceLocation/r1.2/code/API_definitions/location-verification.yaml&nocors
         type: Documentation
-      - url: openapidevice-location-verification-api-openapi.yml
+      - url: openapi/device-location-verification-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Device Location Verification API/bruno.json
         type: BrunoCollection
@@ -268,7 +268,7 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/DeviceLocation/r1.2/code/API_definitions/geofencing-subscriptions.yaml&nocors
         type: Documentation
-      - url: openapidevice-geofencing-subscriptions-api-openapi.yml
+      - url: openapi/device-geofencing-subscriptions-api-openapi.yml
         type: OpenAPI
       - url: >-
           bruno/GSMA Camara Project Device Geofencing Subscriptions
@@ -299,7 +299,7 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/DeviceLocation/r1.2/code/API_definitions/location-retrieval.yaml&nocors
         type: Documentation
-      - url: openapidevice-location-retrieval-api-openapi.yml
+      - url: openapi/device-location-retrieval-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Device Location Retrieval API/bruno.json
         type: BrunoCollection
@@ -327,7 +327,7 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/PopulationDensityData/r1.2/code/API_definitions/population-density-data.yaml&nocors
         type: Documentation
-      - url: openapipopulation-density-api-openapi.yml
+      - url: openapi/population-density-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Population Density Data/bruno.json
         type: BrunoCollection
@@ -354,7 +354,7 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/QualityOnDemand/r1.2/code/API_definitions/quality-on-demand.yaml&nocors
         type: Documentation
-      - url: openapiquality-on-demand-api-openapi.yml
+      - url: openapi/quality-on-demand-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Quality on Demand API/bruno.json
         type: BrunoCollection
@@ -383,7 +383,7 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/ConnectivityInsights/r1.2/code/API_definitions/connectivity-insights.yaml&nocors
         type: Documentation
-      - url: openapiconnectivity-insights-api-openapi.yml
+      - url: openapi/connectivity-insights-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Connectivity Insights API/bruno.json
         type: BrunoCollection
@@ -410,7 +410,7 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/ConnectivityInsights/r1.2/code/API_definitions/connectivity-insights-subscriptions.yaml&nocors
         type: Documentation
-      - url: openapiconnectivity-insights-subscriptions-api-openapi.yml
+      - url: openapi/connectivity-insights-subscriptions-api-openapi.yml
         type: OpenAPI
       - url: >-
           bruno/GSMA Camara Project Connectivity Insights Subscriptions
@@ -435,7 +435,7 @@ apis:
       - url: >-
           https://github.com/camaraproject/ConnectivityInsights/releases/tag/r1.2
         type: GitHub Repository
-      - url: openapiapplication-profiles-api-openapi.yml
+      - url: openapi/application-profiles-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Application Profiles API/bruno.json
         type: BrunoCollection
@@ -457,7 +457,7 @@ apis:
     properties:
       - url: https://github.com/camaraproject/ShortMessageService/tree/main
         type: GitHubRepository
-      - url: openapisms-api-openapi.yml
+      - url: openapi/sms-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project SMS API/bruno.json
         type: BrunoCollection
@@ -480,7 +480,7 @@ apis:
       - url: >-
           https://github.com/camaraproject/ShortMessageService/blob/6fd0ff0e79a3e26244e5f026c8e40260b0a47494/documentation/API_documentation/Text_SMS_User_Story.md
         type: Documentation
-      - url: openapisms-delivery-notification-subscription-api-openapi.yml
+      - url: openapi/sms-delivery-notification-subscription-api-openapi.yml
         type: OpenAPI
       - url: >-
           bruno/GSMA Camara Project SMS Delivery Notification Subscription
@@ -509,7 +509,7 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
         type: Documentation
-      - url: openapihome-devices-qod-api-openapi.yml
+      - url: openapi/home-devices-qod-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
         type: BrunoCollection
@@ -540,7 +540,7 @@ apis:
       - url: >-
           https://github.com/camaraproject/SimpleEdgeDiscovery/blob/main/documentation/API_documentation/SimpleEdgeDiscovery_User_Story.md
         type: Documentation
-      - url: openapisimple-edge-discovery-api-openapi.yml
+      - url: openapi/simple-edge-discovery-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Simple Edge Discovery/bruno.json
         type: BrunoCollection
@@ -569,7 +569,7 @@ apis:
       - url: >-
           https://github.com/camaraproject/EdgeCloud/blob/main/documentation/API_documentation/Simple_Edge_Discovery_API_Readiness_Checklist.md
         type: Documentation
-      - url: openapitraffic-influence-api-openapi.yml
+      - url: openapi/traffic-influence-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Traffic Influence API/bruno.json
         type: BrunoCollection
@@ -598,7 +598,7 @@ apis:
     properties:
       - url: https://github.com/camaraproject/EdgeCloud
         type: GitHubRepository
-      - url: openapiapplication-endpoint-discovery-api-openapi.yml
+      - url: openapi/application-endpoint-discovery-api-openapi.yml
         type: OpenAPI
       - url: >-
           bruno/GSMA Camara Project Application Endpoint Discovery
@@ -625,7 +625,7 @@ apis:
     properties:
       - url: https://github.com/camaraproject/EdgeCloud
         type: GitHubRepository
-      - url: openapiedge-application-management-api-openapi.yml
+      - url: openapi/edge-application-management-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Edge Application Management API/bruno.json
         type: BrunoCollection
@@ -655,7 +655,7 @@ apis:
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/CarrierBillingCheckOut/r1.3/code/API_definitions/carrier-billing.yaml&nocors
         type: Documentation
-      - url: openapicarrier-billing-api-openapi.yml
+      - url: openapi/carrier-billing-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Carrier Billing/bruno.json
         type: BrunoCollection
