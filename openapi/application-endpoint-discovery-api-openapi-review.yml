@@ -1,0 +1,2067 @@
+executed: '2024-12-04T19:39:44.074Z'
+results:
+  - code: openapi-info-terms-of-service-error
+    message: Info MUST Have Terms of Service
+    path:
+      - info
+    severity: 0
+    range:
+      start:
+        line: 1
+        character: 5
+      end:
+        line: 12
+        character: 57
+  - code: openapi-info-title-info
+    message: Info Has Title
+    path:
+      - info
+      - title
+    severity: 2
+    range:
+      start:
+        line: 2
+        character: 9
+      end:
+        line: 2
+        character: 63
+  - code: openapi-info-title-length-error
+    message: Info Title MUST Be Less Than 50 Characters
+    path:
+      - info
+      - title
+    severity: 0
+    range:
+      start:
+        line: 2
+        character: 9
+      end:
+        line: 2
+        character: 63
+  - code: openapi-info-title-upper-case-info
+    message: Info Title MUST Have First Characters Capitalized
+    path:
+      - info
+      - title
+    severity: 2
+    range:
+      start:
+        line: 2
+        character: 9
+      end:
+        line: 2
+        character: 63
+  - code: openapi-info-version-info
+    message: Info Has Version
+    path:
+      - info
+      - version
+    severity: 2
+    range:
+      start:
+        line: 3
+        character: 11
+      end:
+        line: 3
+        character: 20
+  - code: openapi-info-description-info
+    message: Info Has Description
+    path:
+      - info
+      - description
+    severity: 2
+    range:
+      start:
+        line: 4
+        character: 15
+      end:
+        line: 7
+        character: 80
+  - code: openapi-info-contact-info
+    message: Info Has Contact Object
+    path:
+      - info
+      - contact
+    severity: 2
+    range:
+      start:
+        line: 8
+        character: 10
+      end:
+        line: 9
+        character: 41
+  - code: openapi-info-contact-name-error
+    message: Info MUST Have Contact Name
+    path:
+      - info
+      - contact
+    severity: 0
+    range:
+      start:
+        line: 8
+        character: 10
+      end:
+        line: 9
+        character: 41
+  - code: openapi-info-contact-url-error
+    message: Info MUST Have Contact URL
+    path:
+      - info
+      - contact
+    severity: 0
+    range:
+      start:
+        line: 8
+        character: 10
+      end:
+        line: 9
+        character: 41
+  - code: openapi-info-contact-email-info
+    message: Info Has Contact Email
+    path:
+      - info
+      - contact
+      - email
+    severity: 2
+    range:
+      start:
+        line: 9
+        character: 11
+      end:
+        line: 9
+        character: 41
+  - code: openapi-info-license-identifier-error
+    message: Info MUST Have License Identifier
+    path:
+      - info
+      - license
+    severity: 0
+    range:
+      start:
+        line: 10
+        character: 10
+      end:
+        line: 12
+        character: 57
+  - code: openapi-info-license-info
+    message: Info Has License
+    path:
+      - info
+      - license
+    severity: 2
+    range:
+      start:
+        line: 10
+        character: 10
+      end:
+        line: 12
+        character: 57
+  - code: openapi-info-license-name-info
+    message: Info License Name
+    path:
+      - info
+      - license
+      - name
+    severity: 2
+    range:
+      start:
+        line: 11
+        character: 10
+      end:
+        line: 11
+        character: 20
+  - code: openapi-info-license-url-info
+    message: Info Has License URL
+    path:
+      - info
+      - license
+      - url
+    severity: 2
+    range:
+      start:
+        line: 12
+        character: 9
+      end:
+        line: 12
+        character: 57
+  - code: openapi-external-docs-info
+    message: OpenAPI Has External Documentation
+    path:
+      - externalDocs
+    severity: 2
+    range:
+      start:
+        line: 13
+        character: 13
+      end:
+        line: 15
+        character: 49
+  - code: openapi-tags-object-info
+    message: OpenAPIs Have a Tag Object
+    path:
+      - tags
+    severity: 2
+    range:
+      start:
+        line: 25
+        character: 5
+      end:
+        line: 28
+        character: 64
+  - code: openapi-tags-name-info
+    message: Tags Have a Name
+    path:
+      - tags
+      - '0'
+      - name
+    severity: 2
+    range:
+      start:
+        line: 26
+        character: 10
+      end:
+        line: 26
+        character: 40
+  - code: openapi-tags-description-info
+    message: Tags Have a Description
+    path:
+      - tags
+      - '0'
+      - description
+    severity: 2
+    range:
+      start:
+        line: 27
+        character: 17
+      end:
+        line: 28
+        character: 64
+  - code: openapi-no-api-in-path-error
+    message: No API in Path
+    path:
+      - paths
+      - /app-endpoints
+    severity: 0
+    range:
+      start:
+        line: 30
+        character: 17
+      end:
+        line: 140
+        character: 41
+  - code: openapi-no-path-trailing-slash-info
+    message: Path Trailing Slash
+    path:
+      - paths
+      - /app-endpoints
+    severity: 2
+    range:
+      start:
+        line: 30
+        character: 17
+      end:
+        line: 140
+        character: 41
+  - code: openapi-version-in-path-info
+    message: Version in Path
+    path:
+      - paths
+      - /app-endpoints
+    severity: 2
+    range:
+      start:
+        line: 30
+        character: 17
+      end:
+        line: 140
+        character: 41
+  - code: openapi-no-request-body-on-get-info
+    message: GET Request Body
+    path:
+      - paths
+      - /app-endpoints
+      - get
+    severity: 2
+    range:
+      start:
+        line: 31
+        character: 8
+      end:
+        line: 140
+        character: 41
+  - code: openapi-operation-security-definitions-info
+    message: Operations MUST Have a Security Definition
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - security
+    severity: 2
+    range:
+      start:
+        line: 32
+        character: 15
+      end:
+        line: 34
+        character: 63
+  - code: openapi-operations-operation-ids-camel-case-error
+    message: Operation Identifier MUST Be camelCase
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - operationId
+    severity: 0
+    range:
+      start:
+        line: 35
+        character: 19
+      end:
+        line: 35
+        character: 34
+  - code: openapi-operations-operation-ids-camel-case-info
+    message: Operation Identifier Is camelCase
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - operationId
+    severity: 2
+    range:
+      start:
+        line: 35
+        character: 19
+      end:
+        line: 35
+        character: 34
+  - code: openapi-operations-operation-ids-info
+    message: Operation Has Identifier
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - operationId
+    severity: 2
+    range:
+      start:
+        line: 35
+        character: 19
+      end:
+        line: 35
+        character: 34
+  - code: openapi-parameters-componentized-error
+    message: Parameters MUST use components $ref.
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - parameters
+      - '0'
+    severity: 0
+    range:
+      start:
+        line: 37
+        character: 10
+      end:
+        line: 46
+        character: 23
+  - code: openapi-parameters-componentized-error
+    message: Parameters MUST use components $ref.
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - parameters
+      - '1'
+    severity: 0
+    range:
+      start:
+        line: 47
+        character: 10
+      end:
+        line: 53
+        character: 55
+  - code: openapi-parameters-componentized-error
+    message: Parameters MUST use components $ref.
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - parameters
+      - '2'
+    severity: 0
+    range:
+      start:
+        line: 54
+        character: 10
+      end:
+        line: 60
+        character: 58
+  - code: openapi-parameters-componentized-error
+    message: Parameters MUST use components $ref.
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - parameters
+      - '3'
+    severity: 0
+    range:
+      start:
+        line: 61
+        character: 10
+      end:
+        line: 69
+        character: 64
+  - code: openapi-parameters-componentized-error
+    message: Parameters MUST use components $ref.
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - parameters
+      - '4'
+    severity: 0
+    range:
+      start:
+        line: 70
+        character: 10
+      end:
+        line: 79
+        character: 52
+  - code: openapi-parameters-componentized-error
+    message: Parameters MUST use components $ref.
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - parameters
+      - '5'
+    severity: 0
+    range:
+      start:
+        line: 80
+        character: 10
+      end:
+        line: 88
+        character: 46
+  - code: openapi-parameters-componentized-error
+    message: Parameters MUST use components $ref.
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - parameters
+      - '6'
+    severity: 0
+    range:
+      start:
+        line: 89
+        character: 10
+      end:
+        line: 100
+        character: 24
+  - code: openapi-response-get-200-status-code-info
+    message: GET Responses Has 200 Status Codes
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - responses
+      - '200'
+    severity: 2
+    range:
+      start:
+        line: 102
+        character: 14
+      end:
+        line: 109
+        character: 60
+  - code: openapi-response-get-200-description-info
+    message: GET 200 Response has description.
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - responses
+      - '200'
+      - description
+    severity: 2
+    range:
+      start:
+        line: 103
+        character: 23
+      end:
+        line: 105
+        character: 69
+  - code: openapi-response-get-200-content-info
+    message: GET 200 Response Has Content.
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - responses
+      - '200'
+      - content
+    severity: 2
+    range:
+      start:
+        line: 106
+        character: 18
+      end:
+        line: 109
+        character: 60
+  - code: openapi-response-get-200-media-type-examples-error
+    message: GET 200 Response MUST Have Examples
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - responses
+      - '200'
+      - content
+      - application/json
+    severity: 0
+    range:
+      start:
+        line: 107
+        character: 29
+      end:
+        line: 109
+        character: 60
+  - code: openapi-response-get-200-media-type-info
+    message: GET 200 Response Has Media Type.
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - responses
+      - '200'
+      - content
+      - application/json
+    severity: 2
+    range:
+      start:
+        line: 107
+        character: 29
+      end:
+        line: 109
+        character: 60
+  - code: openapi-response-get-200-media-type-schema-info
+    message: GET 200 Response Has Schema
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - responses
+      - '200'
+      - content
+      - application/json
+      - schema
+    severity: 2
+    range:
+      start:
+        line: 108
+        character: 21
+      end:
+        line: 109
+        character: 60
+  - code: openapi-response-get-200-media-type-schema-ref-info
+    message: GET 200 Responses Uses Schema Reference
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - responses
+      - '200'
+      - content
+      - application/json
+      - schema
+    severity: 2
+    range:
+      start:
+        line: 108
+        character: 21
+      end:
+        line: 109
+        character: 60
+  - code: openapi-response-get-400-schema-ref-info
+    message: GET 400 Responses Uses Schema Reference
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - responses
+      - '400'
+    severity: 2
+    range:
+      start:
+        line: 110
+        character: 14
+      end:
+        line: 111
+        character: 54
+  - code: openapi-response-get-400-status-code-info
+    message: GET Responses Has 400 Status Codes
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - responses
+      - '400'
+    severity: 2
+    range:
+      start:
+        line: 110
+        character: 14
+      end:
+        line: 111
+        character: 54
+  - code: openapi-response-get-401-schema-ref-info
+    message: GET 401 Responses Has Schema Reference
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - responses
+      - '401'
+    severity: 2
+    range:
+      start:
+        line: 112
+        character: 14
+      end:
+        line: 113
+        character: 56
+  - code: openapi-response-get-401-status-code-info
+    message: GET Responses MUST Have 401 Status Code
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - responses
+      - '401'
+    severity: 2
+    range:
+      start:
+        line: 112
+        character: 14
+      end:
+        line: 113
+        character: 56
+  - code: openapi-response-get-403-schema-ref-info
+    message: GET 403 Responses Uses Schema Reference
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - responses
+      - '403'
+    severity: 2
+    range:
+      start:
+        line: 114
+        character: 14
+      end:
+        line: 115
+        character: 53
+  - code: openapi-response-get-403-status-code-info
+    message: GET Responses MUST Have 403 Status Code
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - responses
+      - '403'
+    severity: 2
+    range:
+      start:
+        line: 114
+        character: 14
+      end:
+        line: 115
+        character: 53
+  - code: openapi-response-get-404-schema-ref-info
+    message: GET 404 Responses Uses Schema Reference
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - responses
+      - '404'
+    severity: 2
+    range:
+      start:
+        line: 116
+        character: 14
+      end:
+        line: 117
+        character: 52
+  - code: openapi-response-get-429-schema-ref-info
+    message: GET 429 Responses Uses Schema Reference
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - responses
+      - '429'
+    severity: 2
+    range:
+      start:
+        line: 122
+        character: 14
+      end:
+        line: 123
+        character: 59
+  - code: openapi-response-get-429-status-code-info
+    message: GET Responses MUST Have 429 Status Code
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - responses
+      - '429'
+    severity: 2
+    range:
+      start:
+        line: 122
+        character: 14
+      end:
+        line: 123
+        character: 59
+  - code: openapi-response-get-500-schema-ref-info
+    message: GET 500 Responses Uses Schema Reference
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - responses
+      - '500'
+    severity: 2
+    range:
+      start:
+        line: 124
+        character: 14
+      end:
+        line: 125
+        character: 63
+  - code: openapi-response-get-500-status-code-info
+    message: GET Responses Has 500 Status Code
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - responses
+      - '500'
+    severity: 2
+    range:
+      start:
+        line: 124
+        character: 14
+      end:
+        line: 125
+        character: 63
+  - code: openapi-operations-tags-info
+    message: Operations Has Tags
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - tags
+    severity: 2
+    range:
+      start:
+        line: 132
+        character: 11
+      end:
+        line: 133
+        character: 19
+  - code: openapi-operations-tags-upper-case-info
+    message: Operation Tag Names Have First Letter in Each Word Capitalized
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - tags
+      - '0'
+    severity: 2
+    range:
+      start:
+        line: 133
+        character: 10
+      end:
+        line: 133
+        character: 19
+  - code: openapi-operations-summary-info
+    message: Operation Has a Summary
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - summary
+    severity: 2
+    range:
+      start:
+        line: 134
+        character: 15
+      end:
+        line: 136
+        character: 34
+  - code: openapi-operations-summary-length-error
+    message: Operation Summary MUST Be Less Than 50 Characters
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - summary
+    severity: 1
+    range:
+      start:
+        line: 134
+        character: 15
+      end:
+        line: 136
+        character: 34
+  - code: openapi-operations-summary-period-none-info
+    message: Operation Has a Period.
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - summary
+    severity: 2
+    range:
+      start:
+        line: 134
+        character: 15
+      end:
+        line: 136
+        character: 34
+  - code: openapi-operations-description-info
+    message: Operation Has Description
+    path:
+      - paths
+      - /app-endpoints
+      - get
+      - description
+    severity: 2
+    range:
+      start:
+        line: 137
+        character: 19
+      end:
+        line: 140
+        character: 41
+  - code: openapi-components-examples-error
+    message: Components MUST Have a Examples Property
+    path:
+      - components
+    severity: 0
+    range:
+      start:
+        line: 141
+        character: 11
+      end:
+        line: 475
+        character: 59
+  - code: openapi-components-parameters-error
+    message: Components MUST Have a Parameters Property
+    path:
+      - components
+    severity: 0
+    range:
+      start:
+        line: 141
+        character: 11
+      end:
+        line: 475
+        character: 59
+  - code: openapi-security-schemes-info
+    message: Components Have a Security Schemes
+    path:
+      - components
+      - securitySchemes
+    severity: 2
+    range:
+      start:
+        line: 142
+        character: 18
+      end:
+        line: 146
+        character: 56
+  - code: openapi-components-headers-info
+    message: Components Have a Headers Property
+    path:
+      - components
+      - headers
+    severity: 2
+    range:
+      start:
+        line: 147
+        character: 10
+      end:
+        line: 158
+        character: 20
+  - code: openapi-components-headers-rate-limit-error
+    message: Components MUST Have Rate Limit Headers
+    path:
+      - components
+      - headers
+    severity: 0
+    range:
+      start:
+        line: 147
+        character: 10
+      end:
+        line: 158
+        character: 20
+  - code: openapi-components-headers-retry-after-error
+    message: Components MUST have a retry after headers.
+    path:
+      - components
+      - headers
+    severity: 0
+    range:
+      start:
+        line: 147
+        character: 10
+      end:
+        line: 158
+        character: 20
+  - code: openapi-components-schemas-info
+    message: Components Have a Schema Property
+    path:
+      - components
+      - schemas
+    severity: 2
+    range:
+      start:
+        line: 159
+        character: 10
+      end:
+        line: 266
+        character: 51
+  - code: openapi-schema-names-pascal-case-info
+    message: Schema Names Are PascalCase.
+    path:
+      - components
+      - schemas
+      - AppId
+    severity: 2
+    range:
+      start:
+        line: 160
+        character: 10
+      end:
+        line: 165
+        character: 75
+  - code: openapi-schema-type-info
+    message: Schema Has Type Property
+    path:
+      - components
+      - schemas
+      - AppId
+      - type
+    severity: 2
+    range:
+      start:
+        line: 161
+        character: 12
+      end:
+        line: 161
+        character: 18
+  - code: openapi-schema-description-info
+    message: Schemas Has a Description.
+    path:
+      - components
+      - schemas
+      - AppId
+      - description
+    severity: 2
+    range:
+      start:
+        line: 163
+        character: 19
+      end:
+        line: 165
+        character: 75
+  - code: openapi-schema-names-pascal-case-info
+    message: Schema Names Are PascalCase.
+    path:
+      - components
+      - schemas
+      - AccessEndpoints
+    severity: 2
+    range:
+      start:
+        line: 166
+        character: 20
+      end:
+        line: 196
+        character: 21
+  - code: openapi-schema-type-info
+    message: Schema Has Type Property
+    path:
+      - components
+      - schemas
+      - AccessEndpoints
+      - type
+    severity: 2
+    range:
+      start:
+        line: 167
+        character: 12
+      end:
+        line: 167
+        character: 18
+  - code: openapi-schema-description-info
+    message: Schemas Has a Description.
+    path:
+      - components
+      - schemas
+      - AccessEndpoints
+      - description
+    severity: 2
+    range:
+      start:
+        line: 168
+        character: 19
+      end:
+        line: 170
+        character: 47
+  - code: openapi-schema-required-info
+    message: Schema Has Required Property
+    path:
+      - components
+      - schemas
+      - AccessEndpoints
+      - required
+    severity: 2
+    range:
+      start:
+        line: 171
+        character: 15
+      end:
+        line: 172
+        character: 14
+  - code: openapi-schema-properties-info
+    message: Schema Have Properties
+    path:
+      - components
+      - schemas
+      - AccessEndpoints
+      - properties
+    severity: 2
+    range:
+      start:
+        line: 180
+        character: 17
+      end:
+        line: 196
+        character: 21
+  - code: openapi-schema-properties-names-camel-case-info
+    message: Schema Property Names Are camelCase.
+    path:
+      - components
+      - schemas
+      - AccessEndpoints
+      - properties
+      - port
+    severity: 2
+    range:
+      start:
+        line: 181
+        character: 13
+      end:
+        line: 182
+        character: 43
+  - code: openapi-schema-properties-descriptions-info
+    message: Schema Properties Have Description
+    path:
+      - components
+      - schemas
+      - AccessEndpoints
+      - properties
+      - fqdn
+      - description
+    severity: 2
+    range:
+      start:
+        line: 183
+        character: 13
+      end:
+        line: 184
+        character: 43
+  - code: openapi-schema-properties-names-camel-case-info
+    message: Schema Property Names Are camelCase.
+    path:
+      - components
+      - schemas
+      - AccessEndpoints
+      - properties
+      - fqdn
+    severity: 2
+    range:
+      start:
+        line: 183
+        character: 13
+      end:
+        line: 184
+        character: 43
+  - code: openapi-schema-properties-string-maxlength-error
+    message: Schema String Properties MUST Have Maximum Length
+    path:
+      - components
+      - schemas
+      - AccessEndpoints
+      - properties
+      - fqdn
+    severity: 0
+    range:
+      start:
+        line: 183
+        character: 13
+      end:
+        line: 184
+        character: 43
+  - code: openapi-schema-properties-string-minlength-error
+    message: Schema String Properties MUST Have Minimum Length
+    path:
+      - components
+      - schemas
+      - AccessEndpoints
+      - properties
+      - fqdn
+    severity: 0
+    range:
+      start:
+        line: 183
+        character: 13
+      end:
+        line: 184
+        character: 43
+  - code: openapi-schema-properties-array-maxitems-error
+    message: Schema Array Properties MUST Have Max Items
+    path:
+      - components
+      - schemas
+      - AccessEndpoints
+      - properties
+      - ipv4Addresses
+    severity: 0
+    range:
+      start:
+        line: 185
+        character: 22
+      end:
+        line: 190
+        character: 21
+  - code: openapi-schema-properties-array-maxitems-info
+    message: Schema Array Properties Have Max Items
+    path:
+      - components
+      - schemas
+      - AccessEndpoints
+      - properties
+      - ipv4Addresses
+    severity: 2
+    range:
+      start:
+        line: 185
+        character: 22
+      end:
+        line: 190
+        character: 21
+  - code: openapi-schema-properties-names-camel-case-info
+    message: Schema Property Names Are camelCase.
+    path:
+      - components
+      - schemas
+      - AccessEndpoints
+      - properties
+      - ipv4Addresses
+    severity: 2
+    range:
+      start:
+        line: 185
+        character: 22
+      end:
+        line: 190
+        character: 21
+  - code: openapi-schema-properties-array-items-info
+    message: Schema Array Properties Has Items
+    path:
+      - components
+      - schemas
+      - AccessEndpoints
+      - properties
+      - ipv4Addresses
+      - items
+    severity: 2
+    range:
+      start:
+        line: 188
+        character: 16
+      end:
+        line: 189
+        character: 49
+  - code: openapi-schema-properties-array-minitems-info
+    message: Schema Array Properties Have Min Items
+    path:
+      - components
+      - schemas
+      - AccessEndpoints
+      - properties
+      - ipv4Addresses
+      - minItems
+    severity: 2
+    range:
+      start:
+        line: 190
+        character: 20
+      end:
+        line: 190
+        character: 21
+  - code: openapi-schema-properties-array-maxitems-error
+    message: Schema Array Properties MUST Have Max Items
+    path:
+      - components
+      - schemas
+      - AccessEndpoints
+      - properties
+      - ipv6Addresses
+    severity: 0
+    range:
+      start:
+        line: 191
+        character: 22
+      end:
+        line: 196
+        character: 21
+  - code: openapi-schema-properties-array-maxitems-info
+    message: Schema Array Properties Have Max Items
+    path:
+      - components
+      - schemas
+      - AccessEndpoints
+      - properties
+      - ipv6Addresses
+    severity: 2
+    range:
+      start:
+        line: 191
+        character: 22
+      end:
+        line: 196
+        character: 21
+  - code: openapi-schema-properties-names-camel-case-info
+    message: Schema Property Names Are camelCase.
+    path:
+      - components
+      - schemas
+      - AccessEndpoints
+      - properties
+      - ipv6Addresses
+    severity: 2
+    range:
+      start:
+        line: 191
+        character: 22
+      end:
+        line: 196
+        character: 21
+  - code: openapi-schema-properties-array-items-info
+    message: Schema Array Properties Has Items
+    path:
+      - components
+      - schemas
+      - AccessEndpoints
+      - properties
+      - ipv6Addresses
+      - items
+    severity: 2
+    range:
+      start:
+        line: 194
+        character: 16
+      end:
+        line: 195
+        character: 49
+  - code: openapi-schema-properties-array-minitems-info
+    message: Schema Array Properties Have Min Items
+    path:
+      - components
+      - schemas
+      - AccessEndpoints
+      - properties
+      - ipv6Addresses
+      - minItems
+    severity: 2
+    range:
+      start:
+        line: 196
+        character: 20
+      end:
+        line: 196
+        character: 21
+  - code: openapi-schema-names-pascal-case-info
+    message: Schema Names Are PascalCase.
+    path:
+      - components
+      - schemas
+      - ErrorResponse
+    severity: 2
+    range:
+      start:
+        line: 197
+        character: 18
+      end:
+        line: 212
+        character: 20
+  - code: openapi-schema-required-error
+    message: Schema MUST Have Required Property
+    path:
+      - components
+      - schemas
+      - ErrorResponse
+    severity: 0
+    range:
+      start:
+        line: 197
+        character: 18
+      end:
+        line: 212
+        character: 20
+  - code: openapi-schema-description-info
+    message: Schemas Has a Description.
+    path:
+      - components
+      - schemas
+      - ErrorResponse
+      - description
+    severity: 2
+    range:
+      start:
+        line: 198
+        character: 19
+      end:
+        line: 198
+        character: 61
+  - code: openapi-schema-type-info
+    message: Schema Has Type Property
+    path:
+      - components
+      - schemas
+      - ErrorResponse
+      - type
+    severity: 2
+    range:
+      start:
+        line: 199
+        character: 12
+      end:
+        line: 199
+        character: 18
+  - code: openapi-schema-properties-info
+    message: Schema Have Properties
+    path:
+      - components
+      - schemas
+      - ErrorResponse
+      - properties
+    severity: 2
+    range:
+      start:
+        line: 200
+        character: 17
+      end:
+        line: 212
+        character: 20
+  - code: openapi-schema-properties-names-camel-case-info
+    message: Schema Property Names Are camelCase.
+    path:
+      - components
+      - schemas
+      - ErrorResponse
+      - properties
+      - code
+    severity: 2
+    range:
+      start:
+        line: 201
+        character: 13
+      end:
+        line: 203
+        character: 75
+  - code: openapi-schema-properties-string-maxlength-error
+    message: Schema String Properties MUST Have Maximum Length
+    path:
+      - components
+      - schemas
+      - ErrorResponse
+      - properties
+      - code
+    severity: 0
+    range:
+      start:
+        line: 201
+        character: 13
+      end:
+        line: 203
+        character: 75
+  - code: openapi-schema-properties-string-minlength-error
+    message: Schema String Properties MUST Have Minimum Length
+    path:
+      - components
+      - schemas
+      - ErrorResponse
+      - properties
+      - code
+    severity: 0
+    range:
+      start:
+        line: 201
+        character: 13
+      end:
+        line: 203
+        character: 75
+  - code: openapi-schema-properties-descriptions-info
+    message: Schema Properties Have Description
+    path:
+      - components
+      - schemas
+      - ErrorResponse
+      - properties
+      - code
+      - description
+    severity: 2
+    range:
+      start:
+        line: 203
+        character: 23
+      end:
+        line: 203
+        character: 75
+  - code: openapi-schema-properties-names-camel-case-info
+    message: Schema Property Names Are camelCase.
+    path:
+      - components
+      - schemas
+      - ErrorResponse
+      - properties
+      - status
+    severity: 2
+    range:
+      start:
+        line: 204
+        character: 15
+      end:
+        line: 206
+        character: 44
+  - code: openapi-schema-properties-names-camel-case-info
+    message: Schema Property Names Are camelCase.
+    path:
+      - components
+      - schemas
+      - ErrorResponse
+      - properties
+      - message
+    severity: 2
+    range:
+      start:
+        line: 207
+        character: 16
+      end:
+        line: 212
+        character: 20
+  - code: openapi-schema-properties-string-maxlength-error
+    message: Schema String Properties MUST Have Maximum Length
+    path:
+      - components
+      - schemas
+      - ErrorResponse
+      - properties
+      - message
+    severity: 0
+    range:
+      start:
+        line: 207
+        character: 16
+      end:
+        line: 212
+        character: 20
+  - code: openapi-schema-properties-string-minlength-error
+    message: Schema String Properties MUST Have Minimum Length
+    path:
+      - components
+      - schemas
+      - ErrorResponse
+      - properties
+      - message
+    severity: 0
+    range:
+      start:
+        line: 207
+        character: 16
+      end:
+        line: 212
+        character: 20
+  - code: openapi-schema-properties-descriptions-info
+    message: Schema Properties Have Description
+    path:
+      - components
+      - schemas
+      - ErrorResponse
+      - properties
+      - message
+      - description
+    severity: 2
+    range:
+      start:
+        line: 209
+        character: 23
+      end:
+        line: 212
+        character: 20
+  - code: openapi-schema-names-pascal-case-info
+    message: Schema Names Are PascalCase.
+    path:
+      - components
+      - schemas
+      - Fqdn
+    severity: 2
+    range:
+      start:
+        line: 213
+        character: 9
+      end:
+        line: 215
+        character: 47
+  - code: openapi-schema-type-info
+    message: Schema Has Type Property
+    path:
+      - components
+      - schemas
+      - Fqdn
+      - type
+    severity: 2
+    range:
+      start:
+        line: 214
+        character: 12
+      end:
+        line: 214
+        character: 18
+  - code: openapi-schema-description-info
+    message: Schemas Has a Description.
+    path:
+      - components
+      - schemas
+      - Fqdn
+      - description
+    severity: 2
+    range:
+      start:
+        line: 215
+        character: 19
+      end:
+        line: 215
+        character: 47
+  - code: openapi-schema-names-pascal-case-error
+    message: Schema Names MUST Be PascalCase.
+    path:
+      - components
+      - schemas
+      - Ipv4Addr
+    severity: 0
+    range:
+      start:
+        line: 216
+        character: 13
+      end:
+        line: 222
+        character: 27
+  - code: openapi-schema-names-pascal-case-info
+    message: Schema Names Are PascalCase.
+    path:
+      - components
+      - schemas
+      - Ipv4Addr
+    severity: 2
+    range:
+      start:
+        line: 216
+        character: 13
+      end:
+        line: 222
+        character: 27
+  - code: openapi-schema-type-info
+    message: Schema Has Type Property
+    path:
+      - components
+      - schemas
+      - Ipv4Addr
+      - type
+    severity: 2
+    range:
+      start:
+        line: 217
+        character: 12
+      end:
+        line: 217
+        character: 18
+  - code: openapi-schema-description-info
+    message: Schemas Has a Description.
+    path:
+      - components
+      - schemas
+      - Ipv4Addr
+      - description
+    severity: 2
+    range:
+      start:
+        line: 218
+        character: 19
+      end:
+        line: 221
+        character: 21
+  - code: openapi-schema-names-pascal-case-error
+    message: Schema Names MUST Be PascalCase.
+    path:
+      - components
+      - schemas
+      - Ipv6Addr
+    severity: 0
+    range:
+      start:
+        line: 223
+        character: 13
+      end:
+        line: 228
+        character: 43
+  - code: openapi-schema-names-pascal-case-info
+    message: Schema Names Are PascalCase.
+    path:
+      - components
+      - schemas
+      - Ipv6Addr
+    severity: 2
+    range:
+      start:
+        line: 223
+        character: 13
+      end:
+        line: 228
+        character: 43
+  - code: openapi-schema-type-info
+    message: Schema Has Type Property
+    path:
+      - components
+      - schemas
+      - Ipv6Addr
+      - type
+    severity: 2
+    range:
+      start:
+        line: 224
+        character: 12
+      end:
+        line: 224
+        character: 18
+  - code: openapi-schema-description-info
+    message: Schemas Has a Description.
+    path:
+      - components
+      - schemas
+      - Ipv6Addr
+      - description
+    severity: 2
+    range:
+      start:
+        line: 225
+        character: 19
+      end:
+        line: 227
+        character: 74
+  - code: openapi-schema-names-pascal-case-info
+    message: Schema Names Are PascalCase.
+    path:
+      - components
+      - schemas
+      - Port
+    severity: 2
+    range:
+      start:
+        line: 229
+        character: 9
+      end:
+        line: 232
+        character: 16
+  - code: openapi-schema-type-info
+    message: Schema Has Type Property
+    path:
+      - components
+      - schemas
+      - Port
+      - type
+    severity: 2
+    range:
+      start:
+        line: 230
+        character: 12
+      end:
+        line: 230
+        character: 19
+  - code: openapi-schema-description-info
+    message: Schemas Has a Description.
+    path:
+      - components
+      - schemas
+      - Port
+      - description
+    severity: 2
+    range:
+      start:
+        line: 231
+        character: 19
+      end:
+        line: 231
+        character: 50
+  - code: openapi-schema-names-pascal-case-info
+    message: Schema Names Are PascalCase.
+    path:
+      - components
+      - schemas
+      - PhoneNumber
+    severity: 2
+    range:
+      start:
+        line: 233
+        character: 16
+      end:
+        line: 242
+        character: 27
+  - code: openapi-schema-description-info
+    message: Schemas Has a Description.
+    path:
+      - components
+      - schemas
+      - PhoneNumber
+      - description
+    severity: 2
+    range:
+      start:
+        line: 234
+        character: 19
+      end:
+        line: 239
+        character: 45
+  - code: openapi-schema-description-length-error
+    message: Schema Description MUST be Less Than 250 Characters
+    path:
+      - components
+      - schemas
+      - PhoneNumber
+      - description
+    severity: 0
+    range:
+      start:
+        line: 234
+        character: 19
+      end:
+        line: 239
+        character: 45
+  - code: openapi-schema-type-info
+    message: Schema Has Type Property
+    path:
+      - components
+      - schemas
+      - PhoneNumber
+      - type
+    severity: 2
+    range:
+      start:
+        line: 240
+        character: 12
+      end:
+        line: 240
+        character: 18
+  - code: openapi-schema-names-pascal-case-info
+    message: Schema Names Are PascalCase.
+    path:
+      - components
+      - schemas
+      - NetworkAccessIdentifier
+    severity: 2
+    range:
+      start:
+        line: 243
+        character: 28
+      end:
+        line: 252
+        character: 35
+  - code: openapi-schema-description-info
+    message: Schemas Has a Description.
+    path:
+      - components
+      - schemas
+      - NetworkAccessIdentifier
+      - description
+    severity: 2
+    range:
+      start:
+        line: 244
+        character: 19
+      end:
+        line: 250
+        character: 17
+  - code: openapi-schema-description-length-error
+    message: Schema Description MUST be Less Than 250 Characters
+    path:
+      - components
+      - schemas
+      - NetworkAccessIdentifier
+      - description
+    severity: 0
+    range:
+      start:
+        line: 244
+        character: 19
+      end:
+        line: 250
+        character: 17
+  - code: openapi-schema-type-info
+    message: Schema Has Type Property
+    path:
+      - components
+      - schemas
+      - NetworkAccessIdentifier
+      - type
+    severity: 2
+    range:
+      start:
+        line: 251
+        character: 12
+      end:
+        line: 251
+        character: 18
+  - code: openapi-schema-names-pascal-case-error
+    message: Schema Names MUST Be PascalCase.
+    path:
+      - components
+      - schemas
+      - SingleIpv4Addr
+    severity: 0
+    range:
+      start:
+        line: 253
+        character: 19
+      end:
+        line: 258
+        character: 27
+  - code: openapi-schema-names-pascal-case-info
+    message: Schema Names Are PascalCase.
+    path:
+      - components
+      - schemas
+      - SingleIpv4Addr
+    severity: 2
+    range:
+      start:
+        line: 253
+        character: 19
+      end:
+        line: 258
+        character: 27
+  - code: openapi-schema-description-info
+    message: Schemas Has a Description.
+    path:
+      - components
+      - schemas
+      - SingleIpv4Addr
+      - description
+    severity: 2
+    range:
+      start:
+        line: 254
+        character: 19
+      end:
+        line: 255
+        character: 49
+  - code: openapi-schema-type-info
+    message: Schema Has Type Property
+    path:
+      - components
+      - schemas
+      - SingleIpv4Addr
+      - type
+    severity: 2
+    range:
+      start:
+        line: 256
+        character: 12
+      end:
+        line: 256
+        character: 18
+  - code: openapi-schema-names-pascal-case-error
+    message: Schema Names MUST Be PascalCase.
+    path:
+      - components
+      - schemas
+      - DeviceIpv6Address
+    severity: 0
+    range:
+      start:
+        line: 259
+        character: 22
+      end:
+        line: 266
+        character: 51
+  - code: openapi-schema-names-pascal-case-info
+    message: Schema Names Are PascalCase.
+    path:
+      - components
+      - schemas
+      - DeviceIpv6Address
+    severity: 2
+    range:
+      start:
+        line: 259
+        character: 22
+      end:
+        line: 266
+        character: 51
+  - code: openapi-schema-description-info
+    message: Schemas Has a Description.
+    path:
+      - components
+      - schemas
+      - DeviceIpv6Address
+      - description
+    severity: 2
+    range:
+      start:
+        line: 260
+        character: 19
+      end:
+        line: 263
+        character: 44
+  - code: openapi-schema-type-info
+    message: Schema Has Type Property
+    path:
+      - components
+      - schemas
+      - DeviceIpv6Address
+      - type
+    severity: 2
+    range:
+      start:
+        line: 264
+        character: 12
+      end:
+        line: 264
+        character: 18
+  - code: openapi-components-responses-bad-request-error
+    message: Components MUST have a bad request response.
+    path:
+      - components
+      - responses
+    severity: 0
+    range:
+      start:
+        line: 267
+        character: 12
+      end:
+        line: 475
+        character: 59
+  - code: openapi-components-responses-conflict-error
+    message: Components MUST have a conflict response.
+    path:
+      - components
+      - responses
+    severity: 0
+    range:
+      start:
+        line: 267
+        character: 12
+      end:
+        line: 475
+        character: 59
+  - code: openapi-components-responses-forbidden-error
+    message: Components MUST have a forbidden response.
+    path:
+      - components
+      - responses
+    severity: 0
+    range:
+      start:
+        line: 267
+        character: 12
+      end:
+        line: 475
+        character: 59
+  - code: openapi-components-responses-info
+    message: Components has a responses property.
+    path:
+      - components
+      - responses
+    severity: 2
+    range:
+      start:
+        line: 267
+        character: 12
+      end:
+        line: 475
+        character: 59
+  - code: openapi-components-responses-internal-server-error-error
+    message: Components MUST have a internal server error response.
+    path:
+      - components
+      - responses
+    severity: 0
+    range:
+      start:
+        line: 267
+        character: 12
+      end:
+        line: 475
+        character: 59
+  - code: openapi-components-responses-not-found-error
+    message: Components MUST have a not found response.
+    path:
+      - components
+      - responses
+    severity: 0
+    range:
+      start:
+        line: 267
+        character: 12
+      end:
+        line: 475
+        character: 59
+  - code: openapi-components-responses-too-many-requests-error
+    message: Components MUST have a too many requests response.
+    path:
+      - components
+      - responses
+    severity: 0
+    range:
+      start:
+        line: 267
+        character: 12
+      end:
+        line: 475
+        character: 59
+  - code: openapi-components-responses-unauthorized-error
+    message: Components MUST have a unauthorized response.
+    path:
+      - components
+      - responses
+    severity: 0
+    range:
+      start:
+        line: 267
+        character: 12
+      end:
+        line: 475
+        character: 59

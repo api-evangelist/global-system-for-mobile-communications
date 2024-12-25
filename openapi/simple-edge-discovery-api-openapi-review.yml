@@ -1,0 +1,1948 @@
+executed: '2024-12-04T19:38:38.539Z'
+results:
+  - code: openapi-info-contact-error
+    message: Info MUST Have Contact Object
+    path:
+      - info
+    severity: 0
+    range:
+      start:
+        line: 1
+        character: 5
+      end:
+        line: 383
+        character: 57
+  - code: openapi-info-terms-of-service-error
+    message: Info MUST Have Terms of Service
+    path:
+      - info
+    severity: 0
+    range:
+      start:
+        line: 1
+        character: 5
+      end:
+        line: 383
+        character: 57
+  - code: openapi-info-title-info
+    message: Info Has Title
+    path:
+      - info
+      - title
+    severity: 2
+    range:
+      start:
+        line: 2
+        character: 9
+      end:
+        line: 2
+        character: 50
+  - code: openapi-info-title-upper-case-info
+    message: Info Title MUST Have First Characters Capitalized
+    path:
+      - info
+      - title
+    severity: 2
+    range:
+      start:
+        line: 2
+        character: 9
+      end:
+        line: 2
+        character: 50
+  - code: openapi-info-version-info
+    message: Info Has Version
+    path:
+      - info
+      - version
+    severity: 2
+    range:
+      start:
+        line: 3
+        character: 11
+      end:
+        line: 3
+        character: 16
+  - code: openapi-info-description-info
+    message: Info Has Description
+    path:
+      - info
+      - description
+    severity: 2
+    range:
+      start:
+        line: 5
+        character: 15
+      end:
+        line: 380
+        character: 7
+  - code: openapi-info-description-length-error
+    message: Info description MUST be less than 500 characters.
+    path:
+      - info
+      - description
+    severity: 0
+    range:
+      start:
+        line: 5
+        character: 15
+      end:
+        line: 380
+        character: 7
+  - code: openapi-info-license-identifier-error
+    message: Info MUST Have License Identifier
+    path:
+      - info
+      - license
+    severity: 0
+    range:
+      start:
+        line: 381
+        character: 10
+      end:
+        line: 383
+        character: 57
+  - code: openapi-info-license-info
+    message: Info Has License
+    path:
+      - info
+      - license
+    severity: 2
+    range:
+      start:
+        line: 381
+        character: 10
+      end:
+        line: 383
+        character: 57
+  - code: openapi-info-license-name-info
+    message: Info License Name
+    path:
+      - info
+      - license
+      - name
+    severity: 2
+    range:
+      start:
+        line: 382
+        character: 10
+      end:
+        line: 382
+        character: 20
+  - code: openapi-info-license-url-info
+    message: Info Has License URL
+    path:
+      - info
+      - license
+      - url
+    severity: 2
+    range:
+      start:
+        line: 383
+        character: 9
+      end:
+        line: 383
+        character: 57
+  - code: openapi-external-docs-info
+    message: OpenAPI Has External Documentation
+    path:
+      - externalDocs
+    severity: 2
+    range:
+      start:
+        line: 384
+        character: 13
+      end:
+        line: 386
+        character: 49
+  - code: openapi-tags-object-info
+    message: OpenAPIs Have a Tag Object
+    path:
+      - tags
+    severity: 2
+    range:
+      start:
+        line: 395
+        character: 5
+      end:
+        line: 398
+        character: 58
+  - code: openapi-tags-name-info
+    message: Tags Have a Name
+    path:
+      - tags
+      - '0'
+      - name
+    severity: 2
+    range:
+      start:
+        line: 396
+        character: 10
+      end:
+        line: 396
+        character: 19
+  - code: openapi-tags-description-info
+    message: Tags Have a Description
+    path:
+      - tags
+      - '0'
+      - description
+    severity: 2
+    range:
+      start:
+        line: 397
+        character: 17
+      end:
+        line: 398
+        character: 58
+  - code: openapi-no-api-in-path-error
+    message: No API in Path
+    path:
+      - paths
+      - /edge-cloud-zones
+    severity: 0
+    range:
+      start:
+        line: 400
+        character: 20
+      end:
+        line: 535
+        character: 41
+  - code: openapi-no-path-trailing-slash-info
+    message: Path Trailing Slash
+    path:
+      - paths
+      - /edge-cloud-zones
+    severity: 2
+    range:
+      start:
+        line: 400
+        character: 20
+      end:
+        line: 535
+        character: 41
+  - code: openapi-version-in-path-info
+    message: Version in Path
+    path:
+      - paths
+      - /edge-cloud-zones
+    severity: 2
+    range:
+      start:
+        line: 400
+        character: 20
+      end:
+        line: 535
+        character: 41
+  - code: openapi-no-request-body-on-get-info
+    message: GET Request Body
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+    severity: 2
+    range:
+      start:
+        line: 401
+        character: 8
+      end:
+        line: 535
+        character: 41
+  - code: openapi-operation-security-definitions-info
+    message: Operations MUST Have a Security Definition
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - security
+    severity: 2
+    range:
+      start:
+        line: 402
+        character: 15
+      end:
+        line: 404
+        character: 57
+  - code: openapi-operations-operation-ids-camel-case-error
+    message: Operation Identifier MUST Be camelCase
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - operationId
+    severity: 0
+    range:
+      start:
+        line: 405
+        character: 19
+      end:
+        line: 405
+        character: 43
+  - code: openapi-operations-operation-ids-camel-case-info
+    message: Operation Identifier Is camelCase
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - operationId
+    severity: 2
+    range:
+      start:
+        line: 405
+        character: 19
+      end:
+        line: 405
+        character: 43
+  - code: openapi-operations-operation-ids-info
+    message: Operation Has Identifier
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - operationId
+    severity: 2
+    range:
+      start:
+        line: 405
+        character: 19
+      end:
+        line: 405
+        character: 43
+  - code: openapi-parameters-componentized-error
+    message: Parameters MUST use components $ref.
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - parameters
+      - '0'
+    severity: 0
+    range:
+      start:
+        line: 407
+        character: 10
+      end:
+        line: 416
+        character: 23
+  - code: openapi-parameters-componentized-error
+    message: Parameters MUST use components $ref.
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - parameters
+      - '1'
+    severity: 0
+    range:
+      start:
+        line: 417
+        character: 10
+      end:
+        line: 425
+        character: 55
+  - code: openapi-parameters-componentized-error
+    message: Parameters MUST use components $ref.
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - parameters
+      - '2'
+    severity: 0
+    range:
+      start:
+        line: 426
+        character: 10
+      end:
+        line: 434
+        character: 45
+  - code: openapi-parameters-componentized-error
+    message: Parameters MUST use components $ref.
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - parameters
+      - '3'
+    severity: 0
+    range:
+      start:
+        line: 435
+        character: 10
+      end:
+        line: 443
+        character: 58
+  - code: openapi-parameters-componentized-error
+    message: Parameters MUST use components $ref.
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - parameters
+      - '4'
+    severity: 0
+    range:
+      start:
+        line: 444
+        character: 10
+      end:
+        line: 451
+        character: 64
+  - code: openapi-parameters-componentized-error
+    message: Parameters MUST use components $ref.
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - parameters
+      - '5'
+    severity: 0
+    range:
+      start:
+        line: 452
+        character: 10
+      end:
+        line: 461
+        character: 52
+  - code: openapi-parameters-componentized-error
+    message: Parameters MUST use components $ref.
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - parameters
+      - '6'
+    severity: 0
+    range:
+      start:
+        line: 462
+        character: 10
+      end:
+        line: 472
+        character: 24
+  - code: openapi-response-get-200-status-code-info
+    message: GET Responses Has 200 Status Codes
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - responses
+      - '200'
+    severity: 2
+    range:
+      start:
+        line: 474
+        character: 14
+      end:
+        line: 484
+        character: 59
+  - code: openapi-response-get-200-description-info
+    message: GET 200 Response has description.
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - responses
+      - '200'
+      - description
+    severity: 2
+    range:
+      start:
+        line: 475
+        character: 23
+      end:
+        line: 477
+        character: 69
+  - code: openapi-response-get-200-content-info
+    message: GET 200 Response Has Content.
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - responses
+      - '200'
+      - content
+    severity: 2
+    range:
+      start:
+        line: 481
+        character: 18
+      end:
+        line: 484
+        character: 59
+  - code: openapi-response-get-200-media-type-examples-error
+    message: GET 200 Response MUST Have Examples
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - responses
+      - '200'
+      - content
+      - application/json
+    severity: 0
+    range:
+      start:
+        line: 482
+        character: 29
+      end:
+        line: 484
+        character: 59
+  - code: openapi-response-get-200-media-type-info
+    message: GET 200 Response Has Media Type.
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - responses
+      - '200'
+      - content
+      - application/json
+    severity: 2
+    range:
+      start:
+        line: 482
+        character: 29
+      end:
+        line: 484
+        character: 59
+  - code: openapi-response-get-200-media-type-schema-info
+    message: GET 200 Response Has Schema
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - responses
+      - '200'
+      - content
+      - application/json
+      - schema
+    severity: 2
+    range:
+      start:
+        line: 483
+        character: 21
+      end:
+        line: 484
+        character: 59
+  - code: openapi-response-get-200-media-type-schema-ref-info
+    message: GET 200 Responses Uses Schema Reference
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - responses
+      - '200'
+      - content
+      - application/json
+      - schema
+    severity: 2
+    range:
+      start:
+        line: 483
+        character: 21
+      end:
+        line: 484
+        character: 59
+  - code: openapi-response-get-400-schema-ref-info
+    message: GET 400 Responses Uses Schema Reference
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - responses
+      - '400'
+    severity: 2
+    range:
+      start:
+        line: 485
+        character: 14
+      end:
+        line: 504
+        character: 75
+  - code: openapi-response-get-400-status-code-info
+    message: GET Responses Has 400 Status Codes
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - responses
+      - '400'
+    severity: 2
+    range:
+      start:
+        line: 485
+        character: 14
+      end:
+        line: 504
+        character: 75
+  - code: openapi-response-get-401-schema-ref-info
+    message: GET 401 Responses Has Schema Reference
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - responses
+      - '401'
+    severity: 2
+    range:
+      start:
+        line: 505
+        character: 14
+      end:
+        line: 506
+        character: 51
+  - code: openapi-response-get-401-status-code-info
+    message: GET Responses MUST Have 401 Status Code
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - responses
+      - '401'
+    severity: 2
+    range:
+      start:
+        line: 505
+        character: 14
+      end:
+        line: 506
+        character: 51
+  - code: openapi-response-get-403-schema-ref-info
+    message: GET 403 Responses Uses Schema Reference
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - responses
+      - '403'
+    severity: 2
+    range:
+      start:
+        line: 507
+        character: 14
+      end:
+        line: 508
+        character: 51
+  - code: openapi-response-get-403-status-code-info
+    message: GET Responses MUST Have 403 Status Code
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - responses
+      - '403'
+    severity: 2
+    range:
+      start:
+        line: 507
+        character: 14
+      end:
+        line: 508
+        character: 51
+  - code: openapi-response-get-404-schema-ref-info
+    message: GET 404 Responses Uses Schema Reference
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - responses
+      - '404'
+    severity: 2
+    range:
+      start:
+        line: 509
+        character: 14
+      end:
+        line: 510
+        character: 51
+  - code: openapi-response-get-429-schema-ref-info
+    message: GET 429 Responses Uses Schema Reference
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - responses
+      - '429'
+    severity: 2
+    range:
+      start:
+        line: 515
+        character: 14
+      end:
+        line: 516
+        character: 51
+  - code: openapi-response-get-429-status-code-info
+    message: GET Responses MUST Have 429 Status Code
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - responses
+      - '429'
+    severity: 2
+    range:
+      start:
+        line: 515
+        character: 14
+      end:
+        line: 516
+        character: 51
+  - code: openapi-response-get-500-schema-ref-info
+    message: GET 500 Responses Uses Schema Reference
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - responses
+      - '500'
+    severity: 2
+    range:
+      start:
+        line: 517
+        character: 14
+      end:
+        line: 518
+        character: 51
+  - code: openapi-response-get-500-status-code-info
+    message: GET Responses Has 500 Status Code
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - responses
+      - '500'
+    severity: 2
+    range:
+      start:
+        line: 517
+        character: 14
+      end:
+        line: 518
+        character: 51
+  - code: openapi-operations-tags-info
+    message: Operations Has Tags
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - tags
+    severity: 2
+    range:
+      start:
+        line: 527
+        character: 11
+      end:
+        line: 528
+        character: 19
+  - code: openapi-operations-tags-upper-case-info
+    message: Operation Tag Names Have First Letter in Each Word Capitalized
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - tags
+      - '0'
+    severity: 2
+    range:
+      start:
+        line: 528
+        character: 10
+      end:
+        line: 528
+        character: 19
+  - code: openapi-operations-summary-info
+    message: Operation Has a Summary
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - summary
+    severity: 2
+    range:
+      start:
+        line: 529
+        character: 15
+      end:
+        line: 531
+        character: 34
+  - code: openapi-operations-summary-length-error
+    message: Operation Summary MUST Be Less Than 50 Characters
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - summary
+    severity: 1
+    range:
+      start:
+        line: 529
+        character: 15
+      end:
+        line: 531
+        character: 34
+  - code: openapi-operations-summary-period-none-info
+    message: Operation Has a Period.
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - summary
+    severity: 2
+    range:
+      start:
+        line: 529
+        character: 15
+      end:
+        line: 531
+        character: 34
+  - code: openapi-operations-description-info
+    message: Operation Has Description
+    path:
+      - paths
+      - /edge-cloud-zones
+      - get
+      - description
+    severity: 2
+    range:
+      start:
+        line: 532
+        character: 19
+      end:
+        line: 535
+        character: 41
+  - code: openapi-components-examples-error
+    message: Components MUST Have a Examples Property
+    path:
+      - components
+    severity: 0
+    range:
+      start:
+        line: 536
+        character: 11
+      end:
+        line: 886
+        character: 51
+  - code: openapi-components-parameters-error
+    message: Components MUST Have a Parameters Property
+    path:
+      - components
+    severity: 0
+    range:
+      start:
+        line: 536
+        character: 11
+      end:
+        line: 886
+        character: 51
+  - code: openapi-security-schemes-info
+    message: Components Have a Security Schemes
+    path:
+      - components
+      - securitySchemes
+    severity: 2
+    range:
+      start:
+        line: 537
+        character: 18
+      end:
+        line: 541
+        character: 56
+  - code: openapi-components-headers-info
+    message: Components Have a Headers Property
+    path:
+      - components
+      - headers
+    severity: 2
+    range:
+      start:
+        line: 542
+        character: 10
+      end:
+        line: 552
+        character: 20
+  - code: openapi-components-headers-rate-limit-error
+    message: Components MUST Have Rate Limit Headers
+    path:
+      - components
+      - headers
+    severity: 0
+    range:
+      start:
+        line: 542
+        character: 10
+      end:
+        line: 552
+        character: 20
+  - code: openapi-components-headers-retry-after-error
+    message: Components MUST have a retry after headers.
+    path:
+      - components
+      - headers
+    severity: 0
+    range:
+      start:
+        line: 542
+        character: 10
+      end:
+        line: 552
+        character: 20
+  - code: openapi-components-schemas-info
+    message: Components Have a Schema Property
+    path:
+      - components
+      - schemas
+    severity: 2
+    range:
+      start:
+        line: 553
+        character: 10
+      end:
+        line: 647
+        character: 20
+  - code: openapi-schema-names-pascal-case-info
+    message: Schema Names Are PascalCase.
+    path:
+      - components
+      - schemas
+      - EdgeCloudZones
+    severity: 2
+    range:
+      start:
+        line: 554
+        character: 19
+      end:
+        line: 563
+        character: 33
+  - code: openapi-schema-type-info
+    message: Schema Has Type Property
+    path:
+      - components
+      - schemas
+      - EdgeCloudZones
+      - type
+    severity: 2
+    range:
+      start:
+        line: 555
+        character: 12
+      end:
+        line: 555
+        character: 17
+  - code: openapi-schema-description-info
+    message: Schemas Has a Description.
+    path:
+      - components
+      - schemas
+      - EdgeCloudZones
+      - description
+    severity: 2
+    range:
+      start:
+        line: 559
+        character: 19
+      end:
+        line: 562
+        character: 69
+  - code: openapi-schema-names-pascal-case-info
+    message: Schema Names Are PascalCase.
+    path:
+      - components
+      - schemas
+      - EdgeCloudZone
+    severity: 2
+    range:
+      start:
+        line: 564
+        character: 18
+      end:
+        line: 577
+        character: 56
+  - code: openapi-schema-required-error
+    message: Schema MUST Have Required Property
+    path:
+      - components
+      - schemas
+      - EdgeCloudZone
+    severity: 0
+    range:
+      start:
+        line: 564
+        character: 18
+      end:
+        line: 577
+        character: 56
+  - code: openapi-schema-type-info
+    message: Schema Has Type Property
+    path:
+      - components
+      - schemas
+      - EdgeCloudZone
+      - type
+    severity: 2
+    range:
+      start:
+        line: 565
+        character: 12
+      end:
+        line: 565
+        character: 18
+  - code: openapi-schema-description-info
+    message: Schemas Has a Description.
+    path:
+      - components
+      - schemas
+      - EdgeCloudZone
+      - description
+    severity: 2
+    range:
+      start:
+        line: 566
+        character: 19
+      end:
+        line: 570
+        character: 25
+  - code: openapi-schema-properties-info
+    message: Schema Have Properties
+    path:
+      - components
+      - schemas
+      - EdgeCloudZone
+      - properties
+    severity: 2
+    range:
+      start:
+        line: 571
+        character: 17
+      end:
+        line: 577
+        character: 56
+  - code: openapi-schema-properties-descriptions-info
+    message: Schema Properties Have Description
+    path:
+      - components
+      - schemas
+      - EdgeCloudZone
+      - properties
+      - edgeCloudZoneId
+      - description
+    severity: 2
+    range:
+      start:
+        line: 572
+        character: 24
+      end:
+        line: 573
+        character: 54
+  - code: openapi-schema-properties-names-camel-case-info
+    message: Schema Property Names Are camelCase.
+    path:
+      - components
+      - schemas
+      - EdgeCloudZone
+      - properties
+      - edgeCloudZoneId
+    severity: 2
+    range:
+      start:
+        line: 572
+        character: 24
+      end:
+        line: 573
+        character: 54
+  - code: openapi-schema-properties-string-maxlength-error
+    message: Schema String Properties MUST Have Maximum Length
+    path:
+      - components
+      - schemas
+      - EdgeCloudZone
+      - properties
+      - edgeCloudZoneId
+    severity: 0
+    range:
+      start:
+        line: 572
+        character: 24
+      end:
+        line: 573
+        character: 54
+  - code: openapi-schema-properties-string-minlength-error
+    message: Schema String Properties MUST Have Minimum Length
+    path:
+      - components
+      - schemas
+      - EdgeCloudZone
+      - properties
+      - edgeCloudZoneId
+    severity: 0
+    range:
+      start:
+        line: 572
+        character: 24
+      end:
+        line: 573
+        character: 54
+  - code: openapi-schema-properties-descriptions-info
+    message: Schema Properties Have Description
+    path:
+      - components
+      - schemas
+      - EdgeCloudZone
+      - properties
+      - edgeCloudZoneName
+      - description
+    severity: 2
+    range:
+      start:
+        line: 574
+        character: 26
+      end:
+        line: 575
+        character: 56
+  - code: openapi-schema-properties-names-camel-case-info
+    message: Schema Property Names Are camelCase.
+    path:
+      - components
+      - schemas
+      - EdgeCloudZone
+      - properties
+      - edgeCloudZoneName
+    severity: 2
+    range:
+      start:
+        line: 574
+        character: 26
+      end:
+        line: 575
+        character: 56
+  - code: openapi-schema-properties-string-maxlength-error
+    message: Schema String Properties MUST Have Maximum Length
+    path:
+      - components
+      - schemas
+      - EdgeCloudZone
+      - properties
+      - edgeCloudZoneName
+    severity: 0
+    range:
+      start:
+        line: 574
+        character: 26
+      end:
+        line: 575
+        character: 56
+  - code: openapi-schema-properties-string-minlength-error
+    message: Schema String Properties MUST Have Minimum Length
+    path:
+      - components
+      - schemas
+      - EdgeCloudZone
+      - properties
+      - edgeCloudZoneName
+    severity: 0
+    range:
+      start:
+        line: 574
+        character: 26
+      end:
+        line: 575
+        character: 56
+  - code: openapi-schema-properties-descriptions-info
+    message: Schema Properties Have Description
+    path:
+      - components
+      - schemas
+      - EdgeCloudZone
+      - properties
+      - edgeCloudProvider
+      - description
+    severity: 2
+    range:
+      start:
+        line: 576
+        character: 26
+      end:
+        line: 577
+        character: 56
+  - code: openapi-schema-properties-names-camel-case-info
+    message: Schema Property Names Are camelCase.
+    path:
+      - components
+      - schemas
+      - EdgeCloudZone
+      - properties
+      - edgeCloudProvider
+    severity: 2
+    range:
+      start:
+        line: 576
+        character: 26
+      end:
+        line: 577
+        character: 56
+  - code: openapi-schema-properties-string-maxlength-error
+    message: Schema String Properties MUST Have Maximum Length
+    path:
+      - components
+      - schemas
+      - EdgeCloudZone
+      - properties
+      - edgeCloudProvider
+    severity: 0
+    range:
+      start:
+        line: 576
+        character: 26
+      end:
+        line: 577
+        character: 56
+  - code: openapi-schema-properties-string-minlength-error
+    message: Schema String Properties MUST Have Minimum Length
+    path:
+      - components
+      - schemas
+      - EdgeCloudZone
+      - properties
+      - edgeCloudProvider
+    severity: 0
+    range:
+      start:
+        line: 576
+        character: 26
+      end:
+        line: 577
+        character: 56
+  - code: openapi-schema-names-pascal-case-info
+    message: Schema Names Are PascalCase.
+    path:
+      - components
+      - schemas
+      - EdgeCloudZoneId
+    severity: 2
+    range:
+      start:
+        line: 578
+        character: 20
+      end:
+        line: 583
+        character: 33
+  - code: openapi-schema-description-info
+    message: Schemas Has a Description.
+    path:
+      - components
+      - schemas
+      - EdgeCloudZoneId
+      - description
+    severity: 2
+    range:
+      start:
+        line: 579
+        character: 19
+      end:
+        line: 580
+        character: 53
+  - code: openapi-schema-type-info
+    message: Schema Has Type Property
+    path:
+      - components
+      - schemas
+      - EdgeCloudZoneId
+      - type
+    severity: 2
+    range:
+      start:
+        line: 581
+        character: 12
+      end:
+        line: 581
+        character: 18
+  - code: openapi-schema-names-pascal-case-info
+    message: Schema Names Are PascalCase.
+    path:
+      - components
+      - schemas
+      - EdgeCloudZoneName
+    severity: 2
+    range:
+      start:
+        line: 584
+        character: 22
+      end:
+        line: 588
+        character: 33
+  - code: openapi-schema-description-info
+    message: Schemas Has a Description.
+    path:
+      - components
+      - schemas
+      - EdgeCloudZoneName
+      - description
+    severity: 2
+    range:
+      start:
+        line: 585
+        character: 19
+      end:
+        line: 586
+        character: 71
+  - code: openapi-schema-type-info
+    message: Schema Has Type Property
+    path:
+      - components
+      - schemas
+      - EdgeCloudZoneName
+      - type
+    severity: 2
+    range:
+      start:
+        line: 587
+        character: 12
+      end:
+        line: 587
+        character: 18
+  - code: openapi-schema-names-pascal-case-info
+    message: Schema Names Are PascalCase.
+    path:
+      - components
+      - schemas
+      - EdgeCloudProvider
+    severity: 2
+    range:
+      start:
+        line: 589
+        character: 22
+      end:
+        line: 592
+        character: 18
+  - code: openapi-schema-description-info
+    message: Schemas Has a Description.
+    path:
+      - components
+      - schemas
+      - EdgeCloudProvider
+      - description
+    severity: 2
+    range:
+      start:
+        line: 590
+        character: 19
+      end:
+        line: 591
+        character: 57
+  - code: openapi-schema-type-info
+    message: Schema Has Type Property
+    path:
+      - components
+      - schemas
+      - EdgeCloudProvider
+      - type
+    severity: 2
+    range:
+      start:
+        line: 592
+        character: 12
+      end:
+        line: 592
+        character: 18
+  - code: openapi-schema-names-pascal-case-info
+    message: Schema Names Are PascalCase.
+    path:
+      - components
+      - schemas
+      - ErrorInfo
+    severity: 2
+    range:
+      start:
+        line: 593
+        character: 14
+      end:
+        line: 609
+        character: 58
+  - code: openapi-schema-type-info
+    message: Schema Has Type Property
+    path:
+      - components
+      - schemas
+      - ErrorInfo
+      - type
+    severity: 2
+    range:
+      start:
+        line: 594
+        character: 12
+      end:
+        line: 594
+        character: 18
+  - code: openapi-schema-description-info
+    message: Schemas Has a Description.
+    path:
+      - components
+      - schemas
+      - ErrorInfo
+      - description
+    severity: 2
+    range:
+      start:
+        line: 595
+        character: 19
+      end:
+        line: 595
+        character: 36
+  - code: openapi-schema-required-info
+    message: Schema Has Required Property
+    path:
+      - components
+      - schemas
+      - ErrorInfo
+      - required
+    severity: 2
+    range:
+      start:
+        line: 596
+        character: 15
+      end:
+        line: 599
+        character: 14
+  - code: openapi-schema-properties-info
+    message: Schema Have Properties
+    path:
+      - components
+      - schemas
+      - ErrorInfo
+      - properties
+    severity: 2
+    range:
+      start:
+        line: 600
+        character: 17
+      end:
+        line: 609
+        character: 58
+  - code: openapi-schema-properties-names-camel-case-info
+    message: Schema Property Names Are camelCase.
+    path:
+      - components
+      - schemas
+      - ErrorInfo
+      - properties
+      - message
+    severity: 2
+    range:
+      start:
+        line: 601
+        character: 16
+      end:
+        line: 603
+        character: 80
+  - code: openapi-schema-properties-string-maxlength-error
+    message: Schema String Properties MUST Have Maximum Length
+    path:
+      - components
+      - schemas
+      - ErrorInfo
+      - properties
+      - message
+    severity: 0
+    range:
+      start:
+        line: 601
+        character: 16
+      end:
+        line: 603
+        character: 80
+  - code: openapi-schema-properties-string-minlength-error
+    message: Schema String Properties MUST Have Minimum Length
+    path:
+      - components
+      - schemas
+      - ErrorInfo
+      - properties
+      - message
+    severity: 0
+    range:
+      start:
+        line: 601
+        character: 16
+      end:
+        line: 603
+        character: 80
+  - code: openapi-schema-properties-descriptions-info
+    message: Schema Properties Have Description
+    path:
+      - components
+      - schemas
+      - ErrorInfo
+      - properties
+      - message
+      - description
+    severity: 2
+    range:
+      start:
+        line: 603
+        character: 23
+      end:
+        line: 603
+        character: 80
+  - code: openapi-schema-properties-names-camel-case-info
+    message: Schema Property Names Are camelCase.
+    path:
+      - components
+      - schemas
+      - ErrorInfo
+      - properties
+      - status
+    severity: 2
+    range:
+      start:
+        line: 604
+        character: 15
+      end:
+        line: 606
+        character: 48
+  - code: openapi-schema-properties-names-camel-case-info
+    message: Schema Property Names Are camelCase.
+    path:
+      - components
+      - schemas
+      - ErrorInfo
+      - properties
+      - code
+    severity: 2
+    range:
+      start:
+        line: 607
+        character: 13
+      end:
+        line: 609
+        character: 58
+  - code: openapi-schema-properties-string-maxlength-error
+    message: Schema String Properties MUST Have Maximum Length
+    path:
+      - components
+      - schemas
+      - ErrorInfo
+      - properties
+      - code
+    severity: 0
+    range:
+      start:
+        line: 607
+        character: 13
+      end:
+        line: 609
+        character: 58
+  - code: openapi-schema-properties-string-minlength-error
+    message: Schema String Properties MUST Have Minimum Length
+    path:
+      - components
+      - schemas
+      - ErrorInfo
+      - properties
+      - code
+    severity: 0
+    range:
+      start:
+        line: 607
+        character: 13
+      end:
+        line: 609
+        character: 58
+  - code: openapi-schema-properties-descriptions-info
+    message: Schema Properties Have Description
+    path:
+      - components
+      - schemas
+      - ErrorInfo
+      - properties
+      - code
+      - description
+    severity: 2
+    range:
+      start:
+        line: 609
+        character: 23
+      end:
+        line: 609
+        character: 58
+  - code: openapi-schema-names-pascal-case-info
+    message: Schema Names Are PascalCase.
+    path:
+      - components
+      - schemas
+      - PhoneNumber
+    severity: 2
+    range:
+      start:
+        line: 610
+        character: 16
+      end:
+        line: 619
+        character: 27
+  - code: openapi-schema-description-info
+    message: Schemas Has a Description.
+    path:
+      - components
+      - schemas
+      - PhoneNumber
+      - description
+    severity: 2
+    range:
+      start:
+        line: 611
+        character: 19
+      end:
+        line: 616
+        character: 26
+  - code: openapi-schema-description-length-error
+    message: Schema Description MUST be Less Than 250 Characters
+    path:
+      - components
+      - schemas
+      - PhoneNumber
+      - description
+    severity: 0
+    range:
+      start:
+        line: 611
+        character: 19
+      end:
+        line: 616
+        character: 26
+  - code: openapi-schema-type-info
+    message: Schema Has Type Property
+    path:
+      - components
+      - schemas
+      - PhoneNumber
+      - type
+    severity: 2
+    range:
+      start:
+        line: 617
+        character: 12
+      end:
+        line: 617
+        character: 18
+  - code: openapi-schema-names-pascal-case-info
+    message: Schema Names Are PascalCase.
+    path:
+      - components
+      - schemas
+      - NetworkAccessIdentifier
+    severity: 2
+    range:
+      start:
+        line: 620
+        character: 28
+      end:
+        line: 629
+        character: 35
+  - code: openapi-schema-description-info
+    message: Schemas Has a Description.
+    path:
+      - components
+      - schemas
+      - NetworkAccessIdentifier
+      - description
+    severity: 2
+    range:
+      start:
+        line: 621
+        character: 19
+      end:
+        line: 627
+        character: 17
+  - code: openapi-schema-description-length-error
+    message: Schema Description MUST be Less Than 250 Characters
+    path:
+      - components
+      - schemas
+      - NetworkAccessIdentifier
+      - description
+    severity: 0
+    range:
+      start:
+        line: 621
+        character: 19
+      end:
+        line: 627
+        character: 17
+  - code: openapi-schema-type-info
+    message: Schema Has Type Property
+    path:
+      - components
+      - schemas
+      - NetworkAccessIdentifier
+      - type
+    severity: 2
+    range:
+      start:
+        line: 628
+        character: 12
+      end:
+        line: 628
+        character: 18
+  - code: openapi-schema-names-pascal-case-error
+    message: Schema Names MUST Be PascalCase.
+    path:
+      - components
+      - schemas
+      - SingleIpv4Addr
+    severity: 0
+    range:
+      start:
+        line: 630
+        character: 19
+      end:
+        line: 634
+        character: 27
+  - code: openapi-schema-names-pascal-case-info
+    message: Schema Names Are PascalCase.
+    path:
+      - components
+      - schemas
+      - SingleIpv4Addr
+    severity: 2
+    range:
+      start:
+        line: 630
+        character: 19
+      end:
+        line: 634
+        character: 27
+  - code: openapi-schema-description-info
+    message: Schemas Has a Description.
+    path:
+      - components
+      - schemas
+      - SingleIpv4Addr
+      - description
+    severity: 2
+    range:
+      start:
+        line: 631
+        character: 19
+      end:
+        line: 631
+        character: 60
+  - code: openapi-schema-type-info
+    message: Schema Has Type Property
+    path:
+      - components
+      - schemas
+      - SingleIpv4Addr
+      - type
+    severity: 2
+    range:
+      start:
+        line: 632
+        character: 12
+      end:
+        line: 632
+        character: 18
+  - code: openapi-schema-names-pascal-case-error
+    message: Schema Names MUST Be PascalCase.
+    path:
+      - components
+      - schemas
+      - DeviceIpv6Address
+    severity: 0
+    range:
+      start:
+        line: 635
+        character: 22
+      end:
+        line: 642
+        character: 51
+  - code: openapi-schema-names-pascal-case-info
+    message: Schema Names Are PascalCase.
+    path:
+      - components
+      - schemas
+      - DeviceIpv6Address
+    severity: 2
+    range:
+      start:
+        line: 635
+        character: 22
+      end:
+        line: 642
+        character: 51
+  - code: openapi-schema-description-info
+    message: Schemas Has a Description.
+    path:
+      - components
+      - schemas
+      - DeviceIpv6Address
+      - description
+    severity: 2
+    range:
+      start:
+        line: 636
+        character: 19
+      end:
+        line: 639
+        character: 43
+  - code: openapi-schema-type-info
+    message: Schema Has Type Property
+    path:
+      - components
+      - schemas
+      - DeviceIpv6Address
+      - type
+    severity: 2
+    range:
+      start:
+        line: 640
+        character: 12
+      end:
+        line: 640
+        character: 18
+  - code: openapi-schema-names-pascal-case-info
+    message: Schema Names Are PascalCase.
+    path:
+      - components
+      - schemas
+      - Port
+    severity: 2
+    range:
+      start:
+        line: 643
+        character: 9
+      end:
+        line: 647
+        character: 20
+  - code: openapi-schema-description-info
+    message: Schemas Has a Description.
+    path:
+      - components
+      - schemas
+      - Port
+      - description
+    severity: 2
+    range:
+      start:
+        line: 644
+        character: 19
+      end:
+        line: 644
+        character: 41
+  - code: openapi-schema-type-info
+    message: Schema Has Type Property
+    path:
+      - components
+      - schemas
+      - Port
+      - type
+    severity: 2
+    range:
+      start:
+        line: 645
+        character: 12
+      end:
+        line: 645
+        character: 19
+  - code: openapi-components-responses-bad-request-error
+    message: Components MUST have a bad request response.
+    path:
+      - components
+      - responses
+    severity: 0
+    range:
+      start:
+        line: 648
+        character: 12
+      end:
+        line: 886
+        character: 51
+  - code: openapi-components-responses-conflict-error
+    message: Components MUST have a conflict response.
+    path:
+      - components
+      - responses
+    severity: 0
+    range:
+      start:
+        line: 648
+        character: 12
+      end:
+        line: 886
+        character: 51
+  - code: openapi-components-responses-forbidden-error
+    message: Components MUST have a forbidden response.
+    path:
+      - components
+      - responses
+    severity: 0
+    range:
+      start:
+        line: 648
+        character: 12
+      end:
+        line: 886
+        character: 51
+  - code: openapi-components-responses-info
+    message: Components has a responses property.
+    path:
+      - components
+      - responses
+    severity: 2
+    range:
+      start:
+        line: 648
+        character: 12
+      end:
+        line: 886
+        character: 51
+  - code: openapi-components-responses-internal-server-error-error
+    message: Components MUST have a internal server error response.
+    path:
+      - components
+      - responses
+    severity: 0
+    range:
+      start:
+        line: 648
+        character: 12
+      end:
+        line: 886
+        character: 51
+  - code: openapi-components-responses-not-found-error
+    message: Components MUST have a not found response.
+    path:
+      - components
+      - responses
+    severity: 0
+    range:
+      start:
+        line: 648
+        character: 12
+      end:
+        line: 886
+        character: 51
+  - code: openapi-components-responses-too-many-requests-error
+    message: Components MUST have a too many requests response.
+    path:
+      - components
+      - responses
+    severity: 0
+    range:
+      start:
+        line: 648
+        character: 12
+      end:
+        line: 886
+        character: 51
+  - code: openapi-components-responses-unauthorized-error
+    message: Components MUST have a unauthorized response.
+    path:
+      - components
+      - responses
+    severity: 0
+    range:
+      start:
+        line: 648
+        character: 12
+      end:
+        line: 886
+        character: 51
