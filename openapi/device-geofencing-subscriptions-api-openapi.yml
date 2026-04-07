@@ -22,7 +22,7 @@ servers:
         default: http://localhost:9091
         description: API root
 tags:
-  - name: Geofencing subscriptions
+  - name: Geofencing Subscriptions
     description: >-
       Operations to manage event subscription on geofencing events for leaving
       and entering an area
@@ -30,7 +30,7 @@ paths:
   /subscriptions:
     post:
       tags:
-        - Geofencing subscriptions
+        - Geofencing Subscriptions
       summary: Global System for Mobile Communications Create a geofencing subscription for a device
       description: >-
         Create a subscription for a device to receive notifications when a
@@ -141,7 +141,7 @@ paths:
           $ref: '#/components/responses/Generic503'
     get:
       tags:
-        - Geofencing subscriptions
+        - Geofencing Subscriptions
       summary: Global System for Mobile Communications Retrieve a list of geofencing event subscription
       description: Retrieve a list of geofencing event subscription(s)
       operationId: retrieveGeofencingSubscriptionList
@@ -178,7 +178,7 @@ paths:
   /subscriptions/{subscriptionId}:
     get:
       tags:
-        - Geofencing subscriptions
+        - Geofencing Subscriptions
       summary: Global System for Mobile Communications Operation to retrieve a subscription based on the provided ID
       description: >-
         retrieve Geofencing subscription information for a given subscription
@@ -216,7 +216,7 @@ paths:
           $ref: '#/components/responses/Generic503'
     delete:
       tags:
-        - Geofencing subscriptions
+        - Geofencing Subscriptions
       summary: Global System for Mobile Communications Delete a Geofencing event subscription
       operationId: deleteGeofencingSubscription
       description: delete a given Geofencing subscription.

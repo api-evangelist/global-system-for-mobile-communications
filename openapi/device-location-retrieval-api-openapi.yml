@@ -20,13 +20,13 @@ servers:
         default: http://localhost:9091
         description: API root
 tags:
-  - name: Location retrieval
+  - name: Location Retrieval
     description: Retrieve the location of a device
 paths:
   /retrieve:
     post:
       tags:
-        - Location retrieval
+        - Location Retrieval
       summary: Global System for Mobile Communications Execute location retrieval for a user equipment
       description: Retrieve the area where a certain user device is localized.
       operationId: retrieveLocation

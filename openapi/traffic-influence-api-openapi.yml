@@ -25,9 +25,9 @@ servers:
         default: http://localhost:9091
         description: API root for the Traffic Influence API
 tags:
-  - name: Traffic Influence API read
+  - name: Traffic Influence API Read
     description: Reads existing TrafficInfluence resources
-  - name: Traffic Influence API write
+  - name: Traffic Influence API Write
     description: Creates of modifies a TrafficInfluence resource
 paths:
   /traffic-influences:
@@ -43,7 +43,7 @@ paths:
             $ref: '#/components/schemas/AppId'
           description: Used to select traffic influence resources filtered by appId
       tags:
-        - Traffic Influence API read
+        - Traffic Influence API Read
       summary: Global System for Mobile Communications Retries existing TrafficInfluence Resources
       description: >-
         Reads all of the active TrafficInfluence resources owned by the same API
@@ -73,7 +73,7 @@ paths:
           $ref: '#/components/responses/BackendConnTimeout'
     post:
       tags:
-        - Traffic Influence API write
+        - Traffic Influence API Write
       summary: Global System for Mobile Communications Creates a new TrafficInfluence resource
       description: >-
         Takes as input an object containing the intents from the API Consumer
@@ -142,7 +142,7 @@ paths:
           type: string
     get:
       tags:
-        - Traffic Influence API read
+        - Traffic Influence API Read
       summary: >-
         Global System for Mobile Communications Reads a specific TrafficInfluence resource identified by the trafficInfluenceID value.
       description: >-
@@ -178,7 +178,7 @@ paths:
           $ref: '#/components/responses/BackendConnTimeout'
     patch:
       tags:
-        - Traffic Influence API write
+        - Traffic Influence API Write
       summary: >-
         Global System for Mobile Communications updates a specific TrafficInfluence resource, identified by the trafficInfluenceID value.
       description: >-
@@ -234,7 +234,7 @@ paths:
           $ref: '#/components/callbacks/onTrafficInfluenceChanged'
     delete:
       tags:
-        - Traffic Influence API write
+        - Traffic Influence API Write
       summary: Global System for Mobile Communications Delete an existing TrafficInfluence resource
       description: >-
         invoked by the API Consumer to stop influencing the traffic, deleting a

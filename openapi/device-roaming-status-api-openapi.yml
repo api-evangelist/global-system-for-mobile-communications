@@ -163,7 +163,7 @@ servers:
         default: http://localhost:9091
         description: API root
 tags:
-  - name: Roaming status retrieval
+  - name: Roaming Status Retrieval
     description: >-
       Operation to get device roaming status and country information (if
       roaming) synchronously
@@ -171,7 +171,7 @@ paths:
   /retrieve:
     post:
       tags:
-        - Roaming status retrieval
+        - Roaming Status Retrieval
       summary: Global System for Mobile Communications Get the current roaming status and the country information
       description: Get the current roaming status and the country information
       operationId: getRoamingStatus

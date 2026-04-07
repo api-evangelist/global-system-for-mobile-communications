@@ -21,13 +21,13 @@ servers:
         default: http://localhost:9091
         description: API root
 tags:
-  - name: SMS delivery notification subscription
+  - name: SMS Delivery Notification Subscription
     description: Operation to manage event subscription on sms delivery event (swapped)
 paths:
   /subscriptions:
     post:
       tags:
-        - SMS delivery notification subscription
+        - SMS Delivery Notification Subscription
       summary: Global System for Mobile Communications Create a sms delivery event subscription for a given consumer
       description: Create a sms delivery event subscription for a given consumer
       operationId: createSMSDeliverySubscription
@@ -123,7 +123,7 @@ paths:
           $ref: '#/components/responses/Generic503'
     get:
       tags:
-        - SMS Delivery notification subscription
+        - SMS Delivery Notification Subscription
       summary: Global System for Mobile Communications Retrieve a list of SMS Delivery event subscription
       description: Retrieve a list of SMS Delivery event subscription(s)
       operationId: retrieveSubscriptionList
@@ -157,7 +157,7 @@ paths:
   /subscriptions/{subscriptionId}:
     get:
       tags:
-        - SMS Delivery notification subscription
+        - SMS Delivery Notification Subscription
       summary: Global System for Mobile Communications Retrieve a sms delivery event subscription for a phone number
       description: retrieve event subscription information for a given subscription.
       operationId: retrieveSubscription
@@ -191,7 +191,7 @@ paths:
           $ref: '#/components/responses/Generic503'
     delete:
       tags:
-        - SMS Delivery notification subscription
+        - SMS Delivery Notification Subscription
       summary: Global System for Mobile Communications Delete a sms delivery event subscription
       operationId: deleteSubscription
       description: delete a given event subscription.

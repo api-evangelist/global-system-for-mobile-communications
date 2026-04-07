@@ -24,8 +24,7 @@ servers:
         default: sms/v0alpha1
         description: Base path for the Short Message Service
 tags:
-  - name: Short Message Service
-    description: API operation to send SMS
+  - name: Send SMS
 paths:
   /short-message:
     post:

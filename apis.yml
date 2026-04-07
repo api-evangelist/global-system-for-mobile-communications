@@ -6,8 +6,8 @@ apis:
     name: GSMA Camara Project Call Forwarding Signal API
     tags:
       - Anti Fraud
-      - Subscribers
       - Identity
+      - Subscribers
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
@@ -31,10 +31,10 @@ apis:
     name: GSMA Camara Project Device Roaming Status API
     tags:
       - Anti Fraud
-      - Subscribers
       - Identity
       - Roaming
       - Status
+      - Subscribers
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
@@ -57,9 +57,9 @@ apis:
     name: GSMA Camara Project KYC Fill-In API
     tags:
       - Anti Fraud
-      - Subscribers
       - Identity
       - KYC
+      - Subscribers
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
@@ -79,9 +79,9 @@ apis:
     name: GSMA Camara Project KYC Match API
     tags:
       - Anti Fraud
-      - Subscribers
       - Identity
       - KYC
+      - Subscribers
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
@@ -104,15 +104,14 @@ apis:
     name: GSMA Camara Project Number Verification API
     tags:
       - Anti Fraud
-      - Subscribers
       - Identity
       - Numbers
+      - Subscribers
       - Verification
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
-      - url: 
-          https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
+      - url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
         type: GitHubRepository
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/NumberVerification/r1.3/code/API_definitions/number-verification.yaml&nocors
@@ -132,9 +131,9 @@ apis:
     name: GSMA Camara Project One Time Password API
     tags:
       - Anti Fraud
-      - Subscribers
       - Identity
       - Passwords
+      - Subscribers
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
@@ -158,8 +157,8 @@ apis:
     name: GSMA Camara Project SIM Swap API
     tags:
       - Anti Fraud
-      - Subscribers
       - SIM
+      - Subscribers
       - Swaps
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
@@ -185,8 +184,8 @@ apis:
     name: GSMA Camara Project SIM Swap Notification Subscription API
     tags:
       - Anti Fraud
-      - Subscribers
       - SIM
+      - Subscribers
       - Swaps
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
@@ -215,22 +214,21 @@ apis:
     name: GSMA Camara Project Scam Signal API
     tags:
       - Anti Fraud
-      - Subscribers
       - Scams
       - Signals
+      - Subscribers
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     description: >-
       Scam Signal API allows businesses to protect their customers from
       impersonation scams, particularly Authorized Pushed Payment (APP) fraud.
-  - aid: 
-      global-system-for-mobile-communications:device-location-verification-api
+  - aid: global-system-for-mobile-communications:device-location-verification-api
     name: GSMA Camara Project Device Location Verification API
     tags:
-      - Mobile
       - Connectivity
-      - Location
       - Devices
+      - Location
+      - Mobile
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
@@ -241,8 +239,7 @@ apis:
         type: Documentation
       - url: openapi/device-location-verification-api-openapi.yml
         type: OpenAPI
-      - url: bruno/GSMA Camara Project Device Location Verification 
-          API/bruno.json
+      - url: bruno/GSMA Camara Project Device Location Verification API/bruno.json
         type: BrunoCollection
       - url: >-
           https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/35240-23a17d7b-07a0-405e-896b-6c4f3f4cc8c6
@@ -257,11 +254,11 @@ apis:
       global-system-for-mobile-communications:device-geofencing-subscriptions-api
     name: GSMA Camara Project Device Geofencing Subscriptions API
     tags:
-      - Mobile
       - Connectivity
-      - Location
-      - Geofencing
       - Devices
+      - Geofencing
+      - Location
+      - Mobile
       - Subscriptions
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
@@ -289,11 +286,11 @@ apis:
   - aid: global-system-for-mobile-communications:device-location-retrieval-api
     name: GSMA Camara Project Device Location Retrieval API
     tags:
-      - Mobile
       - Connectivity
-      - Location
-      - Retrieval
       - Devices
+      - Location
+      - Mobile
+      - Retrieval
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
@@ -316,11 +313,11 @@ apis:
   - aid: global-system-for-mobile-communications:population-density-api
     name: GSMA Camara Project Population Density Data API
     tags:
-      - Mobile
       - Connectivity
-      - Location
-      - Retrieval
       - Devices
+      - Location
+      - Mobile
+      - Retrieval
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
@@ -345,10 +342,10 @@ apis:
   - aid: global-system-for-mobile-communications:quality-on-demand-api
     name: GSMA Camara Project Quality on Demand API
     tags:
-      - Network
-      - Quality
-      - Optimizations
       - Demand
+      - Network
+      - Optimizations
+      - Quality
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
@@ -374,9 +371,9 @@ apis:
   - aid: global-system-for-mobile-communications:connectivity-insights-api
     name: GSMA Camara Project Connectivity Insights API
     tags:
-      - Network
       - Connectivity
       - Insights
+      - Network
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
@@ -401,9 +398,9 @@ apis:
       global-system-for-mobile-communications:connectivity-insights-subscriptions-api
     name: GSMA Camara Project Connectivity Insights Subscriptions API
     tags:
-      - Network
       - Connectivity
       - Insights
+      - Network
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
@@ -429,8 +426,8 @@ apis:
   - aid: global-system-for-mobile-communications:application-profiles-api
     name: GSMA Camara Project Application Profiles API
     tags:
-      - Network
       - Applications
+      - Network
       - Profiles
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
@@ -452,8 +449,8 @@ apis:
   - aid: global-system-for-mobile-communications:sms-api
     name: GSMA Camara Project SMS API
     tags:
-      - Mobile
       - Communication
+      - Mobile
       - SMS
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
@@ -477,8 +474,8 @@ apis:
       global-system-for-mobile-communications:sms-delivery-notification-subscription-api
     name: GSMA Camara Project SMS Delivery Notification Subscription API
     tags:
-      - Mobile
       - Communication
+      - Mobile
       - SMS
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
@@ -503,12 +500,12 @@ apis:
   - aid: global-system-for-mobile-communications:home-devices-qod-api
     name: GSMA Camara Project Home Devices QoD API
     tags:
-      - Fixed Connectivity
-      - Networks
-      - Quality
-      - Optimization
-      - Home
       - Devices
+      - Fixed Connectivity
+      - Home
+      - Networks
+      - Optimization
+      - Quality
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
@@ -534,17 +531,16 @@ apis:
     name: GSMA Camara Project Simple Edge Discovery API
     tags:
       - Cloud
-      - Edge
-      - Mobile
-      - Optimization
-      - Home
       - Devices
       - Discovery
+      - Edge
+      - Home
+      - Mobile
+      - Optimization
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
-      - url: 
-          https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
+      - url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
         type: GitHubRepository
       - url: >-
           https://github.com/camaraproject/SimpleEdgeDiscovery/blob/main/documentation/API_documentation/SimpleEdgeDiscovery_User_Story.md
@@ -564,12 +560,12 @@ apis:
     name: GSMA Camara Project Traffic Influence API
     tags:
       - Cloud
-      - Edge
-      - Mobile
-      - Optimization
-      - Home
       - Devices
       - Discovery
+      - Edge
+      - Home
+      - Mobile
+      - Optimization
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
@@ -593,16 +589,15 @@ apis:
       developer to have moved into a different geographical location, the
       Traffic Influence API can be invoked again to get the optimal routing in
       the new location.
-  - aid: 
-      global-system-for-mobile-communications:application-endpoint-discovery-api
+  - aid: global-system-for-mobile-communications:application-endpoint-discovery-api
     name: GSMA Camara Project Application Endpoint Discovery API
     tags:
-      - Cloud
-      - Edge
-      - Mobile
       - Application
+      - Cloud
       - Discovery
+      - Edge
       - Endpoints
+      - Mobile
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
@@ -625,11 +620,11 @@ apis:
   - aid: global-system-for-mobile-communications:edge-application-management-api
     name: GSMA Camara Project Edge Application Management API
     tags:
+      - Application
       - Cloud
       - Edge
-      - Mobile
-      - Application
       - Management
+      - Mobile
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
@@ -637,8 +632,7 @@ apis:
         type: GitHubRepository
       - url: openapi/edge-application-management-api-openapi.yml
         type: OpenAPI
-      - url: bruno/GSMA Camara Project Edge Application Management 
-          API/bruno.json
+      - url: bruno/GSMA Camara Project Edge Application Management API/bruno.json
         type: BrunoCollection
       - url: >-
           https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/35240-981545ec-b150-47da-a448-59c92b127a05
@@ -652,11 +646,11 @@ apis:
   - aid: global-system-for-mobile-communications:carrier-billing-api
     name: GSMA Camara Project Carrier Billing
     tags:
+      - Billing
+      - Carrier
+      - Charging
       - Mobile
       - Payments
-      - Charging
-      - Carrier
-      - Billing
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
@@ -681,12 +675,12 @@ apis:
       lifecycle.
 name: Global System for Mobile Communications
 tags:
-  - Telecommunications
-  - Telco
-  - Standards
-  - Networks
-  - Networking
   - Mobile
+  - Networking
+  - Networks
+  - Standards
+  - Telco
+  - Telecommunications
 type: Index
 common:
   - url: >-

@@ -32,7 +32,7 @@ paths:
         - openId:
             - sim-swap
       tags:
-        - Retrieve SIM swap date
+        - Retrieve SIM Swap Date
       description: >-
         Get timestamp of last SIM swap event for a mobile user account provided
         with phone number.
@@ -81,7 +81,7 @@ paths:
         - openId:
             - sim-swap
       tags:
-        - Check SIM swap
+        - Check SIM Swap
       description: Check if SIM swap has been performed during a past period
       operationId: checkSimSwap
       parameters:
@@ -365,3 +365,6 @@ components:
                 status: 504
                 code: TIMEOUT
                 message: Request timeout exceeded.
+tags:
+  - name: Check SIM Swap
+  - name: Retrieve SIM Swap Date

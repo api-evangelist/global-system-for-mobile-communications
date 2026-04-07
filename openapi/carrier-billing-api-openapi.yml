@@ -132,10 +132,10 @@ servers:
 tags:
   - name: One Step Payment
     description: Operations to manage One Step Payment procedure
-  - name: Two Step Payment
-    description: Operations to manage Two Step Payment procedure
   - name: Payment
     description: Operations to obtain information about payments
+  - name: Two Step Payment
+    description: Operations to manage Two Step Payment procedure
 paths:
   /payments:
     post:

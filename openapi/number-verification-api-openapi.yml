@@ -22,17 +22,17 @@ servers:
           API root, defined by the service provider, e.g. `api.example.com` or
           `api.example.com/somepath
 tags:
-  - name: Phone number verify
+  - name: Phone Number Share
+    description: API operation to return the phone number associated to the access token.
+  - name: Phone Number Verify
     description: >-
       API operation to verify a phone number received as input. It can be
       received either in plain text or hashed format.
-  - name: Phone number share
-    description: API operation to return the phone number associated to the access token.
 paths:
   /verify:
     post:
       tags:
-        - Phone number verify
+        - Phone Number Verify
       summary: >-
         Global System for Mobile Communications Verifies if the received hashed/plain text phone number matches the phone number associated with the access token
       description: >
@@ -90,7 +90,7 @@ paths:
   /device-phone-number:
     get:
       tags:
-        - Phone number share
+        - Phone Number Share
       summary: Global System for Mobile Communications Returns the phone number associated with the access token
       description: >
         Returns the phone number so the API clients can verify the number

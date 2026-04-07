@@ -22,13 +22,13 @@ servers:
         default: http://localhost:9091
         description: API root
 tags:
-  - name: Location verification
+  - name: Location Verification
     description: Verification of the location of a device
 paths:
   /verify:
     post:
       tags:
-        - Location verification
+        - Location Verification
       summary: Global System for Mobile Communications Verify the location of a device
       description: >
         Verify whether the location of a device is within a requested area. The
