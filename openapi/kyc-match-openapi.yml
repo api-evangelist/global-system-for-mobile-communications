@@ -1,8 +1,8 @@
 openapi: 3.0.3
 info:
-  title: Know Your Customer Match
+  title: Global System for Mobile Communications Know Your Customer Match
 
-  description: |
+  description: |2
 
     This API provides the customer with the ability to compare the information it (Service Provider, SP) has for a particular mobile phone user with that on file (and verified) by the mobile phone user's Operator in their own KYC records, in order for the SP to confirm the accuracy of the information and provide a specific service to the mobile phone user.
 
@@ -12,7 +12,7 @@ info:
 
     * **Match Score**: a numerical value that quantifies the similarity between two pieces of text based on the words they contain. This score is often used in various applications like text comparison, plagiarism detection, information retrieval, and natural language processing. The score typically reflects how well the words in one text match the words in another text. In the context of this API, this score will be used to determine how much does the input information looks like the information stored in the Operator's system. Unless otherwise captured in the specification, score will use the Jaro-Winkler distance algorithm for all countries. This parameter, as optional, will be returned depending on the capability of the Operator to calculate the scoring value. This means that not all Operators will implement this functionality or won't have the requested parameter available. It can happen that an Operator implements the score functionality but, for whatever reason, is not able to calculate it based on the client's input or the related stored information. For these cases, the score property related won't be returned in the response.
     The range of score values is between "0" and "100", where higher scores indicate a higher similarity between the two compared parameters.
-    
+
     ## API Functionality
 
     This API allows API clients to verify the matching of a number of attributes related to a customer identity against the account data bound to their phone number.  The API is intended to be used in the following scenarios, for example:
@@ -71,7 +71,7 @@ paths:
     post:
       tags:
         - Match
-      summary: Matching a customer identity by checking a set of attributes related against the account data bound to their phone number.
+      summary: Global System for Mobile Communications Matching a customer identity by checking a set of attributes related against the account data bound to their phone number.
       description: |-
         Verify matching of a number of attributes related to a customer identity against the verified data bound to their phone number in the Operator systems. Regardless of whether the `phoneNumber` is explicitly stated in the request body, at least one of the other fields must be provided, otherwise a `HTTP 400 - KNOW_YOUR_CUSTOMER.INVALID_PARAM_COMBINATION` error will be returned.
 
@@ -88,12 +88,11 @@ paths:
 
       security:
         - openId:
-          - kyc-match:match
+            - kyc-match:match
 
 
       parameters:
         - $ref: '#/components/parameters/x-correlator'
-        
       requestBody:
         required: true
         content:
@@ -203,7 +202,7 @@ components:
       description: Correlation id for the different services
       schema:
         type: string
-        
+
   schemas:
     KYC_MatchRequestBody:
       type: object
@@ -226,11 +225,11 @@ components:
         givenName:
           type: string
           description: First/given name or compound first/given name of the customer.
-          
+
         familyName:
           type: string
           description: Last name, family name, or surname of the customer.
-          
+
         nameKanaHankaku:
           type: string
           description: Complete name of the customer in Hankaku-Kana format (reading of name) for Japan.
@@ -250,7 +249,7 @@ components:
         address:
           type: string
           description: Complete address of the customer.  For some countries, it is built following the usual concatenation of parameters in a country, but for other countries, this is not the case.  For some countries, it can use streetName, streetNumber and/or houseNumberExtension. For example, in ESP, streetName+streetNumber; in NLD, it can be streetName+streetNumber or streetName+streetNumber+houseNumberExtension.
-          
+
         streetName:
           type: string
           description: Name of the street of the customer's address. It should not include the type of the street.
@@ -298,9 +297,9 @@ components:
     MatchResult:
       type: string
       enum:
-          - 'true'
-          - 'false'
-          - 'not_available'
+        - 'true'
+        - 'false'
+        - 'not_available'
 
     MatchScoreResult:
       type: integer
@@ -480,7 +479,7 @@ components:
       description: |
         Client does not have sufficient permission.
         In addition to regular scenario of `PERMISSION_DENIED`, another scenarios may exist:
-      
+
         - Phone number cannot be deducted from access token context.(`{"code": "INVALID_TOKEN_CONTEXT","message": "Phone number mismatch with access token context"}`)
         - The idDocument property is missing.(`{"code": "KNOW_YOUR_CUSTOMER.ID_DOCUMENT_REQUIRED","message": "The idDocument is required to perform the properties validation"}`)
         - The idDocument does not match the one associated to the provided phoneNumber in the Operator's system.(`{"code": "KNOW_YOUR_CUSTOMER.ID_DOCUMENT_MISMATCH","message": "The idDocument needs to match the one associated with the provided phoneNumber"}`)

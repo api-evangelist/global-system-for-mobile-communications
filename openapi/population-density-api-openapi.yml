@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: GSMA Camara Project Population Density Data
+  title: Global System for Mobile Communications GSMA Camara Project Population Density Data
   description: >-
     Population Density Data API exposes population density estimations for a
     specified area for a specified time interval.
@@ -167,7 +167,7 @@ paths:
     post:
       tags:
         - Population Density Data
-      summary: Retrieves population density information in a specified area
+      summary: Global System for Mobile Communications Retrieves population density information in a specified area
       description: >-
         Retrieves population density estimation together with the estimation
         range related  for a time slot for a given area (described as a polygon)

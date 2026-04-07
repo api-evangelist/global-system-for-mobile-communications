@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: GSMA Camara Project Connectivity Insights API
+  title: Global System for Mobile Communications GSMA Camara Project Connectivity Insights API
   version: 0.4.0
   x-camara-commonalities: 0.4.0
   description: >-
@@ -34,7 +34,7 @@ paths:
             - connectivity-insights:check
       tags:
         - Network Quality
-      summary: Check the network quality.
+      summary: Global System for Mobile Communications Check the network quality.
       description: |
         Check the network quality. The response shows the network's current
          level of confidence that it can meet an application profile's quality

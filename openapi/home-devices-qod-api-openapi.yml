@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: GSMA Camara Project Home Devices QoD
+  title: Global System for Mobile Communications GSMA Camara Project Home Devices QoD
   description: >
     Service Enabling Network Function API for *QoS-on-demand* (QoD) control
     applied to devices connected to the user's home network. API clients can
@@ -139,7 +139,7 @@ servers:
 paths:
   /qos:
     put:
-      summary: Set the desired QoS behaviour for a user home device
+      summary: Global System for Mobile Communications Set the desired QoS behaviour for a user home device
       description: >
         Set the desired QoS behaviour for the traffic corresponding to the user
         home device matching the input criteria. **QoS behaviour is determined
@@ -222,26 +222,19 @@ components:
 
             |-----------------------|-----------|----------------------|---------------------|-----------------------------------------------|
 
-            | Real-Time Interactive |    CS4    |          32          |       
-            100000       | Video conferencing and Interactive gaming     |
+            | Real-Time Interactive |    CS4    |          32          |        100000       | Video conferencing and Interactive gaming     |
 
-            | Multimedia Streaming  |    AF31   |          26          |       
-            011010       | Streaming video and audio on demand           |
+            | Multimedia Streaming  |    AF31   |          26          |        011010       | Streaming video and audio on demand           |
 
-            | Broadcast Video       |    CS3    |          24          |       
-            011000       | Broadcast TV & live events                    |
+            | Broadcast Video       |    CS3    |          24          |        011000       | Broadcast TV & live events                    |
 
-            | Low-Latency Data      |    AF21   |          18          |       
-            010010       | Client/server transactions Web-based ordering |
+            | Low-Latency Data      |    AF21   |          18          |        010010       | Client/server transactions Web-based ordering |
 
-            | High-Throughput Data  |    AF11   |          10          |       
-            001010       | Store and forward applications                |
+            | High-Throughput Data  |    AF11   |          10          |        001010       | Store and forward applications                |
 
-            | Low-Priority Data     |    CS1    |           8          |       
-            001000       | Any flow that has no BW assurance             |
+            | Low-Priority Data     |    CS1    |           8          |        001000       | Any flow that has no BW assurance             |
 
-            | Standard              |  DF(CS0)  |           0          |       
-            000000       | Undifferentiated applications                 |
+            | Standard              |  DF(CS0)  |           0          |        000000       | Undifferentiated applications                 |
           enum:
             - real_time_interactive
             - multimedia_streaming

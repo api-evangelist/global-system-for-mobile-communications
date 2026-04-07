@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: GSMA Camara Project Edge Application Management API
+  title: Global System for Mobile Communications GSMA Camara Project Edge Application Management API
   version: 0.9.3-wip
   description: >-
     Edge Application Management API allows API consumers to manage the Life
@@ -41,7 +41,7 @@ paths:
             - edge-application-management:apps:write
       tags:
         - Application
-      summary: Submit application metadata to the Edge Cloud Provider.
+      summary: Global System for Mobile Communications Submit application metadata to the Edge Cloud Provider.
       description: |
         Contains the information about the application to be
         instantiated in the Edge Cloud
@@ -96,7 +96,7 @@ paths:
             - edge-application-management:apps:read
       tags:
         - Application
-      summary: Retrieve a list of existing Applications
+      summary: Global System for Mobile Communications Retrieve a list of existing Applications
       description: |
         Get the list of all existing Application definitions from the
         Edge Cloud Provider that the user has permission to view.
@@ -132,7 +132,7 @@ paths:
             - edge-application-management:apps:read
       tags:
         - Application
-      summary: Retrieve the information of an Application
+      summary: Global System for Mobile Communications Retrieve the information of an Application
       description: |
         Ask the Edge Cloud Provider the information for a given application
       operationId: getApp
@@ -177,8 +177,8 @@ paths:
             - edge-application-management:apps:delete
       tags:
         - Application
-      summary: |
-        Delete an Application from an Edge Cloud Provider
+      summary: |-
+        Global System for Mobile Communications Delete an Application from an Edge Cloud Provider
       description: Delete all the information and content related to an Application
       operationId: deleteApp
       parameters:
@@ -229,7 +229,7 @@ paths:
             - edge-application-management:instances:write
       tags:
         - Application
-      summary: Instantiation of an Application
+      summary: Global System for Mobile Communications Instantiation of an Application
       description: |
         Ask the Edge Cloud Platform to instantiate an application to one
         or several Edge Cloud Zones with an Application as an input and an
@@ -305,7 +305,7 @@ paths:
             - edge-application-management:instances:read
       tags:
         - Application
-      summary: Retrieve the information of Application Instances for a given App
+      summary: Global System for Mobile Communications Retrieve the information of Application Instances for a given App
       description: |
         Ask the Edge Cloud Provider the information of the instances for a
         given application
@@ -372,7 +372,7 @@ paths:
             - edge-application-management:instances:delete
       tags:
         - Application
-      summary: Terminate an Application Instance
+      summary: Global System for Mobile Communications Terminate an Application Instance
       description: |
         Terminate a running instance of an application within
         an Edge Cloud Zone
@@ -416,7 +416,7 @@ paths:
             - edge-application-management:edge-cloud-zones:read
       tags:
         - Edge Cloud
-      summary: Retrieve a list of the operators Edge Cloud Zones and their status
+      summary: Global System for Mobile Communications Retrieve a list of the operators Edge Cloud Zones and their status
       description: |
         List of the operators Edge Cloud Zones and their
         status, ordering the results by location and filtering by

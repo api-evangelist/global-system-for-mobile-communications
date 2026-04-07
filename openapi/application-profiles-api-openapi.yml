@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: GSMA Camara Project Application Profiles API
+  title: Global System for Mobile Communications GSMA Camara Project Application Profiles API
   version: 0.3.0
   license:
     name: Apache 2.0
@@ -31,8 +31,8 @@ paths:
             - application-profiles:create
       tags:
         - Application Profiles
-      summary: |
-        create a profile which represents an application's networking demands.
+      summary: |-
+        Global System for Mobile Communications create a profile which represents an application's networking demands.
       description: |
         Define network monitoring intents for optimal end user application
         experience.

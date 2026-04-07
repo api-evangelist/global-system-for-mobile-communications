@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: GSMA Camara Project Device Geofencing Subscriptions API
+  title: Global System for Mobile Communications GSMA Camara Project Device Geofencing Subscriptions API
   description: >-
     Device Geofencing Subscriptions API enables the subscription to geographical
     position changes. With this API, customers can create subscriptions for
@@ -31,7 +31,7 @@ paths:
     post:
       tags:
         - Geofencing subscriptions
-      summary: Create a geofencing subscription for a device
+      summary: Global System for Mobile Communications Create a geofencing subscription for a device
       description: >-
         Create a subscription for a device to receive notifications when a
         device enters or exits a specified area
@@ -142,7 +142,7 @@ paths:
     get:
       tags:
         - Geofencing subscriptions
-      summary: Retrieve a list of geofencing event subscription
+      summary: Global System for Mobile Communications Retrieve a list of geofencing event subscription
       description: Retrieve a list of geofencing event subscription(s)
       operationId: retrieveGeofencingSubscriptionList
       parameters:
@@ -179,7 +179,7 @@ paths:
     get:
       tags:
         - Geofencing subscriptions
-      summary: Operation to retrieve a subscription based on the provided ID
+      summary: Global System for Mobile Communications Operation to retrieve a subscription based on the provided ID
       description: >-
         retrieve Geofencing subscription information for a given subscription
         ID.
@@ -217,7 +217,7 @@ paths:
     delete:
       tags:
         - Geofencing subscriptions
-      summary: Delete a Geofencing event subscription
+      summary: Global System for Mobile Communications Delete a Geofencing event subscription
       operationId: deleteGeofencingSubscription
       description: delete a given Geofencing subscription.
       security:

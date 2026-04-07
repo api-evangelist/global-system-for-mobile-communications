@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: GSMA Camara Project Simple Edge Discovery
+  title: Global System for Mobile Communications GSMA Camara Project Simple Edge Discovery
   version: 1.0.0
   x-camara-commonalities: 0.4.0
   description: >
@@ -527,8 +527,8 @@ paths:
           $ref: '#/components/responses/Generic504'
       tags:
         - Discovery
-      summary: |
-        Returns the name of the Edge Cloud Zone closest to user device
+      summary: |-
+        Global System for Mobile Communications Returns the name of the Edge Cloud Zone closest to user device
         identified in the request.
       description: |
         On receiving this request, the network will return the name

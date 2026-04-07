@@ -115,7 +115,7 @@ info:
 
     (FAQs will be added in a later version of the documentation)
   version: 0.3.1
-  title: GSMA Camara Project Carrier Billing
+  title: Global System for Mobile Communications GSMA Camara Project Carrier Billing
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
@@ -144,7 +144,7 @@ paths:
             - carrier-billing:payments:create
       tags:
         - One Step Payment
-      summary: Create a new Payment
+      summary: Global System for Mobile Communications Create a new Payment
       operationId: createPayment
       description: Create a new payment for subsequent charging to an end user. Carrier Billing Server will apply the charging according to business configuration for the end user.
       parameters:
@@ -231,7 +231,7 @@ paths:
             - carrier-billing:payments:read
       tags:
         - Payment
-      summary: Get a list of payments
+      summary: Global System for Mobile Communications Get a list of payments
       operationId: retrievePayments
       description: |-
         Retrieve a list of payments and their details based on some filtering criteria.
@@ -287,7 +287,7 @@ paths:
             - carrier-billing:payments:read
       tags:
         - Payment
-      summary: Get payment details
+      summary: Global System for Mobile Communications Get payment details
       operationId: retrievePayment
       description: |-
         Retrieve payment details for a given payment.
@@ -330,7 +330,7 @@ paths:
             - carrier-billing:payments:create
       tags:
         - Two Step Payment
-      summary: Prepare (reserve) a payment
+      summary: Global System for Mobile Communications Prepare (reserve) a payment
       operationId: preparePayment
       description: Prepare a new payment procedure. Carrier Billing Server will apply the charging according to business configuration for the end user.
       parameters:
@@ -429,7 +429,7 @@ paths:
             - carrier-billing:payments:write
       tags:
         - Two Step Payment
-      summary: Validate a payment
+      summary: Global System for Mobile Communications Validate a payment
       operationId: validatePayment
       description: Validate a given payment with a code, identified by its paymentId. This process is applicable for 2-STEP, when optionally required by business case.
       parameters:
@@ -488,7 +488,7 @@ paths:
             - carrier-billing:payments:write
       tags:
         - Two Step Payment
-      summary: Confirm a payment
+      summary: Global System for Mobile Communications Confirm a payment
       operationId: confirmPayment
       description: Confirm a reservation of a given payment, identified by its paymentId.
       parameters:
@@ -537,7 +537,7 @@ paths:
             - carrier-billing:payments:write
       tags:
         - Two Step Payment
-      summary: Cancel a payment
+      summary: Global System for Mobile Communications Cancel a payment
       operationId: cancelPayment
       description: Cancel a reservation of a given payment, identified by its paymentId.
       parameters:
@@ -787,19 +787,13 @@ components:
           example: "+34671999000"
         clientCorrelator:
           type: string
-          description:
-            Uniquely identifies this create payment request. If there is
-            a communication failure during the payment request, using the same clientCorrelator
-            when retrying the request allows the operator to avoid applying the same
-            charge twice. This field SHOULD be present. Same value as indicated in the request.
+          description: Uniquely identifies this create payment request. If there is a communication failure during the payment request, using the same clientCorrelator when retrying the request allows the operator to avoid applying the same charge twice. This field SHOULD be present. Same value as indicated in the request.
           example: "req-12f2pgh448gh2hvrfrv"
         paymentAmount:
           $ref: "#/components/schemas/PaymentAmountForCharge"
         referenceCode:
           type: string
-          description:
-            Merchant generated payment reference to uniquely identify the
-            request, for instance, in the case of disputes. Same value as the one provided in the request.
+          description: Merchant generated payment reference to uniquely identify the request, for instance, in the case of disputes. Same value as the one provided in the request.
           example: "ref-pay-834tfr2rA3v8r8vr3rv"
         resourceURL:
           type: string
@@ -807,9 +801,7 @@ components:
           example: "urn:payments:AK234rfweSBuWGFUEWFGWEVWRV"
         serverReferenceCode:
           type: string
-          description:
-            Reference to the charge or refund, provided by the server,
-            and meaningful to the server’s backend system for the purpose of reconciliation.
+          description: Reference to the charge or refund, provided by the server, and meaningful to the server’s backend system for the purpose of reconciliation.
           example: "ref-pay-834tfr2rA3v8r8vr3rv-serv"
     AmountTransactionInput:
       type: object
@@ -831,19 +823,13 @@ components:
           example: "+34671999000"
         clientCorrelator:
           type: string
-          description:
-            Uniquely identifies this create payment request. If there is
-            a communication failure during the payment request, using the same clientCorrelator
-            when retrying the request allows the operator to avoid applying the same
-            charge twice. This field SHOULD be present.
+          description: Uniquely identifies this create payment request. If there is a communication failure during the payment request, using the same clientCorrelator when retrying the request allows the operator to avoid applying the same charge twice. This field SHOULD be present.
           example: "req-12f2pgh448gh2hvrfrv"
         paymentAmount:
           $ref: "#/components/schemas/PaymentAmountForCharge"
         referenceCode:
           type: string
-          description:
-            Merchant generated payment reference to uniquely identify the
-            request, for instance, in the case of disputes.
+          description: Merchant generated payment reference to uniquely identify the request, for instance, in the case of disputes.
           example: "ref-pay-834tfr2rA3v8r8vr3rv"
     PaymentAmountForCharge:
       type: object
@@ -953,18 +939,13 @@ components:
           example: "+34671999000"
         clientCorrelator:
           type: string
-          description: Uniquely identifies this payment request. If there is
-            a communication failure during the payment request, using the same clientCorrelator
-            when retrying the request allows the operator to avoid applying the same
-            charge twice. This field SHOULD be present. Same value as indicated in the request.
+          description: Uniquely identifies this payment request. If there is a communication failure during the payment request, using the same clientCorrelator when retrying the request allows the operator to avoid applying the same charge twice. This field SHOULD be present. Same value as indicated in the request.
           example: "req-12f2pgh448gh2hvrfrv"
         paymentAmount:
           $ref: "#/components/schemas/PaymentAmountForReserve"
         referenceCode:
           type: string
-          description:
-            Merchant generated payment reference to uniquely identify the
-            request, for example, in the case of disputes. Same value as the one provided in the request.
+          description: Merchant generated payment reference to uniquely identify the request, for example, in the case of disputes. Same value as the one provided in the request.
           example: "ref-pay-834tfr2rA3v8r8vr3rv"
         resourceURL:
           type: string
@@ -972,9 +953,7 @@ components:
           example: "urn:payments:AK234rfweSBuWGFUEWFGWEVWRV"
         serverReferenceCode:
           type: string
-          description:
-            Reference to the charge or refund, provided by the server,
-            and meaningful to the server’s backend system for the purpose of reconciliation.
+          description: Reference to the charge or refund, provided by the server, and meaningful to the server’s backend system for the purpose of reconciliation.
           example: "ref-pay-834tfr2rA3v8r8vr3rv-serv"
     AmountReservationTransactionForReserveInput:
       type: object
@@ -996,19 +975,13 @@ components:
           example: "+34671999000"
         clientCorrelator:
           type: string
-          description:
-            Uniquely identifies this create payment request. If there is
-            a communication failure during the payment request, using the same clientCorrelator
-            when retrying the request allows the operator to avoid applying the same
-            charge twice. This field SHOULD be present.
+          description: Uniquely identifies this create payment request. If there is a communication failure during the payment request, using the same clientCorrelator when retrying the request allows the operator to avoid applying the same charge twice. This field SHOULD be present.
           example: "req-12f2pgh448gh2hvrfrv"
         paymentAmount:
           $ref: "#/components/schemas/PaymentAmountForReserve"
         referenceCode:
           type: string
-          description:
-            Merchant generated payment reference to uniquely identify the
-            request, for instance, in the case of disputes.
+          description: Merchant generated payment reference to uniquely identify the request, for instance, in the case of disputes.
           example: "ref-pay-834tfr2rA3v8r8vr3rv"
     PaymentAmountForReserve:
       type: object

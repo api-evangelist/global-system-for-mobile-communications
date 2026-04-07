@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: GSMA Camara Project Device Location Retrieval API
+  title: Global System for Mobile Communications GSMA Camara Project Device Location Retrieval API
   description: >-
     Device Location Retrieval API provides the ability to retrieve the location
     of a device. The retrieved area depends on the network conditions at the
@@ -27,7 +27,7 @@ paths:
     post:
       tags:
         - Location retrieval
-      summary: Execute location retrieval for a user equipment
+      summary: Global System for Mobile Communications Execute location retrieval for a user equipment
       description: Retrieve the area where a certain user device is localized.
       operationId: retrieveLocation
       parameters:

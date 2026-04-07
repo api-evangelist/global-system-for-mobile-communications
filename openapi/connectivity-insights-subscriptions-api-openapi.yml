@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: GSMA Camara Project Connectivity Insights Subscriptions API
+  title: Global System for Mobile Communications GSMA Camara Project Connectivity Insights Subscriptions API
   version: 0.4.0
   x-camara-commonalities: 0.4.0
   description: >-
@@ -32,7 +32,7 @@ paths:
       tags:
         - Connectivity Insights Subscriptions
       description: Create a Connectivity insights subscription for a device
-      summary: Create a Connectivity insights subscription for a device
+      summary: Global System for Mobile Communications Create a Connectivity insights subscription for a device
       operationId: createSubscription
       parameters:
         - $ref: '#/components/parameters/x-correlator'
@@ -131,7 +131,7 @@ paths:
     get:
       tags:
         - Connectivity Insights Subscriptions
-      summary: Retrieve a list of apiName event subscription
+      summary: Global System for Mobile Communications Retrieve a list of apiName event subscription
       operationId: getSubscriptionList
       description: |
         Operation to list subscriptions authorized to be retrieved by the
@@ -168,7 +168,7 @@ paths:
     get:
       tags:
         - Connectivity Insights Subscriptions
-      summary: Operation to retrieve a subscription based on the provided ID
+      summary: Global System for Mobile Communications Operation to retrieve a subscription based on the provided ID
       operationId: getSubscription
       description: Retrieve a given subscription by ID
       security:
@@ -202,7 +202,7 @@ paths:
     delete:
       tags:
         - Connectivity Insights Subscriptions
-      summary: Operation to delete a subscription
+      summary: Global System for Mobile Communications Operation to delete a subscription
       operationId: deleteSubscription
       description: Delete a given subscription by ID
       security:

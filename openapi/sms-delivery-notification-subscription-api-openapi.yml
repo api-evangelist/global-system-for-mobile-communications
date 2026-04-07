@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: GSMA Camara Project SMS Delivery Notification Subscription API
+  title: Global System for Mobile Communications GSMA Camara Project SMS Delivery Notification Subscription API
   description: >-
     API to create, retrieve and delete event subscriptions related to a sms
     delivery operation performed on an associated phone number.
@@ -28,7 +28,7 @@ paths:
     post:
       tags:
         - SMS delivery notification subscription
-      summary: Create a sms delivery event subscription for a given consumer
+      summary: Global System for Mobile Communications Create a sms delivery event subscription for a given consumer
       description: Create a sms delivery event subscription for a given consumer
       operationId: createSMSDeliverySubscription
       parameters:
@@ -124,7 +124,7 @@ paths:
     get:
       tags:
         - SMS Delivery notification subscription
-      summary: Retrieve a list of SMS Delivery event subscription
+      summary: Global System for Mobile Communications Retrieve a list of SMS Delivery event subscription
       description: Retrieve a list of SMS Delivery event subscription(s)
       operationId: retrieveSubscriptionList
       parameters:
@@ -158,7 +158,7 @@ paths:
     get:
       tags:
         - SMS Delivery notification subscription
-      summary: Retrieve a sms delivery event subscription for a phone number
+      summary: Global System for Mobile Communications Retrieve a sms delivery event subscription for a phone number
       description: retrieve event subscription information for a given subscription.
       operationId: retrieveSubscription
       security:
@@ -192,7 +192,7 @@ paths:
     delete:
       tags:
         - SMS Delivery notification subscription
-      summary: Delete a sms delivery event subscription
+      summary: Global System for Mobile Communications Delete a sms delivery event subscription
       operationId: deleteSubscription
       description: delete a given event subscription.
       security:

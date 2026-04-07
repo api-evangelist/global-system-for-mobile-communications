@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: GSMA Camara Project Device Roaming Status
+  title: Global System for Mobile Communications GSMA Camara Project Device Roaming Status
   description: >
     This API provides the API consumer with the ability to query device roaming
     Status
@@ -172,7 +172,7 @@ paths:
     post:
       tags:
         - Roaming status retrieval
-      summary: Get the current roaming status and the country information
+      summary: Global System for Mobile Communications Get the current roaming status and the country information
       description: Get the current roaming status and the country information
       operationId: getRoamingStatus
       parameters:

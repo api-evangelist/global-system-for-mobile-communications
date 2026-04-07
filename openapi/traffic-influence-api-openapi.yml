@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: GSMA Camara Project Traffic Influence API
+  title: Global System for Mobile Communications GSMA Camara Project Traffic Influence API
   version: wip
   description: >-
     The Traffic Influence API provides the capability to establish the optimal
@@ -44,7 +44,7 @@ paths:
           description: Used to select traffic influence resources filtered by appId
       tags:
         - Traffic Influence API read
-      summary: Retries existing TrafficInfluence Resources
+      summary: Global System for Mobile Communications Retries existing TrafficInfluence Resources
       description: >-
         Reads all of the active TrafficInfluence resources owned by the same API
         Consumer
@@ -74,7 +74,7 @@ paths:
     post:
       tags:
         - Traffic Influence API write
-      summary: Creates a new TrafficInfluence resource
+      summary: Global System for Mobile Communications Creates a new TrafficInfluence resource
       description: >-
         Takes as input an object containing the intents from the API Consumer
         and creates a TrafficInfluence resourse accordingly. The
@@ -144,8 +144,7 @@ paths:
       tags:
         - Traffic Influence API read
       summary: >-
-        Reads a specific TrafficInfluence resource identified by the
-        trafficInfluenceID value.
+        Global System for Mobile Communications Reads a specific TrafficInfluence resource identified by the trafficInfluenceID value.
       description: >-
         Returns a specific TrafficInfluence resources owned by the same API
         Consumer.
@@ -181,8 +180,7 @@ paths:
       tags:
         - Traffic Influence API write
       summary: >-
-        updates a specific TrafficInfluence resource, identified by the
-        trafficInfluenceID value.
+        Global System for Mobile Communications updates a specific TrafficInfluence resource, identified by the trafficInfluenceID value.
       description: >-
         The resource identified by the trafficInfluenceID value can be modified.
         Before the PATCH can be invoked the status (state) of the resource must
@@ -237,7 +235,7 @@ paths:
     delete:
       tags:
         - Traffic Influence API write
-      summary: Delete an existing TrafficInfluence resource
+      summary: Global System for Mobile Communications Delete an existing TrafficInfluence resource
       description: >-
         invoked by the API Consumer to stop influencing the traffic, deleting a
         TrafficInfluence resource previously created.

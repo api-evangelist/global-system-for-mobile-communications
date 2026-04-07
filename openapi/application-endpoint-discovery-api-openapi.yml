@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: GSMA Camara Project Application Endpoint Discovery API
+  title: Global System for Mobile Communications GSMA Camara Project Application Endpoint Discovery API
   version: 0.1.0-wip
   description: >-
     The Application Discovery API extends beyond the capabilities of the Simple
@@ -132,8 +132,8 @@ paths:
           $ref: '#/components/responses/504GatewayTimeout'
       tags:
         - Discovery
-      summary: |
-        Returns the Endpoint of the closest App Instance to user device
+      summary: |-
+        Global System for Mobile Communications Returns the Endpoint of the closest App Instance to user device
         identified in the request.
       description: |
         On receiving this request, the network will return the name

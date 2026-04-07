@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: GSMA Camara Project Know Your Customer Match
+  title: Global System for Mobile Communications GSMA Camara Project Know Your Customer Match
   description: >-
     This API provides the customer with the ability to compare the information
     it (Service Provider, SP) has for a particular mobile phone user with that
@@ -31,8 +31,7 @@ paths:
       tags:
         - Match
       summary: >-
-        Matching a customer identity by checking a set of attributes related
-        against the account data bound to their phone number.
+        Global System for Mobile Communications Matching a customer identity by checking a set of attributes related against the account data bound to their phone number.
       description: >-
         Verify matching of a number of attributes related to a customer identity
         against the verified data bound to their phone number in the Operator
@@ -61,7 +60,7 @@ paths:
                   givenName: Federica
                   familyName: Sanchez Arjona
                   nameKanaHankaku: federica
-                  nameKanaZenkaku: &EDERICA
+                  nameKanaZenkaku:
                   middleNames: Sanchez
                   familyNameAtBirth: YYYY
                   address: Tokyo-to Chiyoda-ku Iidabashi 3-10-10
@@ -454,8 +453,7 @@ components:
                 message: Indicated parameter combination is invalid
     Generic401:
       description: >-
-        Authentication problem with the client request. Unauthorized error. 
-        Access Token related errors.
+        Authentication problem with the client request. Unauthorized error.  Access Token related errors.
       headers:
         x-correlator:
           $ref: '#/components/headers/x-correlator'

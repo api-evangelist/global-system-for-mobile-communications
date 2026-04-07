@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: GSMA Camara Project Number Verification
+  title: Global System for Mobile Communications GSMA Camara Project Number Verification
   description: >-
     Service Enabling Network Function API to verify that the provided **mobile
     phone number** is the one used in the device. It verifies that the user is
@@ -34,8 +34,7 @@ paths:
       tags:
         - Phone number verify
       summary: >-
-        Verifies if the received hashed/plain text phone number matches the
-        phone number associated with the access token
+        Global System for Mobile Communications Verifies if the received hashed/plain text phone number matches the phone number associated with the access token
       description: >
         Verifies if the specified phone number (either in plain text or hashed
         format) matches the one that the user is currently using. Only one of
@@ -92,7 +91,7 @@ paths:
     get:
       tags:
         - Phone number share
-      summary: Returns the phone number associated with the access token
+      summary: Global System for Mobile Communications Returns the phone number associated with the access token
       description: >
         Returns the phone number so the API clients can verify the number
         themselves:

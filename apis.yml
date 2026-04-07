@@ -111,7 +111,8 @@ apis:
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
-      - url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
+      - url: 
+          https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
         type: GitHubRepository
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/NumberVerification/r1.3/code/API_definitions/number-verification.yaml&nocors
@@ -222,7 +223,8 @@ apis:
     description: >-
       Scam Signal API allows businesses to protect their customers from
       impersonation scams, particularly Authorized Pushed Payment (APP) fraud.
-  - aid: global-system-for-mobile-communications:device-location-verification-api
+  - aid: 
+      global-system-for-mobile-communications:device-location-verification-api
     name: GSMA Camara Project Device Location Verification API
     tags:
       - Mobile
@@ -239,7 +241,8 @@ apis:
         type: Documentation
       - url: openapi/device-location-verification-api-openapi.yml
         type: OpenAPI
-      - url: bruno/GSMA Camara Project Device Location Verification API/bruno.json
+      - url: bruno/GSMA Camara Project Device Location Verification 
+          API/bruno.json
         type: BrunoCollection
       - url: >-
           https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/35240-23a17d7b-07a0-405e-896b-6c4f3f4cc8c6
@@ -464,7 +467,12 @@ apis:
       - url: >-
           https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/im7p4j1/gsma-camara-project-sms-api
         type: PostmanCollection
-    description: "SMS API provides the customer with the ability to send an SMS to a mobile phone number in use on a mobile phone device. There are 3 different categories of SMS, namely Service SMS, Promotional SMS and Transactional SMS.  The SMS API can also be used to send a binary message to a mobile phone number which is being used on an (IoT) device.\v "
+    description: >-
+      SMS API provides the customer with the ability to send an SMS to a mobile phone
+      number in use on a mobile phone device. There are 3 different categories of
+      SMS, namely Service SMS, Promotional SMS and Transactional SMS. The SMS API
+      can also be used to send a binary message to a mobile phone number which is
+      being used on an (IoT) device.
   - aid: >-
       global-system-for-mobile-communications:sms-delivery-notification-subscription-api
     name: GSMA Camara Project SMS Delivery Notification Subscription API
@@ -535,7 +543,8 @@ apis:
     humanURL: >-
       https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
     properties:
-      - url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
+      - url: 
+          https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
         type: GitHubRepository
       - url: >-
           https://github.com/camaraproject/SimpleEdgeDiscovery/blob/main/documentation/API_documentation/SimpleEdgeDiscovery_User_Story.md
@@ -584,7 +593,8 @@ apis:
       developer to have moved into a different geographical location, the
       Traffic Influence API can be invoked again to get the optimal routing in
       the new location.
-  - aid: global-system-for-mobile-communications:application-endpoint-discovery-api
+  - aid: 
+      global-system-for-mobile-communications:application-endpoint-discovery-api
     name: GSMA Camara Project Application Endpoint Discovery API
     tags:
       - Cloud
@@ -627,7 +637,8 @@ apis:
         type: GitHubRepository
       - url: openapi/edge-application-management-api-openapi.yml
         type: OpenAPI
-      - url: bruno/GSMA Camara Project Edge Application Management API/bruno.json
+      - url: bruno/GSMA Camara Project Edge Application Management 
+          API/bruno.json
         type: BrunoCollection
       - url: >-
           https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/35240-981545ec-b150-47da-a448-59c92b127a05
@@ -663,11 +674,11 @@ apis:
           https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/0m2sok6/gsma-camara-project-carrier-billing
         type: PostmanCollection
     description: >-
-      The Carrier Billing API provides programmable interface for developers and
-      other users (capabilities consumers) to charge an amount on a mobile line.
-      It can be easily integrated and allows end-users to buy digital content in
-      an easy &amp; secured way. The API provides management of a payment entity
-      and its associated lifecycle.
+      The Carrier Billing API provides programmable interface for developers and other
+      users (capabilities consumers) to charge an amount on a mobile line. It can
+      be easily integrated and allows end-users to buy digital content in an easy
+      & secured way. The API provides management of a payment entity and its associated
+      lifecycle.
 name: Global System for Mobile Communications
 tags:
   - Telecommunications

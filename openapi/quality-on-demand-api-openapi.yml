@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: GSMA Camara Project Quality on Demand API
+  title: Global System for Mobile Communications GSMA Camara Project Quality on Demand API
   description: >-
     Quality on Demand API offers the application developer the capability to
     request stable latency (reduced jitter) or minimum throughput for specified
@@ -32,7 +32,7 @@ paths:
     post:
       tags:
         - QoS Sessions
-      summary: Creates a new session
+      summary: Global System for Mobile Communications Creates a new session
       description: >
         Create QoS Session to manage latency/throughput priorities
 
@@ -165,7 +165,7 @@ paths:
     get:
       tags:
         - QoS Sessions
-      summary: Get QoS session information
+      summary: Global System for Mobile Communications Get QoS session information
       description: >
         Querying for QoS session resource information details
 
@@ -224,7 +224,7 @@ paths:
     delete:
       tags:
         - QoS Sessions
-      summary: Delete a QoS session
+      summary: Global System for Mobile Communications Delete a QoS session
       description: >
         Release resources related to QoS session
 
@@ -287,7 +287,7 @@ paths:
     post:
       tags:
         - QoS Sessions
-      summary: Extend the duration of an active session
+      summary: Global System for Mobile Communications Extend the duration of an active session
       description: >
         Extend the overall session duration of an active QoS session (with
         qosStatus = AVAILABLE).
@@ -369,7 +369,7 @@ paths:
     post:
       tags:
         - QoS Sessions
-      summary: Get QoS session information for a device
+      summary: Global System for Mobile Communications Get QoS session information for a device
       description: >
         Querying for QoS session resource information details for a device
 
