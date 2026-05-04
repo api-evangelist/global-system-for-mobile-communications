@@ -1,0 +1,210 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Global System for Mobile Communications
+providerId: global-system-for-mobile-communications
+created: '2026-05-04'
+modified: '2026-05-04'
+tags:
+  - Mobile
+  - Networking
+  - Networks
+  - Standards
+  - Telco
+  - Telecommunications
+  - Rate Limiting
+  - Quotas
+  - Throttling
+description: Machine-readable rate limit definitions for the Global System for Mobile Communications API
+  surface. Captures per-tier quotas, burst behavior, response signaling, and recovery semantics. Defaults
+  are scaffold values to be replaced with published provider limits.
+headers:
+  limit: X-RateLimit-Limit
+  remaining: X-RateLimit-Remaining
+  reset: X-RateLimit-Reset
+  retryAfter: Retry-After
+  policy: RateLimit-Policy
+responseCodes:
+  throttled: 429
+  quotaExceeded: 429
+  serviceUnavailable: 503
+limits:
+  - tier: free
+    name: Free Tier Default
+    scope: api-key
+    metric: requests_per_minute
+    limit: 10
+    burst: 20
+    timeFrame: minute
+    applies:
+      - GSMA Camara Project Call Forwarding Signal API
+      - GSMA Camara Project Device Roaming Status API
+      - GSMA Camara Project KYC Fill-In API
+      - GSMA Camara Project KYC Match API
+      - GSMA Camara Project Number Verification API
+      - GSMA Camara Project One Time Password API
+      - GSMA Camara Project SIM Swap API
+      - GSMA Camara Project SIM Swap Notification Subscription API
+      - GSMA Camara Project Scam Signal API
+      - GSMA Camara Project Device Location Verification API
+      - GSMA Camara Project Device Geofencing Subscriptions API
+      - GSMA Camara Project Device Location Retrieval API
+      - GSMA Camara Project Population Density Data API
+      - GSMA Camara Project Quality on Demand API
+      - GSMA Camara Project Connectivity Insights API
+      - GSMA Camara Project Connectivity Insights Subscriptions API
+      - GSMA Camara Project Application Profiles API
+      - GSMA Camara Project SMS API
+      - GSMA Camara Project SMS Delivery Notification Subscription API
+      - GSMA Camara Project Home Devices QoD API
+      - GSMA Camara Project Simple Edge Discovery API
+      - GSMA Camara Project Traffic Influence API
+      - GSMA Camara Project Application Endpoint Discovery API
+      - GSMA Camara Project Edge Application Management API
+      - GSMA Camara Project Carrier Billing
+  - tier: free
+    name: Free Tier Monthly Quota
+    scope: api-key
+    metric: requests_per_month
+    limit: 1000
+    timeFrame: month
+    applies:
+      - GSMA Camara Project Call Forwarding Signal API
+      - GSMA Camara Project Device Roaming Status API
+      - GSMA Camara Project KYC Fill-In API
+      - GSMA Camara Project KYC Match API
+      - GSMA Camara Project Number Verification API
+      - GSMA Camara Project One Time Password API
+      - GSMA Camara Project SIM Swap API
+      - GSMA Camara Project SIM Swap Notification Subscription API
+      - GSMA Camara Project Scam Signal API
+      - GSMA Camara Project Device Location Verification API
+      - GSMA Camara Project Device Geofencing Subscriptions API
+      - GSMA Camara Project Device Location Retrieval API
+      - GSMA Camara Project Population Density Data API
+      - GSMA Camara Project Quality on Demand API
+      - GSMA Camara Project Connectivity Insights API
+      - GSMA Camara Project Connectivity Insights Subscriptions API
+      - GSMA Camara Project Application Profiles API
+      - GSMA Camara Project SMS API
+      - GSMA Camara Project SMS Delivery Notification Subscription API
+      - GSMA Camara Project Home Devices QoD API
+      - GSMA Camara Project Simple Edge Discovery API
+      - GSMA Camara Project Traffic Influence API
+      - GSMA Camara Project Application Endpoint Discovery API
+      - GSMA Camara Project Edge Application Management API
+      - GSMA Camara Project Carrier Billing
+  - tier: professional
+    name: Professional Tier Default
+    scope: api-key
+    metric: requests_per_minute
+    limit: 100
+    burst: 200
+    timeFrame: minute
+    applies:
+      - GSMA Camara Project Call Forwarding Signal API
+      - GSMA Camara Project Device Roaming Status API
+      - GSMA Camara Project KYC Fill-In API
+      - GSMA Camara Project KYC Match API
+      - GSMA Camara Project Number Verification API
+      - GSMA Camara Project One Time Password API
+      - GSMA Camara Project SIM Swap API
+      - GSMA Camara Project SIM Swap Notification Subscription API
+      - GSMA Camara Project Scam Signal API
+      - GSMA Camara Project Device Location Verification API
+      - GSMA Camara Project Device Geofencing Subscriptions API
+      - GSMA Camara Project Device Location Retrieval API
+      - GSMA Camara Project Population Density Data API
+      - GSMA Camara Project Quality on Demand API
+      - GSMA Camara Project Connectivity Insights API
+      - GSMA Camara Project Connectivity Insights Subscriptions API
+      - GSMA Camara Project Application Profiles API
+      - GSMA Camara Project SMS API
+      - GSMA Camara Project SMS Delivery Notification Subscription API
+      - GSMA Camara Project Home Devices QoD API
+      - GSMA Camara Project Simple Edge Discovery API
+      - GSMA Camara Project Traffic Influence API
+      - GSMA Camara Project Application Endpoint Discovery API
+      - GSMA Camara Project Edge Application Management API
+      - GSMA Camara Project Carrier Billing
+  - tier: professional
+    name: Professional Tier Monthly Quota
+    scope: api-key
+    metric: requests_per_month
+    limit: 100000
+    timeFrame: month
+    applies:
+      - GSMA Camara Project Call Forwarding Signal API
+      - GSMA Camara Project Device Roaming Status API
+      - GSMA Camara Project KYC Fill-In API
+      - GSMA Camara Project KYC Match API
+      - GSMA Camara Project Number Verification API
+      - GSMA Camara Project One Time Password API
+      - GSMA Camara Project SIM Swap API
+      - GSMA Camara Project SIM Swap Notification Subscription API
+      - GSMA Camara Project Scam Signal API
+      - GSMA Camara Project Device Location Verification API
+      - GSMA Camara Project Device Geofencing Subscriptions API
+      - GSMA Camara Project Device Location Retrieval API
+      - GSMA Camara Project Population Density Data API
+      - GSMA Camara Project Quality on Demand API
+      - GSMA Camara Project Connectivity Insights API
+      - GSMA Camara Project Connectivity Insights Subscriptions API
+      - GSMA Camara Project Application Profiles API
+      - GSMA Camara Project SMS API
+      - GSMA Camara Project SMS Delivery Notification Subscription API
+      - GSMA Camara Project Home Devices QoD API
+      - GSMA Camara Project Simple Edge Discovery API
+      - GSMA Camara Project Traffic Influence API
+      - GSMA Camara Project Application Endpoint Discovery API
+      - GSMA Camara Project Edge Application Management API
+      - GSMA Camara Project Carrier Billing
+  - tier: enterprise
+    name: Enterprise Negotiated Limit
+    scope: contract
+    metric: requests_per_minute
+    limit: 1000
+    burst: 5000
+    timeFrame: minute
+    applies:
+      - GSMA Camara Project Call Forwarding Signal API
+      - GSMA Camara Project Device Roaming Status API
+      - GSMA Camara Project KYC Fill-In API
+      - GSMA Camara Project KYC Match API
+      - GSMA Camara Project Number Verification API
+      - GSMA Camara Project One Time Password API
+      - GSMA Camara Project SIM Swap API
+      - GSMA Camara Project SIM Swap Notification Subscription API
+      - GSMA Camara Project Scam Signal API
+      - GSMA Camara Project Device Location Verification API
+      - GSMA Camara Project Device Geofencing Subscriptions API
+      - GSMA Camara Project Device Location Retrieval API
+      - GSMA Camara Project Population Density Data API
+      - GSMA Camara Project Quality on Demand API
+      - GSMA Camara Project Connectivity Insights API
+      - GSMA Camara Project Connectivity Insights Subscriptions API
+      - GSMA Camara Project Application Profiles API
+      - GSMA Camara Project SMS API
+      - GSMA Camara Project SMS Delivery Notification Subscription API
+      - GSMA Camara Project Home Devices QoD API
+      - GSMA Camara Project Simple Edge Discovery API
+      - GSMA Camara Project Traffic Influence API
+      - GSMA Camara Project Application Endpoint Discovery API
+      - GSMA Camara Project Edge Application Management API
+      - GSMA Camara Project Carrier Billing
+policies:
+  - name: Backoff Strategy
+    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
+      when present.
+  - name: Burst Handling
+    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
+      before throttling engages.
+  - name: Quota Reset
+    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
+      windows reset on a sliding-window basis.
+  - name: Fair Use
+    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
+      may be subject to fair-use throttling.
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com
