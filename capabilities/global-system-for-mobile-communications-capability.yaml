@@ -1,0 +1,113 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Global System for Mobile Communications GSMA Camara Project Application Endpoint Discovery API
+  description: The Application Discovery API extends beyond the capabilities of the Simple Edge Discovery API by not only
+    locating the nearest Edge Cloud Zone but also directly linking to the application endpoints within those Edge Cloud Zones.
+  tags:
+  - Global
+  - System
+  - For
+  - Mobile
+  - Communications
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: global-system-for-mobile-communications
+    baseUri: https://localhost:443/application-endpoint-discovery/vwip
+    description: Global System for Mobile Communications GSMA Camara Project Application Endpoint Discovery API HTTP API.
+    resources:
+    - name: app-endpoints
+      path: /app-endpoints
+      operations:
+      - name: getappendpoints
+        method: GET
+        description: Global System for Mobile Communications Returns the Endpoint of the closest App Instance to user device
+          identified in the request.
+        inputParameters:
+        - name: filter
+          in: query
+          type: string
+          required: true
+          description: Filter the Edge Cloud Zones according to the parameter value. For this API the only supported value
+            is `closest`.
+        - name: IPv4-Address
+          in: header
+          type: string
+          description: The public IPv4 address allocated to the device.
+        - name: IPv6-Address
+          in: header
+          type: string
+          description: The public IPv6 address allocated to the device.
+        - name: Network-Access-Identifier
+          in: header
+          type: string
+          description: 3GPP network access identifier for the subscription being used by the device.
+        - name: Phone-Number
+          in: header
+          type: string
+          required: true
+          description: MSISDN in E.164 format (starting with country code) of the mobile subscription being used by the device.
+            Optionally prefixed with '+'.
+        - name: AppId
+          in: header
+          type: string
+          required: true
+          description: A globally unique identifier associated with the application. OP generates this identifier when the
+            application is submitted over NBI.
+        - name: X-Correlator
+          in: header
+          type: string
+          description: When the API Consumer includes the "X-Correlator" header in the request, the API provider must include
+            it in the response with the same value that was used in t
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: global-system-for-mobile-communications-rest
+    description: REST adapter for Global System for Mobile Communications GSMA Camara Project Application Endpoint Discovery
+      API.
+    resources:
+    - path: /app-endpoints
+      name: getappendpoints
+      operations:
+      - method: GET
+        name: getappendpoints
+        description: Global System for Mobile Communications Returns the Endpoint of the closest App Instance to user device
+          identified in the request.
+        call: global-system-for-mobile-communications.getappendpoints
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: global-system-for-mobile-communications-mcp
+    transport: http
+    description: MCP adapter for Global System for Mobile Communications GSMA Camara Project Application Endpoint Discovery
+      API for AI agent use.
+    tools:
+    - name: getappendpoints
+      description: Global System for Mobile Communications Returns the Endpoint of the closest App Instance to user device
+        identified in the request.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: global-system-for-mobile-communications.getappendpoints
+      with:
+        filter: tools.filter
+      inputParameters:
+      - name: filter
+        type: string
+        description: Filter the Edge Cloud Zones according to the parameter value. For this API the only supported value is
+          `closest`.
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
