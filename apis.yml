@@ -379,7 +379,7 @@ apis:
     properties:
       - url: >-
           https://github.com/camaraproject/ConnectivityInsights/releases/tag/r1.2
-        type: GitHub Repository
+        type: GitHubRepository
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/ConnectivityInsights/r1.2/code/API_definitions/connectivity-insights.yaml&nocors
         type: Documentation
@@ -406,7 +406,7 @@ apis:
     properties:
       - url: >-
           https://github.com/camaraproject/ConnectivityInsights/releases/tag/r1.2
-        type: GitHub Repository
+        type: GitHubRepository
       - url: >-
           https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/ConnectivityInsights/r1.2/code/API_definitions/connectivity-insights-subscriptions.yaml&nocors
         type: Documentation
@@ -434,7 +434,7 @@ apis:
     properties:
       - url: >-
           https://github.com/camaraproject/ConnectivityInsights/releases/tag/r1.2
-        type: GitHub Repository
+        type: GitHubRepository
       - url: openapi/application-profiles-api-openapi.yml
         type: OpenAPI
       - url: bruno/GSMA Camara Project Application Profiles API/bruno.json
