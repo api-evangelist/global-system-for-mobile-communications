@@ -1,0 +1,117 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Global System for Mobile Communications GSMA Camara Project Simple Edge Discovery — Discovery
+  description: 'Global System for Mobile Communications GSMA Camara Project Simple Edge Discovery — Discovery. 1 operations.
+    Lead operation: Global System for Mobile Communications Returns the name of the Edge Cloud Zone closest to user device
+
+    identified in the request.. Self-contained Naftiko capability covering one Global System For Mobile Communications business
+    surface.'
+  tags:
+  - Global System For Mobile Communications
+  - Discovery
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GLOBAL_SYSTEM_FOR_MOBILE_COMMUNICATIONS_API_KEY: GLOBAL_SYSTEM_FOR_MOBILE_COMMUNICATIONS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: simple-edge-discovery-discovery
+    baseUri: ''
+    description: Global System for Mobile Communications GSMA Camara Project Simple Edge Discovery — Discovery business capability.
+      Self-contained, no shared references.
+    resources:
+    - name: edge-cloud-zones
+      path: /edge-cloud-zones
+      operations:
+      - name: readclosestedgecloudzone
+        method: GET
+        description: Global System for Mobile Communications Returns the name of the Edge Cloud Zone closest to user device
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: filter
+          in: query
+          type: string
+          description: Filter the Edge Cloud Zones according to the parameter value.
+          required: true
+        - name: IPv4-Address
+          in: header
+          type: string
+          description: The public IPv4 address allocated to the device by the network operator.
+        - name: Public-port
+          in: header
+          type: string
+          description: The public TCP or UDP port allocated to the device by the network operator.
+        - name: IPv6-Address
+          in: header
+          type: string
+          description: The public IPv6 address allocated to the device by the network operator.
+        - name: Network-Access-Identifier
+          in: header
+          type: string
+          description: 3GPP network access identifier for the subscription
+        - name: Phone-Number
+          in: header
+          type: string
+          description: MSISDN in E.164 format (starting with country code) of
+        - name: x-correlator
+          in: header
+          type: string
+          description: When the API Consumer includes the "x-correlator" header in the
+  exposes:
+  - type: rest
+    namespace: simple-edge-discovery-discovery-rest
+    port: 8080
+    description: REST adapter for Global System for Mobile Communications GSMA Camara Project Simple Edge Discovery — Discovery.
+      One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/edge-cloud-zones
+      name: edge-cloud-zones
+      description: REST surface for edge-cloud-zones.
+      operations:
+      - method: GET
+        name: readclosestedgecloudzone
+        description: Global System for Mobile Communications Returns the name of the Edge Cloud Zone closest to user device
+        call: simple-edge-discovery-discovery.readclosestedgecloudzone
+        with:
+          filter: rest.filter
+          IPv4-Address: rest.IPv4-Address
+          Public-port: rest.Public-port
+          IPv6-Address: rest.IPv6-Address
+          Network-Access-Identifier: rest.Network-Access-Identifier
+          Phone-Number: rest.Phone-Number
+          x-correlator: rest.x-correlator
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: simple-edge-discovery-discovery-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Global System for Mobile Communications GSMA Camara Project Simple Edge Discovery — Discovery.
+      One tool per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: global-system-mobile-communications-returns
+      description: Global System for Mobile Communications Returns the name of the Edge Cloud Zone closest to user device
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: simple-edge-discovery-discovery.readclosestedgecloudzone
+      with:
+        filter: tools.filter
+        IPv4-Address: tools.IPv4-Address
+        Public-port: tools.Public-port
+        IPv6-Address: tools.IPv6-Address
+        Network-Access-Identifier: tools.Network-Access-Identifier
+        Phone-Number: tools.Phone-Number
+        x-correlator: tools.x-correlator
+      outputParameters:
+      - type: object
+        mapping: $.

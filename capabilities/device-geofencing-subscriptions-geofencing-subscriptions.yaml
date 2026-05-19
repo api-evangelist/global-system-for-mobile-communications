@@ -1,0 +1,161 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Global System for Mobile Communications GSMA Camara Project Device Geofencing Subscriptions API — Geofencing Subscriptions
+  description: 'Global System for Mobile Communications GSMA Camara Project Device Geofencing Subscriptions API — Geofencing
+    Subscriptions. 4 operations. Lead operation: Global System for Mobile Communications Create a geofencing subscription
+    for a device. Self-contained Naftiko capability covering one Global System For Mobile Communications business surface.'
+  tags:
+  - Global System For Mobile Communications
+  - Geofencing Subscriptions
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GLOBAL_SYSTEM_FOR_MOBILE_COMMUNICATIONS_API_KEY: GLOBAL_SYSTEM_FOR_MOBILE_COMMUNICATIONS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: device-geofencing-subscriptions-geofencing-subscriptions
+    baseUri: ''
+    description: Global System for Mobile Communications GSMA Camara Project Device Geofencing Subscriptions API — Geofencing
+      Subscriptions business capability. Self-contained, no shared references.
+    resources:
+    - name: subscriptions
+      path: /subscriptions
+      operations:
+      - name: createsubscription
+        method: POST
+        description: Global System for Mobile Communications Create a geofencing subscription for a device
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: retrievegeofencingsubscriptionlist
+        method: GET
+        description: Global System for Mobile Communications Retrieve a list of geofencing event subscription
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: subscriptions-subscriptionId
+      path: /subscriptions/{subscriptionId}
+      operations:
+      - name: retrievegeofencingsubscription
+        method: GET
+        description: Global System for Mobile Communications Operation to retrieve a subscription based on the provided ID
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deletegeofencingsubscription
+        method: DELETE
+        description: Global System for Mobile Communications Delete a Geofencing event subscription
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: device-geofencing-subscriptions-geofencing-subscriptions-rest
+    port: 8080
+    description: REST adapter for Global System for Mobile Communications GSMA Camara Project Device Geofencing Subscriptions
+      API — Geofencing Subscriptions. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/subscriptions
+      name: subscriptions
+      description: REST surface for subscriptions.
+      operations:
+      - method: POST
+        name: createsubscription
+        description: Global System for Mobile Communications Create a geofencing subscription for a device
+        call: device-geofencing-subscriptions-geofencing-subscriptions.createsubscription
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: retrievegeofencingsubscriptionlist
+        description: Global System for Mobile Communications Retrieve a list of geofencing event subscription
+        call: device-geofencing-subscriptions-geofencing-subscriptions.retrievegeofencingsubscriptionlist
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}
+      name: subscriptions-subscriptionid
+      description: REST surface for subscriptions-subscriptionId.
+      operations:
+      - method: GET
+        name: retrievegeofencingsubscription
+        description: Global System for Mobile Communications Operation to retrieve a subscription based on the provided ID
+        call: device-geofencing-subscriptions-geofencing-subscriptions.retrievegeofencingsubscription
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletegeofencingsubscription
+        description: Global System for Mobile Communications Delete a Geofencing event subscription
+        call: device-geofencing-subscriptions-geofencing-subscriptions.deletegeofencingsubscription
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: device-geofencing-subscriptions-geofencing-subscriptions-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Global System for Mobile Communications GSMA Camara Project Device Geofencing Subscriptions
+      API — Geofencing Subscriptions. One tool per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: global-system-mobile-communications-create
+      description: Global System for Mobile Communications Create a geofencing subscription for a device
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: device-geofencing-subscriptions-geofencing-subscriptions.createsubscription
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: global-system-mobile-communications-retrieve
+      description: Global System for Mobile Communications Retrieve a list of geofencing event subscription
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: device-geofencing-subscriptions-geofencing-subscriptions.retrievegeofencingsubscriptionlist
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: global-system-mobile-communications-operation
+      description: Global System for Mobile Communications Operation to retrieve a subscription based on the provided ID
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: device-geofencing-subscriptions-geofencing-subscriptions.retrievegeofencingsubscription
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: global-system-mobile-communications-delete
+      description: Global System for Mobile Communications Delete a Geofencing event subscription
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: device-geofencing-subscriptions-geofencing-subscriptions.deletegeofencingsubscription
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,79 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Global System for Mobile Communications GSMA Camara Project Home Devices QoD — Home Devices QoD
+  description: 'Global System for Mobile Communications GSMA Camara Project Home Devices QoD — Home Devices QoD. 1 operations.
+    Lead operation: Global System for Mobile Communications Set the desired QoS behaviour for a user home device. Self-contained
+    Naftiko capability covering one Global System For Mobile Communications business surface.'
+  tags:
+  - Global System For Mobile Communications
+  - Home Devices QoD
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GLOBAL_SYSTEM_FOR_MOBILE_COMMUNICATIONS_API_KEY: GLOBAL_SYSTEM_FOR_MOBILE_COMMUNICATIONS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: home-devices-qod-home-devices-qod
+    baseUri: ''
+    description: Global System for Mobile Communications GSMA Camara Project Home Devices QoD — Home Devices QoD business
+      capability. Self-contained, no shared references.
+    resources:
+    - name: qos
+      path: /qos
+      operations:
+      - name: setqos
+        method: PUT
+        description: Global System for Mobile Communications Set the desired QoS behaviour for a user home device
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: home-devices-qod-home-devices-qod-rest
+    port: 8080
+    description: REST adapter for Global System for Mobile Communications GSMA Camara Project Home Devices QoD — Home Devices
+      QoD. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/qos
+      name: qos
+      description: REST surface for qos.
+      operations:
+      - method: PUT
+        name: setqos
+        description: Global System for Mobile Communications Set the desired QoS behaviour for a user home device
+        call: home-devices-qod-home-devices-qod.setqos
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: home-devices-qod-home-devices-qod-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Global System for Mobile Communications GSMA Camara Project Home Devices QoD — Home Devices
+      QoD. One tool per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: global-system-mobile-communications-set
+      description: Global System for Mobile Communications Set the desired QoS behaviour for a user home device
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: home-devices-qod-home-devices-qod.setqos
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

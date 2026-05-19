@@ -1,0 +1,79 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Global System for Mobile Communications GSMA Camara Project SIM Swap API — Retrieve SIM Swap Date
+  description: 'Global System for Mobile Communications GSMA Camara Project SIM Swap API — Retrieve SIM Swap Date. 1 operations.
+    Lead operation: Retrieve SIM Swap Date. Self-contained Naftiko capability covering one Global System For Mobile Communications
+    business surface.'
+  tags:
+  - Global System For Mobile Communications
+  - Retrieve SIM Swap Date
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GLOBAL_SYSTEM_FOR_MOBILE_COMMUNICATIONS_API_KEY: GLOBAL_SYSTEM_FOR_MOBILE_COMMUNICATIONS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: sim-swap-retrieve-sim-swap-date
+    baseUri: ''
+    description: Global System for Mobile Communications GSMA Camara Project SIM Swap API — Retrieve SIM Swap Date business
+      capability. Self-contained, no shared references.
+    resources:
+    - name: retrieve-date
+      path: /retrieve-date
+      operations:
+      - name: retrievesimswapdate
+        method: POST
+        description: Get timestamp of last SIM swap event for a mobile user account provided with phone number.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: sim-swap-retrieve-sim-swap-date-rest
+    port: 8080
+    description: REST adapter for Global System for Mobile Communications GSMA Camara Project SIM Swap API — Retrieve SIM
+      Swap Date. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/retrieve-date
+      name: retrieve-date
+      description: REST surface for retrieve-date.
+      operations:
+      - method: POST
+        name: retrievesimswapdate
+        description: Get timestamp of last SIM swap event for a mobile user account provided with phone number.
+        call: sim-swap-retrieve-sim-swap-date.retrievesimswapdate
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: sim-swap-retrieve-sim-swap-date-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Global System for Mobile Communications GSMA Camara Project SIM Swap API — Retrieve SIM Swap
+      Date. One tool per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: get-timestamp-last-sim-swap
+      description: Get timestamp of last SIM swap event for a mobile user account provided with phone number.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: sim-swap-retrieve-sim-swap-date.retrievesimswapdate
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

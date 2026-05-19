@@ -1,0 +1,79 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Global System for Mobile Communications GSMA Camara Project SMS API — Send SMS
+  description: 'Global System for Mobile Communications GSMA Camara Project SMS API — Send SMS. 1 operations. Lead operation:
+    Global System for Mobile Communications Send SMS. Self-contained Naftiko capability covering one Global System For Mobile
+    Communications business surface.'
+  tags:
+  - Global System For Mobile Communications
+  - Send SMS
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GLOBAL_SYSTEM_FOR_MOBILE_COMMUNICATIONS_API_KEY: GLOBAL_SYSTEM_FOR_MOBILE_COMMUNICATIONS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: sms-send-sms
+    baseUri: ''
+    description: Global System for Mobile Communications GSMA Camara Project SMS API — Send SMS business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: short-message
+      path: /short-message
+      operations:
+      - name: sendsms
+        method: POST
+        description: Global System for Mobile Communications Send SMS
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: sms-send-sms-rest
+    port: 8080
+    description: REST adapter for Global System for Mobile Communications GSMA Camara Project SMS API — Send SMS. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/short-message
+      name: short-message
+      description: REST surface for short-message.
+      operations:
+      - method: POST
+        name: sendsms
+        description: Global System for Mobile Communications Send SMS
+        call: sms-send-sms.sendsms
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: sms-send-sms-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Global System for Mobile Communications GSMA Camara Project SMS API — Send SMS. One tool
+      per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: global-system-mobile-communications-send
+      description: Global System for Mobile Communications Send SMS
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: sms-send-sms.sendsms
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

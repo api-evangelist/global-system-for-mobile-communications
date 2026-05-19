@@ -1,0 +1,250 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Global System for Mobile Communications GSMA Camara Project Quality on Demand API — QoS Sessions
+  description: 'Global System for Mobile Communications GSMA Camara Project Quality on Demand API — QoS Sessions. 5 operations.
+    Lead operation: Global System for Mobile Communications Get QoS session information for a device. Self-contained Naftiko
+    capability covering one Global System For Mobile Communications business surface.'
+  tags:
+  - Global System For Mobile Communications
+  - QoS Sessions
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GLOBAL_SYSTEM_FOR_MOBILE_COMMUNICATIONS_API_KEY: GLOBAL_SYSTEM_FOR_MOBILE_COMMUNICATIONS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: quality-on-demand-qos-sessions
+    baseUri: ''
+    description: Global System for Mobile Communications GSMA Camara Project Quality on Demand API — QoS Sessions business
+      capability. Self-contained, no shared references.
+    resources:
+    - name: retrieve-sessions
+      path: /retrieve-sessions
+      operations:
+      - name: retrievesessionsbydevice
+        method: POST
+        description: Global System for Mobile Communications Get QoS session information for a device
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: sessions
+      path: /sessions
+      operations:
+      - name: createsession
+        method: POST
+        description: Global System for Mobile Communications Creates a new session
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: sessions-sessionId
+      path: /sessions/{sessionId}
+      operations:
+      - name: getsession
+        method: GET
+        description: Global System for Mobile Communications Get QoS session information
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: sessionId
+          in: path
+          type: string
+          description: Session ID that was obtained from the createSession operation
+          required: true
+      - name: deletesession
+        method: DELETE
+        description: Global System for Mobile Communications Delete a QoS session
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: sessionId
+          in: path
+          type: string
+          description: Session ID that was obtained from the createSession operation
+          required: true
+    - name: sessions-sessionId-extend
+      path: /sessions/{sessionId}/extend
+      operations:
+      - name: extendqossessionduration
+        method: POST
+        description: Global System for Mobile Communications Extend the duration of an active session
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: sessionId
+          in: path
+          type: string
+          description: Session ID that was obtained from the createSession operation
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.GLOBAL_SYSTEM_FOR_MOBILE_COMMUNICATIONS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: quality-on-demand-qos-sessions-rest
+    port: 8080
+    description: REST adapter for Global System for Mobile Communications GSMA Camara Project Quality on Demand API — QoS
+      Sessions. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/retrieve-sessions
+      name: retrieve-sessions
+      description: REST surface for retrieve-sessions.
+      operations:
+      - method: POST
+        name: retrievesessionsbydevice
+        description: Global System for Mobile Communications Get QoS session information for a device
+        call: quality-on-demand-qos-sessions.retrievesessionsbydevice
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/sessions
+      name: sessions
+      description: REST surface for sessions.
+      operations:
+      - method: POST
+        name: createsession
+        description: Global System for Mobile Communications Creates a new session
+        call: quality-on-demand-qos-sessions.createsession
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/sessions/{sessionid}
+      name: sessions-sessionid
+      description: REST surface for sessions-sessionId.
+      operations:
+      - method: GET
+        name: getsession
+        description: Global System for Mobile Communications Get QoS session information
+        call: quality-on-demand-qos-sessions.getsession
+        with:
+          sessionId: rest.sessionId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletesession
+        description: Global System for Mobile Communications Delete a QoS session
+        call: quality-on-demand-qos-sessions.deletesession
+        with:
+          sessionId: rest.sessionId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/sessions/{sessionid}/extend
+      name: sessions-sessionid-extend
+      description: REST surface for sessions-sessionId-extend.
+      operations:
+      - method: POST
+        name: extendqossessionduration
+        description: Global System for Mobile Communications Extend the duration of an active session
+        call: quality-on-demand-qos-sessions.extendqossessionduration
+        with:
+          sessionId: rest.sessionId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: quality-on-demand-qos-sessions-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Global System for Mobile Communications GSMA Camara Project Quality on Demand API — QoS Sessions.
+      One tool per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: global-system-mobile-communications-get
+      description: Global System for Mobile Communications Get QoS session information for a device
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: quality-on-demand-qos-sessions.retrievesessionsbydevice
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: global-system-mobile-communications-creates
+      description: Global System for Mobile Communications Creates a new session
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: quality-on-demand-qos-sessions.createsession
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: global-system-mobile-communications-get-2
+      description: Global System for Mobile Communications Get QoS session information
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: quality-on-demand-qos-sessions.getsession
+      with:
+        sessionId: tools.sessionId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: global-system-mobile-communications-delete
+      description: Global System for Mobile Communications Delete a QoS session
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: quality-on-demand-qos-sessions.deletesession
+      with:
+        sessionId: tools.sessionId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: global-system-mobile-communications-extend
+      description: Global System for Mobile Communications Extend the duration of an active session
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: quality-on-demand-qos-sessions.extendqossessionduration
+      with:
+        sessionId: tools.sessionId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

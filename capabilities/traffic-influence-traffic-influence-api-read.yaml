@@ -1,0 +1,113 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Global System for Mobile Communications GSMA Camara Project Traffic Influence API — Traffic Influence API Read
+  description: 'Global System for Mobile Communications GSMA Camara Project Traffic Influence API — Traffic Influence API
+    Read. 2 operations. Lead operation: Global System for Mobile Communications Retries existing TrafficInfluence Resources.
+    Self-contained Naftiko capability covering one Global System For Mobile Communications business surface.'
+  tags:
+  - Global System For Mobile Communications
+  - Traffic Influence API Read
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GLOBAL_SYSTEM_FOR_MOBILE_COMMUNICATIONS_API_KEY: GLOBAL_SYSTEM_FOR_MOBILE_COMMUNICATIONS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: traffic-influence-traffic-influence-api-read
+    baseUri: ''
+    description: Global System for Mobile Communications GSMA Camara Project Traffic Influence API — Traffic Influence API
+      Read business capability. Self-contained, no shared references.
+    resources:
+    - name: traffic-influences
+      path: /traffic-influences
+      operations:
+      - name: gettrafficinfluence
+        method: GET
+        description: Global System for Mobile Communications Retries existing TrafficInfluence Resources
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: appId
+          in: query
+          type: string
+          description: Used to select traffic influence resources filtered by appId
+    - name: traffic-influences-trafficInfluenceID
+      path: /traffic-influences/{trafficInfluenceID}
+      operations:
+      - name: getalltrafficinfluences
+        method: GET
+        description: Global System for Mobile Communications Reads a specific TrafficInfluence resource identified by the
+          trafficInfluenceID value.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: traffic-influence-traffic-influence-api-read-rest
+    port: 8080
+    description: REST adapter for Global System for Mobile Communications GSMA Camara Project Traffic Influence API — Traffic
+      Influence API Read. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/traffic-influences
+      name: traffic-influences
+      description: REST surface for traffic-influences.
+      operations:
+      - method: GET
+        name: gettrafficinfluence
+        description: Global System for Mobile Communications Retries existing TrafficInfluence Resources
+        call: traffic-influence-traffic-influence-api-read.gettrafficinfluence
+        with:
+          appId: rest.appId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/traffic-influences/{trafficinfluenceid}
+      name: traffic-influences-trafficinfluenceid
+      description: REST surface for traffic-influences-trafficInfluenceID.
+      operations:
+      - method: GET
+        name: getalltrafficinfluences
+        description: Global System for Mobile Communications Reads a specific TrafficInfluence resource identified by the
+          trafficInfluenceID value.
+        call: traffic-influence-traffic-influence-api-read.getalltrafficinfluences
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: traffic-influence-traffic-influence-api-read-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Global System for Mobile Communications GSMA Camara Project Traffic Influence API — Traffic
+      Influence API Read. One tool per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: global-system-mobile-communications-retries
+      description: Global System for Mobile Communications Retries existing TrafficInfluence Resources
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: traffic-influence-traffic-influence-api-read.gettrafficinfluence
+      with:
+        appId: tools.appId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: global-system-mobile-communications-reads
+      description: Global System for Mobile Communications Reads a specific TrafficInfluence resource identified by the trafficInfluenceID
+        value.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: traffic-influence-traffic-influence-api-read.getalltrafficinfluences
+      outputParameters:
+      - type: object
+        mapping: $.

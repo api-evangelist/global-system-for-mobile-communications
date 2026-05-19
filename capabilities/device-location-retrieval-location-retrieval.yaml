@@ -1,0 +1,79 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Global System for Mobile Communications GSMA Camara Project Device Location Retrieval API — Location Retrieval
+  description: 'Global System for Mobile Communications GSMA Camara Project Device Location Retrieval API — Location Retrieval.
+    1 operations. Lead operation: Global System for Mobile Communications Execute location retrieval for a user equipment.
+    Self-contained Naftiko capability covering one Global System For Mobile Communications business surface.'
+  tags:
+  - Global System For Mobile Communications
+  - Location Retrieval
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GLOBAL_SYSTEM_FOR_MOBILE_COMMUNICATIONS_API_KEY: GLOBAL_SYSTEM_FOR_MOBILE_COMMUNICATIONS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: device-location-retrieval-location-retrieval
+    baseUri: ''
+    description: Global System for Mobile Communications GSMA Camara Project Device Location Retrieval API — Location Retrieval
+      business capability. Self-contained, no shared references.
+    resources:
+    - name: retrieve
+      path: /retrieve
+      operations:
+      - name: retrievelocation
+        method: POST
+        description: Global System for Mobile Communications Execute location retrieval for a user equipment
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: device-location-retrieval-location-retrieval-rest
+    port: 8080
+    description: REST adapter for Global System for Mobile Communications GSMA Camara Project Device Location Retrieval API
+      — Location Retrieval. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/retrieve
+      name: retrieve
+      description: REST surface for retrieve.
+      operations:
+      - method: POST
+        name: retrievelocation
+        description: Global System for Mobile Communications Execute location retrieval for a user equipment
+        call: device-location-retrieval-location-retrieval.retrievelocation
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: device-location-retrieval-location-retrieval-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Global System for Mobile Communications GSMA Camara Project Device Location Retrieval API
+      — Location Retrieval. One tool per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: global-system-mobile-communications-execute
+      description: Global System for Mobile Communications Execute location retrieval for a user equipment
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: device-location-retrieval-location-retrieval.retrievelocation
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

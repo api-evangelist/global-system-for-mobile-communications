@@ -1,0 +1,313 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Global System for Mobile Communications GSMA Camara Project Edge Application Management API — Application
+  description: 'Global System for Mobile Communications GSMA Camara Project Edge Application Management API — Application.
+    7 operations. Lead operation: Global System for Mobile Communications Instantiation of an Application. Self-contained
+    Naftiko capability covering one Global System For Mobile Communications business surface.'
+  tags:
+  - Global System For Mobile Communications
+  - Application
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GLOBAL_SYSTEM_FOR_MOBILE_COMMUNICATIONS_API_KEY: GLOBAL_SYSTEM_FOR_MOBILE_COMMUNICATIONS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: edge-application-management-application
+    baseUri: ''
+    description: Global System for Mobile Communications GSMA Camara Project Edge Application Management API — Application
+      business capability. Self-contained, no shared references.
+    resources:
+    - name: appinstances
+      path: /appinstances
+      operations:
+      - name: createappinstance
+        method: POST
+        description: Global System for Mobile Communications Instantiation of an Application
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: getappinstance
+        method: GET
+        description: Global System for Mobile Communications Retrieve the information of Application Instances for a given
+          App
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: appId
+          in: query
+          type: string
+          description: A globally unique identifier associated with
+        - name: appInstanceId
+          in: query
+          type: string
+          description: A globally unique identifier associated with a running
+        - name: region
+          in: query
+          type: string
+          description: Human readable name of the geographical Edge Cloud Region of
+    - name: appinstances-appInstanceId
+      path: /appinstances/{appInstanceId}
+      operations:
+      - name: deleteappinstance
+        method: DELETE
+        description: Global System for Mobile Communications Terminate an Application Instance
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: appInstanceId
+          in: path
+          type: string
+          description: Identificator of the specific application instance
+          required: true
+    - name: apps
+      path: /apps
+      operations:
+      - name: submitapp
+        method: POST
+        description: Global System for Mobile Communications Submit application metadata to the Edge Cloud Provider.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: getapps
+        method: GET
+        description: Global System for Mobile Communications Retrieve a list of existing Applications
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: apps-appId
+      path: /apps/{appId}
+      operations:
+      - name: getapp
+        method: GET
+        description: Global System for Mobile Communications Retrieve the information of an Application
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: appId
+          in: path
+          type: string
+          description: A globally unique identifier associated with the
+          required: true
+      - name: deleteapp
+        method: DELETE
+        description: Global System for Mobile Communications Delete an Application from an Edge Cloud Provider
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: appId
+          in: path
+          type: string
+          description: Identificator of the application to be
+          required: true
+  exposes:
+  - type: rest
+    namespace: edge-application-management-application-rest
+    port: 8080
+    description: REST adapter for Global System for Mobile Communications GSMA Camara Project Edge Application Management
+      API — Application. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/appinstances
+      name: appinstances
+      description: REST surface for appinstances.
+      operations:
+      - method: POST
+        name: createappinstance
+        description: Global System for Mobile Communications Instantiation of an Application
+        call: edge-application-management-application.createappinstance
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: getappinstance
+        description: Global System for Mobile Communications Retrieve the information of Application Instances for a given
+          App
+        call: edge-application-management-application.getappinstance
+        with:
+          appId: rest.appId
+          appInstanceId: rest.appInstanceId
+          region: rest.region
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/appinstances/{appinstanceid}
+      name: appinstances-appinstanceid
+      description: REST surface for appinstances-appInstanceId.
+      operations:
+      - method: DELETE
+        name: deleteappinstance
+        description: Global System for Mobile Communications Terminate an Application Instance
+        call: edge-application-management-application.deleteappinstance
+        with:
+          appInstanceId: rest.appInstanceId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/apps
+      name: apps
+      description: REST surface for apps.
+      operations:
+      - method: POST
+        name: submitapp
+        description: Global System for Mobile Communications Submit application metadata to the Edge Cloud Provider.
+        call: edge-application-management-application.submitapp
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: getapps
+        description: Global System for Mobile Communications Retrieve a list of existing Applications
+        call: edge-application-management-application.getapps
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/apps/{appid}
+      name: apps-appid
+      description: REST surface for apps-appId.
+      operations:
+      - method: GET
+        name: getapp
+        description: Global System for Mobile Communications Retrieve the information of an Application
+        call: edge-application-management-application.getapp
+        with:
+          appId: rest.appId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deleteapp
+        description: Global System for Mobile Communications Delete an Application from an Edge Cloud Provider
+        call: edge-application-management-application.deleteapp
+        with:
+          appId: rest.appId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: edge-application-management-application-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Global System for Mobile Communications GSMA Camara Project Edge Application Management API
+      — Application. One tool per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: global-system-mobile-communications-instantiation
+      description: Global System for Mobile Communications Instantiation of an Application
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: edge-application-management-application.createappinstance
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: global-system-mobile-communications-retrieve
+      description: Global System for Mobile Communications Retrieve the information of Application Instances for a given App
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: edge-application-management-application.getappinstance
+      with:
+        appId: tools.appId
+        appInstanceId: tools.appInstanceId
+        region: tools.region
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: global-system-mobile-communications-terminate
+      description: Global System for Mobile Communications Terminate an Application Instance
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: edge-application-management-application.deleteappinstance
+      with:
+        appInstanceId: tools.appInstanceId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: global-system-mobile-communications-submit
+      description: Global System for Mobile Communications Submit application metadata to the Edge Cloud Provider.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: edge-application-management-application.submitapp
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: global-system-mobile-communications-retrieve-2
+      description: Global System for Mobile Communications Retrieve a list of existing Applications
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: edge-application-management-application.getapps
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: global-system-mobile-communications-retrieve-3
+      description: Global System for Mobile Communications Retrieve the information of an Application
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: edge-application-management-application.getapp
+      with:
+        appId: tools.appId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: global-system-mobile-communications-delete
+      description: Global System for Mobile Communications Delete an Application from an Edge Cloud Provider
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: edge-application-management-application.deleteapp
+      with:
+        appId: tools.appId
+      outputParameters:
+      - type: object
+        mapping: $.

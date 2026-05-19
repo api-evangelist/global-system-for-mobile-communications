@@ -1,0 +1,85 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Global System for Mobile Communications GSMA Camara Project Call Forwarding Signal API — Call Forwarding Information
+    Retrieval
+  description: 'Global System for Mobile Communications GSMA Camara Project Call Forwarding Signal API — Call Forwarding Information
+    Retrieval. 1 operations. Lead operation: Global System for Mobile Communications Retrieve the information about the type
+    of call forwarding service active on a phone number (PhoneNumber). Self-contained Naftiko capability covering one Global
+    System For Mobile Communications business'
+  tags:
+  - Global System For Mobile Communications
+  - Call Forwarding Information Retrieval
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GLOBAL_SYSTEM_FOR_MOBILE_COMMUNICATIONS_API_KEY: GLOBAL_SYSTEM_FOR_MOBILE_COMMUNICATIONS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: call-forwarding-signal-call-forwarding-information-retrieval
+    baseUri: ''
+    description: Global System for Mobile Communications GSMA Camara Project Call Forwarding Signal API — Call Forwarding
+      Information Retrieval business capability. Self-contained, no shared references.
+    resources:
+    - name: call-forwardings
+      path: /call-forwardings
+      operations:
+      - name: retrievecallforwarding
+        method: POST
+        description: Global System for Mobile Communications Retrieve the information about the type of call forwarding service
+          active on a phone number (PhoneNumber)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: call-forwarding-signal-call-forwarding-information-retrieval-rest
+    port: 8080
+    description: REST adapter for Global System for Mobile Communications GSMA Camara Project Call Forwarding Signal API —
+      Call Forwarding Information Retrieval. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/call-forwardings
+      name: call-forwardings
+      description: REST surface for call-forwardings.
+      operations:
+      - method: POST
+        name: retrievecallforwarding
+        description: Global System for Mobile Communications Retrieve the information about the type of call forwarding service
+          active on a phone number (PhoneNumber)
+        call: call-forwarding-signal-call-forwarding-information-retrieval.retrievecallforwarding
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: call-forwarding-signal-call-forwarding-information-retrieval-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Global System for Mobile Communications GSMA Camara Project Call Forwarding Signal API —
+      Call Forwarding Information Retrieval. One tool per consumed operation, routed inline through this capability's consumes
+      block.
+    tools:
+    - name: global-system-mobile-communications-retrieve
+      description: Global System for Mobile Communications Retrieve the information about the type of call forwarding service
+        active on a phone number (PhoneNumber)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: call-forwarding-signal-call-forwarding-information-retrieval.retrievecallforwarding
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
