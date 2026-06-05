@@ -1,651 +1,662 @@
-# Global System for Mobile Communications (GSMA) (global-system-for-mobile-communications)
+# Global System for Mobile Communications (global-system-for-mobile-communications)
 
-We unite over 1000 mobile operators and businesses across the ecosystem and
-related industries to advance innovation and reduce inequalities around the
-world.
+We unite over 1000 mobile operators and businesses across the ecosystem and related industries to advance innovation and reduce inequalities around the world.
 
-**URL:** [Visit APIs.json URL](
-https://raw.githubusercontent.com/api-evangelist/global-system-for-mobile-communications/refs/heads/main/apis.yml)
+**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/global-system-for-mobile-communications/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/global-system-for-mobile-communications/refs/heads/main/apis.yml)
 
 ## Scope
 
-- **Type:** Index 
-- **Position:** Consuming 
-- **Access:** 3rd-Party 
+- **Type:** Index
+- **Position:** Consuming
+- **Access:** 3rd-Party
 
-## Tags:
+## Tags
 
- - Telecommunications, Telco, Standards, Networks, Networking, Mobile
+- Mobile
+- Networking
+- Networks
+- Standards
+- Telco
+- Telecommunications
 
 ## Timestamps
 
-- **Created:** 2024-12-03 
-- **Modified:** 2024-12-04 
+- **Created:** 2024-12-03T00:00:00.000Z
+- **Modified:** 2026-05-19
 
 ## APIs
 
 ### GSMA Camara Project Call Forwarding Signal API
 
-Call Forwarding Signal API can be used to determine if a specific mobile
-Phone Number has an active call forwarding setup.
+Call Forwarding Signal API can be used to determine if a specific mobile Phone Number has an active call forwarding setup.
 
-**Human URL:** [
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
+- **Human URL:** [https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
 
+#### Tags
 
-#### Tags:
-
- - Anti Fraud, Subscribers, Identity
+- Anti Fraud
+- Identity
+- Subscribers
 
 #### Properties
 
-- [GitHubRepository](
-https://github.com/camaraproject/CallForwardingSignal/releases/tag/r1.3)
-- [Documentation](
-https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/CallForwardingSignal/r1.3/code/API_definitions/call-forwarding-signal.yaml&nocors)
-- [OpenAPI](openapi/call-forwarding-signal-api-openapi.yml)
-- [BrunoCollection](bruno/GSMA Camara Project Call Forwarding Signal API/bruno.json)
-- [PostmanCollection](
-https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/35240-bd9acd12-585e-4c28-ba61-6ee7a91f55d0)
+- [GitHub Repository](https://github.com/camaraproject/CallForwardingSignal/releases/tag/r1.3)
+- [Documentation](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/CallForwardingSignal/r1.3/code/API_definitions/call-forwarding-signal.yaml&nocors)
+- [OpenAPI](openapi/call-forwarding-signal-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/call-forwarding-signal-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/call-forwarding-signal-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Bruno Collection](bruno/GSMA Camara Project Call Forwarding Signal API/bruno.json)
+- [Postman Collection](https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/35240-bd9acd12-585e-4c28-ba61-6ee7a91f55d0) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+
 ### GSMA Camara Project Device Roaming Status API
 
-Device Roaming Status API checks whether a certain user device is roaming
-and if so, the country it is in.
+Device Roaming Status API checks whether a certain user device is roaming and if so, the country it is in.
 
-**Human URL:** [
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
+- **Human URL:** [https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
 
+#### Tags
 
-#### Tags:
-
- - Anti Fraud, Subscribers, Identity, Roaming, Status
+- Anti Fraud
+- Identity
+- Roaming
+- Status
+- Subscribers
 
 #### Properties
 
-- [GitHubRepository](https://github.com/camaraproject/DeviceStatus/releases/tag/r1.3)
-- [Documentation](
-https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/DeviceStatus/r1.3/code/API_definitions/device-roaming-status.yaml&nocors)
-- [OpenAPI](openapi/device-roaming-status-api-openapi.yml)
-- [BrunoCollection](bruno/GSMA Camara Project Device Roaming Status/bruno.json)
-- [PostmanCollection](
-https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/wgatuug/gsma-camara-project-device-roaming-status)
+- [GitHub Repository](https://github.com/camaraproject/DeviceStatus/releases/tag/r1.3)
+- [Documentation](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/DeviceStatus/r1.3/code/API_definitions/device-roaming-status.yaml&nocors)
+- [OpenAPI](openapi/device-roaming-status-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/device-roaming-status-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/device-roaming-status-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Bruno Collection](bruno/GSMA Camara Project Device Roaming Status/bruno.json)
+- [Postman Collection](https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/wgatuug/gsma-camara-project-device-roaming-status) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+
 ### GSMA Camara Project KYC Fill-In API
 
-KYC Fill-In API is used to request and receive information that has been
-verified by the end users Mobile Operator in their KYC records. The
-information can include mobile phone number, name, postal code, address,
-birthdate, email address etc.
+KYC Fill-In API is used to request and receive information that has been verified by the end users Mobile Operator in their KYC records. The information can include mobile phone number, name, postal code, address, birthdate, email address etc.
 
-**Human URL:** [
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
+- **Human URL:** [https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
 
+#### Tags
 
-#### Tags:
-
- - Anti Fraud, Subscribers, Identity, KYC
+- Anti Fraud
+- Identity
+- KYC
+- Subscribers
 
 #### Properties
 
-- [GitHubRepository](https://github.com/camaraproject/KnowYourCustomer/releases/tag/r1.3)
-- [Documentation](
-https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors)
-- [OpenAPI](openapi/kyc-fill-in-api-openapi.yml)
+- [GitHub Repository](https://github.com/camaraproject/KnowYourCustomer/releases/tag/r1.3)
+- [Documentation](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors)
+- [OpenAPI](openapi/kyc-fill-in-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/kyc-fill-in-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/kyc-fill-in-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+
 ### GSMA Camara Project KYC Match API
 
-KYC Match API provides the ability to compare the information the API
-customer has for a particular user with that on file and verified by the
-users Mobile Network Operator in their own KYC records.
+KYC Match API provides the ability to compare the information the API customer has for a particular user with that on file and verified by the users Mobile Network Operator in their own KYC records.
 
-**Human URL:** [
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
+- **Human URL:** [https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
 
+#### Tags
 
-#### Tags:
-
- - Anti Fraud, Subscribers, Identity, KYC
+- Anti Fraud
+- Identity
+- KYC
+- Subscribers
 
 #### Properties
 
-- [GitHubRepository](https://github.com/camaraproject/KnowYourCustomer/releases/tag/r1.3)
-- [Documentation](
-https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors)
-- [OpenAPI](openapi/kyc-match-openapi.yml)
-- [BrunoCollection](bruno/GSMA Camara Project Know Your Customer Match/bruno.json)
-- [PostmanCollection](none)
+- [GitHub Repository](https://github.com/camaraproject/KnowYourCustomer/releases/tag/r1.3)
+- [Documentation](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors)
+- [OpenAPI](openapi/kyc-match-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/kyc-match.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/kyc-match.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Bruno Collection](bruno/GSMA Camara Project Know Your Customer Match/bruno.json)
+- [Postman Collection](none) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+
 ### GSMA Camara Project Number Verification API
 
-Number Verification API enables the seamless authentication of a mobile
-device by verifying that the provided mobile phone number is the one used
-in the device.
+Number Verification API enables the seamless authentication of a mobile device by verifying that the provided mobile phone number is the one used in the device.
 
-**Human URL:** [
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
+- **Human URL:** [https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
 
+#### Tags
 
-#### Tags:
-
- - Anti Fraud, Subscribers, Identity, Numbers, Verification
+- Anti Fraud
+- Identity
+- Numbers
+- Subscribers
+- Verification
 
 #### Properties
 
-- [GitHubRepository](https://github.com/camaraproject/NumberVerification/releases/tag/r1.3)
-- [Documentation](
-https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/NumberVerification/r1.3/code/API_definitions/number-verification.yaml&nocors)
-- [OpenAPI](openapi/number-verification-api-openapi.yml)
-- [BrunoCollection](bruno/GSMA Camara Project Number Verification/bruno.json)
-- [PostmanCollection](
-https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/lvrdn91/gsma-camara-project-number-verification)
+- [GitHub Repository](https://github.com/camaraproject/NumberVerification/releases/tag/r1.3)
+- [Documentation](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/NumberVerification/r1.3/code/API_definitions/number-verification.yaml&nocors)
+- [OpenAPI](openapi/number-verification-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/number-verification-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/number-verification-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Bruno Collection](bruno/GSMA Camara Project Number Verification/bruno.json)
+- [Postman Collection](https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/lvrdn91/gsma-camara-project-number-verification) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+
 ### GSMA Camara Project One Time Password API
 
-One Time Password API delivers a short-lived one-time password to a mobile
-phone number via SMS. The API then validates the code as input by the
-end-user into the service, to verify proof of possession.
+One Time Password API delivers a short-lived one-time password to a mobile phone number via SMS. The API then validates the code as input by the end-user into the service, to verify proof of possession.
 
-**Human URL:** [
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
+- **Human URL:** [https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
 
+#### Tags
 
-#### Tags:
-
- - Anti Fraud, Subscribers, Identity, Passwords
+- Anti Fraud
+- Identity
+- Passwords
+- Subscribers
 
 #### Properties
 
-- [GitHubRepository](https://github.com/camaraproject/OTPValidation/releases/tag/r1.2)
-- [Documentation](
-https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r1.2/code/API_definitions/one-time-password-sms.yaml&nocors)
-- [OpenAPI](openapi/one-time-password-api-openapi.yml)
-- [BrunoCollection](bruno/GSMA Camara Project One Time Password SMS/bruno.json)
-- [PostmanCollection](
-https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/lm2bnug/gsma-camara-project-one-time-password-sms)
+- [GitHub Repository](https://github.com/camaraproject/OTPValidation/releases/tag/r1.2)
+- [Documentation](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r1.2/code/API_definitions/one-time-password-sms.yaml&nocors)
+- [OpenAPI](openapi/one-time-password-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/one-time-password-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/one-time-password-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Bruno Collection](bruno/GSMA Camara Project One Time Password SMS/bruno.json)
+- [Postman Collection](https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/lm2bnug/gsma-camara-project-one-time-password-sms) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+
 ### GSMA Camara Project SIM Swap API
 
-SIM Swap API checks the last date that the SIM card associated with a
-mobile phone number has changed. The response may be a timestamp or a
-yes/no for a defined period (e.g. last 24h).
+SIM Swap API checks the last date that the SIM card associated with a mobile phone number has changed. The response may be a timestamp or a yes/no for a defined period (e.g. last 24h).
 
-**Human URL:** [
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
+- **Human URL:** [https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
 
+#### Tags
 
-#### Tags:
-
- - Anti Fraud, Subscribers, SIM, Swaps
+- Anti Fraud
+- SIM
+- Subscribers
+- Swaps
 
 #### Properties
 
-- [GitHubRepository](https://github.com/camaraproject/SimSwap/releases/tag/r1.3)
-- [Documentation](
-https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/SimSwap/r1.3/code/API_definitions/sim-swap.yaml&nocors)
-- [OpenAPI](openapi/sim-swap-api-openapi.yml)
-- [BrunoCollection](bruno/GSMA Camara Project SIM Swap API/bruno.json)
-- [PostmanCollection](
-https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/1ohhvf0/gsma-camara-project-sim-swap-api)
+- [GitHub Repository](https://github.com/camaraproject/SimSwap/releases/tag/r1.3)
+- [Documentation](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/SimSwap/r1.3/code/API_definitions/sim-swap.yaml&nocors)
+- [OpenAPI](openapi/sim-swap-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/sim-swap-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/sim-swap-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Bruno Collection](bruno/GSMA Camara Project SIM Swap API/bruno.json)
+- [Postman Collection](https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/1ohhvf0/gsma-camara-project-sim-swap-api) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+
 ### GSMA Camara Project SIM Swap Notification Subscription API
 
-SIM Swap Notification Subscription enables subscription to notifications
-related to SIM Swap events, reporting a change in the SIM card associated
-with a mobile phone number. A SIM Swap event often responds to legitimate
-device upgrades or replacements but is also susceptible to abuse through
-fraudulent activities.
+SIM Swap Notification Subscription enables subscription to notifications related to SIM Swap events, reporting a change in the SIM card associated with a mobile phone number. A SIM Swap event often responds to legitimate device upgrades or replacements but is also susceptible to abuse through fraudulent activities.
 
-**Human URL:** [
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
+- **Human URL:** [https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
 
+#### Tags
 
-#### Tags:
-
- - Anti Fraud, Subscribers, SIM, Swaps
+- Anti Fraud
+- SIM
+- Subscribers
+- Swaps
 
 #### Properties
 
-- [GitHubRepository](https://github.com/camaraproject/SimSwap/releases/tag/r1.3)
-- [Documentation](
-https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/SimSwap/r1.3/code/API_definitions/sim-swap.yaml&nocors)
-- [OpenAPI](openapi/sim-swap-notification-subscription-api-openapi.yml)
-- [BrunoCollection](
-bruno/GSMA Camara Project SIM Swap Notification Subscription
-API/bruno.json)
-- [PostmanCollection](
-https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/t35i4sr/gsma-camara-project-sms-delivery-notification-subscription-api)
+- [GitHub Repository](https://github.com/camaraproject/SimSwap/releases/tag/r1.3)
+- [Documentation](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/SimSwap/r1.3/code/API_definitions/sim-swap.yaml&nocors)
+- [OpenAPI](openapi/sim-swap-notification-subscription-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/sim-swap-notification-subscription-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/sim-swap-notification-subscription-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Bruno Collection](bruno/GSMA Camara Project SIM Swap Notification Subscription API/bruno.json)
+- [Postman Collection](https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/t35i4sr/gsma-camara-project-sms-delivery-notification-subscription-api) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+
 ### GSMA Camara Project Scam Signal API
 
-Scam Signal API allows businesses to protect their customers from
-impersonation scams, particularly Authorized Pushed Payment (APP) fraud.
+Scam Signal API allows businesses to protect their customers from impersonation scams, particularly Authorized Pushed Payment (APP) fraud.
 
-**Human URL:** [
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
+- **Human URL:** [https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
 
+#### Tags
 
-#### Tags:
+- Anti Fraud
+- Scams
+- Signals
+- Subscribers
 
- - Anti Fraud, Subscribers, Scams, Signals
+#### Properties
+
+- [Postman Collection](collections/application-endpoint-discovery-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/application-endpoint-discovery-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Postman Collection](collections/application-profiles-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/application-profiles-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Postman Collection](collections/call-forwarding-signal-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/call-forwarding-signal-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Postman Collection](collections/carrier-billing-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/carrier-billing-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Postman Collection](collections/connectivity-insights-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/connectivity-insights-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Postman Collection](collections/connectivity-insights-subscriptions-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/connectivity-insights-subscriptions-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Postman Collection](collections/device-geofencing-subscriptions-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/device-geofencing-subscriptions-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Postman Collection](collections/device-location-retrieval-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/device-location-retrieval-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Postman Collection](collections/device-location-verification-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/device-location-verification-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Postman Collection](collections/device-roaming-status-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/device-roaming-status-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Postman Collection](collections/edge-application-management-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/edge-application-management-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Postman Collection](collections/home-devices-qod-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/home-devices-qod-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Postman Collection](collections/kyc-fill-in-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/kyc-fill-in-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Postman Collection](collections/kyc-match.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/kyc-match.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Postman Collection](collections/number-verification-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/number-verification-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Postman Collection](collections/one-time-password-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/one-time-password-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Postman Collection](collections/population-density-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/population-density-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Postman Collection](collections/quality-on-demand-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/quality-on-demand-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Postman Collection](collections/sim-swap-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/sim-swap-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Postman Collection](collections/sim-swap-notification-subscription-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/sim-swap-notification-subscription-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Postman Collection](collections/simple-edge-discovery-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/simple-edge-discovery-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Postman Collection](collections/sms-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/sms-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Postman Collection](collections/sms-delivery-notification-subscription-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/sms-delivery-notification-subscription-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Postman Collection](collections/traffic-influence-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/traffic-influence-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+
 ### GSMA Camara Project Device Location Verification API
 
-Device Location Verification API checks if a mobile device is in proximity
-of a given location. The API request contains the location to be checked
-and an accuracy range in km (between 2km and 200km). The API response
-indicates whether the location is within the accuracy range of the last
-known location of the MSISDN.
+Device Location Verification API checks if a mobile device is in proximity of a given location. The API request contains the location to be checked and an accuracy range in km (between 2km and 200km). The API response indicates whether the location is within the accuracy range of the last known location of the MSISDN.
 
-**Human URL:** [
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
+- **Human URL:** [https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
 
+#### Tags
 
-#### Tags:
-
- - Mobile, Connectivity, Location, Devices
+- Connectivity
+- Devices
+- Location
+- Mobile
 
 #### Properties
 
-- [GitHubRepository](https://github.com/camaraproject/DeviceLocation)
-- [Documentation](
-https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/DeviceLocation/r1.2/code/API_definitions/location-verification.yaml&nocors)
-- [OpenAPI](openapi/device-location-verification-api-openapi.yml)
-- [BrunoCollection](bruno/GSMA Camara Project Device Location Verification API/bruno.json)
-- [PostmanCollection](
-https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/35240-23a17d7b-07a0-405e-896b-6c4f3f4cc8c6)
+- [GitHub Repository](https://github.com/camaraproject/DeviceLocation)
+- [Documentation](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/DeviceLocation/r1.2/code/API_definitions/location-verification.yaml&nocors)
+- [OpenAPI](openapi/device-location-verification-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/device-location-verification-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/device-location-verification-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Bruno Collection](bruno/GSMA Camara Project Device Location Verification API/bruno.json)
+- [Postman Collection](https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/35240-23a17d7b-07a0-405e-896b-6c4f3f4cc8c6) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+
 ### GSMA Camara Project Device Geofencing Subscriptions API
 
-Device Geofencing Subscriptions API enables the subscription to
-geographical position changes. With this API, customers can create
-subscriptions for their devices to receive notifications when a device
-enters or exits a specified area. If the geofencing-state of a device
-changes, the event subscriber will be notified back.
+Device Geofencing Subscriptions API enables the subscription to geographical position changes. With this API, customers can create subscriptions for their devices to receive notifications when a device enters or exits a specified area. If the geofencing-state of a device changes, the event subscriber will be notified back.
 
-**Human URL:** [
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
+- **Human URL:** [https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
 
+#### Tags
 
-#### Tags:
-
- - Mobile, Connectivity, Location, Geofencing, Devices, Subscriptions
+- Connectivity
+- Devices
+- Geofencing
+- Location
+- Mobile
+- Subscriptions
 
 #### Properties
 
-- [GitHubRepository](https://github.com/camaraproject/DeviceLocation)
-- [Documentation](
-https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/DeviceLocation/r1.2/code/API_definitions/geofencing-subscriptions.yaml&nocors)
-- [OpenAPI](openapi/device-geofencing-subscriptions-api-openapi.yml)
-- [BrunoCollection](
-bruno/GSMA Camara Project Device Geofencing Subscriptions
-API/bruno.json)
-- [PostmanCollection](
-https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/lddca5b/gsma-camara-project-device-geofencing-subscriptions-api)
+- [GitHub Repository](https://github.com/camaraproject/DeviceLocation)
+- [Documentation](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/DeviceLocation/r1.2/code/API_definitions/geofencing-subscriptions.yaml&nocors)
+- [OpenAPI](openapi/device-geofencing-subscriptions-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/device-geofencing-subscriptions-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/device-geofencing-subscriptions-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Bruno Collection](bruno/GSMA Camara Project Device Geofencing Subscriptions API/bruno.json)
+- [Postman Collection](https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/lddca5b/gsma-camara-project-device-geofencing-subscriptions-api) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+
 ### GSMA Camara Project Device Location Retrieval API
 
-Device Location Retrieval API provides the ability to retrieve the
-location of a device. The retrieved area depends on the network conditions
-at the subscribers location.
+Device Location Retrieval API provides the ability to retrieve the location of a device. The retrieved area depends on the network conditions at the subscribers location.
 
-**Human URL:** [
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
+- **Human URL:** [https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
 
+#### Tags
 
-#### Tags:
-
- - Mobile, Connectivity, Location, Retrieval, Devices
+- Connectivity
+- Devices
+- Location
+- Mobile
+- Retrieval
 
 #### Properties
 
-- [GitHubRepository](https://github.com/camaraproject/DeviceLocation)
-- [Documentation](
-https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/DeviceLocation/r1.2/code/API_definitions/location-retrieval.yaml&nocors)
-- [OpenAPI](openapi/device-location-retrieval-api-openapi.yml)
-- [BrunoCollection](bruno/GSMA Camara Project Device Location Retrieval API/bruno.json)
-- [PostmanCollection](
-https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/2un0g1u/gsma-camara-project-device-location-retrieval-api)
+- [GitHub Repository](https://github.com/camaraproject/DeviceLocation)
+- [Documentation](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/DeviceLocation/r1.2/code/API_definitions/location-retrieval.yaml&nocors)
+- [OpenAPI](openapi/device-location-retrieval-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/device-location-retrieval-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/device-location-retrieval-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Bruno Collection](bruno/GSMA Camara Project Device Location Retrieval API/bruno.json)
+- [Postman Collection](https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/2un0g1u/gsma-camara-project-device-location-retrieval-api) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+
 ### GSMA Camara Project Population Density Data API
 
-Population Density Data API enables the retrieval of population density
-estimations for a specific area at a future date and time, considering
-historical anonymised information of the network connected devices in the
-requested area.
+Population Density Data API enables the retrieval of population density estimations for a specific area at a future date and time, considering historical anonymised information of the network connected devices in the requested area.
 
-**Human URL:** [
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
+- **Human URL:** [https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
 
+#### Tags
 
-#### Tags:
-
- - Mobile, Connectivity, Location, Retrieval, Devices
+- Connectivity
+- Devices
+- Location
+- Mobile
+- Retrieval
 
 #### Properties
 
-- [GitHubRepository](
-https://github.com/camaraproject/PopulationDensityData/releases/tag/r1.2)
-- [Documentation](
-https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/PopulationDensityData/r1.2/code/API_definitions/population-density-data.yaml&nocors)
-- [OpenAPI](openapi/population-density-api-openapi.yml)
-- [BrunoCollection](bruno/GSMA Camara Project Population Density Data/bruno.json)
-- [PostmanCollection](
-https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/lwfh4b3/gsma-camara-project-population-density-data)
+- [GitHub Repository](https://github.com/camaraproject/PopulationDensityData/releases/tag/r1.2)
+- [Documentation](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/PopulationDensityData/r1.2/code/API_definitions/population-density-data.yaml&nocors)
+- [OpenAPI](openapi/population-density-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/population-density-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/population-density-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Bruno Collection](bruno/GSMA Camara Project Population Density Data/bruno.json)
+- [Postman Collection](https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/lwfh4b3/gsma-camara-project-population-density-data) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+
 ### GSMA Camara Project Quality on Demand API
 
-Quality on Demand API offers the application developer the capability to
-request stable latency (reduced jitter) or minimum throughput for
-specified application data flows between application clients (within a
-user device) and Application Servers (backend services). The developer has
-a pre-defined set of Quality of Service (QoS) profiles which they could
-choose from depending on their latency or throughput requirements.
+Quality on Demand API offers the application developer the capability to request stable latency (reduced jitter) or minimum throughput for specified application data flows between application clients (within a user device) and Application Servers (backend services). The developer has a pre-defined set of Quality of Service (QoS) profiles which they could choose from depending on their latency or throughput requirements.
 
-**Human URL:** [
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
+- **Human URL:** [https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
 
+#### Tags
 
-#### Tags:
-
- - Network, Quality, Optimizations, Demand
+- Demand
+- Network
+- Optimizations
+- Quality
 
 #### Properties
 
-- [GitHubRepository](https://github.com/camaraproject/QualityOnDemand/releases/tag/r1.2)
-- [Documentation](
-https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/QualityOnDemand/r1.2/code/API_definitions/quality-on-demand.yaml&nocors)
-- [OpenAPI](openapi/quality-on-demand-api-openapi.yml)
-- [BrunoCollection](bruno/GSMA Camara Project Quality on Demand API/bruno.json)
-- [PostmanCollection](
-https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/35240-a139bda5-4882-455b-83a2-2e3ea7bcb16f)
+- [GitHub Repository](https://github.com/camaraproject/QualityOnDemand/releases/tag/r1.2)
+- [Documentation](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/QualityOnDemand/r1.2/code/API_definitions/quality-on-demand.yaml&nocors)
+- [OpenAPI](openapi/quality-on-demand-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/quality-on-demand-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/quality-on-demand-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Bruno Collection](bruno/GSMA Camara Project Quality on Demand API/bruno.json)
+- [Postman Collection](https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/35240-a139bda5-4882-455b-83a2-2e3ea7bcb16f) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+
 ### GSMA Camara Project Connectivity Insights API
 
-The Connectivity Insights API allows an application developer to ask the
-network the likelihood that an application's networking requirements can
-be met for a given end user session.
+The Connectivity Insights API allows an application developer to ask the network the likelihood that an application's networking requirements can be met for a given end user session.
 
-**Human URL:** [
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
+- **Human URL:** [https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
 
+#### Tags
 
-#### Tags:
-
- - Network, Connectivity, Insights
+- Connectivity
+- Insights
+- Network
 
 #### Properties
 
-- [GitHub Repository](
-https://github.com/camaraproject/ConnectivityInsights/releases/tag/r1.2)
-- [Documentation](
-https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/ConnectivityInsights/r1.2/code/API_definitions/connectivity-insights.yaml&nocors)
-- [OpenAPI](openapi/connectivity-insights-api-openapi.yml)
-- [BrunoCollection](bruno/GSMA Camara Project Connectivity Insights API/bruno.json)
-- [PostmanCollection](
-https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/0jyjgn6/gsma-camara-project-connectivity-insights-api)
+- [GitHub Repository](https://github.com/camaraproject/ConnectivityInsights/releases/tag/r1.2)
+- [Documentation](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/ConnectivityInsights/r1.2/code/API_definitions/connectivity-insights.yaml&nocors)
+- [OpenAPI](openapi/connectivity-insights-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/connectivity-insights-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/connectivity-insights-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Bruno Collection](bruno/GSMA Camara Project Connectivity Insights API/bruno.json)
+- [Postman Collection](https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/0jyjgn6/gsma-camara-project-connectivity-insights-api) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+
 ### GSMA Camara Project Connectivity Insights Subscriptions API
 
-The Connectivity Insights API allows an application developer to ask the
-network the likelihood that an application's networking requirements can
-be met for a given end user session.
+The Connectivity Insights API allows an application developer to ask the network the likelihood that an application's networking requirements can be met for a given end user session.
 
-**Human URL:** [
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
+- **Human URL:** [https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
 
+#### Tags
 
-#### Tags:
-
- - Network, Connectivity, Insights
+- Connectivity
+- Insights
+- Network
 
 #### Properties
 
-- [GitHub Repository](
-https://github.com/camaraproject/ConnectivityInsights/releases/tag/r1.2)
-- [Documentation](
-https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/ConnectivityInsights/r1.2/code/API_definitions/connectivity-insights-subscriptions.yaml&nocors)
-- [OpenAPI](openapi/connectivity-insights-subscriptions-api-openapi.yml)
-- [BrunoCollection](
-bruno/GSMA Camara Project Connectivity Insights Subscriptions
-API/bruno.json)
-- [PostmanCollection](
-https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/odjfucf/gsma-camara-project-connectivity-insights-subscriptions-api)
+- [GitHub Repository](https://github.com/camaraproject/ConnectivityInsights/releases/tag/r1.2)
+- [Documentation](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/ConnectivityInsights/r1.2/code/API_definitions/connectivity-insights-subscriptions.yaml&nocors)
+- [OpenAPI](openapi/connectivity-insights-subscriptions-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/connectivity-insights-subscriptions-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/connectivity-insights-subscriptions-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Bruno Collection](bruno/GSMA Camara Project Connectivity Insights Subscriptions API/bruno.json)
+- [Postman Collection](https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/odjfucf/gsma-camara-project-connectivity-insights-subscriptions-api) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+
 ### GSMA Camara Project Application Profiles API
 
-Application profiles allows application developers to share all the
-information about their application which would be relevant for network/
-CAMARA APIs related decision making.
+Application profiles allows application developers to share all the information about their application which would be relevant for network/ CAMARA APIs related decision making.
 
-**Human URL:** [
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
+- **Human URL:** [https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
 
+#### Tags
 
-#### Tags:
-
- - Network, Applications, Profiles
+- Applications
+- Network
+- Profiles
 
 #### Properties
 
-- [GitHub Repository](
-https://github.com/camaraproject/ConnectivityInsights/releases/tag/r1.2)
-- [OpenAPI](openapi/application-profiles-api-openapi.yml)
-- [BrunoCollection](bruno/GSMA Camara Project Application Profiles API/bruno.json)
-- [PostmanCollection](
-https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/ryw6hox/gsma-camara-project-application-profiles-api)
+- [GitHub Repository](https://github.com/camaraproject/ConnectivityInsights/releases/tag/r1.2)
+- [OpenAPI](openapi/application-profiles-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/application-profiles-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/application-profiles-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Bruno Collection](bruno/GSMA Camara Project Application Profiles API/bruno.json)
+- [Postman Collection](https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/ryw6hox/gsma-camara-project-application-profiles-api) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+
 ### GSMA Camara Project SMS API
-SMS API provides the customer with the ability to send an SMS to a mobile phone number in use on a mobile phone device. There are 3 different categories of SMS, namely Service SMS, Promotional SMS and Transactional SMS.  The SMS API can also be used to send a binary message to a mobile phone number which is being used on an (IoT) device. 
 
-**Human URL:** [
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
+SMS API provides the customer with the ability to send an SMS to a mobile phone number in use on a mobile phone device. There are 3 different categories of SMS, namely Service SMS, Promotional SMS and Transactional SMS. The SMS API can also be used to send a binary message to a mobile phone number which is being used on an (IoT) device.
 
+- **Human URL:** [https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
 
-#### Tags:
+#### Tags
 
- - Mobile, Communication, SMS
+- Communication
+- Mobile
+- SMS
 
 #### Properties
 
-- [GitHubRepository](https://github.com/camaraproject/ShortMessageService/tree/main)
-- [OpenAPI](openapi/sms-api-openapi.yml)
-- [BrunoCollection](bruno/GSMA Camara Project SMS API/bruno.json)
-- [PostmanCollection](
-https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/im7p4j1/gsma-camara-project-sms-api)
+- [GitHub Repository](https://github.com/camaraproject/ShortMessageService/tree/main)
+- [OpenAPI](openapi/sms-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/sms-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/sms-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Bruno Collection](bruno/GSMA Camara Project SMS API/bruno.json)
+- [Postman Collection](https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/im7p4j1/gsma-camara-project-sms-api) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+
 ### GSMA Camara Project SMS Delivery Notification Subscription API
 
-API to create, retrieve and delete event subscriptions related to a sms
-delivery operation performed on an associated phone number.
+API to create, retrieve and delete event subscriptions related to a sms delivery operation performed on an associated phone number.
 
-**Human URL:** [
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
+- **Human URL:** [https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
 
+#### Tags
 
-#### Tags:
-
- - Mobile, Communication, SMS
+- Communication
+- Mobile
+- SMS
 
 #### Properties
 
-- [GitHubRepository](https://github.com/camaraproject/ShortMessageService/tree/main)
-- [Documentation](
-https://github.com/camaraproject/ShortMessageService/blob/6fd0ff0e79a3e26244e5f026c8e40260b0a47494/documentation/API_documentation/Text_SMS_User_Story.md)
-- [OpenAPI](openapi/sms-delivery-notification-subscription-api-openapi.yml)
-- [BrunoCollection](
-bruno/GSMA Camara Project SMS Delivery Notification Subscription
-API/bruno.json)
-- [PostmanCollection](
-https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/t35i4sr/gsma-camara-project-sms-delivery-notification-subscription-api)
+- [GitHub Repository](https://github.com/camaraproject/ShortMessageService/tree/main)
+- [Documentation](https://github.com/camaraproject/ShortMessageService/blob/6fd0ff0e79a3e26244e5f026c8e40260b0a47494/documentation/API_documentation/Text_SMS_User_Story.md)
+- [OpenAPI](openapi/sms-delivery-notification-subscription-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/sms-delivery-notification-subscription-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/sms-delivery-notification-subscription-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Bruno Collection](bruno/GSMA Camara Project SMS Delivery Notification Subscription API/bruno.json)
+- [Postman Collection](https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/t35i4sr/gsma-camara-project-sms-delivery-notification-subscription-api) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+
 ### GSMA Camara Project Home Devices QoD API
 
-Home Devices QoD API enables application developers to control the network
-configuration of their End Users devices when they are connected through
-the WiFi access point provided by a telco fixed line. Developers can
-request to change, on demand, the desired QoS behaviour for the IP traffic
-corresponding to a specific user home device.
+Home Devices QoD API enables application developers to control the network configuration of their End Users devices when they are connected through the WiFi access point provided by a telco fixed line. Developers can request to change, on demand, the desired QoS behaviour for the IP traffic corresponding to a specific user home device.
 
-**Human URL:** [
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
+- **Human URL:** [https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
 
+#### Tags
 
-#### Tags:
-
- - Fixed Connectivity, Networks, Quality, Optimization, Home, Devices
+- Devices
+- Fixed Connectivity
+- Home
+- Networks
+- Optimization
+- Quality
 
 #### Properties
 
-- [GitHubRepository](https://github.com/camaraproject/HomeDevicesQoD/releases/tag/r1.2)
-- [Documentation](
-https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors)
-- [OpenAPI](openapi/home-devices-qod-api-openapi.yml)
-- [BrunoCollection](bruno/GSMA Camara Project Home Devices QoD/bruno.json)
-- [PostmanCollection](
-nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone)
+- [GitHub Repository](https://github.com/camaraproject/HomeDevicesQoD/releases/tag/r1.2)
+- [Documentation](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors)
+- [OpenAPI](openapi/home-devices-qod-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/home-devices-qod-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/home-devices-qod-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Bruno Collection](bruno/GSMA Camara Project Home Devices QoD/bruno.json)
+- [Postman Collection](nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+
 ### GSMA Camara Project Simple Edge Discovery API
 
-Simple Edge Discovery API allows an application to discover the nearest
-Edge-Cloud zone for it to connect to, specifically the API will calculate
-the Edge Cloud Zone with the shortest network path to the application.
+Simple Edge Discovery API allows an application to discover the nearest Edge-Cloud zone for it to connect to, specifically the API will calculate the Edge Cloud Zone with the shortest network path to the application.
 
-**Human URL:** [
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
+- **Human URL:** [https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
 
+#### Tags
 
-#### Tags:
-
- - Cloud, Edge, Mobile, Optimization, Home, Devices, Discovery
+- Cloud
+- Devices
+- Discovery
+- Edge
+- Home
+- Mobile
+- Optimization
 
 #### Properties
 
-- [GitHubRepository](https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3)
-- [Documentation](
-https://github.com/camaraproject/SimpleEdgeDiscovery/blob/main/documentation/API_documentation/SimpleEdgeDiscovery_User_Story.md)
-- [OpenAPI](openapi/simple-edge-discovery-api-openapi.yml)
-- [BrunoCollection](bruno/GSMA Camara Project Simple Edge Discovery/bruno.json)
-- [PostmanCollection](
-https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/5ze8wkz/gsma-camara-project-simple-edge-discovery)
+- [GitHub Repository](https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3)
+- [Documentation](https://github.com/camaraproject/SimpleEdgeDiscovery/blob/main/documentation/API_documentation/SimpleEdgeDiscovery_User_Story.md)
+- [OpenAPI](openapi/simple-edge-discovery-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/simple-edge-discovery-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/simple-edge-discovery-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Bruno Collection](bruno/GSMA Camara Project Simple Edge Discovery/bruno.json)
+- [Postman Collection](https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/5ze8wkz/gsma-camara-project-simple-edge-discovery) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+
 ### GSMA Camara Project Traffic Influence API
 
-The Traffic Influence API provides the capability to establish the optimal
-routing, in terms of latency, in a specific geographical area, between the
-user device, e.g. the users smartphone, and the optimal Edge Application
-Server (EAS) instance nearby. If the user device is detected by the
-developer to have moved into a different geographical location, the
-Traffic Influence API can be invoked again to get the optimal routing in
-the new location.
+The Traffic Influence API provides the capability to establish the optimal routing, in terms of latency, in a specific geographical area, between the user device, e.g. the users smartphone, and the optimal Edge Application Server (EAS) instance nearby. If the user device is detected by the developer to have moved into a different geographical location, the Traffic Influence API can be invoked again to get the optimal routing in the new location.
 
-**Human URL:** [
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
+- **Human URL:** [https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
 
+#### Tags
 
-#### Tags:
-
- - Cloud, Edge, Mobile, Optimization, Home, Devices, Discovery
+- Cloud
+- Devices
+- Discovery
+- Edge
+- Home
+- Mobile
+- Optimization
 
 #### Properties
 
-- [GitHubRepository](https://github.com/camaraproject/EdgeCloud)
-- [Documentation](
-https://github.com/camaraproject/EdgeCloud/blob/main/documentation/API_documentation/Simple_Edge_Discovery_API_Readiness_Checklist.md)
-- [OpenAPI](openapi/traffic-influence-api-openapi.yml)
-- [BrunoCollection](bruno/GSMA Camara Project Traffic Influence API/bruno.json)
-- [PostmanCollection](
-https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/1tmj16r/gsma-camara-project-traffic-influence-api)
+- [GitHub Repository](https://github.com/camaraproject/EdgeCloud)
+- [Documentation](https://github.com/camaraproject/EdgeCloud/blob/main/documentation/API_documentation/Simple_Edge_Discovery_API_Readiness_Checklist.md)
+- [OpenAPI](openapi/traffic-influence-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/traffic-influence-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/traffic-influence-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Bruno Collection](bruno/GSMA Camara Project Traffic Influence API/bruno.json)
+- [Postman Collection](https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/1tmj16r/gsma-camara-project-traffic-influence-api) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+
 ### GSMA Camara Project Application Endpoint Discovery API
 
-The Application Discovery API extends beyond the capabilities of the
-Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone
-but also directly linking to the application endpoints within those Edge
-Cloud Zones.
+The Application Discovery API extends beyond the capabilities of the Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone but also directly linking to the application endpoints within those Edge Cloud Zones.
 
-**Human URL:** [
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
+- **Human URL:** [https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
 
+#### Tags
 
-#### Tags:
-
- - Cloud, Edge, Mobile, Application, Discovery, Endpoints
+- Application
+- Cloud
+- Discovery
+- Edge
+- Endpoints
+- Mobile
 
 #### Properties
 
-- [GitHubRepository](https://github.com/camaraproject/EdgeCloud)
-- [OpenAPI](openapi/application-endpoint-discovery-api-openapi.yml)
-- [BrunoCollection](
-bruno/GSMA Camara Project Application Endpoint Discovery
-API/bruno.json)
-- [PostmanCollection](
-https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/tomzja8/gsma-camara-project-application-endpoint-discovery-api)
+- [GitHub Repository](https://github.com/camaraproject/EdgeCloud)
+- [OpenAPI](openapi/application-endpoint-discovery-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/application-endpoint-discovery-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/application-endpoint-discovery-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Bruno Collection](bruno/GSMA Camara Project Application Endpoint Discovery API/bruno.json)
+- [Postman Collection](https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/tomzja8/gsma-camara-project-application-endpoint-discovery-api) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+
 ### GSMA Camara Project Edge Application Management API
 
-Edge Application Management API allows API consumers to manage the Life
-Cycle of an Application and to Discover Edge Cloud Zones. The reference
-scenario foresees a distributed Telco Edge Cloud where any Application
-Delevoper, known as an Application Provider, can host and deploy their
-application according to their specifications and operational criteria.
+Edge Application Management API allows API consumers to manage the Life Cycle of an Application and to Discover Edge Cloud Zones. The reference scenario foresees a distributed Telco Edge Cloud where any Application Delevoper, known as an Application Provider, can host and deploy their application according to their specifications and operational criteria.
 
-**Human URL:** [
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
+- **Human URL:** [https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
 
+#### Tags
 
-#### Tags:
-
- - Cloud, Edge, Mobile, Application, Management
+- Application
+- Cloud
+- Edge
+- Management
+- Mobile
 
 #### Properties
 
-- [GitHubRepository](https://github.com/camaraproject/EdgeCloud)
-- [OpenAPI](openapi/edge-application-management-api-openapi.yml)
-- [BrunoCollection](bruno/GSMA Camara Project Edge Application Management API/bruno.json)
-- [PostmanCollection](
-https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/35240-981545ec-b150-47da-a448-59c92b127a05)
+- [GitHub Repository](https://github.com/camaraproject/EdgeCloud)
+- [OpenAPI](openapi/edge-application-management-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/edge-application-management-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/edge-application-management-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Bruno Collection](bruno/GSMA Camara Project Edge Application Management API/bruno.json)
+- [Postman Collection](https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/35240-981545ec-b150-47da-a448-59c92b127a05) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+
 ### GSMA Camara Project Carrier Billing
 
-The Carrier Billing API provides programmable interface for developers and
-other users (capabilities consumers) to charge an amount on a mobile line.
-It can be easily integrated and allows end-users to buy digital content in
-an easy &amp; secured way. The API provides management of a payment entity
-and its associated lifecycle.
+The Carrier Billing API provides programmable interface for developers and other users (capabilities consumers) to charge an amount on a mobile line. It can be easily integrated and allows end-users to buy digital content in an easy & secured way. The API provides management of a payment entity and its associated lifecycle.
 
-**Human URL:** [
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](
-https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
+- **Human URL:** [https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/)
 
+#### Tags
 
-#### Tags:
-
- - Mobile, Payments, Charging, Carrier, Billing
+- Billing
+- Carrier
+- Charging
+- Mobile
+- Payments
 
 #### Properties
 
-- [GitHubRepository](
-https://github.com/camaraproject/CarrierBillingCheckOut/releases/tag/r1.3)
-- [Documentation](
-https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/CarrierBillingCheckOut/r1.3/code/API_definitions/carrier-billing.yaml&nocors)
-- [OpenAPI](openapi/carrier-billing-api-openapi.yml)
-- [BrunoCollection](bruno/GSMA Camara Project Carrier Billing/bruno.json)
-- [PostmanCollection](
-https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/0m2sok6/gsma-camara-project-carrier-billing)
+- [GitHub Repository](https://github.com/camaraproject/CarrierBillingCheckOut/releases/tag/r1.3)
+- [Documentation](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/CarrierBillingCheckOut/r1.3/code/API_definitions/carrier-billing.yaml&nocors)
+- [OpenAPI](openapi/carrier-billing-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/carrier-billing-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/carrier-billing-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Bruno Collection](bruno/GSMA Camara Project Carrier Billing/bruno.json)
+- [Postman Collection](https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/0m2sok6/gsma-camara-project-carrier-billing) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
 
 ## Common Properties
 
-- [PostmanWorkspace](
-https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/overview)
-- [PrivacyPolicy](https://www.gsma.com/about-us/legal/)
-- [TermsOfService](https://www.gsma.com/about-us/legal/)
-- [PressReleases](https://www.gsma.com/newsroom/press-releases/)
+- [Postman Workspace](https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/overview)
+- [Privacy Policy](https://www.gsma.com/about-us/legal/)
+- [Terms of Service](https://www.gsma.com/about-us/legal/)
+- [Press Releases](https://www.gsma.com/newsroom/press-releases/)
 - [Events](https://www.gsma.com/get-involved/events/)
 
 ## Maintainers
 
 **FN:** Kin Lane
-
 **Email:** info@apievangelist.com
-
