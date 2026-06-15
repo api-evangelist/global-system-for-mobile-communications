@@ -1,0 +1,106 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Global System for Mobile Communications GSMA Camara Project SMS Delivery Notification Subscription API",
+    "version": "0.1.0-alpha.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SMS Delivery Notification Subscription",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Global System for Mobile Communications Retrieve a list of SMS Delivery event subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/sms-delivery-notification-subscriptions/v0alpha1/subscriptions",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Retrieve a list of SMS Delivery event subscription(s)"
+        },
+        {
+          "info": {
+            "name": "Global System for Mobile Communications Create a sms delivery event subscription for a given consumer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/sms-delivery-notification-subscriptions/v0alpha1/subscriptions",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a sms delivery event subscription for a given consumer"
+        },
+        {
+          "info": {
+            "name": "Global System for Mobile Communications Retrieve a sms delivery event subscription for a phone number",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/sms-delivery-notification-subscriptions/v0alpha1/subscriptions/:subscriptionId",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Subscription identifier that was obtained from the create event subscription operation"
+              }
+            ]
+          },
+          "docs": "retrieve event subscription information for a given subscription."
+        },
+        {
+          "info": {
+            "name": "Global System for Mobile Communications Delete a sms delivery event subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/sms-delivery-notification-subscriptions/v0alpha1/subscriptions/:subscriptionId",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Subscription identifier that was obtained from the create event subscription operation"
+              }
+            ]
+          },
+          "docs": "delete a given event subscription."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

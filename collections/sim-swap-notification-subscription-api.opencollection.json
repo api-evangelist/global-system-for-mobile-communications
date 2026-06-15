@@ -1,0 +1,68 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Global System for Mobile Communications GSMA Camara Project SIM Swap Notification Subscription API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Retrieve SIM Swap Date",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "retrieveSimSwapDate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/sim-swap/v1/retrieve-date",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get timestamp of last SIM swap event for a mobile user account provided with phone number."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Check SIM Swap",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "checkSimSwap",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/sim-swap/v1/check",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Check if SIM swap has been performed during a past period"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

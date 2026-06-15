@@ -1,0 +1,2547 @@
+{
+  "item": [
+    {
+      "id": "a35d4a26-5834-4de3-a2bd-22a2e7878a2d",
+      "name": "Traffic Influence API Read",
+      "description": {
+        "content": "Reads existing TrafficInfluence resources",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "526701a7-fb82-4813-9264-8a61b8c05a2f",
+          "name": "Global System for Mobile Communications Retries existing TrafficInfluence Resources",
+          "request": {
+            "name": "Global System for Mobile Communications Retries existing TrafficInfluence Resources",
+            "description": {
+              "content": "Reads all of the active TrafficInfluence resources owned by the same API Consumer",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "traffic-influences"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "appId",
+                  "value": "<uuid>",
+                  "description": "Used to select traffic influence resources filtered by appId"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "API root for the Traffic Influence API",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services.",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "3117cfd8-9064-487d-afd7-24941ba02ef1",
+              "name": "Returns the information about existing TrafficInfluence resources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "6B29FC40-CA47-1067-B31D-00DD010662DA"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"apiConsumerId\": \"<string>\",\n    \"appId\": \"6B29FC40-CA47-1067-B31D-00DD010662DA\",\n    \"trafficInfluenceID\": \"<string>\",\n    \"appInstanceId\": \"<uuid>\",\n    \"edgeCloudRegion\": \"<string>\",\n    \"edgeCloudZoneId\": \"<uuid>\",\n    \"device\": {\n      \"phoneNumber\": \"+123456789\",\n      \"networkAccessIdentifier\": \"123456789@domain.com\",\n      \"ipv4Address\": {},\n      \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n    },\n    \"state\": \"<string>\",\n    \"sourceTrafficFilters\": {\n      \"sourcePort\": \"<integer>\"\n    },\n    \"destinationTrafficFilters\": {\n      \"destinationPort\": \"<integer>\",\n      \"destinationProtocol\": \"TCP\"\n    },\n    \"notificationUri\": \"<string>\",\n    \"notificationAuthToken\": \"<string>\"\n  },\n  {\n    \"apiConsumerId\": \"<string>\",\n    \"appId\": \"6B29FC40-CA47-1067-B31D-00DD010662DA\",\n    \"trafficInfluenceID\": \"<string>\",\n    \"appInstanceId\": \"<uuid>\",\n    \"edgeCloudRegion\": \"<string>\",\n    \"edgeCloudZoneId\": \"<uuid>\",\n    \"device\": {\n      \"phoneNumber\": \"+123456789\",\n      \"networkAccessIdentifier\": \"123456789@domain.com\",\n      \"ipv4Address\": {},\n      \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n    },\n    \"state\": \"<string>\",\n    \"sourceTrafficFilters\": {\n      \"sourcePort\": \"<integer>\"\n    },\n    \"destinationTrafficFilters\": {\n      \"destinationPort\": \"<integer>\",\n      \"destinationProtocol\": \"TCP\"\n    },\n    \"notificationUri\": \"<string>\",\n    \"notificationAuthToken\": \"<string>\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "927d1393-f7b8-4c59-9f4d-284645c5ebd3",
+              "name": "Authentication problem with the client request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "6B29FC40-CA47-1067-B31D-00DD010662DA"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "95bcce3a-1e7b-45b9-a33b-88cc10cf449d",
+              "name": "Client does not have sufficient permission",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "6B29FC40-CA47-1067-B31D-00DD010662DA"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2ca89f14-2972-4f48-95fb-58010a4c350d",
+              "name": "An unknow error has occurred",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "6B29FC40-CA47-1067-B31D-00DD010662DA"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"Generic error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fc1b3608-bd91-49ff-90f6-74ca9b7731b0",
+              "name": "Service unavailable. Typically the server is down",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "6B29FC40-CA47-1067-B31D-00DD010662DA"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service unavailable\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "46358525-d504-40a5-a727-2ea6c74cc24e",
+              "name": "Connection timeout towards backend service has occurred",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "6B29FC40-CA47-1067-B31D-00DD010662DA"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Gateway Timeout",
+              "code": 504,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"Backend connection timeout\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8f9217f9-340b-4b96-bca4-e57d8678214b",
+          "name": "Global System for Mobile Communications Reads a specific TrafficInfluence resource identified by the trafficInfluenceID value.",
+          "request": {
+            "name": "Global System for Mobile Communications Reads a specific TrafficInfluence resource identified by the trafficInfluenceID value.",
+            "description": {
+              "content": "Returns a specific TrafficInfluence resources owned by the same API Consumer.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "traffic-influences",
+                ":trafficInfluenceID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "trafficInfluenceID",
+                  "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                },
+                {
+                  "description": "API root for the Traffic Influence API",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services.",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "dd040c09-8a92-45b6-bc8c-98b91aa6b4fb",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"apiConsumerId\": \"<string>\",\n  \"appId\": \"6B29FC40-CA47-1067-B31D-00DD010662DA\",\n  \"trafficInfluenceID\": \"<string>\",\n  \"appInstanceId\": \"<uuid>\",\n  \"edgeCloudRegion\": \"<string>\",\n  \"edgeCloudZoneId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"state\": \"<string>\",\n  \"sourceTrafficFilters\": {\n    \"sourcePort\": \"<integer>\"\n  },\n  \"destinationTrafficFilters\": {\n    \"destinationPort\": \"<integer>\",\n    \"destinationProtocol\": \"TCP\"\n  },\n  \"notificationUri\": \"<string>\",\n  \"notificationAuthToken\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0a9b21da-9434-4827-b539-2a1153eb7e05",
+              "name": "Authentication problem with the client request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "817caa0d-02bd-4c47-8712-0c27c2148625",
+              "name": "Client does not have sufficient permission",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "036925bd-fb25-40e9-adfe-747790c03e00",
+              "name": "The specified resource was not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "936c6d85-f065-43af-a567-5659693d7a1c",
+              "name": "An unknow error has occurred",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"Generic error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "982e91b2-c778-4e07-8353-78d4333d4304",
+              "name": "Service unavailable. Typically the server is down",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service unavailable\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4a047da4-99e3-467e-88b5-7445f4b4d5b7",
+              "name": "Connection timeout towards backend service has occurred",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Gateway Timeout",
+              "code": 504,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"Backend connection timeout\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "a9edafbb-6d23-41af-b8af-822bf641f36c",
+      "name": "Traffic Influence API Write",
+      "description": {
+        "content": "Creates of modifies a TrafficInfluence resource",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "aad4bccd-8e56-4fea-8321-5b511695fead",
+          "name": "Global System for Mobile Communications Creates a new TrafficInfluence resource",
+          "request": {
+            "name": "Global System for Mobile Communications Creates a new TrafficInfluence resource",
+            "description": {
+              "content": "Takes as input an object containing the intents from the API Consumer and creates a TrafficInfluence resourse accordingly. The trafficInfluenceID parameter, that is part of the object, must not be valorized when creating a new resource. For this reason the trafficInfluenceID parameter must be avoided in the object, anyway it will be ignored by the API Producer. It is automatically generated by the system and returned in the response.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "traffic-influences"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "API root for the Traffic Influence API",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services.",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"apiConsumerId\": \"<string>\",\n  \"appId\": \"<uuid>\",\n  \"trafficInfluenceID\": \"<string>\",\n  \"appInstanceId\": \"<uuid>\",\n  \"edgeCloudRegion\": \"<string>\",\n  \"edgeCloudZoneId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"<string>\",\n    \"networkAccessIdentifier\": \"<string>\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"<ipv6>\"\n  },\n  \"state\": \"<string>\",\n  \"sourceTrafficFilters\": {\n    \"sourcePort\": \"<integer>\"\n  },\n  \"destinationTrafficFilters\": {\n    \"destinationPort\": \"<integer>\",\n    \"destinationProtocol\": \"<string>\"\n  },\n  \"notificationUri\": \"<string>\",\n  \"notificationAuthToken\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0eea01b8-39c9-477a-b1c5-20b89baa6ccb",
+              "name": "TrafficInfluence resource created, the related object is returned with the resource ID (trafficInfluenceID) and status (state) valorised.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiConsumerId\": \"<string>\",\n  \"appId\": \"6B29FC40-CA47-1067-B31D-00DD010662DA\",\n  \"trafficInfluenceID\": \"<string>\",\n  \"appInstanceId\": \"<uuid>\",\n  \"edgeCloudRegion\": \"<string>\",\n  \"edgeCloudZoneId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"state\": \"<string>\",\n  \"sourceTrafficFilters\": {\n    \"sourcePort\": \"<integer>\"\n  },\n  \"destinationTrafficFilters\": {\n    \"destinationPort\": \"<integer>\",\n    \"destinationProtocol\": \"TCP\"\n  },\n  \"notificationUri\": \"<string>\",\n  \"notificationAuthToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "Link to the created traffic influence resource",
+                  "key": "Location",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"apiConsumerId\": \"<string>\",\n  \"appId\": \"6B29FC40-CA47-1067-B31D-00DD010662DA\",\n  \"trafficInfluenceID\": \"<string>\",\n  \"appInstanceId\": \"<uuid>\",\n  \"edgeCloudRegion\": \"<string>\",\n  \"edgeCloudZoneId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"state\": \"<string>\",\n  \"sourceTrafficFilters\": {\n    \"sourcePort\": \"<integer>\"\n  },\n  \"destinationTrafficFilters\": {\n    \"destinationPort\": \"<integer>\",\n    \"destinationProtocol\": \"TCP\"\n  },\n  \"notificationUri\": \"<string>\",\n  \"notificationAuthToken\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8cee8ac0-0774-4d98-abb7-5cc801bd1f93",
+              "name": "Problem with the client request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiConsumerId\": \"<string>\",\n  \"appId\": \"6B29FC40-CA47-1067-B31D-00DD010662DA\",\n  \"trafficInfluenceID\": \"<string>\",\n  \"appInstanceId\": \"<uuid>\",\n  \"edgeCloudRegion\": \"<string>\",\n  \"edgeCloudZoneId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"state\": \"<string>\",\n  \"sourceTrafficFilters\": {\n    \"sourcePort\": \"<integer>\"\n  },\n  \"destinationTrafficFilters\": {\n    \"destinationPort\": \"<integer>\",\n    \"destinationProtocol\": \"TCP\"\n  },\n  \"notificationUri\": \"<string>\",\n  \"notificationAuthToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Client specified an invalid argument, request body or query param\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "64ff1623-06e6-4d5f-b8c2-b2360559272f",
+              "name": "Authentication problem with the client request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiConsumerId\": \"<string>\",\n  \"appId\": \"6B29FC40-CA47-1067-B31D-00DD010662DA\",\n  \"trafficInfluenceID\": \"<string>\",\n  \"appInstanceId\": \"<uuid>\",\n  \"edgeCloudRegion\": \"<string>\",\n  \"edgeCloudZoneId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"state\": \"<string>\",\n  \"sourceTrafficFilters\": {\n    \"sourcePort\": \"<integer>\"\n  },\n  \"destinationTrafficFilters\": {\n    \"destinationPort\": \"<integer>\",\n    \"destinationProtocol\": \"TCP\"\n  },\n  \"notificationUri\": \"<string>\",\n  \"notificationAuthToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e90c6919-888e-422d-ae6b-781dbf34900b",
+              "name": "Client does not have sufficient permission",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiConsumerId\": \"<string>\",\n  \"appId\": \"6B29FC40-CA47-1067-B31D-00DD010662DA\",\n  \"trafficInfluenceID\": \"<string>\",\n  \"appInstanceId\": \"<uuid>\",\n  \"edgeCloudRegion\": \"<string>\",\n  \"edgeCloudZoneId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"state\": \"<string>\",\n  \"sourceTrafficFilters\": {\n    \"sourcePort\": \"<integer>\"\n  },\n  \"destinationTrafficFilters\": {\n    \"destinationPort\": \"<integer>\",\n    \"destinationProtocol\": \"TCP\"\n  },\n  \"notificationUri\": \"<string>\",\n  \"notificationAuthToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ba2069d5-e95e-4ef1-82f6-961f7585e1f4",
+              "name": "An unknow error has occurred",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiConsumerId\": \"<string>\",\n  \"appId\": \"6B29FC40-CA47-1067-B31D-00DD010662DA\",\n  \"trafficInfluenceID\": \"<string>\",\n  \"appInstanceId\": \"<uuid>\",\n  \"edgeCloudRegion\": \"<string>\",\n  \"edgeCloudZoneId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"state\": \"<string>\",\n  \"sourceTrafficFilters\": {\n    \"sourcePort\": \"<integer>\"\n  },\n  \"destinationTrafficFilters\": {\n    \"destinationPort\": \"<integer>\",\n    \"destinationProtocol\": \"TCP\"\n  },\n  \"notificationUri\": \"<string>\",\n  \"notificationAuthToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"Generic error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fe6f2ab6-08ea-4ac0-809c-7cc15f5d42aa",
+              "name": "Service unavailable. Typically the server is down",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiConsumerId\": \"<string>\",\n  \"appId\": \"6B29FC40-CA47-1067-B31D-00DD010662DA\",\n  \"trafficInfluenceID\": \"<string>\",\n  \"appInstanceId\": \"<uuid>\",\n  \"edgeCloudRegion\": \"<string>\",\n  \"edgeCloudZoneId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"state\": \"<string>\",\n  \"sourceTrafficFilters\": {\n    \"sourcePort\": \"<integer>\"\n  },\n  \"destinationTrafficFilters\": {\n    \"destinationPort\": \"<integer>\",\n    \"destinationProtocol\": \"TCP\"\n  },\n  \"notificationUri\": \"<string>\",\n  \"notificationAuthToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service unavailable\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "96341002-2d6d-46c1-ad35-21a67288a925",
+              "name": "Connection timeout towards backend service has occurred",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiConsumerId\": \"<string>\",\n  \"appId\": \"6B29FC40-CA47-1067-B31D-00DD010662DA\",\n  \"trafficInfluenceID\": \"<string>\",\n  \"appInstanceId\": \"<uuid>\",\n  \"edgeCloudRegion\": \"<string>\",\n  \"edgeCloudZoneId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"state\": \"<string>\",\n  \"sourceTrafficFilters\": {\n    \"sourcePort\": \"<integer>\"\n  },\n  \"destinationTrafficFilters\": {\n    \"destinationPort\": \"<integer>\",\n    \"destinationProtocol\": \"TCP\"\n  },\n  \"notificationUri\": \"<string>\",\n  \"notificationAuthToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Gateway Timeout",
+              "code": 504,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"Backend connection timeout\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "03c73a56-2603-4f13-95a3-0ec3d194926a",
+          "name": "Global System for Mobile Communications updates a specific TrafficInfluence resource, identified by the trafficInfluenceID value.",
+          "request": {
+            "name": "Global System for Mobile Communications updates a specific TrafficInfluence resource, identified by the trafficInfluenceID value.",
+            "description": {
+              "content": "The resource identified by the trafficInfluenceID value can be modified. Before the PATCH can be invoked the status (state) of the resource must be \"active\". If not an errore code 409 (DENIED_WAIT) is returned.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "traffic-influences",
+                ":trafficInfluenceID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "trafficInfluenceID",
+                  "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                },
+                {
+                  "description": "API root for the Traffic Influence API",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services.",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"apiConsumerId\": \"<string>\",\n  \"appId\": \"<uuid>\",\n  \"trafficInfluenceID\": \"<string>\",\n  \"appInstanceId\": \"<uuid>\",\n  \"edgeCloudRegion\": \"<string>\",\n  \"edgeCloudZoneId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"<string>\",\n    \"networkAccessIdentifier\": \"<string>\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"<ipv6>\"\n  },\n  \"state\": \"<string>\",\n  \"sourceTrafficFilters\": {\n    \"sourcePort\": \"<integer>\"\n  },\n  \"destinationTrafficFilters\": {\n    \"destinationPort\": \"<integer>\",\n    \"destinationProtocol\": \"<string>\"\n  },\n  \"notificationUri\": \"<string>\",\n  \"notificationAuthToken\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dcf58987-fb68-4355-9544-9fbdce22e261",
+              "name": "TrafficInfluence resource edited, the related object is returned, the status (state) is updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiConsumerId\": \"<string>\",\n  \"appId\": \"6B29FC40-CA47-1067-B31D-00DD010662DA\",\n  \"trafficInfluenceID\": \"<string>\",\n  \"appInstanceId\": \"<uuid>\",\n  \"edgeCloudRegion\": \"<string>\",\n  \"edgeCloudZoneId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"state\": \"<string>\",\n  \"sourceTrafficFilters\": {\n    \"sourcePort\": \"<integer>\"\n  },\n  \"destinationTrafficFilters\": {\n    \"destinationPort\": \"<integer>\",\n    \"destinationProtocol\": \"TCP\"\n  },\n  \"notificationUri\": \"<string>\",\n  \"notificationAuthToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Link to the created traffic influence resource",
+                  "key": "Location",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"apiConsumerId\": \"<string>\",\n  \"appId\": \"6B29FC40-CA47-1067-B31D-00DD010662DA\",\n  \"trafficInfluenceID\": \"<string>\",\n  \"appInstanceId\": \"<uuid>\",\n  \"edgeCloudRegion\": \"<string>\",\n  \"edgeCloudZoneId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"state\": \"<string>\",\n  \"sourceTrafficFilters\": {\n    \"sourcePort\": \"<integer>\"\n  },\n  \"destinationTrafficFilters\": {\n    \"destinationPort\": \"<integer>\",\n    \"destinationProtocol\": \"TCP\"\n  },\n  \"notificationUri\": \"<string>\",\n  \"notificationAuthToken\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cb3ecd30-1019-4398-b4ff-046901ff50b9",
+              "name": "Problem with the client request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiConsumerId\": \"<string>\",\n  \"appId\": \"6B29FC40-CA47-1067-B31D-00DD010662DA\",\n  \"trafficInfluenceID\": \"<string>\",\n  \"appInstanceId\": \"<uuid>\",\n  \"edgeCloudRegion\": \"<string>\",\n  \"edgeCloudZoneId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"state\": \"<string>\",\n  \"sourceTrafficFilters\": {\n    \"sourcePort\": \"<integer>\"\n  },\n  \"destinationTrafficFilters\": {\n    \"destinationPort\": \"<integer>\",\n    \"destinationProtocol\": \"TCP\"\n  },\n  \"notificationUri\": \"<string>\",\n  \"notificationAuthToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Client specified an invalid argument, request body or query param\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ab7e19c2-fd70-43ad-8e9c-0ae56fe07b11",
+              "name": "Authentication problem with the client request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiConsumerId\": \"<string>\",\n  \"appId\": \"6B29FC40-CA47-1067-B31D-00DD010662DA\",\n  \"trafficInfluenceID\": \"<string>\",\n  \"appInstanceId\": \"<uuid>\",\n  \"edgeCloudRegion\": \"<string>\",\n  \"edgeCloudZoneId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"state\": \"<string>\",\n  \"sourceTrafficFilters\": {\n    \"sourcePort\": \"<integer>\"\n  },\n  \"destinationTrafficFilters\": {\n    \"destinationPort\": \"<integer>\",\n    \"destinationProtocol\": \"TCP\"\n  },\n  \"notificationUri\": \"<string>\",\n  \"notificationAuthToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "82bf6a63-f4c2-420d-ab55-5e7bb4617049",
+              "name": "Client does not have sufficient permission",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiConsumerId\": \"<string>\",\n  \"appId\": \"6B29FC40-CA47-1067-B31D-00DD010662DA\",\n  \"trafficInfluenceID\": \"<string>\",\n  \"appInstanceId\": \"<uuid>\",\n  \"edgeCloudRegion\": \"<string>\",\n  \"edgeCloudZoneId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"state\": \"<string>\",\n  \"sourceTrafficFilters\": {\n    \"sourcePort\": \"<integer>\"\n  },\n  \"destinationTrafficFilters\": {\n    \"destinationPort\": \"<integer>\",\n    \"destinationProtocol\": \"TCP\"\n  },\n  \"notificationUri\": \"<string>\",\n  \"notificationAuthToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0a39a25f-e9ab-4bff-880c-87f07f5e4263",
+              "name": "The specified resource was not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiConsumerId\": \"<string>\",\n  \"appId\": \"6B29FC40-CA47-1067-B31D-00DD010662DA\",\n  \"trafficInfluenceID\": \"<string>\",\n  \"appInstanceId\": \"<uuid>\",\n  \"edgeCloudRegion\": \"<string>\",\n  \"edgeCloudZoneId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"state\": \"<string>\",\n  \"sourceTrafficFilters\": {\n    \"sourcePort\": \"<integer>\"\n  },\n  \"destinationTrafficFilters\": {\n    \"destinationPort\": \"<integer>\",\n    \"destinationProtocol\": \"TCP\"\n  },\n  \"notificationUri\": \"<string>\",\n  \"notificationAuthToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b64d1643-f340-4bcc-99d6-26bb4cd996c8",
+              "name": "An unknow error has occurred",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiConsumerId\": \"<string>\",\n  \"appId\": \"6B29FC40-CA47-1067-B31D-00DD010662DA\",\n  \"trafficInfluenceID\": \"<string>\",\n  \"appInstanceId\": \"<uuid>\",\n  \"edgeCloudRegion\": \"<string>\",\n  \"edgeCloudZoneId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"state\": \"<string>\",\n  \"sourceTrafficFilters\": {\n    \"sourcePort\": \"<integer>\"\n  },\n  \"destinationTrafficFilters\": {\n    \"destinationPort\": \"<integer>\",\n    \"destinationProtocol\": \"TCP\"\n  },\n  \"notificationUri\": \"<string>\",\n  \"notificationAuthToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"Generic error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cf192779-14a1-4f8a-b8b1-da2fb2a9327a",
+              "name": "Service unavailable. Typically the server is down",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiConsumerId\": \"<string>\",\n  \"appId\": \"6B29FC40-CA47-1067-B31D-00DD010662DA\",\n  \"trafficInfluenceID\": \"<string>\",\n  \"appInstanceId\": \"<uuid>\",\n  \"edgeCloudRegion\": \"<string>\",\n  \"edgeCloudZoneId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"state\": \"<string>\",\n  \"sourceTrafficFilters\": {\n    \"sourcePort\": \"<integer>\"\n  },\n  \"destinationTrafficFilters\": {\n    \"destinationPort\": \"<integer>\",\n    \"destinationProtocol\": \"TCP\"\n  },\n  \"notificationUri\": \"<string>\",\n  \"notificationAuthToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service unavailable\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "38638beb-d733-4888-9e63-3ce81bf9fc12",
+              "name": "Connection timeout towards backend service has occurred",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiConsumerId\": \"<string>\",\n  \"appId\": \"6B29FC40-CA47-1067-B31D-00DD010662DA\",\n  \"trafficInfluenceID\": \"<string>\",\n  \"appInstanceId\": \"<uuid>\",\n  \"edgeCloudRegion\": \"<string>\",\n  \"edgeCloudZoneId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"state\": \"<string>\",\n  \"sourceTrafficFilters\": {\n    \"sourcePort\": \"<integer>\"\n  },\n  \"destinationTrafficFilters\": {\n    \"destinationPort\": \"<integer>\",\n    \"destinationProtocol\": \"TCP\"\n  },\n  \"notificationUri\": \"<string>\",\n  \"notificationAuthToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Gateway Timeout",
+              "code": 504,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"Backend connection timeout\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "097fe4bc-53f9-4fb9-939f-1d85bf16f25a",
+          "name": "Global System for Mobile Communications Delete an existing TrafficInfluence resource",
+          "request": {
+            "name": "Global System for Mobile Communications Delete an existing TrafficInfluence resource",
+            "description": {
+              "content": "invoked by the API Consumer to stop influencing the traffic, deleting a TrafficInfluence resource previously created.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "traffic-influences",
+                ":trafficInfluenceID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "callbackUrl",
+                  "value": "<uri>",
+                  "description": "the location where updated data will be sent.  Must be network\naccessible\nby the source server\n"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "trafficInfluenceID",
+                  "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                },
+                {
+                  "description": "API root for the Traffic Influence API",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services.",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE"
+          },
+          "response": [
+            {
+              "id": "cdb8e200-8f45-4a53-b12f-069bbe6ce87e",
+              "name": "The resource delation request has been accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "callbackUrl",
+                      "value": "https://my-notification-server.com"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"OK\",\n  \"message\": \"Accepted\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f784d822-f679-4121-a54c-d1b37a9e4746",
+              "name": "Authentication problem with the client request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "callbackUrl",
+                      "value": "https://my-notification-server.com"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2cfb753f-dce2-4ffb-8b1e-49bacdefddc8",
+              "name": "Client does not have sufficient permission",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "callbackUrl",
+                      "value": "https://my-notification-server.com"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ad00aa85-f0cd-4873-a8ff-887398f956a6",
+              "name": "The specified resource was not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "callbackUrl",
+                      "value": "https://my-notification-server.com"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fdb6248a-934e-443d-a37b-9c52961c610e",
+              "name": "Service unavailable. Typically the server is down",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "callbackUrl",
+                      "value": "https://my-notification-server.com"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service unavailable\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "65219c7e-05b5-4574-84bb-543cbe8591e9",
+              "name": "Connection timeout towards backend service has occurred",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "callbackUrl",
+                      "value": "https://my-notification-server.com"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root for the Traffic Influence API",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Gateway Timeout",
+              "code": 504,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"Backend connection timeout\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "API root for the Traffic Influence API",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "http://localhost:9091",
+      "key": "apiRoot"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/traffic-influence/vwip",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3872cab9-10f2-48cc-9c39-c9ca7d32a5b0",
+    "name": "Global System for Mobile Communications GSMA Camara Project Traffic Influence API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Traffic Influence API provides the capability to establish the optimal routing, in terms of latency, in a specific geographical area, between the user device, e.g. the users smartphone, and the optimal Edge Application Server (EAS) instance nearby. If the user device is detected by the developer to have moved into a different geographical location, the Traffic Influence API can be invoked again to get the optimal routing in the new location.\n\nContact Support:\n Email: project-email@sample.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,593 @@
+{
+  "item": [
+    {
+      "id": "f8eec9d7-1a3a-47f9-96a6-63a3ce0d2785",
+      "name": "Population Density Data",
+      "description": {
+        "content": "Operations to retrieve population density information.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b2a5096e-27ed-4c2d-858b-56ace7043a58",
+          "name": "Global System for Mobile Communications Retrieves population density information in a specified area",
+          "request": {
+            "name": "Global System for Mobile Communications Retrieves population density information in a specified area",
+            "description": {
+              "content": "Retrieves population density estimation together with the estimation range related  for a time slot for a given area (described as a polygon) as a data set consisting of a sequence of equally-sized objects covering the input polygon area.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "retrieve"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "API root",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services.",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"area\": {\n    \"areaType\": \"<string>\"\n  },\n  \"startDate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"precision\": 7,\n  \"sink\": \"<url>\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "32b525d9-89cf-4180-bf07-2e6aadaa86e4",
+              "name": "Population density data result.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"area\": {\n    \"areaType\": \"POLYGON\",\n    \"boundary\": [\n      {\n        \"latitude\": 45.754114,\n        \"longitude\": 4.860374\n      },\n      {\n        \"latitude\": 45.753845,\n        \"longitude\": 4.863185\n      },\n      {\n        \"latitude\": 45.75249,\n        \"longitude\": 4.861876\n      },\n      {\n        \"latitude\": 45.751224,\n        \"longitude\": 4.861125\n      },\n      {\n        \"latitude\": 45.751442,\n        \"longitude\": 4.859827\n      }\n    ]\n  },\n  \"startDate\": \"2024-04-23T14:44:18.165Z\",\n  \"endDate\": \"2024-04-23T14:44:18.165Z\",\n  \"precision\": 7\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"SUPPORTED_AREA\",\n  \"timedPopulationDensityData\": [\n    {\n      \"startTime\": \"2024-01-03T10:00:00Z\",\n      \"endTime\": \"2024-01-03T11:00:00Z\",\n      \"cellPopulationDensityData\": [\n        {\n          \"geohash\": \"ezdqemf\",\n          \"populationDensityData\": {\n            \"dataType\": \"DENSITY_ESTIMATION\",\n            \"maxPplDensity\": 150,\n            \"minPplDensity\": 30,\n            \"pplDensity\": 60\n          }\n        },\n        {\n          \"geohash\": \"ezdqemg\",\n          \"populationDensityData\": {\n            \"dataType\": \"DENSITY_ESTIMATION\",\n            \"maxPplDensity\": 100,\n            \"minPplDensity\": 40,\n            \"pplDensity\": 90\n          }\n        },\n        {\n          \"geohash\": \"ezdqemu\",\n          \"populationDensityData\": {\n            \"dataType\": \"LOW_DENSITY\"\n          }\n        }\n      ]\n    },\n    {\n      \"startTime\": \"2024-01-03T11:00:00Z\",\n      \"endTime\": \"2024-01-03T12:00:00Z\",\n      \"cellPopulationDensityData\": [\n        {\n          \"geohash\": \"ezdqemf\",\n          \"populationDensityData\": {\n            \"dataType\": \"DENSITY_ESTIMATION\",\n            \"maxPplDensity\": 100,\n            \"minPplDensity\": 30,\n            \"pplDensity\": 70\n          }\n        },\n        {\n          \"geohash\": \"ezdqemg\",\n          \"populationDensityData\": {\n            \"dataType\": \"DENSITY_ESTIMATION\",\n            \"maxPplDensity\": 200,\n            \"minPplDensity\": 40,\n            \"pplDensity\": 100\n          }\n        },\n        {\n          \"geohash\": \"ezdqemu\",\n          \"populationDensityData\": {\n            \"dataType\": \"DENSITY_ESTIMATION\",\n            \"maxPplDensity\": 200,\n            \"minPplDensity\": 40,\n            \"pplDensity\": 100\n          }\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8fd83200-62e2-4d18-9b2b-0bf83adb07ec",
+              "name": "Population density data requested. This response is returned when the behaviour of the API is asynchronous.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"area\": {\n    \"areaType\": \"POLYGON\",\n    \"boundary\": [\n      {\n        \"latitude\": 45.754114,\n        \"longitude\": 4.860374\n      },\n      {\n        \"latitude\": 45.753845,\n        \"longitude\": 4.863185\n      },\n      {\n        \"latitude\": 45.75249,\n        \"longitude\": 4.861876\n      },\n      {\n        \"latitude\": 45.751224,\n        \"longitude\": 4.861125\n      },\n      {\n        \"latitude\": 45.751442,\n        \"longitude\": 4.859827\n      }\n    ]\n  },\n  \"startDate\": \"2024-04-23T14:44:18.165Z\",\n  \"endDate\": \"2024-04-23T14:44:18.165Z\",\n  \"precision\": 7\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7b264af7-0f3c-4929-b994-ebc5701eeb6d",
+              "name": "Problem with the client request. In addition to generic scenarios of `INVALID_ARGUMENT`, `INVALID_CREDENTIAL`, `INVALID_TOKEN`, another scenarios may exist:\n  - The area is not a polygon shape or exceeds supported complexity (\"code\": \"POPULATION_DENSITY_DATA.INVALID_AREA\", \"message\": \"The area is not a polygon shape or exceeds supported complexity\")\n  - Indicated combination of area, time interval and precision is too big (\"code\": \"POPULATION_DENSITY_DATA.UNSUPPPORTED_REQUEST\", \"message\": \"Indicated combination of area, time interval and precision is too big\")\n  - Indicated `startDate` is greater than the maximum allowed (\"code\": \"POPULATION_DENSITY_DATA.MAX_STARTDATE_EXCEEDED\", \"message\": \"Indicated startDate is greater than the maximum allowed\")\n  - Indicated `startDate` is earlier than the minimum allowed (\"code\": \"POPULATION_DENSITY_DATA.MIN_STARTDATE_EXCEEDED\", \"message\": \"Indicated startDate is earlier than the minimum allowed\")\n  - Indicated `endDate` is earlier than the `startDate` (\"code\": \"POPULATION_DENSITY_DATA.INVALID_END_DATE\", \"message\": \"Indicated endDate is earlier than the startDate\")\n  - Indicated time period is greater than the maximum allowed (More than maximum hours between startDate and endDate) (\"code\": \"POPULATION_DENSITY_DATA.MAX_TIME_PERIOD_EXCEEDED\", \"message\": \"Indicated time period is greater than the maximum allowed (More than maximum hours between startDate and endDate)\")\n  - Indicated cell precision (Geohash level) is not supported (\"code\": \"POPULATION_DENSITY_DATA.UNSUPPORTED_PRECISION\", \"message\": \"Indicated cell precision (Geohash level) is not supported\")\n  - Indicated combination of area, time interval and precision is too big for a sync response (\"code\": \"POPULATION_DENSITY_DATA.UNSUPPORTED_SYNC_RESPONSE\", \"message\": \"Indicated combination of area, time interval and precision is too big for a sync response\")",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"area\": {\n    \"areaType\": \"POLYGON\",\n    \"boundary\": [\n      {\n        \"latitude\": 45.754114,\n        \"longitude\": 4.860374\n      },\n      {\n        \"latitude\": 45.753845,\n        \"longitude\": 4.863185\n      },\n      {\n        \"latitude\": 45.75249,\n        \"longitude\": 4.861876\n      },\n      {\n        \"latitude\": 45.751224,\n        \"longitude\": 4.861125\n      },\n      {\n        \"latitude\": 45.751442,\n        \"longitude\": 4.859827\n      }\n    ]\n  },\n  \"startDate\": \"2024-04-23T14:44:18.165Z\",\n  \"endDate\": \"2024-04-23T14:44:18.165Z\",\n  \"precision\": 7\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Invalid input\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a6d08544-5bff-49b6-be93-fea639a09edd",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"area\": {\n    \"areaType\": \"POLYGON\",\n    \"boundary\": [\n      {\n        \"latitude\": 45.754114,\n        \"longitude\": 4.860374\n      },\n      {\n        \"latitude\": 45.753845,\n        \"longitude\": 4.863185\n      },\n      {\n        \"latitude\": 45.75249,\n        \"longitude\": 4.861876\n      },\n      {\n        \"latitude\": 45.751224,\n        \"longitude\": 4.861125\n      },\n      {\n        \"latitude\": 45.751442,\n        \"longitude\": 4.859827\n      }\n    ]\n  },\n  \"startDate\": \"2024-04-23T14:44:18.165Z\",\n  \"endDate\": \"2024-04-23T14:44:18.165Z\",\n  \"precision\": 7\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Authorization failed: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "251219fb-703f-4141-95a8-7628a89c9e9c",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"area\": {\n    \"areaType\": \"POLYGON\",\n    \"boundary\": [\n      {\n        \"latitude\": 45.754114,\n        \"longitude\": 4.860374\n      },\n      {\n        \"latitude\": 45.753845,\n        \"longitude\": 4.863185\n      },\n      {\n        \"latitude\": 45.75249,\n        \"longitude\": 4.861876\n      },\n      {\n        \"latitude\": 45.751224,\n        \"longitude\": 4.861125\n      },\n      {\n        \"latitude\": 45.751442,\n        \"longitude\": 4.859827\n      }\n    ]\n  },\n  \"startDate\": \"2024-04-23T14:44:18.165Z\",\n  \"endDate\": \"2024-04-23T14:44:18.165Z\",\n  \"precision\": 7\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Operation not allowed: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3200368b-aabe-4880-bef9-9a5ac997677a",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"area\": {\n    \"areaType\": \"POLYGON\",\n    \"boundary\": [\n      {\n        \"latitude\": 45.754114,\n        \"longitude\": 4.860374\n      },\n      {\n        \"latitude\": 45.753845,\n        \"longitude\": 4.863185\n      },\n      {\n        \"latitude\": 45.75249,\n        \"longitude\": 4.861876\n      },\n      {\n        \"latitude\": 45.751224,\n        \"longitude\": 4.861125\n      },\n      {\n        \"latitude\": 45.751442,\n        \"longitude\": 4.859827\n      }\n    ]\n  },\n  \"startDate\": \"2024-04-23T14:44:18.165Z\",\n  \"endDate\": \"2024-04-23T14:44:18.165Z\",\n  \"precision\": 7\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"NOT_FOUND\",\n  \"message\": \"The specified resource is not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4da01287-7f5c-46f6-afce-ac4a1e8063e6",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"area\": {\n    \"areaType\": \"POLYGON\",\n    \"boundary\": [\n      {\n        \"latitude\": 45.754114,\n        \"longitude\": 4.860374\n      },\n      {\n        \"latitude\": 45.753845,\n        \"longitude\": 4.863185\n      },\n      {\n        \"latitude\": 45.75249,\n        \"longitude\": 4.861876\n      },\n      {\n        \"latitude\": 45.751224,\n        \"longitude\": 4.861125\n      },\n      {\n        \"latitude\": 45.751442,\n        \"longitude\": 4.859827\n      }\n    ]\n  },\n  \"startDate\": \"2024-04-23T14:44:18.165Z\",\n  \"endDate\": \"2024-04-23T14:44:18.165Z\",\n  \"precision\": 7\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2647efd3-9e12-4e22-ac26-7d6bc7f491ab",
+              "name": "Service unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"area\": {\n    \"areaType\": \"POLYGON\",\n    \"boundary\": [\n      {\n        \"latitude\": 45.754114,\n        \"longitude\": 4.860374\n      },\n      {\n        \"latitude\": 45.753845,\n        \"longitude\": 4.863185\n      },\n      {\n        \"latitude\": 45.75249,\n        \"longitude\": 4.861876\n      },\n      {\n        \"latitude\": 45.751224,\n        \"longitude\": 4.861125\n      },\n      {\n        \"latitude\": 45.751442,\n        \"longitude\": 4.859827\n      }\n    ]\n  },\n  \"startDate\": \"2024-04-23T14:44:18.165Z\",\n  \"endDate\": \"2024-04-23T14:44:18.165Z\",\n  \"precision\": 7\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service unavailable\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "API root",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "http://localhost:9091",
+      "key": "apiRoot"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/population-density-data/v0.1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3eb0bb4b-3265-48e9-93bf-deaa7fbefa11",
+    "name": "Global System for Mobile Communications GSMA Camara Project Population Density Data",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Population Density Data API exposes population density estimations for a specified area for a specified time interval.\n# Introduction\nWith the Population Density Data API the customer can retrieve population density estimations for a specific area at the current or a future period of time. The estimation considers historical anonymized information of the network connected devices in the requested area.\n\nThis functionality can be used for multiple use cases, some of the possible use cases for this API are:\n\n- Supporting BVLOS (Beyond Visual Line of Sight) flights with the information needed to meet SORA 2.5 (Specific Operation Risk Assessment) requirements in terms of intrinsic Ground Risk Class (iGRC). More information in [Specific Operations Risk Assessment](https://www.easa.europa.eu/en/domains/civil-drones-rpas/specific-category-civil-drones/specific-operations-risk-assessment-sora)\n- Providing information to identify if the ground risk class for a given drone flight path is acceptable for the time of the flight, or an alternative time should be considered to lower the risk.\n- Sustainable Urban Planning. \n- Environmental monitoring at mass events, such as concerts or festivals.\n\nThe list above is just a few examples, the API can be used for other use cases as well.\n\n# Relevant terms and definitions\n* **Population Density**: refers to the number of people in a given area divided by the total size of the area.\n* **Notification URL and token**: Developers may provide a callback URL (`sink`) for receiving an async response. This is an optional parameter. If `sink` is included, it is RECOMMENDED for the client to provide as well the `sinkCredential` property to protect the notification endpoint. In the current version,`sinkCredential.credentialType` MUST be set to `ACCESSTOKEN` if provided.\n# API Functionality\nOnce a developer specifies (1) the area as a polygon shape, (2) a precision level and (3) time interval in which they want to obtain the population density, the API returns a data set consisting of a sequence of time ranges, with each time range containing the input polygon subdivided into equal-sized grid cells.\n\nFor each of the equal-sized cells of the grid, an estimated population density is reported for each time slot within the range, this includes: estimated population density people/km2, and a range for this estimation - [minimum, maximum] (exact definitions of minimum and maximum are estimation algorithm specific).\n\nThese values are calculated based on historical data and/or prediction models trained on such data.\n\nThe polygon specifying an area of interest must comply with certain restrictions, which must be previously validated by the developer:\n- The polygon may not exceed a certain area.\n- The polygon may not contain more than 15 vertexes.\n- The polygon must be associated with a location where the MNO provides mobile connectivity services. If a polygon is located entirely outside the supported area, an empty array is returned.\n\nThe standard behaviour of the API is synchronous, although for large area requests the API may behave asynchronously. An API invoker can enforce asynchronous behaviour by providing a callback URL (`sink`) is in the request, in this case the API sends a callback to the callback URL provided with the result of the request. If `sink` is included, it is RECOMMENDED for the client to provide as well the `sinkCredential` property to protect the notification endpoint. In the current version,`sinkCredential.credentialType` MUST be set to `ACCESSTOKEN` if provided.\n\nFor requests with a combination of `area`, `precision`, `startDate` and `endDate` properties involving an amount of processing that cannot be processed synchronously, the API returns the error response `POPULATION_DENSITY_DATA.UNSUPPORTED_SYNC_RESPONSE`.\n\nFor requests with a combination of `area`, `precision`, `startDate` and `endDate` properties too big for both synchronous and asynchronous processing, the API returns the error response `POPULATION_DENSITY_DATA.UNSUPPPORTED_REQUEST`.\n\n**NOTE**: In order to ensure anonymized information, if the data relating to a grid cell in the required time interval is not sufficient to be exposed due to [k-anonymity](https://en.wikipedia.org/wiki/K-anonymity), no such data is  returned by the API and the value of the dataType property is `LOW_DENSITY`.\n# Resources and Operations overview\nThe API provides one endpoint that accepts POST requests for retrieving population density information in the specified area.\n# Authorization and Authentication\nThe \"Camara Security and Interoperability Profile\" provides details on how a client requests an access token. Please refer to Identify and Consent Management (https://github.com/camaraproject/IdentityAndConsentManagement/) for the released version of the Profile.\nWhich specific authorization flows are to be used will be determined during onboarding process, happening between the API Client and the Telco Operator exposing the API, taking into account the declared purpose for accessing the API, while also being subject to the prevailing legal framework dictated by local legislation.\nIt is important to remark that in cases where personal user data is processed by the API, and users can exercise their rights through mechanisms such as opt-in and/or opt-out, the use of 3-legged access tokens becomes mandatory. This measure ensures that the API remains in strict compliance with user privacy preferences and regulatory obligations, upholding the principles of transparency and user-centric data control.\nPopulation Density Data API ensures the usage of anonymized information and do not treat personal data neither as input nor output.  Therefore, the access to Population Density Data API is defined as Client Credentials - 2-legged. Please refer to Identify and Consent Management (https://github.com/camaraproject/IdentityAndConsentManagement/) for the latest detailed specification of this authentication/authorization flow.\n\n# Further info and support\n(FAQs will be added in a later version of the documentation)",
+      "type": "text/plain"
+    }
+  }
+}

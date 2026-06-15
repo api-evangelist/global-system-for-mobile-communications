@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Global System for Mobile Communications GSMA Camara Project Connectivity Insights API",
+    "version": "0.4.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Network Quality",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Global System for Mobile Communications Check the network quality.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/connectivity-insights/v0.4/check-network-quality",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Check the network quality. The response shows the network's current\n level of confidence that it can meet an application profile's quality\n thresholds for a given end user device.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

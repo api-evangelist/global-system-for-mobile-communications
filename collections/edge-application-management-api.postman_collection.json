@@ -1,0 +1,4391 @@
+{
+  "item": [
+    {
+      "id": "fbeea0e3-3428-4117-b40e-56c651aba586",
+      "name": "Application",
+      "description": {
+        "content": "Application and Application Instance Lice Cycle Management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "814b355e-ad4b-4fec-9705-b8d49138f17e",
+          "name": "Global System for Mobile Communications Submit application metadata to the Edge Cloud Provider.",
+          "request": {
+            "name": "Global System for Mobile Communications Submit application metadata to the Edge Cloud Provider.",
+            "description": {
+              "content": "Contains the information about the application to be\ninstantiated in the Edge Cloud\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apps"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "API root",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                },
+                {
+                  "description": "Base path for the Edge Application Management API",
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services\n",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"version\": \"<string>\",\n  \"appProvider\": \"<string>\",\n  \"packageType\": \"<string>\",\n  \"appRepo\": {\n    \"type\": \"<string>\",\n    \"imagePath\": \"<string>\",\n    \"userName\": \"<string>\",\n    \"credentials\": \"<string>\",\n    \"authType\": \"<string>\",\n    \"checksum\": \"<string>\"\n  },\n  \"requiredResources\": {\n    \"infraKind\": \"<string>\",\n    \"applicationResources\": {\n      \"cpuPool\": {\n        \"numCPU\": \"<integer>\",\n        \"memory\": \"<integer>\",\n        \"topology\": {\n          \"minNumberOfNodes\": \"<integer>\",\n          \"minNodeCpu\": \"<integer>\",\n          \"minNodeMemory\": \"<integer>\"\n        }\n      },\n      \"gpuPool\": {\n        \"numCPU\": \"<integer>\",\n        \"memory\": \"<integer>\",\n        \"gpuMemory\": \"<integer>\",\n        \"topology\": {\n          \"minNumberOfNodes\": \"<integer>\",\n          \"minNodeCpu\": \"<integer>\",\n          \"minNodeMemory\": \"<integer>\",\n          \"minNodeGpuMemory\": \"<integer>\"\n        }\n      }\n    },\n    \"isStandalone\": \"<boolean>\",\n    \"version\": \"<string>\",\n    \"additionalStorage\": \"<string>\",\n    \"networking\": {\n      \"primaryNetwork\": {\n        \"provider\": \"<string>\",\n        \"version\": \"<string>\"\n      },\n      \"additionalNetworks\": [\n        {\n          \"name\": \"<string>\",\n          \"interfaceType\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"interfaceType\": \"<string>\"\n        }\n      ]\n    },\n    \"addons\": {\n      \"monitoring\": false,\n      \"ingress\": false\n    }\n  },\n  \"componentSpec\": [\n    {\n      \"componentName\": \"<string>\",\n      \"networkInterfaces\": [\n        {\n          \"interfaceId\": \"<string>\",\n          \"protocol\": \"<string>\",\n          \"port\": \"<integer>\",\n          \"visibilityType\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"componentName\": \"<string>\",\n      \"networkInterfaces\": [\n        {\n          \"interfaceId\": \"<string>\",\n          \"protocol\": \"<string>\",\n          \"port\": \"<integer>\",\n          \"visibilityType\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"appId\": \"<uuid>\",\n  \"operatingSystem\": {\n    \"architecture\": \"<string>\",\n    \"family\": \"<string>\",\n    \"version\": \"<string>\",\n    \"license\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6bf927e9-9198-497c-9d2c-2c59036b120f",
+              "name": "Application created successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"version\": \"<string>\",\n  \"appProvider\": \"<string>\",\n  \"packageType\": \"<string>\",\n  \"appRepo\": {\n    \"type\": \"<string>\",\n    \"imagePath\": \"https://charts.bitnami.com/bitnami/helm/example-chart:0.1.0\",\n    \"userName\": \"<string>\",\n    \"credentials\": \"<string>\",\n    \"authType\": \"<string>\",\n    \"checksum\": \"<string>\"\n  },\n  \"requiredResources\": {\n    \"infraKind\": \"kubernetes\",\n    \"applicationResources\": {\n      \"cpuPool\": {\n        \"numCPU\": 1,\n        \"memory\": 1024,\n        \"topology\": {\n          \"minNumberOfNodes\": 5,\n          \"minNodeCpu\": 2,\n          \"minNodeMemory\": 1024\n        }\n      },\n      \"gpuPool\": {\n        \"numCPU\": 1,\n        \"memory\": 1024,\n        \"gpuMemory\": 16,\n        \"topology\": {\n          \"minNumberOfNodes\": 2,\n          \"minNodeCpu\": 2,\n          \"minNodeMemory\": 1024,\n          \"minNodeGpuMemory\": 8\n        }\n      }\n    },\n    \"isStandalone\": false,\n    \"version\": \"1.29\",\n    \"additionalStorage\": \"80GB\",\n    \"networking\": {\n      \"primaryNetwork\": {\n        \"provider\": \"cilium\",\n        \"version\": \"1.13\"\n      },\n      \"additionalNetworks\": [\n        {\n          \"name\": \"net1\",\n          \"interfaceType\": \"vfio-pci\"\n        },\n        {\n          \"name\": \"net1\",\n          \"interfaceType\": \"vfio-pci\"\n        }\n      ]\n    },\n    \"addons\": {\n      \"monitoring\": true,\n      \"ingress\": true\n    }\n  },\n  \"componentSpec\": [\n    {\n      \"componentName\": \"<string>\",\n      \"networkInterfaces\": [\n        {\n          \"interfaceId\": \"<string>\",\n          \"protocol\": \"<string>\",\n          \"port\": \"<integer>\",\n          \"visibilityType\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"componentName\": \"<string>\",\n      \"networkInterfaces\": [\n        {\n          \"interfaceId\": \"<string>\",\n          \"protocol\": \"<string>\",\n          \"port\": \"<integer>\",\n          \"visibilityType\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"appId\": \"<uuid>\",\n  \"operatingSystem\": {\n    \"architecture\": \"x86_64\",\n    \"family\": \"<string>\",\n    \"version\": \"<string>\",\n    \"license\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"appId\": \"<uuid>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "45e0f4c0-f288-4da2-a964-b37598f7659d",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"version\": \"<string>\",\n  \"appProvider\": \"<string>\",\n  \"packageType\": \"<string>\",\n  \"appRepo\": {\n    \"type\": \"<string>\",\n    \"imagePath\": \"https://charts.bitnami.com/bitnami/helm/example-chart:0.1.0\",\n    \"userName\": \"<string>\",\n    \"credentials\": \"<string>\",\n    \"authType\": \"<string>\",\n    \"checksum\": \"<string>\"\n  },\n  \"requiredResources\": {\n    \"infraKind\": \"kubernetes\",\n    \"applicationResources\": {\n      \"cpuPool\": {\n        \"numCPU\": 1,\n        \"memory\": 1024,\n        \"topology\": {\n          \"minNumberOfNodes\": 5,\n          \"minNodeCpu\": 2,\n          \"minNodeMemory\": 1024\n        }\n      },\n      \"gpuPool\": {\n        \"numCPU\": 1,\n        \"memory\": 1024,\n        \"gpuMemory\": 16,\n        \"topology\": {\n          \"minNumberOfNodes\": 2,\n          \"minNodeCpu\": 2,\n          \"minNodeMemory\": 1024,\n          \"minNodeGpuMemory\": 8\n        }\n      }\n    },\n    \"isStandalone\": false,\n    \"version\": \"1.29\",\n    \"additionalStorage\": \"80GB\",\n    \"networking\": {\n      \"primaryNetwork\": {\n        \"provider\": \"cilium\",\n        \"version\": \"1.13\"\n      },\n      \"additionalNetworks\": [\n        {\n          \"name\": \"net1\",\n          \"interfaceType\": \"vfio-pci\"\n        },\n        {\n          \"name\": \"net1\",\n          \"interfaceType\": \"vfio-pci\"\n        }\n      ]\n    },\n    \"addons\": {\n      \"monitoring\": true,\n      \"ingress\": true\n    }\n  },\n  \"componentSpec\": [\n    {\n      \"componentName\": \"<string>\",\n      \"networkInterfaces\": [\n        {\n          \"interfaceId\": \"<string>\",\n          \"protocol\": \"<string>\",\n          \"port\": \"<integer>\",\n          \"visibilityType\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"componentName\": \"<string>\",\n      \"networkInterfaces\": [\n        {\n          \"interfaceId\": \"<string>\",\n          \"protocol\": \"<string>\",\n          \"port\": \"<integer>\",\n          \"visibilityType\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"appId\": \"<uuid>\",\n  \"operatingSystem\": {\n    \"architecture\": \"x86_64\",\n    \"family\": \"<string>\",\n    \"version\": \"<string>\",\n    \"license\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Schema validation failed at  ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "be095e90-9a23-4296-b6a7-960ee16315dc",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"version\": \"<string>\",\n  \"appProvider\": \"<string>\",\n  \"packageType\": \"<string>\",\n  \"appRepo\": {\n    \"type\": \"<string>\",\n    \"imagePath\": \"https://charts.bitnami.com/bitnami/helm/example-chart:0.1.0\",\n    \"userName\": \"<string>\",\n    \"credentials\": \"<string>\",\n    \"authType\": \"<string>\",\n    \"checksum\": \"<string>\"\n  },\n  \"requiredResources\": {\n    \"infraKind\": \"kubernetes\",\n    \"applicationResources\": {\n      \"cpuPool\": {\n        \"numCPU\": 1,\n        \"memory\": 1024,\n        \"topology\": {\n          \"minNumberOfNodes\": 5,\n          \"minNodeCpu\": 2,\n          \"minNodeMemory\": 1024\n        }\n      },\n      \"gpuPool\": {\n        \"numCPU\": 1,\n        \"memory\": 1024,\n        \"gpuMemory\": 16,\n        \"topology\": {\n          \"minNumberOfNodes\": 2,\n          \"minNodeCpu\": 2,\n          \"minNodeMemory\": 1024,\n          \"minNodeGpuMemory\": 8\n        }\n      }\n    },\n    \"isStandalone\": false,\n    \"version\": \"1.29\",\n    \"additionalStorage\": \"80GB\",\n    \"networking\": {\n      \"primaryNetwork\": {\n        \"provider\": \"cilium\",\n        \"version\": \"1.13\"\n      },\n      \"additionalNetworks\": [\n        {\n          \"name\": \"net1\",\n          \"interfaceType\": \"vfio-pci\"\n        },\n        {\n          \"name\": \"net1\",\n          \"interfaceType\": \"vfio-pci\"\n        }\n      ]\n    },\n    \"addons\": {\n      \"monitoring\": true,\n      \"ingress\": true\n    }\n  },\n  \"componentSpec\": [\n    {\n      \"componentName\": \"<string>\",\n      \"networkInterfaces\": [\n        {\n          \"interfaceId\": \"<string>\",\n          \"protocol\": \"<string>\",\n          \"port\": \"<integer>\",\n          \"visibilityType\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"componentName\": \"<string>\",\n      \"networkInterfaces\": [\n        {\n          \"interfaceId\": \"<string>\",\n          \"protocol\": \"<string>\",\n          \"port\": \"<integer>\",\n          \"visibilityType\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"appId\": \"<uuid>\",\n  \"operatingSystem\": {\n    \"architecture\": \"x86_64\",\n    \"family\": \"<string>\",\n    \"version\": \"<string>\",\n    \"license\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Authorization failed: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ae6f0a5f-0b68-4d48-be9f-264bee5d3131",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"version\": \"<string>\",\n  \"appProvider\": \"<string>\",\n  \"packageType\": \"<string>\",\n  \"appRepo\": {\n    \"type\": \"<string>\",\n    \"imagePath\": \"https://charts.bitnami.com/bitnami/helm/example-chart:0.1.0\",\n    \"userName\": \"<string>\",\n    \"credentials\": \"<string>\",\n    \"authType\": \"<string>\",\n    \"checksum\": \"<string>\"\n  },\n  \"requiredResources\": {\n    \"infraKind\": \"kubernetes\",\n    \"applicationResources\": {\n      \"cpuPool\": {\n        \"numCPU\": 1,\n        \"memory\": 1024,\n        \"topology\": {\n          \"minNumberOfNodes\": 5,\n          \"minNodeCpu\": 2,\n          \"minNodeMemory\": 1024\n        }\n      },\n      \"gpuPool\": {\n        \"numCPU\": 1,\n        \"memory\": 1024,\n        \"gpuMemory\": 16,\n        \"topology\": {\n          \"minNumberOfNodes\": 2,\n          \"minNodeCpu\": 2,\n          \"minNodeMemory\": 1024,\n          \"minNodeGpuMemory\": 8\n        }\n      }\n    },\n    \"isStandalone\": false,\n    \"version\": \"1.29\",\n    \"additionalStorage\": \"80GB\",\n    \"networking\": {\n      \"primaryNetwork\": {\n        \"provider\": \"cilium\",\n        \"version\": \"1.13\"\n      },\n      \"additionalNetworks\": [\n        {\n          \"name\": \"net1\",\n          \"interfaceType\": \"vfio-pci\"\n        },\n        {\n          \"name\": \"net1\",\n          \"interfaceType\": \"vfio-pci\"\n        }\n      ]\n    },\n    \"addons\": {\n      \"monitoring\": true,\n      \"ingress\": true\n    }\n  },\n  \"componentSpec\": [\n    {\n      \"componentName\": \"<string>\",\n      \"networkInterfaces\": [\n        {\n          \"interfaceId\": \"<string>\",\n          \"protocol\": \"<string>\",\n          \"port\": \"<integer>\",\n          \"visibilityType\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"componentName\": \"<string>\",\n      \"networkInterfaces\": [\n        {\n          \"interfaceId\": \"<string>\",\n          \"protocol\": \"<string>\",\n          \"port\": \"<integer>\",\n          \"visibilityType\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"appId\": \"<uuid>\",\n  \"operatingSystem\": {\n    \"architecture\": \"x86_64\",\n    \"family\": \"<string>\",\n    \"version\": \"<string>\",\n    \"license\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Operation not allowed: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ebe962b3-00fe-47e5-946a-d26b99252918",
+              "name": "Conflict",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"version\": \"<string>\",\n  \"appProvider\": \"<string>\",\n  \"packageType\": \"<string>\",\n  \"appRepo\": {\n    \"type\": \"<string>\",\n    \"imagePath\": \"https://charts.bitnami.com/bitnami/helm/example-chart:0.1.0\",\n    \"userName\": \"<string>\",\n    \"credentials\": \"<string>\",\n    \"authType\": \"<string>\",\n    \"checksum\": \"<string>\"\n  },\n  \"requiredResources\": {\n    \"infraKind\": \"kubernetes\",\n    \"applicationResources\": {\n      \"cpuPool\": {\n        \"numCPU\": 1,\n        \"memory\": 1024,\n        \"topology\": {\n          \"minNumberOfNodes\": 5,\n          \"minNodeCpu\": 2,\n          \"minNodeMemory\": 1024\n        }\n      },\n      \"gpuPool\": {\n        \"numCPU\": 1,\n        \"memory\": 1024,\n        \"gpuMemory\": 16,\n        \"topology\": {\n          \"minNumberOfNodes\": 2,\n          \"minNodeCpu\": 2,\n          \"minNodeMemory\": 1024,\n          \"minNodeGpuMemory\": 8\n        }\n      }\n    },\n    \"isStandalone\": false,\n    \"version\": \"1.29\",\n    \"additionalStorage\": \"80GB\",\n    \"networking\": {\n      \"primaryNetwork\": {\n        \"provider\": \"cilium\",\n        \"version\": \"1.13\"\n      },\n      \"additionalNetworks\": [\n        {\n          \"name\": \"net1\",\n          \"interfaceType\": \"vfio-pci\"\n        },\n        {\n          \"name\": \"net1\",\n          \"interfaceType\": \"vfio-pci\"\n        }\n      ]\n    },\n    \"addons\": {\n      \"monitoring\": true,\n      \"ingress\": true\n    }\n  },\n  \"componentSpec\": [\n    {\n      \"componentName\": \"<string>\",\n      \"networkInterfaces\": [\n        {\n          \"interfaceId\": \"<string>\",\n          \"protocol\": \"<string>\",\n          \"port\": \"<integer>\",\n          \"visibilityType\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"componentName\": \"<string>\",\n      \"networkInterfaces\": [\n        {\n          \"interfaceId\": \"<string>\",\n          \"protocol\": \"<string>\",\n          \"port\": \"<integer>\",\n          \"visibilityType\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"appId\": \"<uuid>\",\n  \"operatingSystem\": {\n    \"architecture\": \"x86_64\",\n    \"family\": \"<string>\",\n    \"version\": \"<string>\",\n    \"license\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 409,\n  \"code\": \"CONFLICT\",\n  \"message\": \"App already exists\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "14906b9a-5b99-4ed1-898e-d59b80227693",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"version\": \"<string>\",\n  \"appProvider\": \"<string>\",\n  \"packageType\": \"<string>\",\n  \"appRepo\": {\n    \"type\": \"<string>\",\n    \"imagePath\": \"https://charts.bitnami.com/bitnami/helm/example-chart:0.1.0\",\n    \"userName\": \"<string>\",\n    \"credentials\": \"<string>\",\n    \"authType\": \"<string>\",\n    \"checksum\": \"<string>\"\n  },\n  \"requiredResources\": {\n    \"infraKind\": \"kubernetes\",\n    \"applicationResources\": {\n      \"cpuPool\": {\n        \"numCPU\": 1,\n        \"memory\": 1024,\n        \"topology\": {\n          \"minNumberOfNodes\": 5,\n          \"minNodeCpu\": 2,\n          \"minNodeMemory\": 1024\n        }\n      },\n      \"gpuPool\": {\n        \"numCPU\": 1,\n        \"memory\": 1024,\n        \"gpuMemory\": 16,\n        \"topology\": {\n          \"minNumberOfNodes\": 2,\n          \"minNodeCpu\": 2,\n          \"minNodeMemory\": 1024,\n          \"minNodeGpuMemory\": 8\n        }\n      }\n    },\n    \"isStandalone\": false,\n    \"version\": \"1.29\",\n    \"additionalStorage\": \"80GB\",\n    \"networking\": {\n      \"primaryNetwork\": {\n        \"provider\": \"cilium\",\n        \"version\": \"1.13\"\n      },\n      \"additionalNetworks\": [\n        {\n          \"name\": \"net1\",\n          \"interfaceType\": \"vfio-pci\"\n        },\n        {\n          \"name\": \"net1\",\n          \"interfaceType\": \"vfio-pci\"\n        }\n      ]\n    },\n    \"addons\": {\n      \"monitoring\": true,\n      \"ingress\": true\n    }\n  },\n  \"componentSpec\": [\n    {\n      \"componentName\": \"<string>\",\n      \"networkInterfaces\": [\n        {\n          \"interfaceId\": \"<string>\",\n          \"protocol\": \"<string>\",\n          \"port\": \"<integer>\",\n          \"visibilityType\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"componentName\": \"<string>\",\n      \"networkInterfaces\": [\n        {\n          \"interfaceId\": \"<string>\",\n          \"protocol\": \"<string>\",\n          \"port\": \"<integer>\",\n          \"visibilityType\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"appId\": \"<uuid>\",\n  \"operatingSystem\": {\n    \"architecture\": \"x86_64\",\n    \"family\": \"<string>\",\n    \"version\": \"<string>\",\n    \"license\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Internal server error: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a39eabfb-69b5-48d3-a837-492120be9ef4",
+              "name": "Not Implemented",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"version\": \"<string>\",\n  \"appProvider\": \"<string>\",\n  \"packageType\": \"<string>\",\n  \"appRepo\": {\n    \"type\": \"<string>\",\n    \"imagePath\": \"https://charts.bitnami.com/bitnami/helm/example-chart:0.1.0\",\n    \"userName\": \"<string>\",\n    \"credentials\": \"<string>\",\n    \"authType\": \"<string>\",\n    \"checksum\": \"<string>\"\n  },\n  \"requiredResources\": {\n    \"infraKind\": \"kubernetes\",\n    \"applicationResources\": {\n      \"cpuPool\": {\n        \"numCPU\": 1,\n        \"memory\": 1024,\n        \"topology\": {\n          \"minNumberOfNodes\": 5,\n          \"minNodeCpu\": 2,\n          \"minNodeMemory\": 1024\n        }\n      },\n      \"gpuPool\": {\n        \"numCPU\": 1,\n        \"memory\": 1024,\n        \"gpuMemory\": 16,\n        \"topology\": {\n          \"minNumberOfNodes\": 2,\n          \"minNodeCpu\": 2,\n          \"minNodeMemory\": 1024,\n          \"minNodeGpuMemory\": 8\n        }\n      }\n    },\n    \"isStandalone\": false,\n    \"version\": \"1.29\",\n    \"additionalStorage\": \"80GB\",\n    \"networking\": {\n      \"primaryNetwork\": {\n        \"provider\": \"cilium\",\n        \"version\": \"1.13\"\n      },\n      \"additionalNetworks\": [\n        {\n          \"name\": \"net1\",\n          \"interfaceType\": \"vfio-pci\"\n        },\n        {\n          \"name\": \"net1\",\n          \"interfaceType\": \"vfio-pci\"\n        }\n      ]\n    },\n    \"addons\": {\n      \"monitoring\": true,\n      \"ingress\": true\n    }\n  },\n  \"componentSpec\": [\n    {\n      \"componentName\": \"<string>\",\n      \"networkInterfaces\": [\n        {\n          \"interfaceId\": \"<string>\",\n          \"protocol\": \"<string>\",\n          \"port\": \"<integer>\",\n          \"visibilityType\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"componentName\": \"<string>\",\n      \"networkInterfaces\": [\n        {\n          \"interfaceId\": \"<string>\",\n          \"protocol\": \"<string>\",\n          \"port\": \"<integer>\",\n          \"visibilityType\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"appId\": \"<uuid>\",\n  \"operatingSystem\": {\n    \"architecture\": \"x86_64\",\n    \"family\": \"<string>\",\n    \"version\": \"<string>\",\n    \"license\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Implemented",
+              "code": 501,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 501,\n  \"code\": \"NOT_IMPLEMENTED\",\n  \"message\": \"Service not implemented\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3f0421d1-6fd4-479a-9b6d-be7dabc601e3",
+              "name": "Service Unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"version\": \"<string>\",\n  \"appProvider\": \"<string>\",\n  \"packageType\": \"<string>\",\n  \"appRepo\": {\n    \"type\": \"<string>\",\n    \"imagePath\": \"https://charts.bitnami.com/bitnami/helm/example-chart:0.1.0\",\n    \"userName\": \"<string>\",\n    \"credentials\": \"<string>\",\n    \"authType\": \"<string>\",\n    \"checksum\": \"<string>\"\n  },\n  \"requiredResources\": {\n    \"infraKind\": \"kubernetes\",\n    \"applicationResources\": {\n      \"cpuPool\": {\n        \"numCPU\": 1,\n        \"memory\": 1024,\n        \"topology\": {\n          \"minNumberOfNodes\": 5,\n          \"minNodeCpu\": 2,\n          \"minNodeMemory\": 1024\n        }\n      },\n      \"gpuPool\": {\n        \"numCPU\": 1,\n        \"memory\": 1024,\n        \"gpuMemory\": 16,\n        \"topology\": {\n          \"minNumberOfNodes\": 2,\n          \"minNodeCpu\": 2,\n          \"minNodeMemory\": 1024,\n          \"minNodeGpuMemory\": 8\n        }\n      }\n    },\n    \"isStandalone\": false,\n    \"version\": \"1.29\",\n    \"additionalStorage\": \"80GB\",\n    \"networking\": {\n      \"primaryNetwork\": {\n        \"provider\": \"cilium\",\n        \"version\": \"1.13\"\n      },\n      \"additionalNetworks\": [\n        {\n          \"name\": \"net1\",\n          \"interfaceType\": \"vfio-pci\"\n        },\n        {\n          \"name\": \"net1\",\n          \"interfaceType\": \"vfio-pci\"\n        }\n      ]\n    },\n    \"addons\": {\n      \"monitoring\": true,\n      \"ingress\": true\n    }\n  },\n  \"componentSpec\": [\n    {\n      \"componentName\": \"<string>\",\n      \"networkInterfaces\": [\n        {\n          \"interfaceId\": \"<string>\",\n          \"protocol\": \"<string>\",\n          \"port\": \"<integer>\",\n          \"visibilityType\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"componentName\": \"<string>\",\n      \"networkInterfaces\": [\n        {\n          \"interfaceId\": \"<string>\",\n          \"protocol\": \"<string>\",\n          \"port\": \"<integer>\",\n          \"visibilityType\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"appId\": \"<uuid>\",\n  \"operatingSystem\": {\n    \"architecture\": \"x86_64\",\n    \"family\": \"<string>\",\n    \"version\": \"<string>\",\n    \"license\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service unavailable\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4c16f4aa-b217-42eb-836d-e51f0ab69cb9",
+          "name": "Global System for Mobile Communications Retrieve a list of existing Applications",
+          "request": {
+            "name": "Global System for Mobile Communications Retrieve a list of existing Applications",
+            "description": {
+              "content": "Get the list of all existing Application definitions from the\nEdge Cloud Provider that the user has permission to view.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apps"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "API root",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                },
+                {
+                  "description": "Base path for the Edge Application Management API",
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services\n",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "8b0a43b8-f056-4984-b1a8-8c4466ba856f",
+              "name": "List of existing applications",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"name\": \"<string>\",\n    \"version\": \"<string>\",\n    \"appProvider\": \"<string>\",\n    \"packageType\": \"<string>\",\n    \"appRepo\": {\n      \"type\": \"<string>\",\n      \"imagePath\": \"https://charts.bitnami.com/bitnami/helm/example-chart:0.1.0\",\n      \"userName\": \"<string>\",\n      \"credentials\": \"<string>\",\n      \"authType\": \"<string>\",\n      \"checksum\": \"<string>\"\n    },\n    \"requiredResources\": {\n      \"infraKind\": \"kubernetes\",\n      \"applicationResources\": {\n        \"cpuPool\": {\n          \"numCPU\": 1,\n          \"memory\": 1024,\n          \"topology\": {\n            \"minNumberOfNodes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"minNodeCpu\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"minNodeMemory\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"gpuPool\": {\n          \"numCPU\": 1,\n          \"memory\": 1024,\n          \"gpuMemory\": 16,\n          \"topology\": {\n            \"minNumberOfNodes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"minNodeCpu\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"minNodeMemory\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"minNodeGpuMemory\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      },\n      \"isStandalone\": false,\n      \"version\": \"1.29\",\n      \"additionalStorage\": \"80GB\",\n      \"networking\": {\n        \"primaryNetwork\": {\n          \"provider\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"version\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"additionalNetworks\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      },\n      \"addons\": {\n        \"monitoring\": true,\n        \"ingress\": true\n      }\n    },\n    \"componentSpec\": [\n      {\n        \"componentName\": \"<string>\",\n        \"networkInterfaces\": [\n          {\n            \"interfaceId\": \"<string>\",\n            \"protocol\": \"<string>\",\n            \"port\": \"<integer>\",\n            \"visibilityType\": \"<string>\"\n          }\n        ]\n      },\n      {\n        \"componentName\": \"<string>\",\n        \"networkInterfaces\": [\n          {\n            \"interfaceId\": \"<string>\",\n            \"protocol\": \"<string>\",\n            \"port\": \"<integer>\",\n            \"visibilityType\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"appId\": \"<uuid>\",\n    \"operatingSystem\": {\n      \"architecture\": \"x86_64\",\n      \"family\": \"<string>\",\n      \"version\": \"<string>\",\n      \"license\": \"<string>\"\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"version\": \"<string>\",\n    \"appProvider\": \"<string>\",\n    \"packageType\": \"<string>\",\n    \"appRepo\": {\n      \"type\": \"<string>\",\n      \"imagePath\": \"https://charts.bitnami.com/bitnami/helm/example-chart:0.1.0\",\n      \"userName\": \"<string>\",\n      \"credentials\": \"<string>\",\n      \"authType\": \"<string>\",\n      \"checksum\": \"<string>\"\n    },\n    \"requiredResources\": {\n      \"infraKind\": \"kubernetes\",\n      \"applicationResources\": {\n        \"cpuPool\": {\n          \"numCPU\": 1,\n          \"memory\": 1024,\n          \"topology\": {\n            \"minNumberOfNodes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"minNodeCpu\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"minNodeMemory\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"gpuPool\": {\n          \"numCPU\": 1,\n          \"memory\": 1024,\n          \"gpuMemory\": 16,\n          \"topology\": {\n            \"minNumberOfNodes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"minNodeCpu\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"minNodeMemory\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"minNodeGpuMemory\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      },\n      \"isStandalone\": false,\n      \"version\": \"1.29\",\n      \"additionalStorage\": \"80GB\",\n      \"networking\": {\n        \"primaryNetwork\": {\n          \"provider\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"version\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"additionalNetworks\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      },\n      \"addons\": {\n        \"monitoring\": true,\n        \"ingress\": true\n      }\n    },\n    \"componentSpec\": [\n      {\n        \"componentName\": \"<string>\",\n        \"networkInterfaces\": [\n          {\n            \"interfaceId\": \"<string>\",\n            \"protocol\": \"<string>\",\n            \"port\": \"<integer>\",\n            \"visibilityType\": \"<string>\"\n          }\n        ]\n      },\n      {\n        \"componentName\": \"<string>\",\n        \"networkInterfaces\": [\n          {\n            \"interfaceId\": \"<string>\",\n            \"protocol\": \"<string>\",\n            \"port\": \"<integer>\",\n            \"visibilityType\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"appId\": \"<uuid>\",\n    \"operatingSystem\": {\n      \"architecture\": \"x86_64\",\n      \"family\": \"<string>\",\n      \"version\": \"<string>\",\n      \"license\": \"<string>\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b4ae9452-3015-47d6-8347-ac260808620b",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Authorization failed: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b7aa6278-925f-4da4-840e-06e150e36fe4",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Operation not allowed: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3c0ace2e-3df8-4e26-b485-25fc3c4f6b0a",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"NOT_FOUND\",\n  \"message\": \"Resource does not exist\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d5bbd8cb-8e56-43e8-bdd1-f62c5bd625d6",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Internal server error: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f841a36d-ac72-41d4-89df-740156f4552a",
+              "name": "Service Unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service unavailable\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ba33c3d0-ebeb-4a24-9286-1ecfb8c85b04",
+          "name": "Global System for Mobile Communications Retrieve the information of an Application",
+          "request": {
+            "name": "Global System for Mobile Communications Retrieve the information of an Application",
+            "description": {
+              "content": "Ask the Edge Cloud Provider the information for a given application\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apps",
+                ":appId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "appId",
+                  "description": "(Required) A globally unique identifier associated with the\napplication.\nEdge Cloud Provider generates this identifier when the application\nis submitted.\n"
+                },
+                {
+                  "description": "API root",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                },
+                {
+                  "description": "Base path for the Edge Application Management API",
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services\n",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "24235941-ee18-4379-8983-8616de4eb4e1",
+              "name": "Information of Application",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps",
+                    ":appId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "appId",
+                      "description": "(Required) A globally unique identifier associated with the\napplication.\nEdge Cloud Provider generates this identifier when the application\nis submitted.\n"
+                    },
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"appManifest\": {\n    \"name\": \"<string>\",\n    \"version\": \"<string>\",\n    \"appProvider\": \"<string>\",\n    \"packageType\": \"<string>\",\n    \"appRepo\": {\n      \"type\": \"<string>\",\n      \"imagePath\": \"https://charts.bitnami.com/bitnami/helm/example-chart:0.1.0\",\n      \"userName\": \"<string>\",\n      \"credentials\": \"<string>\",\n      \"authType\": \"<string>\",\n      \"checksum\": \"<string>\"\n    },\n    \"requiredResources\": {\n      \"infraKind\": \"kubernetes\",\n      \"applicationResources\": {\n        \"cpuPool\": {\n          \"numCPU\": 1,\n          \"memory\": 1024,\n          \"topology\": {\n            \"minNumberOfNodes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"minNodeCpu\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"minNodeMemory\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"gpuPool\": {\n          \"numCPU\": 1,\n          \"memory\": 1024,\n          \"gpuMemory\": 16,\n          \"topology\": {\n            \"minNumberOfNodes\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"minNodeCpu\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"minNodeMemory\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"minNodeGpuMemory\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      },\n      \"isStandalone\": false,\n      \"version\": \"1.29\",\n      \"additionalStorage\": \"80GB\",\n      \"networking\": {\n        \"primaryNetwork\": {\n          \"provider\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"version\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"additionalNetworks\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      },\n      \"addons\": {\n        \"monitoring\": true,\n        \"ingress\": true\n      }\n    },\n    \"componentSpec\": [\n      {\n        \"componentName\": \"<string>\",\n        \"networkInterfaces\": [\n          {\n            \"interfaceId\": \"<string>\",\n            \"protocol\": \"<string>\",\n            \"port\": \"<integer>\",\n            \"visibilityType\": \"<string>\"\n          }\n        ]\n      },\n      {\n        \"componentName\": \"<string>\",\n        \"networkInterfaces\": [\n          {\n            \"interfaceId\": \"<string>\",\n            \"protocol\": \"<string>\",\n            \"port\": \"<integer>\",\n            \"visibilityType\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"appId\": \"<uuid>\",\n    \"operatingSystem\": {\n      \"architecture\": \"x86_64\",\n      \"family\": \"<string>\",\n      \"version\": \"<string>\",\n      \"license\": \"<string>\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "41c35e26-ecfa-425c-ac83-ba47c8b3f767",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps",
+                    ":appId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "appId",
+                      "description": "(Required) A globally unique identifier associated with the\napplication.\nEdge Cloud Provider generates this identifier when the application\nis submitted.\n"
+                    },
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Authorization failed: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "92755a32-c08b-4500-a705-1ccb45e9837c",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps",
+                    ":appId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "appId",
+                      "description": "(Required) A globally unique identifier associated with the\napplication.\nEdge Cloud Provider generates this identifier when the application\nis submitted.\n"
+                    },
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Operation not allowed: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "88cac814-0fe2-4400-af9f-c1b9404e743c",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps",
+                    ":appId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "appId",
+                      "description": "(Required) A globally unique identifier associated with the\napplication.\nEdge Cloud Provider generates this identifier when the application\nis submitted.\n"
+                    },
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"NOT_FOUND\",\n  \"message\": \"Resource does not exist\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a418faed-f0f6-4826-b9f9-d02dcc3c1ebb",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps",
+                    ":appId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "appId",
+                      "description": "(Required) A globally unique identifier associated with the\napplication.\nEdge Cloud Provider generates this identifier when the application\nis submitted.\n"
+                    },
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Internal server error: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "19219a69-1c6b-4655-a922-dc2fba47a2e7",
+              "name": "Service Unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps",
+                    ":appId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "appId",
+                      "description": "(Required) A globally unique identifier associated with the\napplication.\nEdge Cloud Provider generates this identifier when the application\nis submitted.\n"
+                    },
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service unavailable\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e9d2d339-d706-41ea-8a3f-88c077a7b461",
+          "name": "Global System for Mobile Communications Delete an Application from an Edge Cloud Provider",
+          "request": {
+            "name": "Global System for Mobile Communications Delete an Application from an Edge Cloud Provider",
+            "description": {
+              "content": "Delete all the information and content related to an Application",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apps",
+                ":appId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "appId",
+                  "description": "(Required) Identificator of the application to be\ndeleted provided by the Edge Cloud Provider\nonce the submission was successful\n"
+                },
+                {
+                  "description": "API root",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                },
+                {
+                  "description": "Base path for the Edge Application Management API",
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services\n",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE"
+          },
+          "response": [
+            {
+              "id": "5c468b6a-ef9f-4508-9629-4670c408ff35",
+              "name": "Request accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps",
+                    ":appId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "appId",
+                      "description": "(Required) Identificator of the application to be\ndeleted provided by the Edge Cloud Provider\nonce the submission was successful\n"
+                    },
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d45d839b-51a0-4b8c-b3a9-6d0af6d11dc5",
+              "name": "App deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps",
+                    ":appId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "appId",
+                      "description": "(Required) Identificator of the application to be\ndeleted provided by the Edge Cloud Provider\nonce the submission was successful\n"
+                    },
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4c00463e-6fc6-40ea-b240-61e92d5e757b",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps",
+                    ":appId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "appId",
+                      "description": "(Required) Identificator of the application to be\ndeleted provided by the Edge Cloud Provider\nonce the submission was successful\n"
+                    },
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Schema validation failed at  ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f137b6fd-7620-49f8-9920-305257890bb4",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps",
+                    ":appId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "appId",
+                      "description": "(Required) Identificator of the application to be\ndeleted provided by the Edge Cloud Provider\nonce the submission was successful\n"
+                    },
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Authorization failed: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "801aff06-fef4-4588-b636-2470594e497f",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps",
+                    ":appId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "appId",
+                      "description": "(Required) Identificator of the application to be\ndeleted provided by the Edge Cloud Provider\nonce the submission was successful\n"
+                    },
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Operation not allowed: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "67da6f75-4a31-49c2-a702-b1b12c0dc408",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps",
+                    ":appId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "appId",
+                      "description": "(Required) Identificator of the application to be\ndeleted provided by the Edge Cloud Provider\nonce the submission was successful\n"
+                    },
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"NOT_FOUND\",\n  \"message\": \"Resource does not exist\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d09a1fa1-7ff0-46a2-8716-aee1bc63de0d",
+              "name": "Conflict",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps",
+                    ":appId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "appId",
+                      "description": "(Required) Identificator of the application to be\ndeleted provided by the Edge Cloud Provider\nonce the submission was successful\n"
+                    },
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 409,\n  \"code\": \"CONFLICT\",\n  \"message\": \"App with a running application instance cannot be deleted\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f1d9c03f-caf9-4db4-bb69-885ee2704d06",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps",
+                    ":appId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "appId",
+                      "description": "(Required) Identificator of the application to be\ndeleted provided by the Edge Cloud Provider\nonce the submission was successful\n"
+                    },
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Internal server error: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3956efc7-4a30-45a9-9d04-1d839de8f072",
+              "name": "Service Unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apps",
+                    ":appId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "appId",
+                      "description": "(Required) Identificator of the application to be\ndeleted provided by the Edge Cloud Provider\nonce the submission was successful\n"
+                    },
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service unavailable\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "67d2ed4a-c56e-463a-b96d-1740201ed57b",
+          "name": "Global System for Mobile Communications Instantiation of an Application",
+          "request": {
+            "name": "Global System for Mobile Communications Instantiation of an Application",
+            "description": {
+              "content": "Ask the Edge Cloud Platform to instantiate an application to one\nor several Edge Cloud Zones with an Application as an input and an\nApplication Instance as the output.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "appinstances"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "API root",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                },
+                {
+                  "description": "Base path for the Edge Application Management API",
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services\n",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"appId\": \"<uuid>\",\n  \"appZones\": [\n    {\n      \"kubernetesClusterRef\": \"<uuid>\",\n      \"EdgeCloudZone\": {\n        \"edgeCloudZoneId\": \"<uuid>\",\n        \"edgeCloudZoneName\": \"<string>\",\n        \"edgeCloudProvider\": \"<string>\",\n        \"edgeCloudZoneStatus\": \"unknown\",\n        \"edgeCloudRegion\": \"<string>\"\n      }\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d3b795ee-79f4-4555-8c8c-108a8f73a4ad",
+              "name": "Application instantiation accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appinstances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"appId\": \"<uuid>\",\n  \"appZones\": [\n    {\n      \"kubernetesClusterRef\": \"642f6105-7015-4af1-a4d1-e1ecb8437abc\",\n      \"EdgeCloudZone\": {\n        \"edgeCloudZoneId\": \"<uuid>\",\n        \"edgeCloudZoneName\": \"<string>\",\n        \"edgeCloudProvider\": \"<string>\",\n        \"edgeCloudZoneStatus\": \"unknown\",\n        \"edgeCloudRegion\": \"<string>\"\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "disabled": false,
+                  "description": "(Required) Contains the URI of the newly created application.",
+                  "key": "Location",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"appInstances\": [\n    {\n      \"appInstanceId\": \"0bf7c031-9aa5-7051-eb6c-daed6de799c7\",\n      \"status\": \"unknown\",\n      \"componentEndpointInfo\": [\n        {\n          \"interfaceId\": \"2shXPv5LtL26U8mS\",\n          \"accessPoints\": {}\n        }\n      ],\n      \"kubernetesClusterRef\": \"642f6105-7015-4af1-a4d1-e1ecb8437abc\",\n      \"edgeCloudZone\": {\n        \"edgeCloudZoneId\": \"<uuid>\",\n        \"edgeCloudZoneName\": \"<string>\",\n        \"edgeCloudProvider\": \"<string>\",\n        \"edgeCloudZoneStatus\": \"unknown\",\n        \"edgeCloudRegion\": \"<string>\"\n      }\n    },\n    {\n      \"appInstanceId\": \"3f5159d6-0709-b5a8-e4b2-a9e8663006d7\",\n      \"status\": \"unknown\",\n      \"componentEndpointInfo\": [\n        {\n          \"interfaceId\": \"PWDrdD03RcySsOMg2aI50L5T\",\n          \"accessPoints\": {}\n        }\n      ],\n      \"kubernetesClusterRef\": \"642f6105-7015-4af1-a4d1-e1ecb8437abc\",\n      \"edgeCloudZone\": {\n        \"edgeCloudZoneId\": \"<uuid>\",\n        \"edgeCloudZoneName\": \"<string>\",\n        \"edgeCloudProvider\": \"<string>\",\n        \"edgeCloudZoneStatus\": \"unknown\",\n        \"edgeCloudRegion\": \"<string>\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2e753a1a-d916-49e3-9f4d-6b7eb845ad19",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appinstances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"appId\": \"<uuid>\",\n  \"appZones\": [\n    {\n      \"kubernetesClusterRef\": \"642f6105-7015-4af1-a4d1-e1ecb8437abc\",\n      \"EdgeCloudZone\": {\n        \"edgeCloudZoneId\": \"<uuid>\",\n        \"edgeCloudZoneName\": \"<string>\",\n        \"edgeCloudProvider\": \"<string>\",\n        \"edgeCloudZoneStatus\": \"unknown\",\n        \"edgeCloudRegion\": \"<string>\"\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Schema validation failed at  ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "47e331c1-0faa-48a0-9b6a-28a42bb90d67",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appinstances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"appId\": \"<uuid>\",\n  \"appZones\": [\n    {\n      \"kubernetesClusterRef\": \"642f6105-7015-4af1-a4d1-e1ecb8437abc\",\n      \"EdgeCloudZone\": {\n        \"edgeCloudZoneId\": \"<uuid>\",\n        \"edgeCloudZoneName\": \"<string>\",\n        \"edgeCloudProvider\": \"<string>\",\n        \"edgeCloudZoneStatus\": \"unknown\",\n        \"edgeCloudRegion\": \"<string>\"\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Authorization failed: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b119dd92-12fc-456d-8778-bc4751d0312c",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appinstances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"appId\": \"<uuid>\",\n  \"appZones\": [\n    {\n      \"kubernetesClusterRef\": \"642f6105-7015-4af1-a4d1-e1ecb8437abc\",\n      \"EdgeCloudZone\": {\n        \"edgeCloudZoneId\": \"<uuid>\",\n        \"edgeCloudZoneName\": \"<string>\",\n        \"edgeCloudProvider\": \"<string>\",\n        \"edgeCloudZoneStatus\": \"unknown\",\n        \"edgeCloudRegion\": \"<string>\"\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Operation not allowed: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "32f5d527-0b96-4d29-be4e-9e123a03c491",
+              "name": "Conflict",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appinstances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"appId\": \"<uuid>\",\n  \"appZones\": [\n    {\n      \"kubernetesClusterRef\": \"642f6105-7015-4af1-a4d1-e1ecb8437abc\",\n      \"EdgeCloudZone\": {\n        \"edgeCloudZoneId\": \"<uuid>\",\n        \"edgeCloudZoneName\": \"<string>\",\n        \"edgeCloudProvider\": \"<string>\",\n        \"edgeCloudZoneStatus\": \"unknown\",\n        \"edgeCloudRegion\": \"<string>\"\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 409,\n  \"code\": \"CONFLICT\",\n  \"message\": \"Application already instantiated in the given Edge Cloud Zone or Edge Cloud Region\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c5c025fc-9f89-48a9-b6bd-24a73e7e5f19",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appinstances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"appId\": \"<uuid>\",\n  \"appZones\": [\n    {\n      \"kubernetesClusterRef\": \"642f6105-7015-4af1-a4d1-e1ecb8437abc\",\n      \"EdgeCloudZone\": {\n        \"edgeCloudZoneId\": \"<uuid>\",\n        \"edgeCloudZoneName\": \"<string>\",\n        \"edgeCloudProvider\": \"<string>\",\n        \"edgeCloudZoneStatus\": \"unknown\",\n        \"edgeCloudRegion\": \"<string>\"\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Internal server error: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f6184c66-3696-4cd8-b4e0-6def0b2c2099",
+              "name": "Not Implemented",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appinstances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"appId\": \"<uuid>\",\n  \"appZones\": [\n    {\n      \"kubernetesClusterRef\": \"642f6105-7015-4af1-a4d1-e1ecb8437abc\",\n      \"EdgeCloudZone\": {\n        \"edgeCloudZoneId\": \"<uuid>\",\n        \"edgeCloudZoneName\": \"<string>\",\n        \"edgeCloudProvider\": \"<string>\",\n        \"edgeCloudZoneStatus\": \"unknown\",\n        \"edgeCloudRegion\": \"<string>\"\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Implemented",
+              "code": 501,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 501,\n  \"code\": \"NOT_IMPLEMENTED\",\n  \"message\": \"Service not implemented\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "56ed9d37-eec0-4138-b2bd-68180b079894",
+              "name": "Service Unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appinstances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"appId\": \"<uuid>\",\n  \"appZones\": [\n    {\n      \"kubernetesClusterRef\": \"642f6105-7015-4af1-a4d1-e1ecb8437abc\",\n      \"EdgeCloudZone\": {\n        \"edgeCloudZoneId\": \"<uuid>\",\n        \"edgeCloudZoneName\": \"<string>\",\n        \"edgeCloudProvider\": \"<string>\",\n        \"edgeCloudZoneStatus\": \"unknown\",\n        \"edgeCloudRegion\": \"<string>\"\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service unavailable\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bfacd474-2e1a-4f84-bdd8-c83a8477c56d",
+          "name": "Global System for Mobile Communications Retrieve the information of Application Instances for a given App",
+          "request": {
+            "name": "Global System for Mobile Communications Retrieve the information of Application Instances for a given App",
+            "description": {
+              "content": "Ask the Edge Cloud Provider the information of the instances for a\ngiven application\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "appinstances"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "appId",
+                  "value": "<uuid>",
+                  "description": "A globally unique identifier associated with\nthe application.\nEdge Cloud Provider generates this identifier when the\napplication is submitted.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "appInstanceId",
+                  "value": "<uuid>",
+                  "description": "A globally unique identifier associated with a running\ninstance of an application within an specific Edge Cloud Zone.\nEdge Cloud Provider generates this identifier.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "region",
+                  "value": "<string>",
+                  "description": "Human readable name of the geographical Edge Cloud Region of\nthe Edge Cloud. Defined by the Edge Cloud Provider.\n"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "API root",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                },
+                {
+                  "description": "Base path for the Edge Application Management API",
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services\n",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "da89e4f6-d61a-4e19-a771-19b6fa866c04",
+              "name": "Information of Application Instances",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appinstances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "appInstanceId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "region",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"appInstanceInfo\": [\n    {\n      \"appInstanceId\": \"<uuid>\",\n      \"status\": \"unknown\",\n      \"componentEndpointInfo\": [\n        {\n          \"interfaceId\": \"QjynwJqqUDXEIHvvvC\",\n          \"accessPoints\": {}\n        }\n      ],\n      \"kubernetesClusterRef\": \"642f6105-7015-4af1-a4d1-e1ecb8437abc\",\n      \"edgeCloudZone\": {\n        \"edgeCloudZoneId\": \"<uuid>\",\n        \"edgeCloudZoneName\": \"<string>\",\n        \"edgeCloudProvider\": \"<string>\",\n        \"edgeCloudZoneStatus\": \"unknown\",\n        \"edgeCloudRegion\": \"<string>\"\n      }\n    },\n    {\n      \"appInstanceId\": \"<uuid>\",\n      \"status\": \"unknown\",\n      \"componentEndpointInfo\": [\n        {\n          \"interfaceId\": \"hKioNOZgJJj67oYWV\",\n          \"accessPoints\": {}\n        }\n      ],\n      \"kubernetesClusterRef\": \"642f6105-7015-4af1-a4d1-e1ecb8437abc\",\n      \"edgeCloudZone\": {\n        \"edgeCloudZoneId\": \"<uuid>\",\n        \"edgeCloudZoneName\": \"<string>\",\n        \"edgeCloudProvider\": \"<string>\",\n        \"edgeCloudZoneStatus\": \"unknown\",\n        \"edgeCloudRegion\": \"<string>\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ffeebc23-8b54-4a0f-bc4c-0bd18d9dced0",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appinstances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "appInstanceId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "region",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Authorization failed: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f2875428-f41f-4b9e-b268-31c3065e3806",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appinstances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "appInstanceId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "region",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Operation not allowed: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2a457b02-2cc0-46a9-9b3a-fc225884b235",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appinstances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "appInstanceId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "region",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"NOT_FOUND\",\n  \"message\": \"Resource does not exist\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3f6b6a70-6899-41bb-8434-582d7273d638",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appinstances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "appInstanceId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "region",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Internal server error: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1d10dd53-cd94-4234-a2a7-b5692a8eb160",
+              "name": "Service Unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appinstances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "appInstanceId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "region",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service unavailable\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ef34715a-3498-4509-95e8-55fe16040041",
+          "name": "Global System for Mobile Communications Terminate an Application Instance",
+          "request": {
+            "name": "Global System for Mobile Communications Terminate an Application Instance",
+            "description": {
+              "content": "Terminate a running instance of an application within\nan Edge Cloud Zone\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "appinstances",
+                ":appInstanceId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "appInstanceId",
+                  "description": "(Required) Identificator of the specific application instance\nthat will be terminated\n"
+                },
+                {
+                  "description": "API root",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                },
+                {
+                  "description": "Base path for the Edge Application Management API",
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services\n",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE"
+          },
+          "response": [
+            {
+              "id": "da411b5c-cafb-49e5-88b5-58461f9acc77",
+              "name": "Request accepted to be processed. It applies for async\ndeletion process\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appinstances",
+                    ":appInstanceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "appInstanceId",
+                      "description": "(Required) Identificator of the specific application instance\nthat will be terminated\n"
+                    },
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "da8d79e7-d4bd-4bb2-8861-f2e0ef3528df",
+              "name": "Application Instance Deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appinstances",
+                    ":appInstanceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "appInstanceId",
+                      "description": "(Required) Identificator of the specific application instance\nthat will be terminated\n"
+                    },
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "99f9fa7e-69a1-4c15-84f3-06435b2d5ecc",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appinstances",
+                    ":appInstanceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "appInstanceId",
+                      "description": "(Required) Identificator of the specific application instance\nthat will be terminated\n"
+                    },
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Schema validation failed at  ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fc34ad0d-a906-48ba-af3c-ca43b294054f",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appinstances",
+                    ":appInstanceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "appInstanceId",
+                      "description": "(Required) Identificator of the specific application instance\nthat will be terminated\n"
+                    },
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Authorization failed: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "457edafa-24c1-41df-b05f-5203f3ee94bf",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appinstances",
+                    ":appInstanceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "appInstanceId",
+                      "description": "(Required) Identificator of the specific application instance\nthat will be terminated\n"
+                    },
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Operation not allowed: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d8ccf2c1-1da4-4acd-a96b-3036ea73a618",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appinstances",
+                    ":appInstanceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "appInstanceId",
+                      "description": "(Required) Identificator of the specific application instance\nthat will be terminated\n"
+                    },
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"NOT_FOUND\",\n  \"message\": \"Resource does not exist\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e1be9a02-0899-437d-bf58-23e8a4cc6d87",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appinstances",
+                    ":appInstanceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "appInstanceId",
+                      "description": "(Required) Identificator of the specific application instance\nthat will be terminated\n"
+                    },
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Internal server error: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b2277f1c-bde4-4421-a33f-c874d5ecf54a",
+              "name": "Service Unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appinstances",
+                    ":appInstanceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "appInstanceId",
+                      "description": "(Required) Identificator of the specific application instance\nthat will be terminated\n"
+                    },
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service unavailable\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "6b6646b3-1d91-405d-9b1b-932a9dac04a4",
+      "name": "Edge Cloud",
+      "description": {
+        "content": "Edge Cloud Zones Availability",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9c88a931-8179-42b9-8063-0fbf779ea751",
+          "name": "Global System for Mobile Communications Retrieve a list of the operators Edge Cloud Zones and their status",
+          "request": {
+            "name": "Global System for Mobile Communications Retrieve a list of the operators Edge Cloud Zones and their status",
+            "description": {
+              "content": "List of the operators Edge Cloud Zones and their\nstatus, ordering the results by location and filtering by\nstatus (active/inactive/unknown)\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "edge-cloud-zones"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "region",
+                  "value": "<string>",
+                  "description": "Human readable name of the geographical Edge Cloud Region of\nthe Edge Cloud. Defined by the Edge Cloud Provider.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "unknown",
+                  "description": "Human readable status of the Edge Cloud Zone"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "API root",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                },
+                {
+                  "description": "Base path for the Edge Application Management API",
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services\n",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "d3771fe4-9b74-420b-a61a-90537b60d951",
+              "name": "Successful response, returning the\nAvailable Edge Cloud Zones.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "edge-cloud-zones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "region",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "unknown"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"edgeCloudZoneId\": \"0336360c-61f4-b1a7-b35c-9a131ea657b1\",\n    \"edgeCloudZoneName\": \"string\",\n    \"edgeCloudProvider\": \"string\",\n    \"edgeCloudZoneStatus\": \"unknown\",\n    \"edgeCloudRegion\": \"<string>\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dc8c6426-e6a8-4eef-9d9d-cc82a4f175a3",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "edge-cloud-zones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "region",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "unknown"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Authorization failed: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "18a22683-cb87-4464-b443-6f1f792db3aa",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "edge-cloud-zones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "region",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "unknown"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Operation not allowed: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1efdce71-1350-4c6f-a820-420b71786908",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "edge-cloud-zones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "region",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "unknown"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"NOT_FOUND\",\n  \"message\": \"Resource does not exist\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "13c297c8-a620-4edf-8719-764aea43287b",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "edge-cloud-zones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "region",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "unknown"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Internal server error: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d827e647-5de6-45c3-a358-32ccbc090397",
+              "name": "Service Unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "edge-cloud-zones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "region",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "unknown"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Edge Application Management API",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "901e6c60-1401-8b41-a9f8-a86376ff24cc"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service unavailable\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "API root",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "http://localhost:443",
+      "key": "apiRoot"
+    },
+    {
+      "description": {
+        "content": "Base path for the Edge Application Management API",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "edge-application-management/vwip",
+      "key": "basePath"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/{{basePath}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3c9a0a12-e8b7-48b5-9cdb-1d8a94619dbf",
+    "name": "Global System for Mobile Communications GSMA Camara Project Edge Application Management API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Edge Application Management API allows API consumers to manage the Life Cycle of an Application and to Discover Edge Cloud Zones. The reference scenario foresees a distributed Telco Edge Cloud where any Application Delevoper, known as an Application Provider, can host and deploy their application according to their specifications and operational criteria (e.g. within an specific geographical zone for data protection\npurposes, ensure a minimum QoS for the application clients, etc).\n\nContact Support:\n Email: sp-edc@lists.camaraproject.org",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,1799 @@
+{
+  "item": [
+    {
+      "id": "d5e72674-be48-44db-bae9-5cba69724e32",
+      "name": "Application Profiles",
+      "description": {
+        "content": "Operations to define, read and manage an application's thresholds\nfor network quality (latency, jitter, loss, throughput)\n",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "58e83ff6-d31f-43d5-b496-28e08b4287fd",
+          "name": "Global System for Mobile Communications create a profile which represents an application's networking demands.",
+          "request": {
+            "name": "Global System for Mobile Communications create a profile which represents an application's networking demands.",
+            "description": {
+              "content": "Define network monitoring intents for optimal end user application\nexperience.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "application-profiles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"networkQualityThresholds\": {\n    \"packetDelayBudget\": {\n      \"value\": \"<integer>\",\n      \"unit\": \"<string>\"\n    },\n    \"targetMinDownstreamRate\": {\n      \"value\": \"<integer>\",\n      \"unit\": \"<string>\"\n    },\n    \"targetMinUpstreamRate\": {\n      \"value\": \"<integer>\",\n      \"unit\": \"<string>\"\n    },\n    \"packetlossErrorRate\": \"<integer>\",\n    \"jitter\": {\n      \"value\": \"<integer>\",\n      \"unit\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f06195f6-ecce-443c-bde6-4325d65d61ed",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-profiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"networkQualityThresholds\": {\n    \"packetDelayBudget\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    },\n    \"targetMinDownstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"targetMinUpstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"packetlossErrorRate\": 3,\n    \"jitter\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"applicationProfileId\": \"dff3b4cf-7819-b1d1-4bdc-7732b7790320\",\n  \"networkQualityThresholds\": {\n    \"packetDelayBudget\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    },\n    \"targetMinDownstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"targetMinUpstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"packetlossErrorRate\": 3,\n    \"jitter\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2c5a424c-3c06-42a6-9cf4-8edbf78eb99b",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-profiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"networkQualityThresholds\": {\n    \"packetDelayBudget\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    },\n    \"targetMinDownstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"targetMinUpstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"packetlossErrorRate\": 3,\n    \"jitter\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Client specified an invalid argument, request body or query param.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c4e8dbcf-86c4-4926-a6ce-f92348403b41",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-profiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"networkQualityThresholds\": {\n    \"packetDelayBudget\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    },\n    \"targetMinDownstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"targetMinUpstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"packetlossErrorRate\": 3,\n    \"jitter\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "db70e87d-d682-4b32-8f11-3ac82b6a38da",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-profiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"networkQualityThresholds\": {\n    \"packetDelayBudget\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    },\n    \"targetMinDownstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"targetMinUpstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"packetlossErrorRate\": 3,\n    \"jitter\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1dd90e09-7670-4d45-8713-bd4694d6bdb4",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-profiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"networkQualityThresholds\": {\n    \"packetDelayBudget\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    },\n    \"targetMinDownstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"targetMinUpstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"packetlossErrorRate\": 3,\n    \"jitter\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Unknown server error. Typically a server bug.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a62e39df-27e6-42fc-9c08-e250e174fe27",
+              "name": "Service Unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-profiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"networkQualityThresholds\": {\n    \"packetDelayBudget\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    },\n    \"targetMinDownstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"targetMinUpstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"packetlossErrorRate\": 3,\n    \"jitter\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service Unavailable.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "20f23b2c-ca90-4d47-a669-2b8dd1931eff",
+          "name": "update Application Profile",
+          "request": {
+            "name": "update Application Profile",
+            "description": {
+              "content": "Update the complete set of network quality thresholds for an\napplication with the new set of thresholds to ensure good\nend user experience\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "application-profiles",
+                ":applicationProfileId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "applicationProfileId",
+                  "description": "(Required) Identifier for the Application Profile"
+                },
+                {
+                  "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"applicationProfileId\": \"<uuid>\",\n  \"networkQualityThresholds\": {\n    \"packetDelayBudget\": {\n      \"value\": \"<integer>\",\n      \"unit\": \"<string>\"\n    },\n    \"targetMinDownstreamRate\": {\n      \"value\": \"<integer>\",\n      \"unit\": \"<string>\"\n    },\n    \"targetMinUpstreamRate\": {\n      \"value\": \"<integer>\",\n      \"unit\": \"<string>\"\n    },\n    \"packetlossErrorRate\": \"<integer>\",\n    \"jitter\": {\n      \"value\": \"<integer>\",\n      \"unit\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c06a9308-bf49-456c-9558-cc4b1545684d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-profiles",
+                    ":applicationProfileId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "applicationProfileId",
+                      "description": "(Required) Identifier for the Application Profile"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationProfileId\": \"<uuid>\",\n  \"networkQualityThresholds\": {\n    \"packetDelayBudget\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    },\n    \"targetMinDownstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"targetMinUpstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"packetlossErrorRate\": 3,\n    \"jitter\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"applicationProfileId\": \"<uuid>\",\n  \"networkQualityThresholds\": {\n    \"packetDelayBudget\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    },\n    \"targetMinDownstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"targetMinUpstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"packetlossErrorRate\": 3,\n    \"jitter\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "636e562c-3742-4f05-817f-16e9285667c5",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-profiles",
+                    ":applicationProfileId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "applicationProfileId",
+                      "description": "(Required) Identifier for the Application Profile"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationProfileId\": \"<uuid>\",\n  \"networkQualityThresholds\": {\n    \"packetDelayBudget\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    },\n    \"targetMinDownstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"targetMinUpstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"packetlossErrorRate\": 3,\n    \"jitter\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Client specified an invalid argument, request body or query param.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4b7904c3-0773-406b-9fed-a65362066636",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-profiles",
+                    ":applicationProfileId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "applicationProfileId",
+                      "description": "(Required) Identifier for the Application Profile"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationProfileId\": \"<uuid>\",\n  \"networkQualityThresholds\": {\n    \"packetDelayBudget\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    },\n    \"targetMinDownstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"targetMinUpstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"packetlossErrorRate\": 3,\n    \"jitter\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "177f6073-285b-4daf-9426-505bb8ca9a23",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-profiles",
+                    ":applicationProfileId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "applicationProfileId",
+                      "description": "(Required) Identifier for the Application Profile"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationProfileId\": \"<uuid>\",\n  \"networkQualityThresholds\": {\n    \"packetDelayBudget\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    },\n    \"targetMinDownstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"targetMinUpstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"packetlossErrorRate\": 3,\n    \"jitter\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f7bbeee3-f494-4a00-8674-d89514960d2e",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-profiles",
+                    ":applicationProfileId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "applicationProfileId",
+                      "description": "(Required) Identifier for the Application Profile"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationProfileId\": \"<uuid>\",\n  \"networkQualityThresholds\": {\n    \"packetDelayBudget\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    },\n    \"targetMinDownstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"targetMinUpstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"packetlossErrorRate\": 3,\n    \"jitter\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"NOT_FOUND\",\n  \"message\": \"The specified resource is not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0c722911-eac3-4c53-80c4-54f2665ed605",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-profiles",
+                    ":applicationProfileId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "applicationProfileId",
+                      "description": "(Required) Identifier for the Application Profile"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationProfileId\": \"<uuid>\",\n  \"networkQualityThresholds\": {\n    \"packetDelayBudget\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    },\n    \"targetMinDownstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"targetMinUpstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"packetlossErrorRate\": 3,\n    \"jitter\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Unknown server error. Typically a server bug.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "413fa263-8ed3-4e87-bd93-04b662dc9e6c",
+              "name": "Service Unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-profiles",
+                    ":applicationProfileId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "applicationProfileId",
+                      "description": "(Required) Identifier for the Application Profile"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationProfileId\": \"<uuid>\",\n  \"networkQualityThresholds\": {\n    \"packetDelayBudget\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    },\n    \"targetMinDownstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"targetMinUpstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"packetlossErrorRate\": 3,\n    \"jitter\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service Unavailable.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f721dd7f-88fd-4a7f-8b4c-5cf6fc68dba0",
+          "name": "read Application Profile",
+          "request": {
+            "name": "read Application Profile",
+            "description": {
+              "content": "Read an Application Profile",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "application-profiles",
+                ":applicationProfileId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "applicationProfileId",
+                  "description": "(Required) Identifier for the Application Profile"
+                },
+                {
+                  "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "623f24ea-42dc-4b48-841b-2cc294a5502b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-profiles",
+                    ":applicationProfileId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "applicationProfileId",
+                      "description": "(Required) Identifier for the Application Profile"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"applicationProfileId\": \"<uuid>\",\n  \"networkQualityThresholds\": {\n    \"packetDelayBudget\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    },\n    \"targetMinDownstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"targetMinUpstreamRate\": {\n      \"value\": 10,\n      \"unit\": \"<string>\"\n    },\n    \"packetlossErrorRate\": 3,\n    \"jitter\": {\n      \"value\": 12,\n      \"unit\": \"Minutes\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "aacfdc9e-f09b-4403-9d5e-54f583feddee",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-profiles",
+                    ":applicationProfileId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "applicationProfileId",
+                      "description": "(Required) Identifier for the Application Profile"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Client specified an invalid argument, request body or query param.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f9a5f4f3-1357-474b-bbc6-29af96a3666f",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-profiles",
+                    ":applicationProfileId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "applicationProfileId",
+                      "description": "(Required) Identifier for the Application Profile"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fbe6c2d3-1315-4cb9-8d0e-0a5c83847cd8",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-profiles",
+                    ":applicationProfileId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "applicationProfileId",
+                      "description": "(Required) Identifier for the Application Profile"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "eac52ccb-afef-4c9a-aea6-205fb6d80246",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-profiles",
+                    ":applicationProfileId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "applicationProfileId",
+                      "description": "(Required) Identifier for the Application Profile"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"NOT_FOUND\",\n  \"message\": \"The specified resource is not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b0653027-01dc-425d-88c8-7ef13f0757c3",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-profiles",
+                    ":applicationProfileId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "applicationProfileId",
+                      "description": "(Required) Identifier for the Application Profile"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Unknown server error. Typically a server bug.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "05215f10-5641-4a32-8402-7a6a62bb19c5",
+              "name": "Service Unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-profiles",
+                    ":applicationProfileId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "applicationProfileId",
+                      "description": "(Required) Identifier for the Application Profile"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service Unavailable.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "db7a7f3e-f750-401a-bebb-63da50defce6",
+          "name": "delete Application Profile",
+          "request": {
+            "name": "delete Application Profile",
+            "description": {
+              "content": "delete",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "application-profiles",
+                ":applicationProfileId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "applicationProfileId",
+                  "description": "(Required) subscription Id"
+                },
+                {
+                  "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE"
+          },
+          "response": [
+            {
+              "id": "3701df69-bdae-42ce-9f90-9fab75d60455",
+              "name": "application profile has been deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-profiles",
+                    ":applicationProfileId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "applicationProfileId",
+                      "description": "(Required) subscription Id"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3352937f-b6b2-4458-b3a1-d599d8e3daea",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-profiles",
+                    ":applicationProfileId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "applicationProfileId",
+                      "description": "(Required) subscription Id"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Client specified an invalid argument, request body or query param.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "607af05e-9ba0-45f7-858f-9cd8b02a999d",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-profiles",
+                    ":applicationProfileId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "applicationProfileId",
+                      "description": "(Required) subscription Id"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b4c6d115-c13e-4117-94ef-e700cbd84915",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-profiles",
+                    ":applicationProfileId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "applicationProfileId",
+                      "description": "(Required) subscription Id"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "512ecd5f-0111-4d0a-8368-2c97e157da6f",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-profiles",
+                    ":applicationProfileId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "applicationProfileId",
+                      "description": "(Required) subscription Id"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"NOT_FOUND\",\n  \"message\": \"The specified resource is not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "057396d2-6989-4a5b-80db-d82b5f5a5bd8",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-profiles",
+                    ":applicationProfileId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "applicationProfileId",
+                      "description": "(Required) subscription Id"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Unknown server error. Typically a server bug.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "04fd987f-c85c-4936-b725-dbb36bf3d0c9",
+              "name": "Service Unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-profiles",
+                    ":applicationProfileId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "applicationProfileId",
+                      "description": "(Required) subscription Id"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service Unavailable.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "http://localhost:9091",
+      "key": "apiRoot"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/application-profiles/v0.3",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "68df72c7-2b1d-49a0-a890-8ccbf6de0504",
+    "name": "Global System for Mobile Communications GSMA Camara Project Application Profiles API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Application profiles allows application developers to share all the information about their application which would be relevant for network/ CAMARA APIs related decision making.",
+      "type": "text/plain"
+    }
+  }
+}

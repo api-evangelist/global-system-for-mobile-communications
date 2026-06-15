@@ -1,0 +1,2190 @@
+{
+  "item": [
+    {
+      "id": "6b3afbd2-3df6-461c-bb6f-b4342580b081",
+      "name": "Connectivity Insights Subscriptions",
+      "description": {
+        "content": "Create and manage a subscription to receive periodic connectivity\ninsights\n",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bac76108-0f79-4be3-b8c0-8df8b38d4d3c",
+          "name": "Global System for Mobile Communications Create a Connectivity insights subscription for a device",
+          "request": {
+            "name": "Global System for Mobile Communications Create a Connectivity insights subscription for a device",
+            "description": {
+              "content": "Create a Connectivity insights subscription for a device",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sink\": \"<url>\",\n  \"protocol\": \"<string>\",\n  \"config\": {\n    \"subscriptionDetail\": {\n      \"device\": {\n        \"phoneNumber\": \"<string>\",\n        \"networkAccessIdentifier\": \"<string>\",\n        \"ipv4Address\": {},\n        \"ipv6Address\": \"<ipv6>\"\n      },\n      \"applicationProfileId\": \"<uuid>\",\n      \"applicationServer\": {\n        \"ipv4Address\": \"<string>\",\n        \"ipv6Address\": \"<string>\"\n      },\n      \"applicationServerPorts\": {\n        \"ranges\": [\n          {\n            \"from\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"to\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"ports\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      }\n    },\n    \"subscriptionExpireTime\": \"<dateTime>\",\n    \"subscriptionMaxEvents\": \"<integer>\",\n    \"initialEvent\": \"<boolean>\"\n  },\n  \"types\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "17ffc5b6-bb69-4b17-a855-bc3902bd6f90",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"protocol\": \"HTTP\",\n  \"config\": {\n    \"subscriptionDetail\": {\n      \"device\": {\n        \"phoneNumber\": \"123456789\",\n        \"networkAccessIdentifier\": \"123456789@domain.com\",\n        \"ipv4Address\": {},\n        \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n      },\n      \"applicationProfileId\": \"<uuid>\",\n      \"applicationServer\": {\n        \"ipv4Address\": \"192.168.0.1/24\",\n        \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n      },\n      \"applicationServerPorts\": {\n        \"ranges\": [\n          {\n            \"from\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"to\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"ports\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      }\n    },\n    \"subscriptionExpireTime\": \"2023-01-17T13:18:23.682Z\",\n    \"subscriptionMaxEvents\": 5,\n    \"initialEvent\": \"<boolean>\"\n  },\n  \"types\": [\n    \"org.camaraproject.connectivity-insights-subscriptions.v0.network-quality\",\n    \"org.camaraproject.connectivity-insights-subscriptions.v0.network-quality\"\n  ],\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"protocol\": \"HTTP\",\n  \"config\": {\n    \"subscriptionDetail\": {\n      \"device\": {\n        \"phoneNumber\": \"123456789\",\n        \"networkAccessIdentifier\": \"123456789@domain.com\",\n        \"ipv4Address\": {},\n        \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n      },\n      \"applicationProfileId\": \"<uuid>\",\n      \"applicationServer\": {\n        \"ipv4Address\": \"192.168.0.1/24\",\n        \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n      },\n      \"applicationServerPorts\": {\n        \"ranges\": [\n          {\n            \"from\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"to\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"ports\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      }\n    },\n    \"subscriptionExpireTime\": \"2023-01-17T13:18:23.682Z\",\n    \"subscriptionMaxEvents\": 5,\n    \"initialEvent\": \"<boolean>\"\n  },\n  \"types\": [\n    \"string\",\n    \"string\"\n  ],\n  \"startsAt\": \"2017-07-27T22:45:47.990Z\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  },\n  \"subscriptionId\": \"1119920371\",\n  \"expiresAt\": \"1946-11-21T08:54:50.550Z\",\n  \"status\": \"DEACTIVE\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "504aeadd-cc52-40b8-a059-5816e069c557",
+              "name": "Request accepted to be processed. It applies for async\ncreation process.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"protocol\": \"HTTP\",\n  \"config\": {\n    \"subscriptionDetail\": {\n      \"device\": {\n        \"phoneNumber\": \"123456789\",\n        \"networkAccessIdentifier\": \"123456789@domain.com\",\n        \"ipv4Address\": {},\n        \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n      },\n      \"applicationProfileId\": \"<uuid>\",\n      \"applicationServer\": {\n        \"ipv4Address\": \"192.168.0.1/24\",\n        \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n      },\n      \"applicationServerPorts\": {\n        \"ranges\": [\n          {\n            \"from\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"to\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"ports\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      }\n    },\n    \"subscriptionExpireTime\": \"2023-01-17T13:18:23.682Z\",\n    \"subscriptionMaxEvents\": 5,\n    \"initialEvent\": \"<boolean>\"\n  },\n  \"types\": [\n    \"org.camaraproject.connectivity-insights-subscriptions.v0.network-quality\",\n    \"org.camaraproject.connectivity-insights-subscriptions.v0.network-quality\"\n  ],\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"subscriptionId\": \"qs15-h556-rt89-1298\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bfc8db3b-b55c-4c2a-9781-eae6b56ab50b",
+              "name": "Problem with the client request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"protocol\": \"HTTP\",\n  \"config\": {\n    \"subscriptionDetail\": {\n      \"device\": {\n        \"phoneNumber\": \"123456789\",\n        \"networkAccessIdentifier\": \"123456789@domain.com\",\n        \"ipv4Address\": {},\n        \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n      },\n      \"applicationProfileId\": \"<uuid>\",\n      \"applicationServer\": {\n        \"ipv4Address\": \"192.168.0.1/24\",\n        \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n      },\n      \"applicationServerPorts\": {\n        \"ranges\": [\n          {\n            \"from\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"to\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"ports\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      }\n    },\n    \"subscriptionExpireTime\": \"2023-01-17T13:18:23.682Z\",\n    \"subscriptionMaxEvents\": 5,\n    \"initialEvent\": \"<boolean>\"\n  },\n  \"types\": [\n    \"org.camaraproject.connectivity-insights-subscriptions.v0.network-quality\",\n    \"org.camaraproject.connectivity-insights-subscriptions.v0.network-quality\"\n  ],\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Client specified an invalid argument, request body or query param.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6e946b94-c56b-4de8-8cf6-0da040419fcd",
+              "name": "Authentication problem with the client request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"protocol\": \"HTTP\",\n  \"config\": {\n    \"subscriptionDetail\": {\n      \"device\": {\n        \"phoneNumber\": \"123456789\",\n        \"networkAccessIdentifier\": \"123456789@domain.com\",\n        \"ipv4Address\": {},\n        \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n      },\n      \"applicationProfileId\": \"<uuid>\",\n      \"applicationServer\": {\n        \"ipv4Address\": \"192.168.0.1/24\",\n        \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n      },\n      \"applicationServerPorts\": {\n        \"ranges\": [\n          {\n            \"from\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"to\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"ports\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      }\n    },\n    \"subscriptionExpireTime\": \"2023-01-17T13:18:23.682Z\",\n    \"subscriptionMaxEvents\": 5,\n    \"initialEvent\": \"<boolean>\"\n  },\n  \"types\": [\n    \"org.camaraproject.connectivity-insights-subscriptions.v0.network-quality\",\n    \"org.camaraproject.connectivity-insights-subscriptions.v0.network-quality\"\n  ],\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b0db138d-856a-4c3d-acee-7eb1a3fcb87c",
+              "name": "Client does not have sufficient permission",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"protocol\": \"HTTP\",\n  \"config\": {\n    \"subscriptionDetail\": {\n      \"device\": {\n        \"phoneNumber\": \"123456789\",\n        \"networkAccessIdentifier\": \"123456789@domain.com\",\n        \"ipv4Address\": {},\n        \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n      },\n      \"applicationProfileId\": \"<uuid>\",\n      \"applicationServer\": {\n        \"ipv4Address\": \"192.168.0.1/24\",\n        \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n      },\n      \"applicationServerPorts\": {\n        \"ranges\": [\n          {\n            \"from\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"to\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"ports\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      }\n    },\n    \"subscriptionExpireTime\": \"2023-01-17T13:18:23.682Z\",\n    \"subscriptionMaxEvents\": 5,\n    \"initialEvent\": \"<boolean>\"\n  },\n  \"types\": [\n    \"org.camaraproject.connectivity-insights-subscriptions.v0.network-quality\",\n    \"org.camaraproject.connectivity-insights-subscriptions.v0.network-quality\"\n  ],\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5c513db5-fa33-426b-82ec-71a8c3a18787",
+              "name": "Conflict",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"protocol\": \"HTTP\",\n  \"config\": {\n    \"subscriptionDetail\": {\n      \"device\": {\n        \"phoneNumber\": \"123456789\",\n        \"networkAccessIdentifier\": \"123456789@domain.com\",\n        \"ipv4Address\": {},\n        \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n      },\n      \"applicationProfileId\": \"<uuid>\",\n      \"applicationServer\": {\n        \"ipv4Address\": \"192.168.0.1/24\",\n        \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n      },\n      \"applicationServerPorts\": {\n        \"ranges\": [\n          {\n            \"from\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"to\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"ports\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      }\n    },\n    \"subscriptionExpireTime\": \"2023-01-17T13:18:23.682Z\",\n    \"subscriptionMaxEvents\": 5,\n    \"initialEvent\": \"<boolean>\"\n  },\n  \"types\": [\n    \"org.camaraproject.connectivity-insights-subscriptions.v0.network-quality\",\n    \"org.camaraproject.connectivity-insights-subscriptions.v0.network-quality\"\n  ],\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 409,\n  \"code\": \"ABORTED\",\n  \"message\": \"Concurrency conflict.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "aedc196b-ad40-4fbd-a15c-72c5f4221b1b",
+              "name": "Unsupported Media Type",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"protocol\": \"HTTP\",\n  \"config\": {\n    \"subscriptionDetail\": {\n      \"device\": {\n        \"phoneNumber\": \"123456789\",\n        \"networkAccessIdentifier\": \"123456789@domain.com\",\n        \"ipv4Address\": {},\n        \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n      },\n      \"applicationProfileId\": \"<uuid>\",\n      \"applicationServer\": {\n        \"ipv4Address\": \"192.168.0.1/24\",\n        \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n      },\n      \"applicationServerPorts\": {\n        \"ranges\": [\n          {\n            \"from\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"to\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"ports\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      }\n    },\n    \"subscriptionExpireTime\": \"2023-01-17T13:18:23.682Z\",\n    \"subscriptionMaxEvents\": 5,\n    \"initialEvent\": \"<boolean>\"\n  },\n  \"types\": [\n    \"org.camaraproject.connectivity-insights-subscriptions.v0.network-quality\",\n    \"org.camaraproject.connectivity-insights-subscriptions.v0.network-quality\"\n  ],\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "X-Correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 415,\n  \"code\": \"UNSUPPORTED_MEDIA_TYPE\",\n  \"message\": \"The server refuses to accept the request because the payload format is in an unsupported format\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6f24a164-cb38-4832-92c6-29a283bc7b3c",
+              "name": "Unprocessable Entity",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"protocol\": \"HTTP\",\n  \"config\": {\n    \"subscriptionDetail\": {\n      \"device\": {\n        \"phoneNumber\": \"123456789\",\n        \"networkAccessIdentifier\": \"123456789@domain.com\",\n        \"ipv4Address\": {},\n        \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n      },\n      \"applicationProfileId\": \"<uuid>\",\n      \"applicationServer\": {\n        \"ipv4Address\": \"192.168.0.1/24\",\n        \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n      },\n      \"applicationServerPorts\": {\n        \"ranges\": [\n          {\n            \"from\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"to\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"ports\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      }\n    },\n    \"subscriptionExpireTime\": \"2023-01-17T13:18:23.682Z\",\n    \"subscriptionMaxEvents\": 5,\n    \"initialEvent\": \"<boolean>\"\n  },\n  \"types\": [\n    \"org.camaraproject.connectivity-insights-subscriptions.v0.network-quality\",\n    \"org.camaraproject.connectivity-insights-subscriptions.v0.network-quality\"\n  ],\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 422,\n  \"code\": \"MULTIEVENT_SUBSCRIPTION_NOT_SUPPORTED\",\n  \"message\": \"Multi event types subscription not managed\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ea96ab91-3e65-4f37-8df2-3ed0acae339b",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"protocol\": \"HTTP\",\n  \"config\": {\n    \"subscriptionDetail\": {\n      \"device\": {\n        \"phoneNumber\": \"123456789\",\n        \"networkAccessIdentifier\": \"123456789@domain.com\",\n        \"ipv4Address\": {},\n        \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n      },\n      \"applicationProfileId\": \"<uuid>\",\n      \"applicationServer\": {\n        \"ipv4Address\": \"192.168.0.1/24\",\n        \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n      },\n      \"applicationServerPorts\": {\n        \"ranges\": [\n          {\n            \"from\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"to\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"ports\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      }\n    },\n    \"subscriptionExpireTime\": \"2023-01-17T13:18:23.682Z\",\n    \"subscriptionMaxEvents\": 5,\n    \"initialEvent\": \"<boolean>\"\n  },\n  \"types\": [\n    \"org.camaraproject.connectivity-insights-subscriptions.v0.network-quality\",\n    \"org.camaraproject.connectivity-insights-subscriptions.v0.network-quality\"\n  ],\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "X-Correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 429,\n  \"code\": \"QUOTA_EXCEEDED\",\n  \"message\": \"Either out of resource quota or reaching rate limiting.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3ed9e57a-bd38-4db5-a3d3-2867cf871a8d",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"protocol\": \"HTTP\",\n  \"config\": {\n    \"subscriptionDetail\": {\n      \"device\": {\n        \"phoneNumber\": \"123456789\",\n        \"networkAccessIdentifier\": \"123456789@domain.com\",\n        \"ipv4Address\": {},\n        \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n      },\n      \"applicationProfileId\": \"<uuid>\",\n      \"applicationServer\": {\n        \"ipv4Address\": \"192.168.0.1/24\",\n        \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n      },\n      \"applicationServerPorts\": {\n        \"ranges\": [\n          {\n            \"from\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"to\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"ports\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      }\n    },\n    \"subscriptionExpireTime\": \"2023-01-17T13:18:23.682Z\",\n    \"subscriptionMaxEvents\": 5,\n    \"initialEvent\": \"<boolean>\"\n  },\n  \"types\": [\n    \"org.camaraproject.connectivity-insights-subscriptions.v0.network-quality\",\n    \"org.camaraproject.connectivity-insights-subscriptions.v0.network-quality\"\n  ],\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Unknown server error. Typically a server bug.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e776870c-ea73-4646-a528-6c0d3cb9c5b9",
+              "name": "Service unavailable. Typically the server is down.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"protocol\": \"HTTP\",\n  \"config\": {\n    \"subscriptionDetail\": {\n      \"device\": {\n        \"phoneNumber\": \"123456789\",\n        \"networkAccessIdentifier\": \"123456789@domain.com\",\n        \"ipv4Address\": {},\n        \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n      },\n      \"applicationProfileId\": \"<uuid>\",\n      \"applicationServer\": {\n        \"ipv4Address\": \"192.168.0.1/24\",\n        \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n      },\n      \"applicationServerPorts\": {\n        \"ranges\": [\n          {\n            \"from\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"to\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"ports\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      }\n    },\n    \"subscriptionExpireTime\": \"2023-01-17T13:18:23.682Z\",\n    \"subscriptionMaxEvents\": 5,\n    \"initialEvent\": \"<boolean>\"\n  },\n  \"types\": [\n    \"org.camaraproject.connectivity-insights-subscriptions.v0.network-quality\",\n    \"org.camaraproject.connectivity-insights-subscriptions.v0.network-quality\"\n  ],\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service Unavailable.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d8fbdd6f-a2d3-44ab-bfcc-b443dc16cc8b",
+          "name": "Global System for Mobile Communications Retrieve a list of apiName event subscription",
+          "request": {
+            "name": "Global System for Mobile Communications Retrieve a list of apiName event subscription",
+            "description": {
+              "content": "Operation to list subscriptions authorized to be retrieved by the\nprovided access token.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "a271909c-6d50-4192-8e22-e59fb1928890",
+              "name": "List of event subscription details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"sink\": \"https://endpoint.example.com/sink\",\n    \"protocol\": \"HTTP\",\n    \"config\": {\n      \"subscriptionDetail\": {\n        \"device\": {\n          \"phoneNumber\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"networkAccessIdentifier\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ipv4Address\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ipv6Address\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"applicationProfileId\": \"<uuid>\",\n        \"applicationServer\": {\n          \"ipv4Address\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ipv6Address\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"applicationServerPorts\": {\n          \"ranges\": [\n            {\n              \"from\": 5010,\n              \"to\": 5020\n            }\n          ],\n          \"ports\": [\n            5060,\n            5070\n          ]\n        }\n      },\n      \"subscriptionExpireTime\": \"2023-01-17T13:18:23.682Z\",\n      \"subscriptionMaxEvents\": 5,\n      \"initialEvent\": \"<boolean>\"\n    },\n    \"types\": [\n      \"string\",\n      \"string\"\n    ],\n    \"startsAt\": \"2001-08-02T19:08:29.577Z\",\n    \"sinkCredential\": {\n      \"credentialType\": \"<string>\"\n    },\n    \"subscriptionId\": \"1119920371\",\n    \"expiresAt\": \"2002-12-22T16:12:55.997Z\",\n    \"status\": \"DEACTIVE\"\n  },\n  {\n    \"sink\": \"https://endpoint.example.com/sink\",\n    \"protocol\": \"HTTP\",\n    \"config\": {\n      \"subscriptionDetail\": {\n        \"device\": {\n          \"phoneNumber\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"networkAccessIdentifier\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ipv4Address\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ipv6Address\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"applicationProfileId\": \"<uuid>\",\n        \"applicationServer\": {\n          \"ipv4Address\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ipv6Address\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"applicationServerPorts\": {\n          \"ranges\": [\n            {\n              \"from\": 5010,\n              \"to\": 5020\n            }\n          ],\n          \"ports\": [\n            5060,\n            5070\n          ]\n        }\n      },\n      \"subscriptionExpireTime\": \"2023-01-17T13:18:23.682Z\",\n      \"subscriptionMaxEvents\": 5,\n      \"initialEvent\": \"<boolean>\"\n    },\n    \"types\": [\n      \"string\",\n      \"string\"\n    ],\n    \"startsAt\": \"1977-03-15T05:08:47.876Z\",\n    \"sinkCredential\": {\n      \"credentialType\": \"<string>\"\n    },\n    \"subscriptionId\": \"1119920371\",\n    \"expiresAt\": \"1995-06-25T23:24:24.841Z\",\n    \"status\": \"DEACTIVE\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "92948a17-59b9-4b30-8368-41fa80bcd6b1",
+              "name": "Problem with the client request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Client specified an invalid argument, request body or query param.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7c5f7811-b752-4a01-9a3a-0300c3e11248",
+              "name": "Authentication problem with the client request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c95d701e-0be3-4d50-884d-70fa29f83173",
+              "name": "Client does not have sufficient permission",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f9d5c339-6d19-4bc7-a54d-8dffc7f1457d",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Unknown server error. Typically a server bug.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b788d11d-59dc-4f6a-93fa-ccc659c477c1",
+              "name": "Service unavailable. Typically the server is down.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service Unavailable.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3c62ae86-a38b-468b-aaad-a14cc1afac01",
+          "name": "Global System for Mobile Communications Operation to retrieve a subscription based on the provided ID",
+          "request": {
+            "name": "Global System for Mobile Communications Operation to retrieve a subscription based on the provided ID",
+            "description": {
+              "content": "Retrieve a given subscription by ID",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) Subscription identifier that was obtained from the create event\nsubscription operation\n"
+                },
+                {
+                  "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "80edead9-bc46-47e5-b082-3704261e40a4",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Subscription identifier that was obtained from the create event\nsubscription operation\n"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"protocol\": \"HTTP\",\n  \"config\": {\n    \"subscriptionDetail\": {\n      \"device\": {\n        \"phoneNumber\": \"123456789\",\n        \"networkAccessIdentifier\": \"123456789@domain.com\",\n        \"ipv4Address\": {},\n        \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n      },\n      \"applicationProfileId\": \"<uuid>\",\n      \"applicationServer\": {\n        \"ipv4Address\": \"192.168.0.1/24\",\n        \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n      },\n      \"applicationServerPorts\": {\n        \"ranges\": [\n          {\n            \"from\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"to\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"ports\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      }\n    },\n    \"subscriptionExpireTime\": \"2023-01-17T13:18:23.682Z\",\n    \"subscriptionMaxEvents\": 5,\n    \"initialEvent\": \"<boolean>\"\n  },\n  \"types\": [\n    \"string\",\n    \"string\"\n  ],\n  \"startsAt\": \"1991-06-18T22:01:13.146Z\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  },\n  \"subscriptionId\": \"1119920371\",\n  \"expiresAt\": \"1952-04-07T02:49:42.839Z\",\n  \"status\": \"ACTIVE\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1cdbe634-058d-49a2-a404-c6546a39b893",
+              "name": "Problem with the client request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Subscription identifier that was obtained from the create event\nsubscription operation\n"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Client specified an invalid argument, request body or query param\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f8c79a4e-99eb-4025-b4a2-dde5e2a81af1",
+              "name": "Authentication problem with the client request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Subscription identifier that was obtained from the create event\nsubscription operation\n"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e6df14bf-04d7-4901-bbb6-9fc0c6f82ffd",
+              "name": "Client does not have sufficient permission",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Subscription identifier that was obtained from the create event\nsubscription operation\n"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a0e42942-da23-4338-acb9-1a92e212378e",
+              "name": "Resource Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Subscription identifier that was obtained from the create event\nsubscription operation\n"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"NOT_FOUND\",\n  \"message\": \"The specified resource is not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e6b2dc3e-9972-426b-80a3-5d249c36e9df",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Subscription identifier that was obtained from the create event\nsubscription operation\n"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Unknown server error. Typically a server bug.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "eadf7123-9562-40ea-b610-33c3d91ae52d",
+              "name": "Service unavailable. Typically the server is down.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Subscription identifier that was obtained from the create event\nsubscription operation\n"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service Unavailable.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "58efeb85-d30b-436c-9e56-d29c74102804",
+          "name": "Global System for Mobile Communications Operation to delete a subscription",
+          "request": {
+            "name": "Global System for Mobile Communications Operation to delete a subscription",
+            "description": {
+              "content": "Delete a given subscription by ID",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) Subscription identifier that was obtained from the create event\nsubscription operation\n"
+                },
+                {
+                  "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE"
+          },
+          "response": [
+            {
+              "id": "7a813ab3-126a-43de-974c-31481842b630",
+              "name": "Request accepted to be processed. It applies for async deletion\nprocess.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Subscription identifier that was obtained from the create event\nsubscription operation\n"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"subscriptionId\": \"qs15-h556-rt89-1298\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "94d90c44-f744-4058-aba3-b4d020505d2f",
+              "name": "apiName subscription deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Subscription identifier that was obtained from the create event\nsubscription operation\n"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e04357d2-cc17-4e09-a55a-45c88c68d71d",
+              "name": "Problem with the client request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Subscription identifier that was obtained from the create event\nsubscription operation\n"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Client specified an invalid argument, request body or query param\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "504bb480-89cd-4ff5-b7cf-2f56a9733ac0",
+              "name": "Authentication problem with the client request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Subscription identifier that was obtained from the create event\nsubscription operation\n"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "aad9a1ef-89e2-4623-bcb4-c2eed842d46e",
+              "name": "Client does not have sufficient permission",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Subscription identifier that was obtained from the create event\nsubscription operation\n"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e6c9008e-49b4-432a-9fbc-d40a7d104566",
+              "name": "Resource Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Subscription identifier that was obtained from the create event\nsubscription operation\n"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"NOT_FOUND\",\n  \"message\": \"The specified resource is not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1054866f-4046-4af5-b021-93df2390acb1",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Subscription identifier that was obtained from the create event\nsubscription operation\n"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Unknown server error. Typically a server bug.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "470339c2-0517-499b-bc4a-5dbc565b4cd9",
+              "name": "Service unavailable. Typically the server is down.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Subscription identifier that was obtained from the create event\nsubscription operation\n"
+                    },
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service Unavailable.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "http://localhost:9091",
+      "key": "apiRoot"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/connectivity-insights-subscriptions/v0.4/check-network-quality",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b1419002-3407-4ac0-8fd9-c37ff323da06",
+    "name": "Global System for Mobile Communications GSMA Camara Project Connectivity Insights Subscriptions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Connectivity Insights API allows an application developer to ask the network the likelihood that an application's networking requirements can be met for a given end user session.",
+      "type": "text/plain"
+    }
+  }
+}

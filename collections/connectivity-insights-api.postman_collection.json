@@ -1,0 +1,599 @@
+{
+  "item": [
+    {
+      "id": "8cd81996-1619-44ca-a85f-634863119f27",
+      "name": "Network Quality",
+      "description": {
+        "content": "Read the network's level of confidence that it can meet the quality\nthresholds for a given application profile and end user device.\n",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e85cd459-6af5-4429-8a75-a4a98ab983f1",
+          "name": "Global System for Mobile Communications Check the network quality.",
+          "request": {
+            "name": "Global System for Mobile Communications Check the network quality.",
+            "description": {
+              "content": "Check the network quality. The response shows the network's current\n level of confidence that it can meet an application profile's quality\n thresholds for a given end user device.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "check-network-quality"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"applicationProfileId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"<string>\",\n    \"networkAccessIdentifier\": \"<string>\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"<ipv6>\"\n  },\n  \"applicationServer\": {\n    \"ipv4Address\": \"<string>\",\n    \"ipv6Address\": \"<string>\"\n  },\n  \"applicationServerPorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"monitoringTimeStamp\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "47256b4a-9fec-4b36-aedd-880f9838e2cc",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "check-network-quality"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationProfileId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"applicationServer\": {\n    \"ipv4Address\": \"192.168.0.1/24\",\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"applicationServerPorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"monitoringTimeStamp\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"packetDelayBudget\": \"unable to meet the application requirements\",\n  \"targetMinDownstreamRate\": \"meets the application requirements\",\n  \"targetMinUpstreamRate\": \"unable to meet the application requirements\",\n  \"packetlossErrorRate\": \"unable to meet the application requirements\",\n  \"jitter\": \"unable to meet the application requirements\",\n  \"additionalKPIs\": {\n    \"signalStrength\": \"excellent\",\n    \"connectivityType\": \"4G\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "23e13b64-eb10-4704-97be-ba55ab805a6d",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "check-network-quality"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationProfileId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"applicationServer\": {\n    \"ipv4Address\": \"192.168.0.1/24\",\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"applicationServerPorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"monitoringTimeStamp\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Client specified an invalid argument, request body or query param.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "90533b36-fc57-4d34-be54-9ca92dd856b2",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "check-network-quality"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationProfileId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"applicationServer\": {\n    \"ipv4Address\": \"192.168.0.1/24\",\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"applicationServerPorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"monitoringTimeStamp\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d5be625e-21f3-49e9-97a3-fdfbb25eaa1a",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "check-network-quality"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationProfileId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"applicationServer\": {\n    \"ipv4Address\": \"192.168.0.1/24\",\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"applicationServerPorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"monitoringTimeStamp\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "98443594-41ee-4969-b118-81007fc0301a",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "check-network-quality"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationProfileId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"applicationServer\": {\n    \"ipv4Address\": \"192.168.0.1/24\",\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"applicationServerPorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"monitoringTimeStamp\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"NOT_FOUND\",\n  \"message\": \"The specified resource is not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f2489814-dae8-415a-909f-b28ee94c6fa4",
+              "name": "Unprocessable Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "check-network-quality"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationProfileId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"applicationServer\": {\n    \"ipv4Address\": \"192.168.0.1/24\",\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"applicationServerPorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"monitoringTimeStamp\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 422,\n  \"code\": \"NOT_SUPPORTED\",\n  \"message\": \"Service not supported for this phoneNumber\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7da5ff17-03dd-44c0-8502-8add3af1b4bd",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "check-network-quality"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationProfileId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"applicationServer\": {\n    \"ipv4Address\": \"192.168.0.1/24\",\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"applicationServerPorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"monitoringTimeStamp\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Unknown server error. Typically a server bug.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f16b93e7-cb2c-409c-91f5-3d38df713770",
+              "name": "Service Unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "check-network-quality"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationProfileId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"applicationServer\": {\n    \"ipv4Address\": \"192.168.0.1/24\",\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"applicationServerPorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"monitoringTimeStamp\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service Unavailable.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5e960c96-be8a-4174-918e-c0df18830f1a",
+              "name": "Gateway Timeout",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "check-network-quality"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationProfileId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"applicationServer\": {\n    \"ipv4Address\": \"192.168.0.1/24\",\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"applicationServerPorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"monitoringTimeStamp\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Gateway Timeout",
+              "code": 504,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 504,\n  \"code\": \"TIMEOUT\",\n  \"message\": \"Request timeout exceeded.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "API root, defined by service provider, e.g.\n`api.example.com` or `api.example.com/somepath`\n",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "http://localhost:9091",
+      "key": "apiRoot"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/connectivity-insights/v0.4",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9989feaf-c3b7-4224-8c7f-2f82425c1702",
+    "name": "Global System for Mobile Communications GSMA Camara Project Connectivity Insights API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Connectivity Insights API allows an application developer to ask the network the likelihood that an application's networking requirements can be met for a given end user session.",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,597 @@
+{
+  "item": [
+    {
+      "id": "f4448b73-e1a3-4cb2-b8c9-a369cf5db965",
+      "name": "Match",
+      "description": {
+        "content": "Operations to match a customer identity against the account data bound to their phone number.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "453078cf-9b57-4383-84ba-248ac95cb805",
+          "name": "Global System for Mobile Communications Matching a customer identity by checking a set of attributes related against the account data bound to their phone number.",
+          "request": {
+            "name": "Global System for Mobile Communications Matching a customer identity by checking a set of attributes related against the account data bound to their phone number.",
+            "description": {
+              "content": "Verify matching of a number of attributes related to a customer identity against the verified data bound to their phone number in the Operator systems. Regardless of whether the `phoneNumber` is explicitly stated in the request body, at least one of the other fields must be provided, otherwise a `HTTP 400 - KNOW_YOUR_CUSTOMER.INVALID_PARAM_COMBINATION` error will be returned.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "match"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "API root, defined by the service provider, e.g. `api.example.com` or `api.example.com/somepath`",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"phoneNumber\": \"<string>\",\n  \"idDocument\": \"<string>\",\n  \"name\": \"<string>\",\n  \"givenName\": \"<string>\",\n  \"familyName\": \"<string>\",\n  \"nameKanaHankaku\": \"<string>\",\n  \"nameKanaZenkaku\": \"<string>\",\n  \"middleNames\": \"<string>\",\n  \"familyNameAtBirth\": \"<string>\",\n  \"address\": \"<string>\",\n  \"streetName\": \"<string>\",\n  \"streetNumber\": \"<string>\",\n  \"postalCode\": \"<string>\",\n  \"region\": \"<string>\",\n  \"locality\": \"<string>\",\n  \"country\": \"<string>\",\n  \"houseNumberExtension\": \"<string>\",\n  \"birthdate\": \"<string>\",\n  \"email\": \"<string>\",\n  \"gender\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8ac59139-f192-4dd6-a099-abaf4c009ff5",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "match"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by the service provider, e.g. `api.example.com` or `api.example.com/somepath`",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34629255833\",\n  \"idDocument\": \"66666666q\",\n  \"name\": \"Federica Sanchez Arjona\",\n  \"givenName\": \"Federica\",\n  \"familyName\": \"Sanchez Arjona\",\n  \"nameKanaHankaku\": \"federica\",\n  \"nameKanaZenkaku\": null,\n  \"middleNames\": \"Sanchez\",\n  \"familyNameAtBirth\": \"YYYY\",\n  \"address\": \"Tokyo-to Chiyoda-ku Iidabashi 3-10-10\",\n  \"streetName\": \"Nicolas Salmeron\",\n  \"streetNumber\": 4,\n  \"postalCode\": 1028460,\n  \"region\": \"Tokyo\",\n  \"locality\": \"ZZZZ\",\n  \"country\": \"JP\",\n  \"houseNumberExtension\": \"VVVV\",\n  \"birthdate\": \"1978-08-22\",\n  \"email\": \"abc@example.com\",\n  \"gender\": \"MALE\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"idDocumentMatch\": \"true\",\n  \"nameMatch\": \"true\",\n  \"givenNameMatch\": \"not_available\",\n  \"familyNameMatch\": \"not_available\",\n  \"nameKanaHankakuMatch\": \"true\",\n  \"nameKanaZenkakuMatch\": \"false\",\n  \"middleNamesMatch\": \"true\",\n  \"familyNameAtBirthMatch\": \"false\",\n  \"familyNameAtBirthMatchScore\": 90,\n  \"addressMatch\": \"true\",\n  \"streetNameMatch\": \"true\",\n  \"streetNumberMatch\": \"true\",\n  \"postalCodeMatch\": \"true\",\n  \"regionMatch\": \"true\",\n  \"localityMatch\": \"not_available\",\n  \"countryMatch\": \"true\",\n  \"houseNumberExtensionMatch\": \"not_available\",\n  \"birthdateMatch\": \"false\",\n  \"emailMatch\": \"false\",\n  \"emailMatchScore\": 87,\n  \"genderMatch\": \"false\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "101eb6b7-3e0d-4442-a943-dbee5a742014",
+              "name": "Problem with the client request.\nIn addition to regular scenario of `INVALID_ARGUMENT`, another scenario may exist.\n\n- Indicated param combination is invalid (`\"code\": \"KNOW_YOUR_CUSTOMER.INVALID_PARAM_COMBINATION\",\"message\": \"Indicated parameter combination is invalid\"`)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "match"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by the service provider, e.g. `api.example.com` or `api.example.com/somepath`",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34629255833\",\n  \"idDocument\": \"66666666q\",\n  \"name\": \"Federica Sanchez Arjona\",\n  \"givenName\": \"Federica\",\n  \"familyName\": \"Sanchez Arjona\",\n  \"nameKanaHankaku\": \"federica\",\n  \"nameKanaZenkaku\": null,\n  \"middleNames\": \"Sanchez\",\n  \"familyNameAtBirth\": \"YYYY\",\n  \"address\": \"Tokyo-to Chiyoda-ku Iidabashi 3-10-10\",\n  \"streetName\": \"Nicolas Salmeron\",\n  \"streetNumber\": 4,\n  \"postalCode\": 1028460,\n  \"region\": \"Tokyo\",\n  \"locality\": \"ZZZZ\",\n  \"country\": \"JP\",\n  \"houseNumberExtension\": \"VVVV\",\n  \"birthdate\": \"1978-08-22\",\n  \"email\": \"abc@example.com\",\n  \"gender\": \"MALE\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Client specified an invalid argument, request body or query param\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bdf32e5a-3b6a-4338-abb7-486df2b3ec14",
+              "name": "Authentication problem with the client request. Unauthorized error.  Access Token related errors.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "match"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by the service provider, e.g. `api.example.com` or `api.example.com/somepath`",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34629255833\",\n  \"idDocument\": \"66666666q\",\n  \"name\": \"Federica Sanchez Arjona\",\n  \"givenName\": \"Federica\",\n  \"familyName\": \"Sanchez Arjona\",\n  \"nameKanaHankaku\": \"federica\",\n  \"nameKanaZenkaku\": null,\n  \"middleNames\": \"Sanchez\",\n  \"familyNameAtBirth\": \"YYYY\",\n  \"address\": \"Tokyo-to Chiyoda-ku Iidabashi 3-10-10\",\n  \"streetName\": \"Nicolas Salmeron\",\n  \"streetNumber\": 4,\n  \"postalCode\": 1028460,\n  \"region\": \"Tokyo\",\n  \"locality\": \"ZZZZ\",\n  \"country\": \"JP\",\n  \"houseNumberExtension\": \"VVVV\",\n  \"birthdate\": \"1978-08-22\",\n  \"email\": \"abc@example.com\",\n  \"gender\": \"MALE\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9e769486-e460-4d86-b5fe-82a0191f03ff",
+              "name": "Client does not have sufficient permission.\nIn addition to regular scenario of `PERMISSION_DENIED`, another scenarios may exist:\n\n- Phone number cannot be deducted from access token context.(`{\"code\": \"INVALID_TOKEN_CONTEXT\",\"message\": \"Phone number mismatch with access token context\"}`)\n- The idDocument property is missing.(`{\"code\": \"KNOW_YOUR_CUSTOMER.ID_DOCUMENT_REQUIRED\",\"message\": \"The idDocument is required to perform the properties validation\"}`)\n- The idDocument does not match the one associated to the provided phoneNumber in the Operator's system.(`{\"code\": \"KNOW_YOUR_CUSTOMER.ID_DOCUMENT_MISMATCH\",\"message\": \"The idDocument needs to match the one associated with the provided phoneNumber\"}`)\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "match"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by the service provider, e.g. `api.example.com` or `api.example.com/somepath`",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34629255833\",\n  \"idDocument\": \"66666666q\",\n  \"name\": \"Federica Sanchez Arjona\",\n  \"givenName\": \"Federica\",\n  \"familyName\": \"Sanchez Arjona\",\n  \"nameKanaHankaku\": \"federica\",\n  \"nameKanaZenkaku\": null,\n  \"middleNames\": \"Sanchez\",\n  \"familyNameAtBirth\": \"YYYY\",\n  \"address\": \"Tokyo-to Chiyoda-ku Iidabashi 3-10-10\",\n  \"streetName\": \"Nicolas Salmeron\",\n  \"streetNumber\": 4,\n  \"postalCode\": 1028460,\n  \"region\": \"Tokyo\",\n  \"locality\": \"ZZZZ\",\n  \"country\": \"JP\",\n  \"houseNumberExtension\": \"VVVV\",\n  \"birthdate\": \"1978-08-22\",\n  \"email\": \"abc@example.com\",\n  \"gender\": \"MALE\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a2c1f7e3-f2d7-410e-80cf-018ca4125260",
+              "name": "Not Found error. Error if URL is wrong / user is not found.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "match"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by the service provider, e.g. `api.example.com` or `api.example.com/somepath`",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34629255833\",\n  \"idDocument\": \"66666666q\",\n  \"name\": \"Federica Sanchez Arjona\",\n  \"givenName\": \"Federica\",\n  \"familyName\": \"Sanchez Arjona\",\n  \"nameKanaHankaku\": \"federica\",\n  \"nameKanaZenkaku\": null,\n  \"middleNames\": \"Sanchez\",\n  \"familyNameAtBirth\": \"YYYY\",\n  \"address\": \"Tokyo-to Chiyoda-ku Iidabashi 3-10-10\",\n  \"streetName\": \"Nicolas Salmeron\",\n  \"streetNumber\": 4,\n  \"postalCode\": 1028460,\n  \"region\": \"Tokyo\",\n  \"locality\": \"ZZZZ\",\n  \"country\": \"JP\",\n  \"houseNumberExtension\": \"VVVV\",\n  \"birthdate\": \"1978-08-22\",\n  \"email\": \"abc@example.com\",\n  \"gender\": \"MALE\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"NOT_FOUND\",\n  \"message\": \"not_found_contractor/not_found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0c4942a4-9052-452d-b5e0-bd1c213c97ba",
+              "name": "Server error.  Problem with MNO's server side.  Some processing error within MNO's servers.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "match"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by the service provider, e.g. `api.example.com` or `api.example.com/somepath`",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34629255833\",\n  \"idDocument\": \"66666666q\",\n  \"name\": \"Federica Sanchez Arjona\",\n  \"givenName\": \"Federica\",\n  \"familyName\": \"Sanchez Arjona\",\n  \"nameKanaHankaku\": \"federica\",\n  \"nameKanaZenkaku\": null,\n  \"middleNames\": \"Sanchez\",\n  \"familyNameAtBirth\": \"YYYY\",\n  \"address\": \"Tokyo-to Chiyoda-ku Iidabashi 3-10-10\",\n  \"streetName\": \"Nicolas Salmeron\",\n  \"streetNumber\": 4,\n  \"postalCode\": 1028460,\n  \"region\": \"Tokyo\",\n  \"locality\": \"ZZZZ\",\n  \"country\": \"JP\",\n  \"houseNumberExtension\": \"VVVV\",\n  \"birthdate\": \"1978-08-22\",\n  \"email\": \"abc@example.com\",\n  \"gender\": \"MALE\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "61e47378-27b5-4395-a90a-cc0f9e43ee3e",
+              "name": "Service unavailable. Typically the server is down.  Problem with MNO's server side.  Any unexpected error within MNO's servers.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "match"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by the service provider, e.g. `api.example.com` or `api.example.com/somepath`",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34629255833\",\n  \"idDocument\": \"66666666q\",\n  \"name\": \"Federica Sanchez Arjona\",\n  \"givenName\": \"Federica\",\n  \"familyName\": \"Sanchez Arjona\",\n  \"nameKanaHankaku\": \"federica\",\n  \"nameKanaZenkaku\": null,\n  \"middleNames\": \"Sanchez\",\n  \"familyNameAtBirth\": \"YYYY\",\n  \"address\": \"Tokyo-to Chiyoda-ku Iidabashi 3-10-10\",\n  \"streetName\": \"Nicolas Salmeron\",\n  \"streetNumber\": 4,\n  \"postalCode\": 1028460,\n  \"region\": \"Tokyo\",\n  \"locality\": \"ZZZZ\",\n  \"country\": \"JP\",\n  \"houseNumberExtension\": \"VVVV\",\n  \"birthdate\": \"1978-08-22\",\n  \"email\": \"abc@example.com\",\n  \"gender\": \"MALE\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service unavailable\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4542b2bb-add6-4921-a35b-5d6cb0cc962d",
+              "name": "Request time exceeded. If it happens repeatedly, consider reducing the request complexity",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "match"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root, defined by the service provider, e.g. `api.example.com` or `api.example.com/somepath`",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34629255833\",\n  \"idDocument\": \"66666666q\",\n  \"name\": \"Federica Sanchez Arjona\",\n  \"givenName\": \"Federica\",\n  \"familyName\": \"Sanchez Arjona\",\n  \"nameKanaHankaku\": \"federica\",\n  \"nameKanaZenkaku\": null,\n  \"middleNames\": \"Sanchez\",\n  \"familyNameAtBirth\": \"YYYY\",\n  \"address\": \"Tokyo-to Chiyoda-ku Iidabashi 3-10-10\",\n  \"streetName\": \"Nicolas Salmeron\",\n  \"streetNumber\": 4,\n  \"postalCode\": 1028460,\n  \"region\": \"Tokyo\",\n  \"locality\": \"ZZZZ\",\n  \"country\": \"JP\",\n  \"houseNumberExtension\": \"VVVV\",\n  \"birthdate\": \"1978-08-22\",\n  \"email\": \"abc@example.com\",\n  \"gender\": \"MALE\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Gateway Timeout",
+              "code": 504,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 504,\n  \"code\": \"TIMEOUT\",\n  \"message\": \"Request timeout exceeded. Try later.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "API root, defined by the service provider, e.g. `api.example.com` or `api.example.com/somepath`",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "http://localhost:9091",
+      "key": "apiRoot"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/kyc-match/v0.2",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "cff2c35f-00a5-4036-b316-ddcb38fb6ca1",
+    "name": "Global System for Mobile Communications GSMA Camara Project Know Your Customer Match",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This API provides the customer with the ability to compare the information it (Service Provider, SP) has for a particular mobile phone user with that on file (and verified) by the mobile phone user's Operator in their own KYC records, in order for the SP to confirm the accuracy of the information and provide a specific service to the mobile phone user.",
+      "type": "text/plain"
+    }
+  }
+}

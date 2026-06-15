@@ -1,0 +1,94 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Global System for Mobile Communications GSMA Camara Project Application Profiles API",
+    "version": "0.3.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Application Profiles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Global System for Mobile Communications create a profile which represents an application's networking demands.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/application-profiles/v0.3/application-profiles",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Define network monitoring intents for optimal end user application\nexperience.\n"
+        },
+        {
+          "info": {
+            "name": "readApplicationProfile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/application-profiles/v0.3/application-profiles/:applicationProfileId",
+            "params": [
+              {
+                "name": "applicationProfileId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier for the Application Profile"
+              }
+            ]
+          },
+          "docs": "Read an Application Profile"
+        },
+        {
+          "info": {
+            "name": "updateApplicationProfile",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/application-profiles/v0.3/application-profiles/:applicationProfileId",
+            "params": [
+              {
+                "name": "applicationProfileId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier for the Application Profile"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update the complete set of network quality thresholds for an\napplication with the new set of thresholds to ensure good\nend user experience\n"
+        },
+        {
+          "info": {
+            "name": "deleteApplicationProfile",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/application-profiles/v0.3/application-profiles/:applicationProfileId",
+            "params": [
+              {
+                "name": "applicationProfileId",
+                "value": "",
+                "type": "path",
+                "description": "subscription Id"
+              }
+            ]
+          },
+          "docs": "delete"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

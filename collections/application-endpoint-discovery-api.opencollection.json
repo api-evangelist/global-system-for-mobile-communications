@@ -1,0 +1,63 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Global System for Mobile Communications GSMA Camara Project Application Endpoint Discovery API",
+    "version": "0.1.0-wip"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Discovery",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Global System for Mobile Communications Returns the Endpoint of the closest App Instance to user device\nidentified in the request.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/{basePath}/app-endpoints",
+            "headers": [
+              {
+                "name": "IPv4-Address",
+                "value": "84.125.93.10"
+              },
+              {
+                "name": "IPv6-Address",
+                "value": "2001:db8:85a3:8d3:1319:8a2e:370:7348"
+              },
+              {
+                "name": "Network-Access-Identifier",
+                "value": "4d596ac1-7822-4927-a3c5-d72e1f922c94@domain.com"
+              },
+              {
+                "name": "Phone-Number",
+                "value": "+441234567890"
+              },
+              {
+                "name": "AppId",
+                "value": ""
+              },
+              {
+                "name": "X-Correlator",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Filter the Edge Cloud Zones according to the parameter value.\nFor this API the only supported value is `closest`.\n"
+              }
+            ]
+          },
+          "docs": "On receiving this request, the network will return the name\nof the App Instance with the shortest network path to the end user\ndevice identified in the request.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

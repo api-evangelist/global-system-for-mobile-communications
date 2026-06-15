@@ -1,0 +1,228 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Global System for Mobile Communications GSMA Camara Project Edge Application Management API",
+    "version": "0.9.3-wip"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Application",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Global System for Mobile Communications Retrieve a list of existing Applications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/{basePath}/apps",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Get the list of all existing Application definitions from the\nEdge Cloud Provider that the user has permission to view.\n"
+        },
+        {
+          "info": {
+            "name": "Global System for Mobile Communications Submit application metadata to the Edge Cloud Provider.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/{basePath}/apps",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Contains the information about the application to be\ninstantiated in the Edge Cloud\n"
+        },
+        {
+          "info": {
+            "name": "Global System for Mobile Communications Retrieve the information of an Application",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/{basePath}/apps/:appId",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "A globally unique identifier associated with the\napplication.\nEdge Cloud Provider generates this identifier when the application\nis submitted.\n"
+              }
+            ]
+          },
+          "docs": "Ask the Edge Cloud Provider the information for a given application\n"
+        },
+        {
+          "info": {
+            "name": "Global System for Mobile Communications Delete an Application from an Edge Cloud Provider",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/{basePath}/apps/:appId",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Identificator of the application to be\ndeleted provided by the Edge Cloud Provider\nonce the submission was successful\n"
+              }
+            ]
+          },
+          "docs": "Delete all the information and content related to an Application"
+        },
+        {
+          "info": {
+            "name": "Global System for Mobile Communications Retrieve the information of Application Instances for a given App",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/{basePath}/appinstances",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "appId",
+                "value": "",
+                "type": "query",
+                "description": "A globally unique identifier associated with\nthe application.\nEdge Cloud Provider generates this identifier when the\napplication is submitted.\n"
+              },
+              {
+                "name": "appInstanceId",
+                "value": "",
+                "type": "query",
+                "description": "A globally unique identifier associated with a running\ninstance of an application within an specific Edge Cloud Zone.\nEdge Cloud Provider generates this identifier.\n"
+              },
+              {
+                "name": "region",
+                "value": "",
+                "type": "query",
+                "description": "Human readable name of the geographical Edge Cloud Region of\nthe Edge Cloud. Defined by the Edge Cloud Provider.\n"
+              }
+            ]
+          },
+          "docs": "Ask the Edge Cloud Provider the information of the instances for a\ngiven application\n"
+        },
+        {
+          "info": {
+            "name": "Global System for Mobile Communications Instantiation of an Application",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/{basePath}/appinstances",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Ask the Edge Cloud Platform to instantiate an application to one\nor several Edge Cloud Zones with an Application as an input and an\nApplication Instance as the output.\n"
+        },
+        {
+          "info": {
+            "name": "Global System for Mobile Communications Terminate an Application Instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/{basePath}/appinstances/:appInstanceId",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "appInstanceId",
+                "value": "",
+                "type": "path",
+                "description": "Identificator of the specific application instance\nthat will be terminated\n"
+              }
+            ]
+          },
+          "docs": "Terminate a running instance of an application within\nan Edge Cloud Zone\n"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Edge Cloud",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Global System for Mobile Communications Retrieve a list of the operators Edge Cloud Zones and their status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/{basePath}/edge-cloud-zones",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "region",
+                "value": "",
+                "type": "query",
+                "description": "Human readable name of the geographical Edge Cloud Region of\nthe Edge Cloud. Defined by the Edge Cloud Provider.\n"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "Human readable status of the Edge Cloud Zone"
+              }
+            ]
+          },
+          "docs": "List of the operators Edge Cloud Zones and their\nstatus, ordering the results by location and filtering by\nstatus (active/inactive/unknown)\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

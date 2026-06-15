@@ -1,0 +1,106 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Global System for Mobile Communications GSMA Camara Project Connectivity Insights Subscriptions API",
+    "version": "0.4.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Connectivity Insights Subscriptions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Global System for Mobile Communications Retrieve a list of apiName event subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/connectivity-insights-subscriptions/v0.4/check-network-quality/subscriptions",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Operation to list subscriptions authorized to be retrieved by the\nprovided access token.\n"
+        },
+        {
+          "info": {
+            "name": "Global System for Mobile Communications Create a Connectivity insights subscription for a device",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/connectivity-insights-subscriptions/v0.4/check-network-quality/subscriptions",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a Connectivity insights subscription for a device"
+        },
+        {
+          "info": {
+            "name": "Global System for Mobile Communications Operation to retrieve a subscription based on the provided ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/connectivity-insights-subscriptions/v0.4/check-network-quality/subscriptions/:subscriptionId",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Subscription identifier that was obtained from the create event\nsubscription operation\n"
+              }
+            ]
+          },
+          "docs": "Retrieve a given subscription by ID"
+        },
+        {
+          "info": {
+            "name": "Global System for Mobile Communications Operation to delete a subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/connectivity-insights-subscriptions/v0.4/check-network-quality/subscriptions/:subscriptionId",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Subscription identifier that was obtained from the create event\nsubscription operation\n"
+              }
+            ]
+          },
+          "docs": "Delete a given subscription by ID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
