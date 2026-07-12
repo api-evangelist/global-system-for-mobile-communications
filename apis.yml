@@ -608,6 +608,12 @@ tags:
   - Telecommunications
 type: Index
 common:
+  - type: VulnerabilityDisclosure
+    url: security/global-system-for-mobile-communications-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/global-system-for-mobile-communications-domain-security.yml
+  - type: Authentication
+    url: authentication/global-system-for-mobile-communications-authentication.yml
   - url: https://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/overview
     type: PostmanWorkspace
   - name: Legal - About Us
@@ -623,6 +629,8 @@ common:
   - name: Events - GSMA
     url: https://www.gsma.com/get-involved/events/
     type: Events
+  - url: https://www.gsma.com/newsroom/feed/
+    type: Blog
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2024-12-03T00:00:00.000Z'
