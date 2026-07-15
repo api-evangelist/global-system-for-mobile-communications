@@ -608,6 +608,8 @@ tags:
   - Telecommunications
 type: Index
 common:
+  - type: AgenticAccess
+    url: agentic-access/global-system-for-mobile-communications-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/global-system-for-mobile-communications-vulnerability-disclosure.yml
   - type: DomainSecurity
