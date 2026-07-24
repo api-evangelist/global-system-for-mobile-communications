@@ -1,0 +1,265 @@
+openapi: 3.0.3
+info:
+  title: Global System for Mobile Communications GSMA Camara Project Endpoint Discovery Application Edge Cloud API
+  version: 0.1.0-wip
+  description: The Application Discovery API extends beyond the capabilities of the Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone but also directly linking to the application endpoints within those Edge Cloud Zones.
+  contact:
+    email: sp-edc@lists.camaraproject.org
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: '{apiRoot}/{basePath}'
+  variables:
+    apiRoot:
+      default: https://localhost:443
+      description: API root.
+    basePath:
+      default: application-endpoint-discovery/vwip
+      description: Base path for the Application Endpoint Discovery.
+tags:
+- name: Edge Cloud
+  description: Edge Cloud Zones Availability
+paths:
+  /edge-cloud-zones:
+    get:
+      security:
+      - openId:
+        - edge-application-management:edge-cloud-zones:read
+      tags:
+      - Edge Cloud
+      summary: Global System for Mobile Communications Retrieve a list of the operators Edge Cloud Zones and their status
+      description: 'List of the operators Edge Cloud Zones and their
+
+        status, ordering the results by location and filtering by
+
+        status (active/inactive/unknown)
+
+        '
+      operationId: getEdgeCloudZones
+      parameters:
+      - $ref: '#/components/parameters/x-correlator'
+      - name: region
+        description: 'Human readable name of the geographical Edge Cloud Region of
+
+          the Edge Cloud. Defined by the Edge Cloud Provider.
+
+          '
+        in: query
+        required: false
+        schema:
+          $ref: '#/components/schemas/EdgeCloudRegion'
+      - name: status
+        description: Human readable status of the Edge Cloud Zone
+        in: query
+        required: false
+        schema:
+          $ref: '#/components/schemas/EdgeCloudZoneStatus'
+      responses:
+        '200':
+          description: 'Successful response, returning the
+
+            Available Edge Cloud Zones.
+
+            '
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EdgeCloudZones'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+components:
+  schemas:
+    EdgeCloudZone:
+      type: object
+      description: 'An Edge Cloud Zone, uniquely identified by a
+
+        combination of the value of the Edge Cloud Zone Id object
+
+        and the value of the Edge Cloud Provider
+
+        object. This value is used to identify an Edge Cloud zone
+
+        between Edge Clouds from different Edge Cloud Providers.
+
+        '
+      required:
+      - edgeCloudZoneId
+      - edgeCloudZoneName
+      - edgeCloudProvider
+      properties:
+        edgeCloudZoneId:
+          $ref: '#/components/schemas/EdgeCloudZoneId'
+        edgeCloudZoneName:
+          $ref: '#/components/schemas/EdgeCloudZoneName'
+        edgeCloudZoneStatus:
+          $ref: '#/components/schemas/EdgeCloudZoneStatus'
+        edgeCloudProvider:
+          $ref: '#/components/schemas/EdgeCloudProvider'
+        edgeCloudRegion:
+          $ref: '#/components/schemas/EdgeCloudRegion'
+      minItems: 1
+    EdgeCloudRegion:
+      type: string
+      description: 'Human readable name of the geographical Edge Cloud Region of
+
+        the Edge Cloud. Defined by the Edge Cloud Provider.
+
+        '
+    EdgeCloudZoneName:
+      type: string
+      description: 'Human readable name of the geographical zone of
+
+        the Edge Cloud. Defined by the Edge Cloud Provider.
+
+        '
+    EdgeCloudZoneStatus:
+      description: Status of the Edge Cloud Zone (default is 'unknown')
+      type: string
+      enum:
+      - active
+      - inactive
+      - unknown
+      default: unknown
+    EdgeCloudZoneId:
+      type: string
+      format: uuid
+      description: 'Unique identifier created by the Edge Cloud Platform to identify an
+
+        Edge Cloud Zone within an Edge Cloud.
+
+        '
+    EdgeCloudProvider:
+      type: string
+      description: Human readable name of the Edge Cloud Provider.
+    ErrorInfo:
+      type: object
+      description: Information about the error
+      properties:
+        status:
+          type: integer
+          description: HTTP status code returned along with this error response
+        code:
+          type: string
+          description: Code given to this error
+        message:
+          type: string
+          description: Detailed error description
+      required:
+      - status
+      - code
+      - message
+    EdgeCloudZones:
+      type: array
+      items:
+        $ref: '#/components/schemas/EdgeCloudZone'
+      minItems: 1
+      description: 'A collection of Edge Cloud Zones where the Application Provider can
+
+        instantiate an Application Instance.
+
+        '
+      additionalProperties: false
+  headers:
+    x-correlator:
+      description: 'Correlation id for the different services
+
+        '
+      required: false
+      schema:
+        type: string
+        format: uuid
+  parameters:
+    x-correlator:
+      name: x-correlator
+      in: header
+      description: 'Correlation id for the different services
+
+        '
+      schema:
+        type: string
+  responses:
+    '403':
+      description: Unauthorized
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 403
+            code: PERMISSION_DENIED
+            message: 'Operation not allowed: ...'
+    '404':
+      description: Not Found
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 404
+            code: NOT_FOUND
+            message: Resource does not exist
+    '500':
+      description: Internal Server Error
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 500
+            code: INTERNAL
+            message: 'Internal server error: ...'
+    '503':
+      description: Service Unavailable
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 503
+            code: UNAVAILABLE
+            message: Service unavailable
+    '401':
+      description: Unauthorized
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 401
+            code: UNAUTHENTICATED
+            message: 'Authorization failed: ...'
+  securitySchemes:
+    openId:
+      description: OpenID Provider Configuration Information.
+      type: openIdConnect
+      openIdConnectUrl: .well-known/openid-configuration
+externalDocs:
+  description: Product documentation at CAMARA.
+  url: https://github.com/camaraproject/EdgeCloud

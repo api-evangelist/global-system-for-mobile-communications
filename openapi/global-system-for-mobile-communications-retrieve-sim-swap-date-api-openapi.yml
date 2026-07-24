@@ -1,0 +1,270 @@
+openapi: 3.0.3
+info:
+  title: Global System for Mobile Communications GSMA Camara Project Endpoint Discovery Application Retrieve SIM Swap Date API
+  version: 0.1.0-wip
+  description: The Application Discovery API extends beyond the capabilities of the Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone but also directly linking to the application endpoints within those Edge Cloud Zones.
+  contact:
+    email: sp-edc@lists.camaraproject.org
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: '{apiRoot}/{basePath}'
+  variables:
+    apiRoot:
+      default: https://localhost:443
+      description: API root.
+    basePath:
+      default: application-endpoint-discovery/vwip
+      description: Base path for the Application Endpoint Discovery.
+tags:
+- name: Retrieve SIM Swap Date
+paths:
+  /retrieve-date:
+    post:
+      security:
+      - openId:
+        - sim-swap:retrieve-date
+      - openId:
+        - sim-swap
+      tags:
+      - Retrieve SIM Swap Date
+      description: Get timestamp of last SIM swap event for a mobile user account provided with phone number.
+      operationId: retrieveSimSwapDate
+      parameters:
+      - $ref: '#/components/parameters/x-correlator'
+      requestBody:
+        description: 'Create a SIM swap date request for a phone number.
+
+          '
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSimSwapDate'
+        required: true
+      responses:
+        '200':
+          description: Contains information about SIM swap change
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SimSwapInfo'
+        '400':
+          $ref: '#/components/responses/Generic400'
+        '401':
+          $ref: '#/components/responses/Generic401'
+        '403':
+          $ref: '#/components/responses/Generic403'
+        '404':
+          $ref: '#/components/responses/Generic404'
+        '422':
+          $ref: '#/components/responses/Generic422'
+        '500':
+          $ref: '#/components/responses/Generic500'
+        '503':
+          $ref: '#/components/responses/Generic503'
+        '504':
+          $ref: '#/components/responses/Generic504'
+components:
+  responses:
+    Generic503:
+      description: Service Unavailable
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_503_UNAVAILABLE:
+              description: Service is not available. Temporary situation usually related to maintenance process in the server side
+              value:
+                status: 503
+                code: UNAVAILABLE
+                message: Service Unavailable.
+    Generic422:
+      description: Unprocessable Content
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_422_NOT_SUPPORTED:
+              description: Not Supported
+              value:
+                status: 422
+                code: NOT_SUPPORTED
+                message: Service not supported for this phoneNumber
+            UNIDENTIFIABLE_PHONE_NUMBER:
+              description: The phone number is not included in the request and the phone number information cannot be derived from the 3-legged access token
+              value:
+                status: 422
+                code: UNIDENTIFIABLE_PHONE_NUMBER
+                message: The phone number cannot be identified
+    Generic404:
+      description: Not found
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_404_NOT_FOUND:
+              description: Resource is not found
+              value:
+                status: 404
+                code: NOT_FOUND
+                message: The specified resource is not found.
+    Generic500:
+      description: Internal Server Error
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_500_INTERNAL:
+              description: Problem in Server side. Regular Server Exception
+              value:
+                status: 500
+                code: INTERNAL
+                message: Unknown server error. Typically a server bug.
+    Generic401:
+      description: Unauthorized
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_401_UNAUTHENTICATED:
+              description: Request cannot be authenticated
+              value:
+                status: 401
+                code: UNAUTHENTICATED
+                message: Request not authenticated due to missing, invalid, or expired credentials.
+    Generic403:
+      description: Forbidden
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_403_PERMISSION_DENIED:
+              description: Permission denied. OAuth2 token access does not have the required scope or when the user fails operational security
+              value:
+                status: 403
+                code: PERMISSION_DENIED
+                message: Client does not have sufficient permissions to perform this action.
+            GENERIC_403_INVALID_TOKEN_CONTEXT:
+              description: Reflect some inconsistency between information in some field of the API and the related OAuth2 Token
+              value:
+                status: 403
+                code: INVALID_TOKEN_CONTEXT
+                message: phoneNumber is not consistent with access token
+    Generic400:
+      description: Bad Request
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_400_INVALID_ARGUMENT:
+              description: Invalid Argument. Generic Syntax Exception
+              value:
+                status: 400
+                code: INVALID_ARGUMENT
+                message: Client specified an invalid argument, request body or query param.
+    Generic504:
+      description: Gateway Timeout
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_504_TIMEOUT:
+              description: API Server Timeout
+              value:
+                status: 504
+                code: TIMEOUT
+                message: Request timeout exceeded.
+  headers:
+    x-correlator:
+      description: Correlation id for the different services
+      schema:
+        type: string
+  parameters:
+    x-correlator:
+      name: x-correlator
+      in: header
+      description: Correlation id for the different services
+      schema:
+        type: string
+  schemas:
+    ErrorInfo:
+      type: object
+      required:
+      - status
+      - code
+      - message
+      properties:
+        status:
+          type: integer
+          description: HTTP response status code
+        code:
+          type: string
+          description: Code given to this error
+        message:
+          type: string
+          description: Detailed error description
+    CreateSimSwapDate:
+      type: object
+      properties:
+        phoneNumber:
+          $ref: '#/components/schemas/PhoneNumber'
+    SimSwapInfo:
+      type: object
+      required:
+      - latestSimChange
+      properties:
+        latestSimChange:
+          type: string
+          format: date-time
+          description: Timestamp of latest SIM swap performed. It must follow [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.6) and must have time zone. Recommended format is yyyy-MM-dd'T'HH:mm:ss.SSSZ (i.e. which allows 2023-07-03T14:27:08.312+02:00 or 2023-07-03T12:27:08.312Z)
+          nullable: true
+          example: '2023-07-03T14:27:08.312+02:00'
+    PhoneNumber:
+      type: string
+      pattern: ^\+[1-9][0-9]{4,14}$
+      example: '+346661113334'
+      description: A public identifier addressing a telephone subscription. In mobile networks it corresponds to the MSISDN (Mobile Station International Subscriber Directory Number). In order to be globally unique it has to be formatted in international format, according to E.164 standard, prefixed with '+'.
+  securitySchemes:
+    openId:
+      description: OpenID Provider Configuration Information.
+      type: openIdConnect
+      openIdConnectUrl: .well-known/openid-configuration
+externalDocs:
+  description: Product documentation at CAMARA.
+  url: https://github.com/camaraproject/EdgeCloud

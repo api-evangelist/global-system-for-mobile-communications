@@ -1,0 +1,950 @@
+openapi: 3.0.3
+info:
+  title: Global System for Mobile Communications GSMA Camara Project Endpoint Application Discovery API
+  version: 0.1.0-wip
+  description: The Application Discovery API extends beyond the capabilities of the Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone but also directly linking to the application endpoints within those Edge Cloud Zones.
+  contact:
+    email: sp-edc@lists.camaraproject.org
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: '{apiRoot}/{basePath}'
+  variables:
+    apiRoot:
+      default: https://localhost:443
+      description: API root.
+    basePath:
+      default: application-endpoint-discovery/vwip
+      description: Base path for the Application Endpoint Discovery.
+tags:
+- name: Discovery
+paths:
+  /app-endpoints:
+    get:
+      security:
+      - openId:
+        - application-endpoint-discovery:app-endpoints:read
+      operationId: getAppEndpoints
+      parameters:
+      - name: filter
+        in: query
+        required: true
+        description: 'Filter the Edge Cloud Zones according to the parameter value.
+
+          For this API the only supported value is `closest`.
+
+          '
+        schema:
+          type: string
+          enum:
+          - closest
+      - name: IPv4-Address
+        in: header
+        required: false
+        description: The public IPv4 address allocated to the device.
+        example: 84.125.93.10
+        schema:
+          $ref: '#/components/schemas/SingleIpv4Addr'
+      - name: IPv6-Address
+        in: header
+        required: false
+        description: The public IPv6 address allocated to the device.
+        example: 2001:db8:85a3:8d3:1319:8a2e:370:7348
+        schema:
+          $ref: '#/components/schemas/DeviceIpv6Address'
+      - name: Network-Access-Identifier
+        in: header
+        description: '3GPP network access identifier for the subscription
+
+          being used by the device.
+
+          '
+        example: 4d596ac1-7822-4927-a3c5-d72e1f922c94@domain.com
+        required: false
+        schema:
+          $ref: '#/components/schemas/NetworkAccessIdentifier'
+      - name: Phone-Number
+        in: header
+        example: '+441234567890'
+        required: true
+        description: 'MSISDN in E.164 format (starting with country code) of
+
+          the mobile subscription being used by the device. Optionally
+
+          prefixed with ''+''.
+
+          '
+        schema:
+          $ref: '#/components/schemas/PhoneNumber'
+      - name: AppId
+        in: header
+        required: true
+        description: 'A globally unique identifier associated with the application.
+
+          OP generates this identifier when the application is submitted over
+
+          NBI.
+
+          '
+        schema:
+          $ref: '#/components/schemas/AppId'
+      - name: X-Correlator
+        in: header
+        required: false
+        description: "When the API Consumer includes the \"X-Correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"X-Correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n"
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: 'Successful response, returning the closest App Instance Endpoint
+
+            Zone to the user device identified in the request header.
+
+            '
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessEndpoints'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '405':
+          $ref: '#/components/responses/405MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/406Unacceptable'
+        '429':
+          $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+        '502':
+          $ref: '#/components/responses/502BadGateway'
+        '503':
+          $ref: '#/components/responses/503ServiceUnavailable'
+        '504':
+          $ref: '#/components/responses/504GatewayTimeout'
+      tags:
+      - Discovery
+      summary: 'Global System for Mobile Communications Returns the Endpoint of the closest App Instance to user device
+
+        identified in the request.'
+      description: 'On receiving this request, the network will return the name
+
+        of the App Instance with the shortest network path to the end user
+
+        device identified in the request.
+
+        '
+  /edge-cloud-zones:
+    get:
+      security:
+      - openId:
+        - simple-edge-discovery:edge-cloud-zones:read
+      operationId: readClosestEdgeCloudZone
+      parameters:
+      - name: filter
+        in: query
+        required: true
+        description: 'Filter the Edge Cloud Zones according to the parameter value.
+
+          For this API the only supported value is `closest`.
+
+          '
+        schema:
+          type: string
+          enum:
+          - closest
+      - name: IPv4-Address
+        in: header
+        required: false
+        description: The public IPv4 address allocated to the device by the network operator.
+        example: 84.125.93.10
+        schema:
+          $ref: '#/components/schemas/SingleIpv4Addr_2'
+      - name: Public-port
+        in: header
+        required: false
+        description: The public TCP or UDP port allocated to the device by the network operator.
+        example: 123
+        schema:
+          $ref: '#/components/schemas/Port_2'
+      - name: IPv6-Address
+        in: header
+        required: false
+        description: The public IPv6 address allocated to the device by the network operator.
+        example: 2001:db8:85a3:8d3:1319:8a2e:370:7348
+        schema:
+          $ref: '#/components/schemas/DeviceIpv6Address_2'
+      - name: Network-Access-Identifier
+        in: header
+        required: false
+        description: '3GPP network access identifier for the subscription
+
+          being used by the device.
+
+          '
+        schema:
+          $ref: '#/components/schemas/NetworkAccessIdentifier_2'
+      - name: Phone-Number
+        in: header
+        example: '+441234567890'
+        required: false
+        description: 'MSISDN in E.164 format (starting with country code) of
+
+          the mobile subscription being used by the device. Optionally
+
+          prefixed with ''+''.
+
+          '
+        schema:
+          $ref: '#/components/schemas/PhoneNumber_2'
+      - name: x-correlator
+        in: header
+        required: false
+        description: "When the API Consumer includes the \"x-correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"x-correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n"
+        schema:
+          type: string
+      responses:
+        '200':
+          description: 'Successful response, returning the closest Edge Cloud
+
+            Zone to the user device identified in the request header.
+
+            '
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EdgeCloudZones'
+        '400':
+          description: 'Client eror - the required querystring was not provided
+
+            '
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorInfo'
+              examples:
+                InvalidQuerystring:
+                  summary: Invalid querystring
+                  description: The 'filter' querystring parameter is missing or does not have a value of 'closest'
+                  value:
+                    status: 400
+                    code: INVALID_QUERYSTRING
+                    message: 'Querystring must be provided: filter=closest'
+        '401':
+          $ref: '#/components/responses/Generic401'
+        '403':
+          $ref: '#/components/responses/Generic403'
+        '404':
+          $ref: '#/components/responses/Generic404'
+        '406':
+          $ref: '#/components/responses/Generic406'
+        '422':
+          $ref: '#/components/responses/Generic422'
+        '429':
+          $ref: '#/components/responses/Generic429'
+        '500':
+          $ref: '#/components/responses/Generic500'
+        '501':
+          $ref: '#/components/responses/Generic501'
+        '502':
+          $ref: '#/components/responses/Generic502'
+        '503':
+          $ref: '#/components/responses/Generic503'
+        '504':
+          $ref: '#/components/responses/Generic504'
+      tags:
+      - Discovery
+      summary: 'Global System for Mobile Communications Returns the name of the Edge Cloud Zone closest to user device
+
+        identified in the request.'
+      description: 'On receiving this request, the network will return the name
+
+        of the Edge Cloud Zone with the shortest network path to the end user
+
+        device identified in the request.
+
+        '
+components:
+  responses:
+    Generic503:
+      description: Service Unavailable
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_503_UNAVAILABLE:
+              description: Service is not available. Temporary situation usually related to maintenance process in the server side
+              value:
+                status: 503
+                code: UNAVAILABLE
+                message: Service Unavailable.
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+    Generic406:
+      description: Not Acceptable
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_406_NOT_ACCEPTABLE:
+              description: 'API Server does not accept the media type (`Accept-*` header) indicated by API client
+
+                '
+              value:
+                status: 406
+                code: NOT_ACCEPTABLE
+                message: 'The server cannot produce a response matching the content requested by the client
+
+                  through `Accept-*` headers.
+
+                  '
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+    Generic500:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_500_INTERNAL:
+              description: Problem in Server side. Regular Server Exception
+              value:
+                status: 500
+                code: INTERNAL
+                message: Unknown server error. Typically a server bug.
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+    429TooManyRequests:
+      description: Too Many Requests
+      headers:
+        X-Correlator:
+          $ref: '#/components/headers/X-Correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          examples:
+            TooManyRequests:
+              description: 'Access to the API has been temporarily blocked due
+
+                to quota or spike arrest limits being reached.
+
+                '
+              value:
+                code: TOO_MANY_REQUESTS
+                status: 429
+                message: Either out of resource quota or reaching rate limiting
+    Generic422:
+      description: Unprocessable Content
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_422_DEVICE_IDENTIFIERS_MISMATCH:
+              description: Inconsistency between device identifiers not pointing to the same device
+              value:
+                status: 422
+                code: DEVICE_IDENTIFIERS_MISMATCH
+                message: Provided device identifiers are not consistent.
+            GENERIC_422_DEVICE_NOT_APPLICABLE:
+              description: Service is not available for the provided device
+              value:
+                status: 422
+                code: DEVICE_NOT_APPLICABLE
+                message: The Service is not available for the provided device.
+            GENERIC_422_UNIDENTIFIABLE_DEVICE:
+              description: The device identifier is not included in the request and the device information cannot be derived from the 3-legged access token
+              value:
+                status: 422
+                code: UNIDENTIFIABLE_DEVICE
+                message: The device cannot be identified.
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+    503ServiceUnavailable:
+      description: Service Unavailable
+      headers:
+        X-Correlator:
+          $ref: '#/components/headers/X-Correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            code: UNAVAILABLE
+            status: 503
+            message: The service is currently not available
+    Generic429:
+      description: Too Many Requests
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_429_QUOTA_EXCEEDED:
+              description: Request is rejected due to exceeding a business quota limit
+              value:
+                status: 429
+                code: QUOTA_EXCEEDED
+                message: Either out of resource quota or reaching rate limiting.
+            GENERIC_429_TOO_MANY_REQUESTS:
+              description: API Server request limit is overpassed
+              value:
+                status: 429
+                code: TOO_MANY_REQUESTS
+                message: Either out of resource quota or reaching rate limiting.
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+    405MethodNotAllowed:
+      description: Method Not Allowed
+      headers:
+        X-Correlator:
+          $ref: '#/components/headers/X-Correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          examples:
+            MethodNotAllowed:
+              description: 'An HTTP verb other than GET has been used to try
+
+                and access the resource.
+
+                '
+              value:
+                code: METHOD_NOT_ALLOWED
+                status: 405
+                message: The request method is not supported by this resource
+    403Forbidden:
+      description: Forbidden
+      headers:
+        X-Correlator:
+          $ref: '#/components/headers/X-Correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          examples:
+            InsufficientPermissions:
+              value:
+                code: PERMISSION_DENIED
+                status: 403
+                message: Client does not have sufficient permissions to perform this action
+    500InternalServerError:
+      description: Internal Server Error
+      headers:
+        X-Correlator:
+          $ref: '#/components/headers/X-Correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            code: INTERNAL
+            status: 500
+            message: The service is currently not available
+    404NotFound:
+      description: Not Found
+      headers:
+        X-Correlator:
+          $ref: '#/components/headers/X-Correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          examples:
+            SubscriberNotFound:
+              description: 'No device found for the specified parameters,
+
+                meaning the closest Edge Cloud Zone cannot be determined.
+
+                '
+              value:
+                code: NOT_FOUND
+                status: 404
+                message: No device found for the specified parameters
+            EndpointNotFound:
+              description: 'No endpoint instance found for the specified parameters,
+
+                meaning the closest Edge Cloud Zone cannot be determined.
+
+                '
+              value:
+                code: NOT_FOUND
+                status: 404
+                message: No endpoint instance found for the specified parameters
+    Generic401:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_401_UNAUTHENTICATED:
+              description: Request cannot be authenticated
+              value:
+                status: 401
+                code: UNAUTHENTICATED
+                message: Request not authenticated due to missing, invalid, or expired credentials.
+            GENERIC_401_AUTHENTICATION_REQUIRED:
+              description: New authentication is needed, authentication is no longer valid
+              value:
+                status: 401
+                code: AUTHENTICATION_REQUIRED
+                message: New authentication is required.
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+    400BadRequest:
+      description: Bad Request
+      headers:
+        X-Correlator:
+          $ref: '#/components/headers/X-Correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          examples:
+            InsufficientParameters:
+              description: 'Sufficient parameters must be specified to allow the
+
+                target UE to be identified.
+
+                '
+              value:
+                code: INVALID_ARGUMENT
+                status: 400
+                message: 'Insufficient parameters: At least one of Network-Access-Identifier, Phone-Number or IP-Address must be specified, or, the API must be called by a client on a network-attached device (hence passing the source IP in the request header).'
+            InvalidExternalId:
+              value:
+                code: INVALID_ARGUMENT
+                status: 400
+                message: 'Invalid Header Format: Network-Access-Identifier'
+            InvalidMSISDN:
+              value:
+                code: INVALID_ARGUMENT
+                status: 400
+                message: 'Invalid Header Format: Phone-Number'
+            InvalidIP:
+              description: 'This error will be returned if the IP address does
+
+                not have a valid format, or if the IP address is a private IPv4
+
+                address.
+
+                '
+              value:
+                code: INVALID_ARGUMENT
+                status: 400
+                message: 'Invalid Header Format: IP-Address'
+    Generic504:
+      description: Gateway Timeout
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_504_TIMEOUT:
+              description: API Server Timeout
+              value:
+                status: 504
+                code: TIMEOUT
+                message: Request timeout exceeded.
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+    504GatewayTimeout:
+      description: Gateway Time-Out
+      headers:
+        X-Correlator:
+          $ref: '#/components/headers/X-Correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            code: TIMEOUT
+            status: 504
+            message: The service is currently not available
+    Generic501:
+      description: Not Implemented
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_501_NOT_IMPLEMENTED:
+              description: Service not implemented. The use of this code should be avoided as far as possible to get the objective to reach aligned implementations
+              value:
+                status: 501
+                code: NOT_IMPLEMENTED
+                message: This functionality is not implemented yet.
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+    406Unacceptable:
+      description: Not Acceptable
+      headers:
+        X-Correlator:
+          $ref: '#/components/headers/X-Correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          examples:
+            NotAcceptable:
+              description: A response format other than JSON has been requested
+              value:
+                code: NOT_ACCEPTABLE
+                status: 406
+                message: The server cannot produce a response matching the content requested by the client through Accept-* headers
+    Generic502:
+      description: Bad Gateway
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_502_BAD_GATEWAY:
+              description: Internal routing problem in the Server side that blocks to manage the service properly
+              value:
+                status: 502
+                code: BAD_GATEWAY
+                message: An upstream internal service cannot be reached.
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+    502BadGateway:
+      description: Bad Gateway
+      headers:
+        X-Correlator:
+          $ref: '#/components/headers/X-Correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            code: BAD_GATEWAY
+            status: 502
+            message: The service is currently not available
+    401Unauthorized:
+      description: Unauthorized
+      headers:
+        X-Correlator:
+          $ref: '#/components/headers/X-Correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          examples:
+            InvalidCredentials:
+              value:
+                code: UNAUTHENTICATED
+                status: 401
+                message: Request not authenticated due to missing, invalid, or expired credentials
+    Generic403:
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_403_PERMISSION_DENIED:
+              description: Permission denied. OAuth2 token access does not have the required scope or when the user fails operational security
+              value:
+                status: 403
+                code: PERMISSION_DENIED
+                message: Client does not have sufficient permissions to perform this action.
+            'GENERIC_403_INVALID_TOKEN_CONTEXT:':
+              description: Reflect some inconsistency between information in some field of the API and the related OAuth2 Token
+              value:
+                status: 403
+                code: INVALID_TOKEN_CONTEXT
+                message: '{{field}} is not consistent with access token.'
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+    Generic404:
+      description: Not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_404_NOT_FOUND:
+              description: Resource is not found
+              value:
+                status: 404
+                code: NOT_FOUND
+                message: The specified resource is not found.
+            GENERIC_404_DEVICE_NOT_FOUND:
+              description: Device identifier not found
+              value:
+                status: 404
+                code: DEVICE_NOT_FOUND
+                message: Device identifier not found.
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+  schemas:
+    EdgeCloudZoneId:
+      description: 'Operator-issued UUID for the Edge Cloud Zone.
+
+        '
+      type: string
+      format: uuid
+      additionalProperties: false
+    Fqdn:
+      type: string
+      description: Fully Qualified Domain Name.
+    EdgeCloudProvider:
+      description: 'The company name of the Edge Cloud Zone provider.
+
+        '
+      type: string
+    EdgeCloudZones:
+      type: array
+      items:
+        $ref: '#/components/schemas/EdgeCloudZone'
+      minItems: 1
+      description: 'A collection of Edge Cloud Zones. For this Simple Edge
+
+        Discovery API the collection will have at most one member (the closest
+
+        Edge Cloud Zone to the user device indicated in the request).
+
+        '
+      additionalProperties: false
+    SingleIpv4Addr:
+      description: 'A single IPv4 address with no subnet mask
+
+        '
+      type: string
+      format: ipv4
+      example: 84.125.93.10
+    PhoneNumber_2:
+      description: A public identifier addressing a telephone subscription. In mobile networks it corresponds to the MSISDN (Mobile Station International Subscriber Directory Number). In order to be globally unique it has to be formatted in international format, according to E.164 standard, prefixed with '+'.
+      type: string
+      pattern: ^\+[1-9][0-9]{4,14}$
+      example: '+123456789'
+    Ipv6Addr:
+      type: string
+      description: 'IP of the device. A single IPv6 address, following IETF 5952
+
+        format, may be specified like 2001:db8:85a3:8d3:1319:8a2e:370:7344
+
+        '
+      example: 2001:db8:85a3::8a2e:370:7334
+    PhoneNumber:
+      description: 'A public identifier addressing a telephone subscription.
+
+        In mobile networks it corresponds to the MSISDN (Mobile Station
+
+        International Subscriber Directory Number). In order to be globally
+
+        unique it has to be formatted in international format, according
+
+        to E.164 standard, prefixed with ''+''.
+
+        '
+      type: string
+      pattern: ^\+[1-9][0-9]{4,14}$
+      example: '+123456789'
+    EdgeCloudZoneName:
+      description: 'Edge Cloud Zone Name - the common name for the Edge Cloud Zone.
+
+        '
+      type: string
+      additionalProperties: false
+    Ipv4Addr:
+      type: string
+      description: 'IP of the device. A single IPv4 address may be specified in
+
+        dotted-quad form 1.2.3.4. Only this exact IP number will match the flow
+
+        control rule.
+
+        '
+      example: 198.51.100.1
+    Port_2:
+      description: TCP or UDP port number
+      type: integer
+      minimum: 0
+      maximum: 65535
+    NetworkAccessIdentifier_2:
+      description: A public identifier addressing a subscription in a mobile network. In 3GPP terminology, it corresponds to the GPSI formatted with the External Identifier ({Local Identifier}@{Domain Identifier}). Unlike the telephone number, the network access identifier is not subjected to portability ruling in force, and is individually managed by each operator.
+      type: string
+      example: 123456789@domain.com
+    ErrorInfo:
+      type: object
+      description: Error information
+      required:
+      - message
+      - status
+      - code
+      properties:
+        message:
+          type: string
+          description: A human readable description of what the event represents
+        status:
+          type: integer
+          description: HTTP response status code
+        code:
+          type: string
+          description: Friendly Code to describe the error
+    DeviceIpv6Address:
+      description: 'The device should be identified by the observed IPv6 address, or by any
+
+        single IPv6 address from within the subnet allocated to the device
+
+        (e.g. adding ::0 to the /64 prefix).
+
+        '
+      type: string
+      format: ipv6
+      example: 2001:db8:85a3:8d3:1319:8a2e:370:7344
+    ErrorResponse:
+      description: Error code and human-readable description.
+      type: object
+      properties:
+        code:
+          type: string
+          description: A short, human-readable summary of the problem type.
+        status:
+          type: integer
+          description: The HTTP status code.
+        message:
+          type: string
+          description: 'This parameter appears when there is an error.
+
+            A human readable explanation specific to this occurrence of the
+
+            problem.
+
+            '
+    AppId:
+      type: string
+      format: uuid
+      description: A globally unique identifier associated with the application. This GUID will have been previously provided by the Edge Cloud Zone provider.
+    EdgeCloudZone:
+      type: object
+      description: 'An Edge Cloud Zone, uniquely identified by a combination
+
+        of the value of the Edge Resource Name object and the value of the
+
+        Provider object (the name of the cloud provider or operator hosting that
+
+        edge cloud zone).
+
+        '
+      properties:
+        edgeCloudZoneId:
+          $ref: '#/components/schemas/EdgeCloudZoneId'
+        edgeCloudZoneName:
+          $ref: '#/components/schemas/EdgeCloudZoneName'
+        edgeCloudProvider:
+          $ref: '#/components/schemas/EdgeCloudProvider'
+    Port:
+      type: integer
+      description: Port to stablish the connection
+      minimum: 0
+    AccessEndpoints:
+      type: object
+      description: 'Application Endpoint for an especific instance that is
+
+        running in an specific Edge Cloud Zone.
+
+        '
+      required:
+      - port
+      anyOf:
+      - required:
+        - fqdn
+      - required:
+        - ipv4Addresses
+      - required:
+        - ipv6Addresses
+      properties:
+        port:
+          $ref: '#/components/schemas/Port'
+        fqdn:
+          $ref: '#/components/schemas/Fqdn'
+        ipv4Addresses:
+          description: IP version 4 of an application instance.
+          type: array
+          items:
+            $ref: '#/components/schemas/Ipv4Addr'
+          minItems: 1
+        ipv6Addresses:
+          description: IP version 6 of an application instance.
+          type: array
+          items:
+            $ref: '#/components/schemas/Ipv6Addr'
+          minItems: 1
+    SingleIpv4Addr_2:
+      description: A single IPv4 address with no subnet mask
+      type: string
+      format: ipv4
+      example: 84.125.93.10
+    DeviceIpv6Address_2:
+      description: The device should be identified by the observed IPv6 address, or by any single IPv6 address from within the subnet allocated to the device (e.g.adding ::0 to the /64 prefix).
+      type: string
+      format: ipv6
+      example: 2001:db8:85a3:8d3:1319:8a2e:370:7344
+    NetworkAccessIdentifier:
+      description: 'A public identifier addressing a subscription in a mobile
+
+        network. In 3GPP terminology, it corresponds to the GPSI formatted with
+
+        the External Identifier ({Local Identifier}@{Domain Identifier}). Unlike
+
+        the telephone number, the network access identifier is not subjected to
+
+        portability ruling in force, and is individually managed by each
+
+        operator.
+
+        '
+      type: string
+      example: 123456789@domain.com
+  headers:
+    x-correlator:
+      description: "When the API Consumer includes the \"x-correlator\" header in the request,\n the API provider must include it in the response with the same value t\n hat was used in the request. Otherwise, it is optional to include the\n \"x-correlator\" header in the response with any valid value.\n Recommendation is to use UUID for values.\n"
+      required: false
+      schema:
+        type: string
+    X-Correlator:
+      description: "When the API Consumer includes the \"X-Correlator\" header in the request,\n the API provider must include it in the response with the same value t\n hat was used in the request. Otherwise, it is optional to include the\n \"X-Correlator\" header in the response with any valid value.\n Recommendation is to use UUID for values.\n"
+      required: false
+      schema:
+        type: string
+        format: uuid
+  securitySchemes:
+    openId:
+      description: OpenID Provider Configuration Information.
+      type: openIdConnect
+      openIdConnectUrl: .well-known/openid-configuration
+externalDocs:
+  description: Product documentation at CAMARA.
+  url: https://github.com/camaraproject/EdgeCloud

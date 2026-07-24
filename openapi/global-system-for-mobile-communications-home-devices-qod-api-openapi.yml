@@ -1,0 +1,321 @@
+openapi: 3.0.3
+info:
+  title: Global System for Mobile Communications GSMA Camara Project Endpoint Discovery Application Home Devices QoD API
+  version: 0.1.0-wip
+  description: The Application Discovery API extends beyond the capabilities of the Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone but also directly linking to the application endpoints within those Edge Cloud Zones.
+  contact:
+    email: sp-edc@lists.camaraproject.org
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: '{apiRoot}/{basePath}'
+  variables:
+    apiRoot:
+      default: https://localhost:443
+      description: API root.
+    basePath:
+      default: application-endpoint-discovery/vwip
+      description: Base path for the Application Endpoint Discovery.
+tags:
+- name: Home Devices QoD
+  description: QoD control operations for home devices
+paths:
+  /qos:
+    put:
+      summary: Global System for Mobile Communications Set the desired QoS behaviour for a user home device
+      description: 'Set the desired QoS behaviour for the traffic corresponding to the user home device matching the input criteria. **QoS behaviour is determined by the service class provided by the API Client. Setting `standard` service class restores default traffic treatment for the target home device.**
+
+
+        - The operation is executed for the user whose `sub` is in the access token used to call this endpoint, and for the home network also deducted from the information included in the access token.
+
+        - The target user device is identified by the internal IP address of that device in the home network.
+
+        - In case there is no device matching the input criteria, the operation returns a 404 error.
+
+        '
+      tags:
+      - Home Devices QoD
+      operationId: setQos
+      parameters:
+      - $ref: '#/components/parameters/x-correlator'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QosOnDemandUpdate'
+            example:
+              serviceClass: real_time_interactive
+              ipAddress: 192.168.1.27
+        required: true
+      responses:
+        '204':
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+          description: Requested QoS passed all validations and was applied
+        '400':
+          $ref: '#/components/responses/Generic400'
+        '401':
+          $ref: '#/components/responses/Generic401'
+        '403':
+          $ref: '#/components/responses/setQosPermissionDenied403'
+        '404':
+          $ref: '#/components/responses/setQosNotFound404'
+        '409':
+          $ref: '#/components/responses/setQosConflict409'
+        '500':
+          $ref: '#/components/responses/Generic500'
+        '503':
+          $ref: '#/components/responses/setQosServiceUnavailable503'
+        '504':
+          $ref: '#/components/responses/Generic504'
+components:
+  responses:
+    setQosServiceUnavailable503:
+      description: Service Unavailable
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            Unavailable:
+              value:
+                status: 503
+                code: UNAVAILABLE
+                message: Service Unavailable
+            RouterOffline:
+              value:
+                status: 503
+                code: HOME_DEVICES_QOD.ROUTER_OFFLINE
+                message: Router is not online. Try it later
+    Generic504:
+      description: Gateway Timeout
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 504
+            code: TIMEOUT
+            message: Request timeout exceeded
+    Generic500:
+      description: Internal Server Error
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 500
+            code: INTERNAL
+            message: Server error
+    Generic401:
+      description: Unauthorized
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 401
+            code: UNAUTHENTICATED
+            message: Request not authenticated due to missing, invalid, or expired credentials
+    Generic400:
+      description: Bad Request
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 400
+            code: INVALID_ARGUMENT
+            message: Client specified an invalid argument, request body or query param
+    setQosNotFound404:
+      description: Not found
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            NotFound:
+              value:
+                status: 404
+                code: NOT_FOUND
+                message: The specified resource is not found
+            NoDeviceMatch:
+              value:
+                status: 404
+                code: DEVICE_NOT_FOUND
+                message: No connected device found for the input criteria provided
+    setQosPermissionDenied403:
+      description: Forbidden
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            PermissionDenied:
+              value:
+                status: 403
+                code: PERMISSION_DENIED
+                message: Client does not have sufficient permissions to perform this action
+            InvalidTokenContext:
+              value:
+                status: 403
+                code: INVALID_TOKEN_CONTEXT
+                message: User home network cannot be deducted from access token context
+    setQosConflict409:
+      description: Conflict
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            Conflict:
+              value:
+                status: 409
+                code: CONFLICT
+                message: Conflict with the current state of the target resource
+            TooManyDevices:
+              value:
+                status: 409
+                code: HOME_DEVICES_QOD.TOO_MANY_DEVICES
+                message: Exceeded the maximum quantity of devices with non-default QoS behaviour
+            RssiBelowThreshold:
+              value:
+                status: 409
+                code: HOME_DEVICES_QOD.RSSI_BELOW_THRESHOLD
+                message: RSSI from device is below allowed threshold
+            QosTooHigh:
+              value:
+                status: 409
+                code: HOME_DEVICES_QOD.QOS_TOO_HIGH
+                message: Requested QoS is higher than the maximum QoS allowed
+            OccupancyAboveThreshold:
+              value:
+                status: 409
+                code: HOME_DEVICES_QOD.OCCUPANCY_ABOVE_THRESHOLD
+                message: The occupancy is above the allowed threshold
+            NotConnectedToRequiredInterface:
+              value:
+                status: 409
+                code: HOME_DEVICES_QOD.NOT_CONNECTED_TO_REQUIRED_INTERFACE
+                message: Device is not connected to the required interface (e.g. WiFi 5GHz interface)
+            NotSupportedRequiredInterface:
+              value:
+                status: 409
+                code: HOME_DEVICES_QOD.NOT_SUPPORTED_REQUIRED_INTERFACE
+                message: Device does not support required interface (e.g. WiFi 5GHz interface)
+            QosAlreadySetToDefault:
+              value:
+                status: 409
+                code: HOME_DEVICES_QOD.QOS_ALREADY_SET_TO_DEFAULT
+                message: Device QoS is already set to default value
+  headers:
+    x-correlator:
+      description: Correlation id for the different services
+      schema:
+        type: string
+  parameters:
+    x-correlator:
+      name: x-correlator
+      in: header
+      description: Correlation id for the different services
+      schema:
+        type: string
+  schemas:
+    ErrorInfo:
+      type: object
+      required:
+      - message
+      - status
+      - code
+      properties:
+        message:
+          type: string
+          description: A human readable description of what the event represent
+        status:
+          type: integer
+          description: HTTP response status code
+        code:
+          type: string
+          description: Friendly Code to describe the error
+    QosOnDemandUpdate:
+      type: object
+      description: Payload to change the QoS behaviour associated to a home device.
+      required:
+      - serviceClass
+      - ipAddress
+      properties:
+        serviceClass:
+          type: string
+          description: 'The name of the service class requested by the API client. It is associated with QoS behaviours optimised for a particular application type. Each service class is mapped to a DSCP value according to [RFC4594](https://datatracker.ietf.org/doc/html/rfc4594) guidelines. The DSCP value is used to classify the target home device''s traffic so that it can be treated accordingly (i.e. to meet its QoS needs).
+
+
+            The following service classes are supported:
+
+
+            | Service Class Name    | DSCP Name | DSCP value (decimal) | DCSP value (binary) | Application Examples                          |
+
+            |-----------------------|-----------|----------------------|---------------------|-----------------------------------------------|
+
+            | Real-Time Interactive |    CS4    |          32          |        100000       | Video conferencing and Interactive gaming     |
+
+            | Multimedia Streaming  |    AF31   |          26          |        011010       | Streaming video and audio on demand           |
+
+            | Broadcast Video       |    CS3    |          24          |        011000       | Broadcast TV & live events                    |
+
+            | Low-Latency Data      |    AF21   |          18          |        010010       | Client/server transactions Web-based ordering |
+
+            | High-Throughput Data  |    AF11   |          10          |        001010       | Store and forward applications                |
+
+            | Low-Priority Data     |    CS1    |           8          |        001000       | Any flow that has no BW assurance             |
+
+            | Standard              |  DF(CS0)  |           0          |        000000       | Undifferentiated applications                 |
+
+            '
+          enum:
+          - real_time_interactive
+          - multimedia_streaming
+          - broadcast_video
+          - low_latency_data
+          - high_throughput_data
+          - low_priority_data
+          - standard
+          example: real_time_interactive
+        ipAddress:
+          type: string
+          format: ipv4
+          description: Internal IP address of the connected device in the LAN.
+          example: 192.168.1.27
+  securitySchemes:
+    openId:
+      description: OpenID Provider Configuration Information.
+      type: openIdConnect
+      openIdConnectUrl: .well-known/openid-configuration
+externalDocs:
+  description: Product documentation at CAMARA.
+  url: https://github.com/camaraproject/EdgeCloud

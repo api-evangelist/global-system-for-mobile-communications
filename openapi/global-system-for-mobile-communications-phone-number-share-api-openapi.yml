@@ -1,0 +1,215 @@
+openapi: 3.0.3
+info:
+  title: Global System for Mobile Communications GSMA Camara Project Endpoint Discovery Application Phone Number Share API
+  version: 0.1.0-wip
+  description: The Application Discovery API extends beyond the capabilities of the Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone but also directly linking to the application endpoints within those Edge Cloud Zones.
+  contact:
+    email: sp-edc@lists.camaraproject.org
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: '{apiRoot}/{basePath}'
+  variables:
+    apiRoot:
+      default: https://localhost:443
+      description: API root.
+    basePath:
+      default: application-endpoint-discovery/vwip
+      description: Base path for the Application Endpoint Discovery.
+tags:
+- name: Phone Number Share
+  description: API operation to return the phone number associated to the access token.
+paths:
+  /device-phone-number:
+    get:
+      tags:
+      - Phone Number Share
+      summary: Global System for Mobile Communications Returns the phone number associated with the access token
+      description: 'Returns the phone number so the API clients can verify the number themselves:
+
+        - It will be done for the user that has authenticated via mobile network
+
+        - It returns the authenticated user''s `device phone number` associated to the access token
+
+        '
+      operationId: phoneNumberShare
+      parameters:
+      - in: header
+        name: x-correlator
+        required: false
+        description: Correlation id for the different services
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          headers:
+            x-correlator:
+              description: Correlation id for the different services
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NumberVerificationShareResponse'
+        '400':
+          $ref: '#/components/responses/Generic400'
+        '401':
+          $ref: '#/components/responses/Generic401'
+        '403':
+          $ref: '#/components/responses/PhoneNumberVerificationPermissionDenied403'
+        '500':
+          $ref: '#/components/responses/Generic500'
+        '503':
+          $ref: '#/components/responses/Generic503'
+        '504':
+          $ref: '#/components/responses/Generic504'
+      security:
+      - openId:
+        - number-verification:device-phone-number:read
+components:
+  responses:
+    Generic503:
+      description: Service unavailable. Typically the server is down.
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 503
+            code: UNAVAILABLE
+            message: Service unavailable
+    Generic500:
+      description: Server error
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 500
+            code: INTERNAL
+            message: Server error
+    Generic401:
+      description: Unauthorized
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_401_UNAUTHENTICATED:
+              description: Request cannot be authenticated
+              value:
+                status: 401
+                code: UNAUTHENTICATED
+                message: Request not authenticated due to missing, invalid, or expired credentials.
+            GENERIC_401_AUTHENTICATION_REQUIRED:
+              description: New authentication is needed, authentication is no longer valid
+              value:
+                status: 401
+                code: AUTHENTICATION_REQUIRED
+                message: New authentication is required.
+    Generic400:
+      description: Problem with the client request
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 400
+            code: INVALID_ARGUMENT
+            message: Client specified an invalid argument, request body or query param
+    Generic504:
+      description: Request time exceeded. If it happens repeatedly, consider reducing the request complexity
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 504
+            code: TIMEOUT
+            message: Request timeout exceeded. Try later.
+    PhoneNumberVerificationPermissionDenied403:
+      description: "Client does not have sufficient permission.\nIn addition to regular scenario of `PERMISSION_DENIED`, other scenarios may exist:\n  - Client authentication was not via mobile network. In order to check the authentication method, AMR parameter value in the 3-legged user's access token can be used and make sure that the authentication was not either by SMS+OTP nor username/password (`{\"code\": \"NUMBER_VERIFICATION.USER_NOT_AUTHENTICATED_BY_MOBILE_NETWORK\",\"message\": \"Client must authenticate via the mobile network to use this service\"}`)\n  - Phone number cannot be deducted from access token context.(`{\"code\": \"INVALID_TOKEN_CONTEXT\",\"message\": \"Phone number cannot be deducted from access token context\"}`)\n"
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_403_PERMISSION_DENIED:
+              description: Permission denied. OAuth2 token access does not have the required scope or when the user fails operational security
+              value:
+                status: 403
+                code: PERMISSION_DENIED
+                message: Client does not have sufficient permissions to perform this action.
+            GENERIC_403_USER_NOT_AUTHENTICATED_BY_MOBILE_NETWORK:
+              value:
+                status: 403
+                code: NUMBER_VERIFICATION.USER_NOT_AUTHENTICATED_BY_MOBILE_NETWORK
+                message: Client must authenticate via the mobile network to use this service
+            GENERIC_403_INVALID_TOKEN_CONTEXT:
+              value:
+                status: 403
+                code: INVALID_TOKEN_CONTEXT
+                message: Phone number cannot be deducted from access token context
+  schemas:
+    DevicePhoneNumber:
+      type: string
+      pattern: ^\+[1-9][0-9]{4,14}$
+      example: '+123456789'
+      description: A public identifier addressing a telephone subscription. In mobile networks it corresponds to the MSISDN (Mobile Station International Subscriber Directory Number). In order to be globally unique it has to be formatted in international format, according to E.164 standard, prefixed with '+'.
+    ErrorInfo:
+      type: object
+      required:
+      - status
+      - code
+      - message
+      properties:
+        status:
+          type: integer
+          description: HTTP response status code
+        code:
+          type: string
+          description: Code given to this error
+        message:
+          type: string
+          description: Detailed error description
+    NumberVerificationShareResponse:
+      type: object
+      description: Number verification share result
+      required:
+      - devicePhoneNumber
+      properties:
+        devicePhoneNumber:
+          $ref: '#/components/schemas/DevicePhoneNumber'
+  headers:
+    x-correlator:
+      description: Correlation id for the different services
+      schema:
+        type: string
+  securitySchemes:
+    openId:
+      description: OpenID Provider Configuration Information.
+      type: openIdConnect
+      openIdConnectUrl: .well-known/openid-configuration
+externalDocs:
+  description: Product documentation at CAMARA.
+  url: https://github.com/camaraproject/EdgeCloud
