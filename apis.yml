@@ -52,8 +52,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -177,9 +175,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -261,8 +256,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -386,9 +379,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -469,8 +459,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -594,9 +582,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -677,8 +662,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -802,9 +785,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -887,8 +867,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -1012,9 +990,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -1094,8 +1069,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -1219,9 +1192,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -1300,8 +1270,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -1425,9 +1393,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -1507,8 +1472,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -1632,9 +1595,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -1713,8 +1673,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -1838,9 +1796,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -1919,8 +1874,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -2044,9 +1997,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -2125,8 +2075,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -2250,9 +2198,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -2332,8 +2277,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -2457,9 +2400,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -2541,8 +2481,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -2666,9 +2604,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -2747,8 +2682,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -2872,9 +2805,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -2953,8 +2883,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -3078,9 +3006,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -3159,8 +3084,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -3284,9 +3207,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -3365,8 +3285,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -3490,9 +3408,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -3573,8 +3488,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -3698,9 +3611,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -3779,8 +3689,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -3904,9 +3812,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -3985,8 +3890,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -4110,9 +4013,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -4193,8 +4093,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -4318,9 +4216,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -4400,8 +4295,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -4525,9 +4418,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -4607,8 +4497,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -4732,9 +4620,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -4814,8 +4699,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -4939,9 +4822,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -5021,8 +4901,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -5146,9 +5024,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -5228,8 +5103,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -5353,9 +5226,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -5434,8 +5304,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -5559,9 +5427,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -5643,8 +5508,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/KnowYourCustomer/r1.3/code/API_definitions/kyc-match.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Know Your Customer Match/bruno.json
-  - type: PostmanCollection
-    url: none
   - type: GitHubRepository
     url: https://github.com/camaraproject/NumberVerification/releases/tag/r1.3
   - type: Documentation
@@ -5768,9 +5631,6 @@ apis:
       https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/HomeDevicesQoD/r1.2/code/API_definitions/home-devices-qod.yaml&nocors
   - type: BrunoCollection
     url: bruno/GSMA Camara Project Home Devices QoD/bruno.json
-  - type: PostmanCollection
-    url: >-
-      nhttps://www.postman.com/api-evangelist/global-system-for-mobile-communications-gsma/collection/dedffqb/gsma-camara-project-home-devices-qodone
   - type: GitHubRepository
     url: https://github.com/camaraproject/SimpleEdgeDiscovery/releases/tag/r1.3
   - type: Documentation
@@ -5821,6 +5681,11 @@ tags:
   - Telecommunications
 type: Index
 common:
+  - type: IssueTracker
+    url: https://github.com/camaraproject/CallForwardingSignal/issues
+  - type: License
+    name: Apache-2.0
+    url: https://github.com/camaraproject/CallForwardingSignal/blob/main/LICENSE
   - type: AgenticAccess
     url: agentic-access/global-system-for-mobile-communications-agentic-access.yml
   - type: VulnerabilityDisclosure
