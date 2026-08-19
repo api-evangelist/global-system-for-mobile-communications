@@ -1,0 +1,592 @@
+{
+  "item": [
+    {
+      "id": "b1fe9900-f80f-417d-9f97-a2aafc0b4670",
+      "name": "Phone Number Verify",
+      "description": {
+        "content": "API operation to verify a phone number received as input. It can be received either in plain text or hashed format.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "455fcb82-f9b4-4836-8739-fe41c980534c",
+          "name": "Global System for Mobile Communications Verifies if the received hashed/plain text phone number matches the phone number associated with the access token",
+          "request": {
+            "name": "Global System for Mobile Communications Verifies if the received hashed/plain text phone number matches the phone number associated with the access token",
+            "description": {
+              "content": "Verifies if the specified phone number (either in plain text or hashed format) matches the one that the user is currently using. Only one of the plain or hashed formats must be provided.\n- The number verification will be done for the user that has authenticated via mobile network\n- It returns true/false depending on if the hashed phone number received as input matches the authenticated user's `device phone number` associated to the access token\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "verify"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "API root.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                },
+                {
+                  "description": "Base path for the Application Endpoint Discovery.",
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"phoneNumber\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e8a0d1e7-592f-4b0f-9af9-038f9810a0d1",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verify"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"devicePhoneNumberVerified\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1319ba78-435e-4b94-b62d-87f11de0a1e9",
+              "name": "Problem with the client request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verify"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Client specified an invalid argument, request body or query param\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4c95cd8b-91ca-40de-bbf2-204f91f34498",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verify"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e3b8c32f-6f8d-4eb5-94db-543bac113c40",
+              "name": "Client does not have sufficient permission.\nIn addition to regular scenario of `PERMISSION_DENIED`, other scenarios may exist:\n  - Client authentication was not via mobile network. In order to check the authentication method, AMR parameter value in the 3-legged user's access token can be used and make sure that the authentication was not either by SMS+OTP nor username/password (`{\"code\": \"NUMBER_VERIFICATION.USER_NOT_AUTHENTICATED_BY_MOBILE_NETWORK\",\"message\": \"Client must authenticate via the mobile network to use this service\"}`)\n  - Phone number cannot be deducted from access token context.(`{\"code\": \"INVALID_TOKEN_CONTEXT\",\"message\": \"Phone number cannot be deducted from access token context\"}`)\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verify"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5a4ad072-a709-4191-bc9a-b34b3241810e",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verify"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ff53f5c4-198b-4bc1-b743-ad497a8a7b0a",
+              "name": "Service unavailable. Typically the server is down.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verify"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service unavailable\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ae4ace6c-c99e-4a29-b40d-3c09b2d1fd0c",
+              "name": "Request time exceeded. If it happens repeatedly, consider reducing the request complexity",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verify"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Gateway Timeout",
+              "code": 504,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 504,\n  \"code\": \"TIMEOUT\",\n  \"message\": \"Request timeout exceeded. Try later.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "API root.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://localhost:443",
+      "key": "apiRoot"
+    },
+    {
+      "description": {
+        "content": "Base path for the Application Endpoint Discovery.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "application-endpoint-discovery/vwip",
+      "key": "basePath"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/{{basePath}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "15019354-7eb6-4a79-800f-7c1ec0e6e5db",
+    "name": "Global System for Mobile Communications GSMA Camara Project Endpoint Discovery Application Phone Number Verify API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Application Discovery API extends beyond the capabilities of the Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone but also directly linking to the application endpoints within those Edge Cloud Zones.\n\nContact Support:\n Email: sp-edc@lists.camaraproject.org",
+      "type": "text/plain"
+    }
+  }
+}

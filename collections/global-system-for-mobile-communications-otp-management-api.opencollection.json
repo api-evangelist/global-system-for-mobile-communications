@@ -1,0 +1,60 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Global System for Mobile Communications GSMA Camara Project Endpoint Discovery Application OTP Management API",
+    "version": "0.1.0-wip"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "OTP Management",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Global System for Mobile Communications Sends a message including an OTP code to the given phone number",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/{basePath}/send-code",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Sends an SMS with the desired message and an OTP code to the received phone number."
+        },
+        {
+          "info": {
+            "name": "Global System for Mobile Communications Verifies the OTP received as input",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/{basePath}/validate-code",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Verifies the code is valid for the received authenticationId"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

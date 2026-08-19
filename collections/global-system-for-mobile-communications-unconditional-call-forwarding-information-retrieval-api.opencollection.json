@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Global System for Mobile Communications GSMA Camara Project Endpoint Discovery Application Unconditional Call Forwarding Information Retrieval API",
+    "version": "0.1.0-wip"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Unconditional Call Forwarding Information Retrieval",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Global System for Mobile Communications Retrieve the information about the status of the unconditional call forwarding service on a phone number (PhoneNumber)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/{basePath}/unconditional-call-forwardings",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint provides information about the status of the unconditional call forwarding, beeing active or not."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

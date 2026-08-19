@@ -1,0 +1,3448 @@
+{
+  "item": [
+    {
+      "id": "a47aa127-22c7-4679-97d9-35ca5b76d710",
+      "name": "QoS Sessions",
+      "description": {
+        "content": "Manage QoS sessions",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8282a72c-5f30-4f10-9762-c329c1a3cf83",
+          "name": "Global System for Mobile Communications Creates a new session",
+          "request": {
+            "name": "Global System for Mobile Communications Creates a new session",
+            "description": {
+              "content": "Create QoS Session to manage latency/throughput priorities\n\nIf the qosStatus in the API response is \"AVAILABLE\" and a notification callback is provided the client will receive in addition to the response a\n`QOS_STATUS_CHANGED` event notification with `qosStatus` as `AVAILABLE`.\n\nIf the `qosStatus` in the API response is `REQUESTED`, the client will receive either\n- a `QOS_STATUS_CHANGED` event notification with `qosStatus` as `AVAILABLE` after the network notifies that it has created the requested session, or\n- a `QOS_STATUS_CHANGED` event notification with `qosStatus` as `UNAVAILABLE` and `statusInfo` as `NETWORK_TERMINATED` after the network notifies that it has failed to provide the requested session.\n\nA `QOS_STATUS_CHANGED` event notification with `qosStatus` as `UNAVAILABLE` will also be send if the network terminates the session before the requested duration expired\n\n**NOTES:**\n- In case of a `QOS_STATUS_CHANGED` event with `qosStatus` as `UNAVAILABLE` and `statusInfo` as `NETWORK_TERMINATED` the resources of the QoS session are not directly released, but will get deleted automatically at earliest 360 seconds after the event.\n\n  This behavior allows clients which are not receiving notification events but are polling to get the session information with the `qosStatus` `UNAVAILABLE` and `statusInfo` `NETWORK_TERMINATED`. Before a client can attempt to create a new QoD session for the same device and flow period they must release the session resources with an explicit `delete` operation if not yet automatically deleted.\n- The access token may be either 2-legged or 3-legged.\n  - If a 3-legged access token which is associated with a device is used, it is recommended NOT to include the `device` parameter in the request (see \"Handling of device information\" within the API description for details).\n  - If a 2-legged access token is used, the device parameter must be provided and identify a device.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "sessions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "API root.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                },
+                {
+                  "description": "Base path for the Application Endpoint Discovery.",
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"applicationServer\": {\n    \"ipv4Address\": \"<string>\",\n    \"ipv6Address\": \"<string>\"\n  },\n  \"duration\": \"<integer>\",\n  \"qosProfile\": \"<string>\",\n  \"device\": {\n    \"phoneNumber\": \"<string>\",\n    \"networkAccessIdentifier\": \"<string>\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"<ipv6>\"\n  },\n  \"devicePorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"applicationServerPorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"sink\": \"<url>\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "74cd6e1b-ce5a-42ac-af04-2ee8734560e5",
+              "name": "Session created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationServer\": {\n    \"ipv4Address\": \"198.51.100.0/24\",\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"duration\": 3600,\n  \"qosProfile\": \"QCI_1_voice\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"devicePorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"applicationServerPorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"applicationServer\": {\n    \"ipv4Address\": \"198.51.100.0/24\",\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"duration\": 3600,\n  \"qosProfile\": \"QCI_1_voice\",\n  \"qosStatus\": \"AVAILABLE\",\n  \"sessionId\": \"a814bf43-8ce6-e277-6c49-684a281f36a8\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"devicePorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"applicationServerPorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  },\n  \"startedAt\": \"2024-06-01T12:00:00Z\",\n  \"expiresAt\": \"2024-06-01T13:00:00Z\",\n  \"statusInfo\": \"NETWORK_TERMINATED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e7431fbe-3325-48ea-9b5a-78285567ccc2",
+              "name": "Bad Request when creating a session",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationServer\": {\n    \"ipv4Address\": \"198.51.100.0/24\",\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"duration\": 3600,\n  \"qosProfile\": \"QCI_1_voice\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"devicePorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"applicationServerPorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Client specified an invalid argument, request body or query param.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "72ce8736-0bee-4890-b84b-a4a579cf2eb3",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationServer\": {\n    \"ipv4Address\": \"198.51.100.0/24\",\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"duration\": 3600,\n  \"qosProfile\": \"QCI_1_voice\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"devicePorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"applicationServerPorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c823af93-9a86-4ec8-998c-4f9edd8e77db",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationServer\": {\n    \"ipv4Address\": \"198.51.100.0/24\",\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"duration\": 3600,\n  \"qosProfile\": \"QCI_1_voice\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"devicePorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"applicationServerPorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a829a5c5-81b6-492d-b298-1806500f3a6b",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationServer\": {\n    \"ipv4Address\": \"198.51.100.0/24\",\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"duration\": 3600,\n  \"qosProfile\": \"QCI_1_voice\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"devicePorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"applicationServerPorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"NOT_FOUND\",\n  \"message\": \"The specified resource is not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "feb93166-dd8f-4f59-972f-8185176f8b3d",
+              "name": "Conflict",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationServer\": {\n    \"ipv4Address\": \"198.51.100.0/24\",\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"duration\": 3600,\n  \"qosProfile\": \"QCI_1_voice\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"devicePorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"applicationServerPorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 409,\n  \"code\": \"CONFLICT\",\n  \"message\": \"Conflict with an existing session for the same device.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a582c7a7-4f94-44b7-abcc-a56e7b88380e",
+              "name": "Unprocessable Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationServer\": {\n    \"ipv4Address\": \"198.51.100.0/24\",\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"duration\": 3600,\n  \"qosProfile\": \"QCI_1_voice\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"devicePorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"applicationServerPorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 422,\n  \"code\": \"DEVICE_IDENTIFIERS_MISMATCH\",\n  \"message\": \"Provided device identifiers are not consistent.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2bc9f7a9-387d-4ffe-b2f9-4401bd226bf0",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationServer\": {\n    \"ipv4Address\": \"198.51.100.0/24\",\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"duration\": 3600,\n  \"qosProfile\": \"QCI_1_voice\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"devicePorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"applicationServerPorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 429,\n  \"code\": \"QUOTA_EXCEEDED\",\n  \"message\": \"Either out of resource quota or reaching rate limiting.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f69c872f-0908-4207-ac65-66e16ba8aadd",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationServer\": {\n    \"ipv4Address\": \"198.51.100.0/24\",\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"duration\": 3600,\n  \"qosProfile\": \"QCI_1_voice\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"devicePorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"applicationServerPorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Internal server error: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a0622487-82a5-43a5-8af5-e9d1c74c90ba",
+              "name": "Service Unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationServer\": {\n    \"ipv4Address\": \"198.51.100.0/24\",\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"duration\": 3600,\n  \"qosProfile\": \"QCI_1_voice\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"devicePorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"applicationServerPorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service Unavailable.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c8803785-f05d-47f6-80d0-ca06de070312",
+          "name": "Global System for Mobile Communications Get QoS session information",
+          "request": {
+            "name": "Global System for Mobile Communications Get QoS session information",
+            "description": {
+              "content": "Querying for QoS session resource information details\n\n**NOTES:**\n- The access token may be either 2-legged or 3-legged.\n- If a 3-legged access token is used, the end user (and device) associated with the session must also be associated with the access token.\n- The session must have been created by the same API client given in the access token\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "sessions",
+                ":sessionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "sessionId",
+                  "description": "(Required) Session ID that was obtained from the createSession operation"
+                },
+                {
+                  "description": "API root.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                },
+                {
+                  "description": "Base path for the Application Endpoint Discovery.",
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "3e58a6ee-c632-4ddc-9d0d-23889a9282ec",
+              "name": "Contains information about active session",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions",
+                    ":sessionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sessionId",
+                      "description": "(Required) Session ID that was obtained from the createSession operation"
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"duration\": 3600,\n  \"device\": {\n    \"ipv4Address\": {\n      \"publicAddress\": \"203.0.113.0\",\n      \"publicPort\": 59765\n    }\n  },\n  \"applicationServer\": {\n    \"ipv4Address\": \"198.51.100.0/24\"\n  },\n  \"qosProfile\": \"QOS_L\",\n  \"sink\": \"https://application-server.com/notifications\",\n  \"sessionId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"startedAt\": \"2024-06-01T12:00:00Z\",\n  \"expiresAt\": \"2024-06-01T13:00:00Z\",\n  \"qosStatus\": \"AVAILABLE\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0b3e8255-af8f-4fd2-b67a-0bfdb792f772",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions",
+                    ":sessionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sessionId",
+                      "description": "(Required) Session ID that was obtained from the createSession operation"
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Client specified an invalid argument, request body or query param.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6b3ec8e8-5955-4262-a89c-3a421509bdc1",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions",
+                    ":sessionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sessionId",
+                      "description": "(Required) Session ID that was obtained from the createSession operation"
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a1745a87-99aa-4912-9d1f-5a874460b6a7",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions",
+                    ":sessionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sessionId",
+                      "description": "(Required) Session ID that was obtained from the createSession operation"
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "726f0ffc-c636-440c-a34b-06332361b489",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions",
+                    ":sessionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sessionId",
+                      "description": "(Required) Session ID that was obtained from the createSession operation"
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"NOT_FOUND\",\n  \"message\": \"The specified resource is not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3f36248f-3292-46a8-a67a-553a0beab1e1",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions",
+                    ":sessionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sessionId",
+                      "description": "(Required) Session ID that was obtained from the createSession operation"
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 429,\n  \"code\": \"QUOTA_EXCEEDED\",\n  \"message\": \"Either out of resource quota or reaching rate limiting.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6220e82d-ed31-4bee-8705-80f1a7ea8b18",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions",
+                    ":sessionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sessionId",
+                      "description": "(Required) Session ID that was obtained from the createSession operation"
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Internal server error: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "da656fd3-ae83-4f36-b8fa-c3d43a6df9ae",
+              "name": "Service Unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions",
+                    ":sessionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sessionId",
+                      "description": "(Required) Session ID that was obtained from the createSession operation"
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service Unavailable.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6cdef51e-c2f2-4eba-a835-4786eb8a0d6a",
+          "name": "Global System for Mobile Communications Delete a QoS session",
+          "request": {
+            "name": "Global System for Mobile Communications Delete a QoS session",
+            "description": {
+              "content": "Release resources related to QoS session\n\nIf the notification callback is provided and the `qosStatus` of the session was `AVAILABLE` the client will receive in addition to the response a `QOS_STATUS_CHANGED` event with\n- `qosStatus` as `UNAVAILABLE` and\n- `statusInfo` as `DELETE_REQUESTED`\nThere will be no notification event if the `qosStatus` was already `UNAVAILABLE`.\n\n**NOTES:**\n- The access token may be either 2-legged or 3-legged.\n- If a 3-legged access token is used, the end user (and device) associated with the session must also be associated with the access token.\n- The session must must have been created by the same API client given in the access token\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "sessions",
+                ":sessionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "sessionId",
+                  "description": "(Required) Session ID that was obtained from the createSession operation"
+                },
+                {
+                  "description": "API root.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                },
+                {
+                  "description": "Base path for the Application Endpoint Discovery.",
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE"
+          },
+          "response": [
+            {
+              "id": "184ba19d-5c17-49d4-aea5-3bf7695cd9f9",
+              "name": "Session deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions",
+                    ":sessionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sessionId",
+                      "description": "(Required) Session ID that was obtained from the createSession operation"
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f008d63f-ec65-401e-8d4f-bba4225098d6",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions",
+                    ":sessionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sessionId",
+                      "description": "(Required) Session ID that was obtained from the createSession operation"
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Client specified an invalid argument, request body or query param.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "161b2331-659a-4f7c-9fd3-b2beafacc8ae",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions",
+                    ":sessionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sessionId",
+                      "description": "(Required) Session ID that was obtained from the createSession operation"
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "615be0e5-9923-4721-919a-fcab96259d82",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions",
+                    ":sessionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sessionId",
+                      "description": "(Required) Session ID that was obtained from the createSession operation"
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7c9ce5aa-b123-45af-8364-d7f473b99470",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions",
+                    ":sessionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sessionId",
+                      "description": "(Required) Session ID that was obtained from the createSession operation"
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"NOT_FOUND\",\n  \"message\": \"The specified resource is not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fd141e17-a9df-4788-a586-c904a868601a",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions",
+                    ":sessionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sessionId",
+                      "description": "(Required) Session ID that was obtained from the createSession operation"
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 429,\n  \"code\": \"QUOTA_EXCEEDED\",\n  \"message\": \"Either out of resource quota or reaching rate limiting.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d2d59ea3-8466-4f6a-8220-b76c2f278a84",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions",
+                    ":sessionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sessionId",
+                      "description": "(Required) Session ID that was obtained from the createSession operation"
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Internal server error: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a77b98ef-2d2d-4cac-85cd-a0992a49bd9e",
+              "name": "Service Unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions",
+                    ":sessionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sessionId",
+                      "description": "(Required) Session ID that was obtained from the createSession operation"
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service Unavailable.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "89cf886d-abf8-4455-b095-ac531034984c",
+          "name": "Global System for Mobile Communications Extend the duration of an active session",
+          "request": {
+            "name": "Global System for Mobile Communications Extend the duration of an active session",
+            "description": {
+              "content": "Extend the overall session duration of an active QoS session (with qosStatus = AVAILABLE).\nThe overall duration of the QoS session, including the additional extended duration, shall not exceed the maximum duration limit fixed for the QoS Profile. If the current duration plus the value of `requestedAdditionalDuration` exceeds the maximum limit, the new overall duration shall be capped to the maximum value allowed.\nAn example: For a QoS profile limited to a `maxDuration` of 50,000 seconds, a QoD session was originally created with duration 30,000 seconds. Before the session expires, the developer requests to extend the session by another 30,000 seconds:\n- Previous duration: 30,000 seconds\n- Requested additional duration: 30,000 seconds\n- New overall session duration: 50,000 seconds (the maximum allowed)\n\n**NOTES:**\n- The access token may be either 2-legged or 3-legged.\n- If a 3-legged access token is used, the end user (and device) associated with the session must also be associated with the access token.\n- The session must must have been created by the same API client given in the access token\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "sessions",
+                ":sessionId",
+                "extend"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "sessionId",
+                  "description": "(Required) Session ID that was obtained from the createSession operation"
+                },
+                {
+                  "description": "API root.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                },
+                {
+                  "description": "Base path for the Application Endpoint Discovery.",
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"requestedAdditionalDuration\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "739b1fea-b0ad-46fe-866d-22c4b745eef7",
+              "name": "Contains information about active session",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions",
+                    ":sessionId",
+                    "extend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sessionId",
+                      "description": "(Required) Session ID that was obtained from the createSession operation"
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"requestedAdditionalDuration\": 1800\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"applicationServer\": {\n    \"ipv4Address\": \"198.51.100.0/24\",\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"duration\": 3600,\n  \"qosProfile\": \"QCI_1_voice\",\n  \"qosStatus\": \"UNAVAILABLE\",\n  \"sessionId\": \"<uuid>\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"devicePorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"applicationServerPorts\": {\n    \"ranges\": [\n      {\n        \"from\": \"<integer>\",\n        \"to\": \"<integer>\"\n      }\n    ],\n    \"ports\": [\n      \"<integer>\"\n    ]\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  },\n  \"startedAt\": \"2024-06-01T12:00:00Z\",\n  \"expiresAt\": \"2024-06-01T13:00:00Z\",\n  \"statusInfo\": \"DURATION_EXPIRED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "efd0d63a-1e2c-423e-a43e-7f514eb46423",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions",
+                    ":sessionId",
+                    "extend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sessionId",
+                      "description": "(Required) Session ID that was obtained from the createSession operation"
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"requestedAdditionalDuration\": 1800\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Client specified an invalid argument, request body or query param.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1a20bfb4-9ab3-476b-ba2a-c3629310f150",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions",
+                    ":sessionId",
+                    "extend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sessionId",
+                      "description": "(Required) Session ID that was obtained from the createSession operation"
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"requestedAdditionalDuration\": 1800\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "128f105a-f352-4014-bd52-21d05244eda1",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions",
+                    ":sessionId",
+                    "extend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sessionId",
+                      "description": "(Required) Session ID that was obtained from the createSession operation"
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"requestedAdditionalDuration\": 1800\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "89024cb8-b02b-48dc-8288-8b85322c31dc",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions",
+                    ":sessionId",
+                    "extend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sessionId",
+                      "description": "(Required) Session ID that was obtained from the createSession operation"
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"requestedAdditionalDuration\": 1800\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"NOT_FOUND\",\n  \"message\": \"The specified resource is not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "acfa7d49-efa3-4725-8973-65f08b244655",
+              "name": "Conflict",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions",
+                    ":sessionId",
+                    "extend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sessionId",
+                      "description": "(Required) Session ID that was obtained from the createSession operation"
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"requestedAdditionalDuration\": 1800\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 409,\n  \"code\": \"QUALITY_ON_DEMAND.SESSION_EXTENSION_NOT_ALLOWED\",\n  \"message\": \"Extending the session duration is not allowed in the current state ({qosStatus}). The session must be in the AVAILABLE state.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2df756fd-9ead-4626-b63e-23e73cdfb822",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions",
+                    ":sessionId",
+                    "extend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sessionId",
+                      "description": "(Required) Session ID that was obtained from the createSession operation"
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"requestedAdditionalDuration\": 1800\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 429,\n  \"code\": \"QUOTA_EXCEEDED\",\n  \"message\": \"Either out of resource quota or reaching rate limiting.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8f9d7e07-85a7-4b0d-b6c8-df2387ae06f3",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions",
+                    ":sessionId",
+                    "extend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sessionId",
+                      "description": "(Required) Session ID that was obtained from the createSession operation"
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"requestedAdditionalDuration\": 1800\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Internal server error: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "185daf49-b606-47d1-9822-763e2d2a50a6",
+              "name": "Service Unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions",
+                    ":sessionId",
+                    "extend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sessionId",
+                      "description": "(Required) Session ID that was obtained from the createSession operation"
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"requestedAdditionalDuration\": 1800\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service Unavailable.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6e0e7588-f912-4a07-b881-fa99abfd9e1c",
+          "name": "Global System for Mobile Communications Get QoS session information for a device",
+          "request": {
+            "name": "Global System for Mobile Communications Get QoS session information for a device",
+            "description": {
+              "content": "Querying for QoS session resource information details for a device\n\n**NOTES:**\n- The access token may be either 2-legged or 3-legged.\n  - If a 3-legged access token is used, the end user (and device) associated with the session must also be associated with the access token. In this case it is recommended NOT to include the `device` parameter in the request (see \"Handling of device information\" within the API description for details).\n  - If a 2-legged access token is used, the device parameter must be provided and identify a device.\n- The session must have been created by the same API client given in the access token\n- If no QoS session is found for the requested device, an empty array is returned.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "retrieve-sessions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "API root.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                },
+                {
+                  "description": "Base path for the Application Endpoint Discovery.",
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"device\": {\n    \"phoneNumber\": \"<string>\",\n    \"networkAccessIdentifier\": \"<string>\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"<ipv6>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "65b03474-586a-4010-969f-16b1bf332f99",
+              "name": "Returns the QoS sessions information for a given device. A device may have multiple sessions, thus the response is an array. An empty array is returned if no sessions are found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrieve-sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"duration\": 3600,\n    \"device\": {\n      \"phoneNumber\": \"+123456789\"\n    },\n    \"applicationServer\": {\n      \"ipv4Address\": \"0.0.0.0/0\"\n    },\n    \"qosProfile\": \"QOS_L\",\n    \"sink\": \"https://application-server.com/notifications\",\n    \"sessionId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"startedAt\": \"2024-06-01T12:00:00Z\",\n    \"expiresAt\": \"2024-06-01T13:00:00Z\",\n    \"qosStatus\": \"AVAILABLE\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3345dece-6103-4fd0-a002-da02572ce63a",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrieve-sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Client specified an invalid argument, request body or query param.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4ee30005-b012-456f-bc18-10c450e48d94",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrieve-sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5339254e-78bb-4c6b-ad32-cbe31bed9d4e",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrieve-sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "622a8a1c-61a5-4409-9eca-6245a96d5332",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrieve-sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"NOT_FOUND\",\n  \"message\": \"The specified resource is not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c7180fed-0ac5-437c-941d-b07a886e1ded",
+              "name": "Unprocessable Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrieve-sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 422,\n  \"code\": \"DEVICE_IDENTIFIERS_MISMATCH\",\n  \"message\": \"Provided device identifiers are not consistent.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "43093754-6d35-4447-92c1-51e2e6c09e17",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrieve-sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 429,\n  \"code\": \"QUOTA_EXCEEDED\",\n  \"message\": \"Either out of resource quota or reaching rate limiting.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8201610f-de4d-4fb2-9bd8-77fecbc2a0a2",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrieve-sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Internal server error: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3b55a0dd-7046-4ae6-addb-9e263799c38c",
+              "name": "Service Unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrieve-sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service Unavailable.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "API root.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://localhost:443",
+      "key": "apiRoot"
+    },
+    {
+      "description": {
+        "content": "Base path for the Application Endpoint Discovery.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "application-endpoint-discovery/vwip",
+      "key": "basePath"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/{{basePath}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8cc41f12-5f44-4309-a68d-9119adc9be94",
+    "name": "Global System for Mobile Communications GSMA Camara Project Endpoint Discovery Application QoS Sessions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Application Discovery API extends beyond the capabilities of the Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone but also directly linking to the application endpoints within those Edge Cloud Zones.\n\nContact Support:\n Email: sp-edc@lists.camaraproject.org",
+      "type": "text/plain"
+    }
+  }
+}

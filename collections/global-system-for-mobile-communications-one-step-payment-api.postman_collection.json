@@ -1,0 +1,728 @@
+{
+  "item": [
+    {
+      "id": "94ec493f-b33a-4056-a399-c6d28b7e0fbc",
+      "name": "One Step Payment",
+      "description": {
+        "content": "Operations to manage One Step Payment procedure",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2e467a40-7bab-4b1d-a97d-29e45e87f5d4",
+          "name": "Global System for Mobile Communications Create a new Payment",
+          "request": {
+            "name": "Global System for Mobile Communications Create a new Payment",
+            "description": {
+              "content": "Create a new payment for subsequent charging to an end user. Carrier Billing Server will apply the charging according to business configuration for the end user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "payments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "API root.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                },
+                {
+                  "description": "Base path for the Application Endpoint Discovery.",
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amountTransaction\": {\n    \"paymentAmount\": {\n      \"chargingInformation\": {\n        \"amount\": \"<float>\",\n        \"currency\": \"<string>\",\n        \"description\": \"<string>\",\n        \"isTaxIncluded\": false,\n        \"taxAmount\": \"<float>\"\n      },\n      \"chargingMetaData\": {\n        \"merchantName\": \"<string>\",\n        \"merchantIdentifier\": \"<string>\",\n        \"fee\": \"<float>\",\n        \"purchaseCategoryCode\": \"<string>\",\n        \"channel\": \"<string>\",\n        \"serviceId\": \"<string>\",\n        \"productId\": \"<string>\"\n      },\n      \"paymentDetails\": [\n        {\n          \"id\": \"<string>\",\n          \"amount\": \"<float>\",\n          \"currency\": \"<string>\",\n          \"description\": \"<string>\",\n          \"isTaxIncluded\": false,\n          \"taxAmount\": \"<float>\"\n        }\n      ]\n    },\n    \"referenceCode\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"clientCorrelator\": \"<string>\"\n  },\n  \"sink\": \"<url>\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dfb9b3f0-b2a0-4fd4-8657-7356cd996642",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amountTransaction\": {\n    \"paymentAmount\": {\n      \"chargingInformation\": {\n        \"amount\": 100,\n        \"currency\": \"EUR\",\n        \"description\": \"FIFA EA Sports 24\",\n        \"isTaxIncluded\": false,\n        \"taxAmount\": 21\n      },\n      \"chargingMetaData\": {\n        \"merchantName\": \"EA Sports\",\n        \"merchantIdentifier\": \"eas-12345\",\n        \"fee\": 10,\n        \"purchaseCategoryCode\": \"games\",\n        \"channel\": \"web\",\n        \"serviceId\": \"games-online\",\n        \"productId\": \"138235321\"\n      },\n      \"paymentDetails\": [\n        {\n          \"id\": \"3goug3uvu32v3b\",\n          \"amount\": 100,\n          \"currency\": \"EUR\",\n          \"description\": \"FIFA EA Sports 24\",\n          \"isTaxIncluded\": false,\n          \"taxAmount\": 21\n        }\n      ]\n    },\n    \"referenceCode\": \"ref-pay-834tfr2rA3v8r8vr3rv\",\n    \"phoneNumber\": \"+34671999000\",\n    \"clientCorrelator\": \"req-12f2pgh448gh2hvrfrv\"\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"amountTransaction\": {\n    \"phoneNumber\": \"+34671999000\",\n    \"paymentAmount\": {\n      \"chargingInformation\": {\n        \"amount\": 100,\n        \"currency\": \"EUR\",\n        \"description\": \"FIFA EA Sports 24\",\n        \"isTaxIncluded\": false,\n        \"taxAmount\": 21\n      },\n      \"chargingMetaData\": {\n        \"merchantName\": \"EA Sports\",\n        \"merchantIdentifier\": \"eas-12345\",\n        \"fee\": 10,\n        \"purchaseCategoryCode\": \"games\",\n        \"channel\": \"web\",\n        \"serviceId\": \"games-online\",\n        \"productId\": \"138235321\"\n      },\n      \"paymentDetails\": [\n        {\n          \"id\": \"3goug3uvu32v3b\",\n          \"amount\": 100,\n          \"currency\": \"EUR\",\n          \"description\": \"FIFA EA Sports 24\",\n          \"isTaxIncluded\": false,\n          \"taxAmount\": 21\n        }\n      ]\n    },\n    \"referenceCode\": \"ref-pay-834tfr2rA3v8r8vr3rv\",\n    \"clientCorrelator\": \"req-12f2pgh448gh2hvrfrv\",\n    \"resourceURL\": \"urn:payments:AK234rfweSBuWGFUEWFGWEVWRV\",\n    \"serverReferenceCode\": \"ref-pay-834tfr2rA3v8r8vr3rv-serv\"\n  },\n  \"paymentId\": \"AK234rfweSBuWGFUEWFGWEVWRV\",\n  \"paymentStatus\": \"processing\",\n  \"paymentCreationDate\": \"1979-02-17T14:00:14.133Z\",\n  \"paymentDate\": \"1987-02-02T09:34:50.683Z\",\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "09d41f8e-dc7c-4e09-b2ee-ff58f43398a3",
+              "name": "Invalid input.\nCommon INVALID_ARGUMENT scenarios usually are:\n  - Schema validation failed (\"code\": \"INVALID_ARGUMENT\",\"message\": \"Client specified an invalid argument, request body or query param.\").\n  - Currency is unknown or not authorized (\"code\": \"INVALID_ARGUMENT\",\"message\": \"Currency is unknown or not authorized\").\n  - clientCorrelator still exist (\"code\": \"INVALID_ARGUMENT\",\"message\": \"clientCorrelator already exist on server\").\n\nIn addition to regular INVALID_ARGUMENT scenario other scenarios may exist:\n  - Invalid sink credential (\"code\": \"INVALID_CREDENTIAL\",\"message\": \"Only Access token is supported\").\n  - Invalid sink credential access token (\"code\": \"INVALID_TOKEN\",\"message\": \"Only bearer token is supported\").",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amountTransaction\": {\n    \"paymentAmount\": {\n      \"chargingInformation\": {\n        \"amount\": 100,\n        \"currency\": \"EUR\",\n        \"description\": \"FIFA EA Sports 24\",\n        \"isTaxIncluded\": false,\n        \"taxAmount\": 21\n      },\n      \"chargingMetaData\": {\n        \"merchantName\": \"EA Sports\",\n        \"merchantIdentifier\": \"eas-12345\",\n        \"fee\": 10,\n        \"purchaseCategoryCode\": \"games\",\n        \"channel\": \"web\",\n        \"serviceId\": \"games-online\",\n        \"productId\": \"138235321\"\n      },\n      \"paymentDetails\": [\n        {\n          \"id\": \"3goug3uvu32v3b\",\n          \"amount\": 100,\n          \"currency\": \"EUR\",\n          \"description\": \"FIFA EA Sports 24\",\n          \"isTaxIncluded\": false,\n          \"taxAmount\": 21\n        }\n      ]\n    },\n    \"referenceCode\": \"ref-pay-834tfr2rA3v8r8vr3rv\",\n    \"phoneNumber\": \"+34671999000\",\n    \"clientCorrelator\": \"req-12f2pgh448gh2hvrfrv\"\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Client specified an invalid argument, request body or query param.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f0ad68e1-ca92-4fe8-993e-4eeae0eb7f2d",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amountTransaction\": {\n    \"paymentAmount\": {\n      \"chargingInformation\": {\n        \"amount\": 100,\n        \"currency\": \"EUR\",\n        \"description\": \"FIFA EA Sports 24\",\n        \"isTaxIncluded\": false,\n        \"taxAmount\": 21\n      },\n      \"chargingMetaData\": {\n        \"merchantName\": \"EA Sports\",\n        \"merchantIdentifier\": \"eas-12345\",\n        \"fee\": 10,\n        \"purchaseCategoryCode\": \"games\",\n        \"channel\": \"web\",\n        \"serviceId\": \"games-online\",\n        \"productId\": \"138235321\"\n      },\n      \"paymentDetails\": [\n        {\n          \"id\": \"3goug3uvu32v3b\",\n          \"amount\": 100,\n          \"currency\": \"EUR\",\n          \"description\": \"FIFA EA Sports 24\",\n          \"isTaxIncluded\": false,\n          \"taxAmount\": 21\n        }\n      ]\n    },\n    \"referenceCode\": \"ref-pay-834tfr2rA3v8r8vr3rv\",\n    \"phoneNumber\": \"+34671999000\",\n    \"clientCorrelator\": \"req-12f2pgh448gh2hvrfrv\"\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4abc705c-eb64-4df4-b7db-5fd6a697e32d",
+              "name": "Client does not have sufficient permission.\nIn addition to regular PERMISSION_DENIED scenario other scenarios may exist:\n  - Phone Number provided not matching Access Token context (\"code\": \"INVALID_TOKEN_CONTEXT\",\"message\": \"Phone Number is not consistent with access token.\").\n  - Payment denied by business (\"code\": \"CARRIER_BILLING.PAYMENT_DENIED\",\"message\": \"Payment denied by business.\").",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amountTransaction\": {\n    \"paymentAmount\": {\n      \"chargingInformation\": {\n        \"amount\": 100,\n        \"currency\": \"EUR\",\n        \"description\": \"FIFA EA Sports 24\",\n        \"isTaxIncluded\": false,\n        \"taxAmount\": 21\n      },\n      \"chargingMetaData\": {\n        \"merchantName\": \"EA Sports\",\n        \"merchantIdentifier\": \"eas-12345\",\n        \"fee\": 10,\n        \"purchaseCategoryCode\": \"games\",\n        \"channel\": \"web\",\n        \"serviceId\": \"games-online\",\n        \"productId\": \"138235321\"\n      },\n      \"paymentDetails\": [\n        {\n          \"id\": \"3goug3uvu32v3b\",\n          \"amount\": 100,\n          \"currency\": \"EUR\",\n          \"description\": \"FIFA EA Sports 24\",\n          \"isTaxIncluded\": false,\n          \"taxAmount\": 21\n        }\n      ]\n    },\n    \"referenceCode\": \"ref-pay-834tfr2rA3v8r8vr3rv\",\n    \"phoneNumber\": \"+34671999000\",\n    \"clientCorrelator\": \"req-12f2pgh448gh2hvrfrv\"\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "34579d8f-b76a-4892-a840-f6ead619ff82",
+              "name": "Conflict",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amountTransaction\": {\n    \"paymentAmount\": {\n      \"chargingInformation\": {\n        \"amount\": 100,\n        \"currency\": \"EUR\",\n        \"description\": \"FIFA EA Sports 24\",\n        \"isTaxIncluded\": false,\n        \"taxAmount\": 21\n      },\n      \"chargingMetaData\": {\n        \"merchantName\": \"EA Sports\",\n        \"merchantIdentifier\": \"eas-12345\",\n        \"fee\": 10,\n        \"purchaseCategoryCode\": \"games\",\n        \"channel\": \"web\",\n        \"serviceId\": \"games-online\",\n        \"productId\": \"138235321\"\n      },\n      \"paymentDetails\": [\n        {\n          \"id\": \"3goug3uvu32v3b\",\n          \"amount\": 100,\n          \"currency\": \"EUR\",\n          \"description\": \"FIFA EA Sports 24\",\n          \"isTaxIncluded\": false,\n          \"taxAmount\": 21\n        }\n      ]\n    },\n    \"referenceCode\": \"ref-pay-834tfr2rA3v8r8vr3rv\",\n    \"phoneNumber\": \"+34671999000\",\n    \"clientCorrelator\": \"req-12f2pgh448gh2hvrfrv\"\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 409,\n  \"code\": \"ALREADY_EXISTS\",\n  \"message\": \"The resource that a client tried to create already exists.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e948eb2f-c03c-4d8b-992f-27da02c3aae0",
+              "name": "Client indicates content that is understable by the Server but unable to be processed.\nScenarios that may exist:\n  - Phone Number is required (\"code\": \"CARRIER_BILLING.PHONE_NUMBER_REQUIRED\",\"message\": \"Phone Number is required.\").\n  - Unauthorized amount requested (\"code\": \"CARRIER_BILLING.UNAUTHORIZED_AMOUNT\",\"message\": \"Unauthorized amount requested.\").\n  - Accumulated threshold amount for the user's mobile account overpassed (\"code\": \"CARRIER_BILLING.USER_AMOUNT_THRESHOLD_OVERPASSED\",\"message\": \"Unathorized payment request. Accumulated user mobile payments overpass account amount threshold.\").",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amountTransaction\": {\n    \"paymentAmount\": {\n      \"chargingInformation\": {\n        \"amount\": 100,\n        \"currency\": \"EUR\",\n        \"description\": \"FIFA EA Sports 24\",\n        \"isTaxIncluded\": false,\n        \"taxAmount\": 21\n      },\n      \"chargingMetaData\": {\n        \"merchantName\": \"EA Sports\",\n        \"merchantIdentifier\": \"eas-12345\",\n        \"fee\": 10,\n        \"purchaseCategoryCode\": \"games\",\n        \"channel\": \"web\",\n        \"serviceId\": \"games-online\",\n        \"productId\": \"138235321\"\n      },\n      \"paymentDetails\": [\n        {\n          \"id\": \"3goug3uvu32v3b\",\n          \"amount\": 100,\n          \"currency\": \"EUR\",\n          \"description\": \"FIFA EA Sports 24\",\n          \"isTaxIncluded\": false,\n          \"taxAmount\": 21\n        }\n      ]\n    },\n    \"referenceCode\": \"ref-pay-834tfr2rA3v8r8vr3rv\",\n    \"phoneNumber\": \"+34671999000\",\n    \"clientCorrelator\": \"req-12f2pgh448gh2hvrfrv\"\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 422,\n  \"code\": \"CARRIER_BILLING.PHONE_NUMBER_REQUIRED\",\n  \"message\": \"Phone Number is required.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8b12a47b-7589-40ca-975a-0b740c6787de",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amountTransaction\": {\n    \"paymentAmount\": {\n      \"chargingInformation\": {\n        \"amount\": 100,\n        \"currency\": \"EUR\",\n        \"description\": \"FIFA EA Sports 24\",\n        \"isTaxIncluded\": false,\n        \"taxAmount\": 21\n      },\n      \"chargingMetaData\": {\n        \"merchantName\": \"EA Sports\",\n        \"merchantIdentifier\": \"eas-12345\",\n        \"fee\": 10,\n        \"purchaseCategoryCode\": \"games\",\n        \"channel\": \"web\",\n        \"serviceId\": \"games-online\",\n        \"productId\": \"138235321\"\n      },\n      \"paymentDetails\": [\n        {\n          \"id\": \"3goug3uvu32v3b\",\n          \"amount\": 100,\n          \"currency\": \"EUR\",\n          \"description\": \"FIFA EA Sports 24\",\n          \"isTaxIncluded\": false,\n          \"taxAmount\": 21\n        }\n      ]\n    },\n    \"referenceCode\": \"ref-pay-834tfr2rA3v8r8vr3rv\",\n    \"phoneNumber\": \"+34671999000\",\n    \"clientCorrelator\": \"req-12f2pgh448gh2hvrfrv\"\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Unknown server error. Typically a server bug.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9316c965-b913-4309-9e66-2207e8e9bf44",
+              "name": "Service unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amountTransaction\": {\n    \"paymentAmount\": {\n      \"chargingInformation\": {\n        \"amount\": 100,\n        \"currency\": \"EUR\",\n        \"description\": \"FIFA EA Sports 24\",\n        \"isTaxIncluded\": false,\n        \"taxAmount\": 21\n      },\n      \"chargingMetaData\": {\n        \"merchantName\": \"EA Sports\",\n        \"merchantIdentifier\": \"eas-12345\",\n        \"fee\": 10,\n        \"purchaseCategoryCode\": \"games\",\n        \"channel\": \"web\",\n        \"serviceId\": \"games-online\",\n        \"productId\": \"138235321\"\n      },\n      \"paymentDetails\": [\n        {\n          \"id\": \"3goug3uvu32v3b\",\n          \"amount\": 100,\n          \"currency\": \"EUR\",\n          \"description\": \"FIFA EA Sports 24\",\n          \"isTaxIncluded\": false,\n          \"taxAmount\": 21\n        }\n      ]\n    },\n    \"referenceCode\": \"ref-pay-834tfr2rA3v8r8vr3rv\",\n    \"phoneNumber\": \"+34671999000\",\n    \"clientCorrelator\": \"req-12f2pgh448gh2hvrfrv\"\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service Unavailable.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e8b322b6-87e8-4253-beec-fe59408ca7b4",
+              "name": "Request timeout exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amountTransaction\": {\n    \"paymentAmount\": {\n      \"chargingInformation\": {\n        \"amount\": 100,\n        \"currency\": \"EUR\",\n        \"description\": \"FIFA EA Sports 24\",\n        \"isTaxIncluded\": false,\n        \"taxAmount\": 21\n      },\n      \"chargingMetaData\": {\n        \"merchantName\": \"EA Sports\",\n        \"merchantIdentifier\": \"eas-12345\",\n        \"fee\": 10,\n        \"purchaseCategoryCode\": \"games\",\n        \"channel\": \"web\",\n        \"serviceId\": \"games-online\",\n        \"productId\": \"138235321\"\n      },\n      \"paymentDetails\": [\n        {\n          \"id\": \"3goug3uvu32v3b\",\n          \"amount\": 100,\n          \"currency\": \"EUR\",\n          \"description\": \"FIFA EA Sports 24\",\n          \"isTaxIncluded\": false,\n          \"taxAmount\": 21\n        }\n      ]\n    },\n    \"referenceCode\": \"ref-pay-834tfr2rA3v8r8vr3rv\",\n    \"phoneNumber\": \"+34671999000\",\n    \"clientCorrelator\": \"req-12f2pgh448gh2hvrfrv\"\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Gateway Timeout",
+              "code": 504,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 504,\n  \"code\": \"TIMEOUT\",\n  \"message\": \"Request timeout exceeded.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "API root.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://localhost:443",
+      "key": "apiRoot"
+    },
+    {
+      "description": {
+        "content": "Base path for the Application Endpoint Discovery.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "application-endpoint-discovery/vwip",
+      "key": "basePath"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/{{basePath}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "eab8ec5e-7936-4fe8-8110-6ba808c370c1",
+    "name": "Global System for Mobile Communications GSMA Camara Project Endpoint Discovery Application One Step Payment API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Application Discovery API extends beyond the capabilities of the Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone but also directly linking to the application endpoints within those Edge Cloud Zones.\n\nContact Support:\n Email: sp-edc@lists.camaraproject.org",
+      "type": "text/plain"
+    }
+  }
+}

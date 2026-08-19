@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Global System for Mobile Communications GSMA Camara Project Endpoint Discovery Application Roaming Status Retrieval API",
+    "version": "0.1.0-wip"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Roaming Status Retrieval",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Global System for Mobile Communications Get the current roaming status and the country information",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/{basePath}/retrieve",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get the current roaming status and the country information"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

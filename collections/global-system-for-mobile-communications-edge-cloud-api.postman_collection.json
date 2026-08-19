@@ -1,0 +1,530 @@
+{
+  "item": [
+    {
+      "id": "1757dc9d-e11c-48e0-bbc0-bb877a48c984",
+      "name": "Edge Cloud",
+      "description": {
+        "content": "Edge Cloud Zones Availability",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1f37c595-3758-47b9-934c-dbb9d99acf5a",
+          "name": "Global System for Mobile Communications Retrieve a list of the operators Edge Cloud Zones and their status",
+          "request": {
+            "name": "Global System for Mobile Communications Retrieve a list of the operators Edge Cloud Zones and their status",
+            "description": {
+              "content": "List of the operators Edge Cloud Zones and their\nstatus, ordering the results by location and filtering by\nstatus (active/inactive/unknown)\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "edge-cloud-zones"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "region",
+                  "value": "<string>",
+                  "description": "Human readable name of the geographical Edge Cloud Region of\nthe Edge Cloud. Defined by the Edge Cloud Provider.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "unknown",
+                  "description": "Human readable status of the Edge Cloud Zone"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "API root.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                },
+                {
+                  "description": "Base path for the Application Endpoint Discovery.",
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services\n",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "2fcd186f-24a5-45cf-8f0a-43acb185bc83",
+              "name": "Successful response, returning the\nAvailable Edge Cloud Zones.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "edge-cloud-zones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "region",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "unknown"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "c563e853-6fac-7361-5cef-d44c920db887"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"edgeCloudZoneId\": \"2b50d119-349b-ab6b-83fd-c3dee83264f2\",\n    \"edgeCloudZoneName\": \"string\",\n    \"edgeCloudProvider\": \"string\",\n    \"edgeCloudZoneStatus\": \"unknown\",\n    \"edgeCloudRegion\": \"<string>\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "78d1c3d2-9c5c-4081-bab0-482526cefa2d",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "edge-cloud-zones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "region",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "unknown"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "c563e853-6fac-7361-5cef-d44c920db887"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Authorization failed: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c4242760-94f3-4af1-a080-38aaace7cb0e",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "edge-cloud-zones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "region",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "unknown"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "c563e853-6fac-7361-5cef-d44c920db887"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Operation not allowed: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e2599666-a92a-4786-8cdc-7ac69c150b2c",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "edge-cloud-zones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "region",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "unknown"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "c563e853-6fac-7361-5cef-d44c920db887"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"NOT_FOUND\",\n  \"message\": \"Resource does not exist\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0b97b596-da64-49f5-b0b5-6098b9325b01",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "edge-cloud-zones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "region",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "unknown"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "c563e853-6fac-7361-5cef-d44c920db887"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Internal server error: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c70aa921-4dc2-49b4-82b5-0c5122dd6c52",
+              "name": "Service Unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "edge-cloud-zones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "region",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "unknown"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services\n",
+                  "key": "x-correlator",
+                  "value": "c563e853-6fac-7361-5cef-d44c920db887"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service unavailable\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "API root.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://localhost:443",
+      "key": "apiRoot"
+    },
+    {
+      "description": {
+        "content": "Base path for the Application Endpoint Discovery.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "application-endpoint-discovery/vwip",
+      "key": "basePath"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/{{basePath}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "dcee8e8e-94e1-43c1-b5c1-28493a2172b2",
+    "name": "Global System for Mobile Communications GSMA Camara Project Endpoint Discovery Application Edge Cloud API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Application Discovery API extends beyond the capabilities of the Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone but also directly linking to the application endpoints within those Edge Cloud Zones.\n\nContact Support:\n Email: sp-edc@lists.camaraproject.org",
+      "type": "text/plain"
+    }
+  }
+}

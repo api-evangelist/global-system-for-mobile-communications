@@ -1,0 +1,3107 @@
+{
+  "item": [
+    {
+      "id": "078c1083-6108-4bfc-8cf6-8eba237799d9",
+      "name": "Two Step Payment",
+      "description": {
+        "content": "Operations to manage Two Step Payment procedure",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6dfb72cb-0490-49fb-9dd5-02cad4b4b34e",
+          "name": "Global System for Mobile Communications Prepare (reserve) a payment",
+          "request": {
+            "name": "Global System for Mobile Communications Prepare (reserve) a payment",
+            "description": {
+              "content": "Prepare a new payment procedure. Carrier Billing Server will apply the charging according to business configuration for the end user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "payments",
+                "prepare"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "API root.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                },
+                {
+                  "description": "Base path for the Application Endpoint Discovery.",
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amountTransaction\": {\n    \"paymentAmount\": {\n      \"chargingInformation\": {\n        \"amount\": \"<float>\",\n        \"currency\": \"<string>\",\n        \"description\": \"<string>\",\n        \"isTaxIncluded\": false,\n        \"taxAmount\": \"<float>\"\n      },\n      \"chargingMetaData\": {\n        \"merchantName\": \"<string>\",\n        \"merchantIdentifier\": \"<string>\",\n        \"fee\": \"<float>\",\n        \"purchaseCategoryCode\": \"<string>\",\n        \"channel\": \"<string>\",\n        \"serviceId\": \"<string>\",\n        \"productId\": \"<string>\"\n      },\n      \"paymentDetails\": [\n        {\n          \"id\": \"<string>\",\n          \"amount\": \"<float>\",\n          \"currency\": \"<string>\",\n          \"description\": \"<string>\",\n          \"isTaxIncluded\": false,\n          \"taxAmount\": \"<float>\"\n        }\n      ]\n    },\n    \"referenceCode\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"clientCorrelator\": \"<string>\"\n  },\n  \"sink\": \"<url>\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8590e6e9-5048-4688-ad56-2f17d965af8c",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    "prepare"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amountTransaction\": {\n    \"paymentAmount\": {\n      \"chargingInformation\": {\n        \"amount\": 100,\n        \"currency\": \"EUR\",\n        \"description\": \"FIFA EA Sports 24\",\n        \"isTaxIncluded\": false,\n        \"taxAmount\": 21\n      },\n      \"chargingMetaData\": {\n        \"merchantName\": \"EA Sports\",\n        \"merchantIdentifier\": \"eas-12345\",\n        \"fee\": 10,\n        \"purchaseCategoryCode\": \"games\",\n        \"channel\": \"web\",\n        \"serviceId\": \"games-online\",\n        \"productId\": \"138235321\"\n      },\n      \"paymentDetails\": [\n        {\n          \"id\": \"3goug3uvu32v3b\",\n          \"amount\": 100,\n          \"currency\": \"EUR\",\n          \"description\": \"FIFA EA Sports 24\",\n          \"isTaxIncluded\": false,\n          \"taxAmount\": 21\n        }\n      ]\n    },\n    \"referenceCode\": \"ref-pay-834tfr2rA3v8r8vr3rv\",\n    \"phoneNumber\": \"+34671999000\",\n    \"clientCorrelator\": \"req-12f2pgh448gh2hvrfrv\"\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"amountTransaction\": {\n    \"phoneNumber\": \"+34671999000\",\n    \"paymentAmount\": {\n      \"chargingInformation\": {\n        \"amount\": 100,\n        \"currency\": \"EUR\",\n        \"description\": \"FIFA EA Sports 24\",\n        \"isTaxIncluded\": false,\n        \"taxAmount\": 21\n      },\n      \"chargingMetaData\": {\n        \"merchantName\": \"EA Sports\",\n        \"merchantIdentifier\": \"eas-12345\",\n        \"fee\": 10,\n        \"purchaseCategoryCode\": \"games\",\n        \"channel\": \"web\",\n        \"serviceId\": \"games-online\",\n        \"productId\": \"138235321\"\n      },\n      \"paymentDetails\": [\n        {\n          \"id\": \"3goug3uvu32v3b\",\n          \"amount\": 100,\n          \"currency\": \"EUR\",\n          \"description\": \"FIFA EA Sports 24\",\n          \"isTaxIncluded\": false,\n          \"taxAmount\": 21\n        }\n      ]\n    },\n    \"referenceCode\": \"ref-pay-834tfr2rA3v8r8vr3rv\",\n    \"clientCorrelator\": \"req-12f2pgh448gh2hvrfrv\",\n    \"resourceURL\": \"urn:payments:AK234rfweSBuWGFUEWFGWEVWRV\",\n    \"serverReferenceCode\": \"ref-pay-834tfr2rA3v8r8vr3rv-serv\"\n  },\n  \"paymentId\": \"AK234rfweSBuWGFUEWFGWEVWRV\",\n  \"paymentStatus\": \"processing\",\n  \"paymentCreationDate\": \"2023-05-10T10:14:12.412Z\",\n  \"validationInfo\": {\n    \"action\": \"validate\",\n    \"authorizationId\": \"Fn34o8g239v3wrb3t\"\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "387201eb-be08-4dd7-9eb1-c61ed14433de",
+              "name": "Invalid input.\nCommon INVALID_ARGUMENT scenarios usually are:\n  - Schema validation failed (\"code\": \"INVALID_ARGUMENT\",\"message\": \"Client specified an invalid argument, request body or query param.\").\n  - paymentId is required (\"code\": \"INVALID_ARGUMENT\",\"message\": \"Expected property is missing: paymentId.\").\n\nIn addition to regular INVALID_ARGUMENT scenario other scenarios may exist:\n  - Invalid sink credential (\"code\": \"INVALID_CREDENTIAL\",\"message\": \"Only Access token is supported\").\n  - Invalid sink credential access token (\"code\": \"INVALID_TOKEN\",\"message\": \"Only bearer token is supported\").",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    "prepare"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amountTransaction\": {\n    \"paymentAmount\": {\n      \"chargingInformation\": {\n        \"amount\": 100,\n        \"currency\": \"EUR\",\n        \"description\": \"FIFA EA Sports 24\",\n        \"isTaxIncluded\": false,\n        \"taxAmount\": 21\n      },\n      \"chargingMetaData\": {\n        \"merchantName\": \"EA Sports\",\n        \"merchantIdentifier\": \"eas-12345\",\n        \"fee\": 10,\n        \"purchaseCategoryCode\": \"games\",\n        \"channel\": \"web\",\n        \"serviceId\": \"games-online\",\n        \"productId\": \"138235321\"\n      },\n      \"paymentDetails\": [\n        {\n          \"id\": \"3goug3uvu32v3b\",\n          \"amount\": 100,\n          \"currency\": \"EUR\",\n          \"description\": \"FIFA EA Sports 24\",\n          \"isTaxIncluded\": false,\n          \"taxAmount\": 21\n        }\n      ]\n    },\n    \"referenceCode\": \"ref-pay-834tfr2rA3v8r8vr3rv\",\n    \"phoneNumber\": \"+34671999000\",\n    \"clientCorrelator\": \"req-12f2pgh448gh2hvrfrv\"\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Client specified an invalid argument, request body or query param.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1ad91af7-b8ef-4a53-b9f6-2fc8b4509366",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    "prepare"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amountTransaction\": {\n    \"paymentAmount\": {\n      \"chargingInformation\": {\n        \"amount\": 100,\n        \"currency\": \"EUR\",\n        \"description\": \"FIFA EA Sports 24\",\n        \"isTaxIncluded\": false,\n        \"taxAmount\": 21\n      },\n      \"chargingMetaData\": {\n        \"merchantName\": \"EA Sports\",\n        \"merchantIdentifier\": \"eas-12345\",\n        \"fee\": 10,\n        \"purchaseCategoryCode\": \"games\",\n        \"channel\": \"web\",\n        \"serviceId\": \"games-online\",\n        \"productId\": \"138235321\"\n      },\n      \"paymentDetails\": [\n        {\n          \"id\": \"3goug3uvu32v3b\",\n          \"amount\": 100,\n          \"currency\": \"EUR\",\n          \"description\": \"FIFA EA Sports 24\",\n          \"isTaxIncluded\": false,\n          \"taxAmount\": 21\n        }\n      ]\n    },\n    \"referenceCode\": \"ref-pay-834tfr2rA3v8r8vr3rv\",\n    \"phoneNumber\": \"+34671999000\",\n    \"clientCorrelator\": \"req-12f2pgh448gh2hvrfrv\"\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5b312136-3d84-4393-afaa-f1e5c3d7d8aa",
+              "name": "Client does not have sufficient permission.\nIn addition to regular PERMISSION_DENIED scenario other scenarios may exist:\n  - Phone Number provided not matching Access Token context (\"code\": \"INVALID_TOKEN_CONTEXT\",\"message\": \"Phone Number is not consistent with access token.\").\n  - Payment denied by business (\"code\": \"CARRIER_BILLING.PAYMENT_DENIED\",\"message\": \"Payment denied by business.\").",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    "prepare"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amountTransaction\": {\n    \"paymentAmount\": {\n      \"chargingInformation\": {\n        \"amount\": 100,\n        \"currency\": \"EUR\",\n        \"description\": \"FIFA EA Sports 24\",\n        \"isTaxIncluded\": false,\n        \"taxAmount\": 21\n      },\n      \"chargingMetaData\": {\n        \"merchantName\": \"EA Sports\",\n        \"merchantIdentifier\": \"eas-12345\",\n        \"fee\": 10,\n        \"purchaseCategoryCode\": \"games\",\n        \"channel\": \"web\",\n        \"serviceId\": \"games-online\",\n        \"productId\": \"138235321\"\n      },\n      \"paymentDetails\": [\n        {\n          \"id\": \"3goug3uvu32v3b\",\n          \"amount\": 100,\n          \"currency\": \"EUR\",\n          \"description\": \"FIFA EA Sports 24\",\n          \"isTaxIncluded\": false,\n          \"taxAmount\": 21\n        }\n      ]\n    },\n    \"referenceCode\": \"ref-pay-834tfr2rA3v8r8vr3rv\",\n    \"phoneNumber\": \"+34671999000\",\n    \"clientCorrelator\": \"req-12f2pgh448gh2hvrfrv\"\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "28e6c8cb-bbf3-49a8-bf42-feab92879d39",
+              "name": "Conflict",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    "prepare"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amountTransaction\": {\n    \"paymentAmount\": {\n      \"chargingInformation\": {\n        \"amount\": 100,\n        \"currency\": \"EUR\",\n        \"description\": \"FIFA EA Sports 24\",\n        \"isTaxIncluded\": false,\n        \"taxAmount\": 21\n      },\n      \"chargingMetaData\": {\n        \"merchantName\": \"EA Sports\",\n        \"merchantIdentifier\": \"eas-12345\",\n        \"fee\": 10,\n        \"purchaseCategoryCode\": \"games\",\n        \"channel\": \"web\",\n        \"serviceId\": \"games-online\",\n        \"productId\": \"138235321\"\n      },\n      \"paymentDetails\": [\n        {\n          \"id\": \"3goug3uvu32v3b\",\n          \"amount\": 100,\n          \"currency\": \"EUR\",\n          \"description\": \"FIFA EA Sports 24\",\n          \"isTaxIncluded\": false,\n          \"taxAmount\": 21\n        }\n      ]\n    },\n    \"referenceCode\": \"ref-pay-834tfr2rA3v8r8vr3rv\",\n    \"phoneNumber\": \"+34671999000\",\n    \"clientCorrelator\": \"req-12f2pgh448gh2hvrfrv\"\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ALREADY_EXISTS\",\n  \"status\": 409,\n  \"message\": \"Another session is created for the same UE\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "569670ce-e39c-4054-af90-ac08c8c157ff",
+              "name": "Client indicates content that is understable by the Server but unable to be processed.\nScenarios that may exist:\n  - Phone Number is required (\"code\": \"CARRIER_BILLING.PHONE_NUMBER_REQUIRED\",\"message\": \"Phone Number is required.\").\n  - Unauthorized amount requested (\"code\": \"CARRIER_BILLING.UNAUTHORIZED_AMOUNT\",\"message\": \"Unauthorized amount requested.\").\n  - Accumulated threshold amount for the user's mobile account overpassed (\"code\": \"CARRIER_BILLING.USER_AMOUNT_THRESHOLD_OVERPASSED\",\"message\": \"Unathorized payment request. Accumulated user mobile payments overpass account amount threshold.\").",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    "prepare"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amountTransaction\": {\n    \"paymentAmount\": {\n      \"chargingInformation\": {\n        \"amount\": 100,\n        \"currency\": \"EUR\",\n        \"description\": \"FIFA EA Sports 24\",\n        \"isTaxIncluded\": false,\n        \"taxAmount\": 21\n      },\n      \"chargingMetaData\": {\n        \"merchantName\": \"EA Sports\",\n        \"merchantIdentifier\": \"eas-12345\",\n        \"fee\": 10,\n        \"purchaseCategoryCode\": \"games\",\n        \"channel\": \"web\",\n        \"serviceId\": \"games-online\",\n        \"productId\": \"138235321\"\n      },\n      \"paymentDetails\": [\n        {\n          \"id\": \"3goug3uvu32v3b\",\n          \"amount\": 100,\n          \"currency\": \"EUR\",\n          \"description\": \"FIFA EA Sports 24\",\n          \"isTaxIncluded\": false,\n          \"taxAmount\": 21\n        }\n      ]\n    },\n    \"referenceCode\": \"ref-pay-834tfr2rA3v8r8vr3rv\",\n    \"phoneNumber\": \"+34671999000\",\n    \"clientCorrelator\": \"req-12f2pgh448gh2hvrfrv\"\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 422,\n  \"code\": \"CARRIER_BILLING.PHONE_NUMBER_REQUIRED\",\n  \"message\": \"Phone Number is required.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8fe58d1a-d2c6-4744-86fe-c94dbd2240ef",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    "prepare"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amountTransaction\": {\n    \"paymentAmount\": {\n      \"chargingInformation\": {\n        \"amount\": 100,\n        \"currency\": \"EUR\",\n        \"description\": \"FIFA EA Sports 24\",\n        \"isTaxIncluded\": false,\n        \"taxAmount\": 21\n      },\n      \"chargingMetaData\": {\n        \"merchantName\": \"EA Sports\",\n        \"merchantIdentifier\": \"eas-12345\",\n        \"fee\": 10,\n        \"purchaseCategoryCode\": \"games\",\n        \"channel\": \"web\",\n        \"serviceId\": \"games-online\",\n        \"productId\": \"138235321\"\n      },\n      \"paymentDetails\": [\n        {\n          \"id\": \"3goug3uvu32v3b\",\n          \"amount\": 100,\n          \"currency\": \"EUR\",\n          \"description\": \"FIFA EA Sports 24\",\n          \"isTaxIncluded\": false,\n          \"taxAmount\": 21\n        }\n      ]\n    },\n    \"referenceCode\": \"ref-pay-834tfr2rA3v8r8vr3rv\",\n    \"phoneNumber\": \"+34671999000\",\n    \"clientCorrelator\": \"req-12f2pgh448gh2hvrfrv\"\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Unknown server error. Typically a server bug.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3b6745cb-82a9-4ce9-b200-fc1b199128f7",
+              "name": "Service unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    "prepare"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amountTransaction\": {\n    \"paymentAmount\": {\n      \"chargingInformation\": {\n        \"amount\": 100,\n        \"currency\": \"EUR\",\n        \"description\": \"FIFA EA Sports 24\",\n        \"isTaxIncluded\": false,\n        \"taxAmount\": 21\n      },\n      \"chargingMetaData\": {\n        \"merchantName\": \"EA Sports\",\n        \"merchantIdentifier\": \"eas-12345\",\n        \"fee\": 10,\n        \"purchaseCategoryCode\": \"games\",\n        \"channel\": \"web\",\n        \"serviceId\": \"games-online\",\n        \"productId\": \"138235321\"\n      },\n      \"paymentDetails\": [\n        {\n          \"id\": \"3goug3uvu32v3b\",\n          \"amount\": 100,\n          \"currency\": \"EUR\",\n          \"description\": \"FIFA EA Sports 24\",\n          \"isTaxIncluded\": false,\n          \"taxAmount\": 21\n        }\n      ]\n    },\n    \"referenceCode\": \"ref-pay-834tfr2rA3v8r8vr3rv\",\n    \"phoneNumber\": \"+34671999000\",\n    \"clientCorrelator\": \"req-12f2pgh448gh2hvrfrv\"\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service Unavailable.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "aa68990d-854d-4c17-a323-7e22df07e625",
+              "name": "Request timeout exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    "prepare"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amountTransaction\": {\n    \"paymentAmount\": {\n      \"chargingInformation\": {\n        \"amount\": 100,\n        \"currency\": \"EUR\",\n        \"description\": \"FIFA EA Sports 24\",\n        \"isTaxIncluded\": false,\n        \"taxAmount\": 21\n      },\n      \"chargingMetaData\": {\n        \"merchantName\": \"EA Sports\",\n        \"merchantIdentifier\": \"eas-12345\",\n        \"fee\": 10,\n        \"purchaseCategoryCode\": \"games\",\n        \"channel\": \"web\",\n        \"serviceId\": \"games-online\",\n        \"productId\": \"138235321\"\n      },\n      \"paymentDetails\": [\n        {\n          \"id\": \"3goug3uvu32v3b\",\n          \"amount\": 100,\n          \"currency\": \"EUR\",\n          \"description\": \"FIFA EA Sports 24\",\n          \"isTaxIncluded\": false,\n          \"taxAmount\": 21\n        }\n      ]\n    },\n    \"referenceCode\": \"ref-pay-834tfr2rA3v8r8vr3rv\",\n    \"phoneNumber\": \"+34671999000\",\n    \"clientCorrelator\": \"req-12f2pgh448gh2hvrfrv\"\n  },\n  \"sink\": \"https://endpoint.example.com/sink\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Gateway Timeout",
+              "code": 504,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 504,\n  \"code\": \"TIMEOUT\",\n  \"message\": \"Request timeout exceeded.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6d1685ef-c7e8-4b3d-9ada-e4bc40a3f379",
+          "name": "Global System for Mobile Communications Validate a payment",
+          "request": {
+            "name": "Global System for Mobile Communications Validate a payment",
+            "description": {
+              "content": "Validate a given payment with a code, identified by its paymentId. This process is applicable for 2-STEP, when optionally required by business case.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "payments",
+                ":paymentId",
+                "validate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "paymentId",
+                  "description": "(Required) The payment identifier returned when the payment preparation was created."
+                },
+                {
+                  "description": "API root.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                },
+                {
+                  "description": "Base path for the Application Endpoint Discovery.",
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"authorizationId\": \"<string>\",\n  \"code\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "24b772f9-8c00-40e9-92f6-f21db039636e",
+              "name": "Validation Succeeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "validate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"authorizationId\": \"Fn34o8g239v3wrb3t\",\n  \"code\": \"352673\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5aef7909-b7a3-40f8-9706-04636136a021",
+              "name": "Invalid input.\nIn addition to regular INVALID_ARGUMENT scenario other scenarios may exist:\n  - authorizationId is not valid (\"code\": \"CARRIER_BILLING.INVALID_AUTHORIZATION_ID\",\"message\": \"Invalid authorizationId.\").\n  - code is not valid (\"code\": \"CARRIER_BILLING.INVALID_CODE\",\"message\": \"Invalid code.\").\n  - validation failed (\"code\": \"CARRIER_BILLING.VALIDATION_FAILED\",\"message\": \"the maximum number of attempts have been consumed for this validation.\").",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "validate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"authorizationId\": \"Fn34o8g239v3wrb3t\",\n  \"code\": \"352673\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Client specified an invalid argument, request body or query param.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e4212c81-a2fd-4724-a7d7-74be792b8a0e",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "validate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"authorizationId\": \"Fn34o8g239v3wrb3t\",\n  \"code\": \"352673\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a079b108-d95f-4ebb-8dfa-11aaae83d90b",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "validate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"authorizationId\": \"Fn34o8g239v3wrb3t\",\n  \"code\": \"352673\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1eb2fcf7-af85-4274-88a5-fc4b0c3f17d1",
+              "name": "Conflict",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "validate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"authorizationId\": \"Fn34o8g239v3wrb3t\",\n  \"code\": \"352673\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ALREADY_EXISTS\",\n  \"status\": 409,\n  \"message\": \"Payment already validated\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7790953a-a6f3-41c8-ad43-36d96f86e7c3",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "validate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"authorizationId\": \"Fn34o8g239v3wrb3t\",\n  \"code\": \"352673\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Unknown server error. Typically a server bug.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "43abfde0-4548-4419-8304-ea2de9a263cc",
+              "name": "Service unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "validate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"authorizationId\": \"Fn34o8g239v3wrb3t\",\n  \"code\": \"352673\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service Unavailable.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "45bd9abc-e650-4bcc-93fa-e1f7197de4eb",
+              "name": "Request timeout exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "validate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"authorizationId\": \"Fn34o8g239v3wrb3t\",\n  \"code\": \"352673\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Gateway Timeout",
+              "code": 504,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 504,\n  \"code\": \"TIMEOUT\",\n  \"message\": \"Request timeout exceeded.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0893d655-d8d6-422b-a530-399ddd509501",
+          "name": "Global System for Mobile Communications Confirm a payment",
+          "request": {
+            "name": "Global System for Mobile Communications Confirm a payment",
+            "description": {
+              "content": "Confirm a reservation of a given payment, identified by its paymentId.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "payments",
+                ":paymentId",
+                "confirm"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "paymentId",
+                  "description": "(Required) The payment identifier returned when the payment preparation was created."
+                },
+                {
+                  "description": "API root.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                },
+                {
+                  "description": "Base path for the Application Endpoint Discovery.",
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"phoneNumber\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bde3502b-9f80-4ca9-b30e-a57dceb7d6be",
+              "name": "Payment confirmation accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "confirm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34671999000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ccff2724-b758-4696-a6c3-ce6271f81df6",
+              "name": "Invalid input.\nCommon INVALID_ARGUMENT scenarios usually are:\n  - Schema validation failed (\"code\": \"INVALID_ARGUMENT\",\"message\": \"Client specified an invalid argument, request body or query param.\").\n  - paymentId is required (\"code\": \"INVALID_ARGUMENT\",\"message\": \"Expected property is missing: paymentId.\").",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "confirm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34671999000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Client specified an invalid argument, request body or query param.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3598eb9e-9fba-430c-a4c7-88d2d7419eb9",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "confirm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34671999000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "aa0fe65e-4bbd-4950-b9cc-e8472d84bdf3",
+              "name": "Client does not have sufficient permission.\nIn addition to regular PERMISSION_DENIED scenario other scenarios may exist:\n  - Phone Number provided not matching Access Token context (\"code\": \"INVALID_TOKEN_CONTEXT\",\"message\": \"Phone Number is not consistent with access token.\").\n  - Payment denied by business (\"code\": \"CARRIER_BILLING.PAYMENT_DENIED\",\"message\": \"Payment denied by business.\").",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "confirm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34671999000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "17508bae-3cf2-493c-afe6-76ef2fc5aba2",
+              "name": "Resource Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "confirm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34671999000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"NOT_FOUND\",\n  \"message\": \"The specified resource is not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3195c6d4-358c-483e-946d-64acef55da86",
+              "name": "Conflict. In addition of regular ALREADY_EXISTS scenario other scenarios may exist:\n  - paymentId is already confirmed (\"code\": \"CARRIER_BILLING.PAYMENT_CONFIRMED\",\"message\": \"Payment has been confirmed.\").\n  - paymentId is already cancelled (\"code\": \"CARRIER_BILLING.PAYMENT_CANCELLED\",\"message\": \"Payment has been cancelled.\").",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "confirm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34671999000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 409,\n  \"code\": \"ALREADY_EXISTS\",\n  \"message\": \"The resource that a client tried to create already exists.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d23a8784-31a0-4c52-8cc6-465ed328ca77",
+              "name": "Client indicates content that is understable by the Server but unable to be processed.\nScenarios that may exist:\n  - Phone Number is required (\"code\": \"CARRIER_BILLING.PHONE_NUMBER_REQUIRED\",\"message\": \"Phone Number is required\").",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "confirm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34671999000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 422,\n  \"code\": \"CARRIER_BILLING.PHONE_NUMBER_REQUIRED\",\n  \"message\": \"Phone Number is required.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e7d607ba-43b3-45b9-bf63-d72a5317e17c",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "confirm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34671999000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Unknown server error. Typically a server bug.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5f3ac1f4-dd22-4b02-8141-800befe578fd",
+              "name": "Service unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "confirm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34671999000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service Unavailable.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2147870e-59bb-4221-9fbd-8f6ca08ff200",
+              "name": "Request timeout exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "confirm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34671999000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Gateway Timeout",
+              "code": 504,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 504,\n  \"code\": \"TIMEOUT\",\n  \"message\": \"Request timeout exceeded.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9d351293-6971-4deb-bf65-970bba167690",
+          "name": "Global System for Mobile Communications Cancel a payment",
+          "request": {
+            "name": "Global System for Mobile Communications Cancel a payment",
+            "description": {
+              "content": "Cancel a reservation of a given payment, identified by its paymentId.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "payments",
+                ":paymentId",
+                "cancel"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "paymentId",
+                  "description": "(Required) The payment identifier returned when the payment preparation was created."
+                },
+                {
+                  "description": "API root.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                },
+                {
+                  "description": "Base path for the Application Endpoint Discovery.",
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"phoneNumber\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "096051e0-80fe-42c8-bf2f-db8cfa920856",
+              "name": "Payment Cancellation Accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34671999000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4d6a0cc8-1c76-4442-a88b-02a4be041585",
+              "name": "Invalid input.\nCommon INVALID_ARGUMENT scenarios usually are:\n  - Schema validation failed (\"code\": \"INVALID_ARGUMENT\",\"message\": \"Client specified an invalid argument, request body or query param.\").\n  - paymentId is required (\"code\": \"INVALID_ARGUMENT\",\"message\": \"Expected property is missing: paymentId.\").",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34671999000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Client specified an invalid argument, request body or query param.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "12c38ab9-231b-4b05-85e3-4880601c9c14",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34671999000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e4864ada-c894-43ec-bbe0-da00391963cd",
+              "name": "Client does not have sufficient permission.\nIn addition to regular PERMISSION_DENIED scenario other scenarios may exist:\n  - Phone Number provided not matching Access Token context (\"code\": \"INVALID_TOKEN_CONTEXT\",\"message\": \"Phone Number is not consistent with access token.\").",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34671999000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8f3b6b54-8005-4751-ae56-abc56d7528eb",
+              "name": "Resource Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34671999000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"NOT_FOUND\",\n  \"message\": \"The specified resource is not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "59357758-c2b7-458f-be58-1bfd65299600",
+              "name": "Conflict. In addition of regular ALREADY_EXISTS scenario other scenarios may exist:\n  - paymentId is already confirmed (\"code\": \"CARRIER_BILLING.PAYMENT_CONFIRMED\",\"message\": \"Payment has been confirmed.\").\n  - paymentId is already cancelled (\"code\": \"CARRIER_BILLING.PAYMENT_CANCELLED\",\"message\": \"Payment has been cancelled.\").",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34671999000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 409,\n  \"code\": \"ALREADY_EXISTS\",\n  \"message\": \"The resource that a client tried to create already exists.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3434f11b-79bb-4886-bbd3-1ced92a785a5",
+              "name": "Client indicates content that is understable by the Server but unable to be processed.\nScenarios that may exist:\n  - Phone Number is required (\"code\": \"CARRIER_BILLING.PHONE_NUMBER_REQUIRED\",\"message\": \"Phone Number is required\").",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34671999000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 422,\n  \"code\": \"CARRIER_BILLING.PHONE_NUMBER_REQUIRED\",\n  \"message\": \"Phone Number is required.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a7d03435-de78-47a9-b6cb-b1249abeffcc",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34671999000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Unknown server error. Typically a server bug.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7d740bd1-4f0c-4e0d-a907-4968650f868f",
+              "name": "Service unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34671999000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service Unavailable.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "44f8dd7f-4705-4f23-acf2-d7765bbfa591",
+              "name": "Request timeout exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) The payment identifier returned when the payment preparation was created."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+34671999000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Gateway Timeout",
+              "code": 504,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 504,\n  \"code\": \"TIMEOUT\",\n  \"message\": \"Request timeout exceeded.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "API root.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://localhost:443",
+      "key": "apiRoot"
+    },
+    {
+      "description": {
+        "content": "Base path for the Application Endpoint Discovery.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "application-endpoint-discovery/vwip",
+      "key": "basePath"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/{{basePath}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f64e8d85-19bd-4fff-a95c-659cf74863ab",
+    "name": "Global System for Mobile Communications GSMA Camara Project Endpoint Discovery Application Two Step Payment API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Application Discovery API extends beyond the capabilities of the Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone but also directly linking to the application endpoints within those Edge Cloud Zones.\n\nContact Support:\n Email: sp-edc@lists.camaraproject.org",
+      "type": "text/plain"
+    }
+  }
+}

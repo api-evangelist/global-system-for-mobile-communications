@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Global System for Mobile Communications GSMA Camara Project Endpoint Discovery Application One Step Payment API",
+    "version": "0.1.0-wip"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "One Step Payment",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Global System for Mobile Communications Create a new Payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/{basePath}/payments",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new payment for subsequent charging to an end user. Carrier Billing Server will apply the charging according to business configuration for the end user."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

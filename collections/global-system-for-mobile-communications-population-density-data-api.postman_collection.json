@@ -1,0 +1,656 @@
+{
+  "item": [
+    {
+      "id": "e834a545-e447-4ee2-af3f-d64bfc9ce972",
+      "name": "Population Density Data",
+      "description": {
+        "content": "Operations to retrieve population density information.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "19221b5f-414c-48f8-9e94-8770274cb8ee",
+          "name": "Global System for Mobile Communications Retrieves population density information in a specified area",
+          "request": {
+            "name": "Global System for Mobile Communications Retrieves population density information in a specified area",
+            "description": {
+              "content": "Retrieves population density estimation together with the estimation range related  for a time slot for a given area (described as a polygon) as a data set consisting of a sequence of equally-sized objects covering the input polygon area.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "retrieve"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "API root.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                },
+                {
+                  "description": "Base path for the Application Endpoint Discovery.",
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services.",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"area\": {\n    \"areaType\": \"<string>\"\n  },\n  \"startDate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"precision\": 7,\n  \"sink\": \"<url>\",\n  \"sinkCredential\": {\n    \"credentialType\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6ab42dee-e992-4187-bd0b-c4717d87f33d",
+              "name": "Population density data result.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"area\": {\n    \"areaType\": \"POLYGON\",\n    \"boundary\": [\n      {\n        \"latitude\": 45.754114,\n        \"longitude\": 4.860374\n      },\n      {\n        \"latitude\": 45.753845,\n        \"longitude\": 4.863185\n      },\n      {\n        \"latitude\": 45.75249,\n        \"longitude\": 4.861876\n      },\n      {\n        \"latitude\": 45.751224,\n        \"longitude\": 4.861125\n      },\n      {\n        \"latitude\": 45.751442,\n        \"longitude\": 4.859827\n      }\n    ]\n  },\n  \"startDate\": \"2024-04-23T14:44:18.165Z\",\n  \"endDate\": \"2024-04-23T14:44:18.165Z\",\n  \"precision\": 7\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"SUPPORTED_AREA\",\n  \"timedPopulationDensityData\": [\n    {\n      \"startTime\": \"2024-01-03T10:00:00Z\",\n      \"endTime\": \"2024-01-03T11:00:00Z\",\n      \"cellPopulationDensityData\": [\n        {\n          \"geohash\": \"ezdqemf\",\n          \"populationDensityData\": {\n            \"dataType\": \"DENSITY_ESTIMATION\",\n            \"maxPplDensity\": 150,\n            \"minPplDensity\": 30,\n            \"pplDensity\": 60\n          }\n        },\n        {\n          \"geohash\": \"ezdqemg\",\n          \"populationDensityData\": {\n            \"dataType\": \"DENSITY_ESTIMATION\",\n            \"maxPplDensity\": 100,\n            \"minPplDensity\": 40,\n            \"pplDensity\": 90\n          }\n        },\n        {\n          \"geohash\": \"ezdqemu\",\n          \"populationDensityData\": {\n            \"dataType\": \"LOW_DENSITY\"\n          }\n        }\n      ]\n    },\n    {\n      \"startTime\": \"2024-01-03T11:00:00Z\",\n      \"endTime\": \"2024-01-03T12:00:00Z\",\n      \"cellPopulationDensityData\": [\n        {\n          \"geohash\": \"ezdqemf\",\n          \"populationDensityData\": {\n            \"dataType\": \"DENSITY_ESTIMATION\",\n            \"maxPplDensity\": 100,\n            \"minPplDensity\": 30,\n            \"pplDensity\": 70\n          }\n        },\n        {\n          \"geohash\": \"ezdqemg\",\n          \"populationDensityData\": {\n            \"dataType\": \"DENSITY_ESTIMATION\",\n            \"maxPplDensity\": 200,\n            \"minPplDensity\": 40,\n            \"pplDensity\": 100\n          }\n        },\n        {\n          \"geohash\": \"ezdqemu\",\n          \"populationDensityData\": {\n            \"dataType\": \"DENSITY_ESTIMATION\",\n            \"maxPplDensity\": 200,\n            \"minPplDensity\": 40,\n            \"pplDensity\": 100\n          }\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e922bab8-55f3-4e3a-8919-9d645d9e9eb8",
+              "name": "Population density data requested. This response is returned when the behaviour of the API is asynchronous.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"area\": {\n    \"areaType\": \"POLYGON\",\n    \"boundary\": [\n      {\n        \"latitude\": 45.754114,\n        \"longitude\": 4.860374\n      },\n      {\n        \"latitude\": 45.753845,\n        \"longitude\": 4.863185\n      },\n      {\n        \"latitude\": 45.75249,\n        \"longitude\": 4.861876\n      },\n      {\n        \"latitude\": 45.751224,\n        \"longitude\": 4.861125\n      },\n      {\n        \"latitude\": 45.751442,\n        \"longitude\": 4.859827\n      }\n    ]\n  },\n  \"startDate\": \"2024-04-23T14:44:18.165Z\",\n  \"endDate\": \"2024-04-23T14:44:18.165Z\",\n  \"precision\": 7\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "74652e30-cb38-47ca-a8f4-2d138b0e3eac",
+              "name": "Problem with the client request. In addition to generic scenarios of `INVALID_ARGUMENT`, `INVALID_CREDENTIAL`, `INVALID_TOKEN`, another scenarios may exist:\n  - The area is not a polygon shape or exceeds supported complexity (\"code\": \"POPULATION_DENSITY_DATA.INVALID_AREA\", \"message\": \"The area is not a polygon shape or exceeds supported complexity\")\n  - Indicated combination of area, time interval and precision is too big (\"code\": \"POPULATION_DENSITY_DATA.UNSUPPPORTED_REQUEST\", \"message\": \"Indicated combination of area, time interval and precision is too big\")\n  - Indicated `startDate` is greater than the maximum allowed (\"code\": \"POPULATION_DENSITY_DATA.MAX_STARTDATE_EXCEEDED\", \"message\": \"Indicated startDate is greater than the maximum allowed\")\n  - Indicated `startDate` is earlier than the minimum allowed (\"code\": \"POPULATION_DENSITY_DATA.MIN_STARTDATE_EXCEEDED\", \"message\": \"Indicated startDate is earlier than the minimum allowed\")\n  - Indicated `endDate` is earlier than the `startDate` (\"code\": \"POPULATION_DENSITY_DATA.INVALID_END_DATE\", \"message\": \"Indicated endDate is earlier than the startDate\")\n  - Indicated time period is greater than the maximum allowed (More than maximum hours between startDate and endDate) (\"code\": \"POPULATION_DENSITY_DATA.MAX_TIME_PERIOD_EXCEEDED\", \"message\": \"Indicated time period is greater than the maximum allowed (More than maximum hours between startDate and endDate)\")\n  - Indicated cell precision (Geohash level) is not supported (\"code\": \"POPULATION_DENSITY_DATA.UNSUPPORTED_PRECISION\", \"message\": \"Indicated cell precision (Geohash level) is not supported\")\n  - Indicated combination of area, time interval and precision is too big for a sync response (\"code\": \"POPULATION_DENSITY_DATA.UNSUPPORTED_SYNC_RESPONSE\", \"message\": \"Indicated combination of area, time interval and precision is too big for a sync response\")",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"area\": {\n    \"areaType\": \"POLYGON\",\n    \"boundary\": [\n      {\n        \"latitude\": 45.754114,\n        \"longitude\": 4.860374\n      },\n      {\n        \"latitude\": 45.753845,\n        \"longitude\": 4.863185\n      },\n      {\n        \"latitude\": 45.75249,\n        \"longitude\": 4.861876\n      },\n      {\n        \"latitude\": 45.751224,\n        \"longitude\": 4.861125\n      },\n      {\n        \"latitude\": 45.751442,\n        \"longitude\": 4.859827\n      }\n    ]\n  },\n  \"startDate\": \"2024-04-23T14:44:18.165Z\",\n  \"endDate\": \"2024-04-23T14:44:18.165Z\",\n  \"precision\": 7\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Invalid input\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d1ae64d1-b62b-4fef-a499-0da53f78a523",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"area\": {\n    \"areaType\": \"POLYGON\",\n    \"boundary\": [\n      {\n        \"latitude\": 45.754114,\n        \"longitude\": 4.860374\n      },\n      {\n        \"latitude\": 45.753845,\n        \"longitude\": 4.863185\n      },\n      {\n        \"latitude\": 45.75249,\n        \"longitude\": 4.861876\n      },\n      {\n        \"latitude\": 45.751224,\n        \"longitude\": 4.861125\n      },\n      {\n        \"latitude\": 45.751442,\n        \"longitude\": 4.859827\n      }\n    ]\n  },\n  \"startDate\": \"2024-04-23T14:44:18.165Z\",\n  \"endDate\": \"2024-04-23T14:44:18.165Z\",\n  \"precision\": 7\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Authorization failed: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4e9a18cf-ea11-47d6-85e6-51802c5f1322",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"area\": {\n    \"areaType\": \"POLYGON\",\n    \"boundary\": [\n      {\n        \"latitude\": 45.754114,\n        \"longitude\": 4.860374\n      },\n      {\n        \"latitude\": 45.753845,\n        \"longitude\": 4.863185\n      },\n      {\n        \"latitude\": 45.75249,\n        \"longitude\": 4.861876\n      },\n      {\n        \"latitude\": 45.751224,\n        \"longitude\": 4.861125\n      },\n      {\n        \"latitude\": 45.751442,\n        \"longitude\": 4.859827\n      }\n    ]\n  },\n  \"startDate\": \"2024-04-23T14:44:18.165Z\",\n  \"endDate\": \"2024-04-23T14:44:18.165Z\",\n  \"precision\": 7\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Operation not allowed: ...\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5f0d72a4-9cb2-4398-a87f-9294acbbae68",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"area\": {\n    \"areaType\": \"POLYGON\",\n    \"boundary\": [\n      {\n        \"latitude\": 45.754114,\n        \"longitude\": 4.860374\n      },\n      {\n        \"latitude\": 45.753845,\n        \"longitude\": 4.863185\n      },\n      {\n        \"latitude\": 45.75249,\n        \"longitude\": 4.861876\n      },\n      {\n        \"latitude\": 45.751224,\n        \"longitude\": 4.861125\n      },\n      {\n        \"latitude\": 45.751442,\n        \"longitude\": 4.859827\n      }\n    ]\n  },\n  \"startDate\": \"2024-04-23T14:44:18.165Z\",\n  \"endDate\": \"2024-04-23T14:44:18.165Z\",\n  \"precision\": 7\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"NOT_FOUND\",\n  \"message\": \"The specified resource is not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "eaf2361b-ba55-45c4-98aa-cb85cb92a59c",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"area\": {\n    \"areaType\": \"POLYGON\",\n    \"boundary\": [\n      {\n        \"latitude\": 45.754114,\n        \"longitude\": 4.860374\n      },\n      {\n        \"latitude\": 45.753845,\n        \"longitude\": 4.863185\n      },\n      {\n        \"latitude\": 45.75249,\n        \"longitude\": 4.861876\n      },\n      {\n        \"latitude\": 45.751224,\n        \"longitude\": 4.861125\n      },\n      {\n        \"latitude\": 45.751442,\n        \"longitude\": 4.859827\n      }\n    ]\n  },\n  \"startDate\": \"2024-04-23T14:44:18.165Z\",\n  \"endDate\": \"2024-04-23T14:44:18.165Z\",\n  \"precision\": 7\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c4a875af-e3bf-4503-a30d-1cf965d3ad94",
+              "name": "Service unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"area\": {\n    \"areaType\": \"POLYGON\",\n    \"boundary\": [\n      {\n        \"latitude\": 45.754114,\n        \"longitude\": 4.860374\n      },\n      {\n        \"latitude\": 45.753845,\n        \"longitude\": 4.863185\n      },\n      {\n        \"latitude\": 45.75249,\n        \"longitude\": 4.861876\n      },\n      {\n        \"latitude\": 45.751224,\n        \"longitude\": 4.861125\n      },\n      {\n        \"latitude\": 45.751442,\n        \"longitude\": 4.859827\n      }\n    ]\n  },\n  \"startDate\": \"2024-04-23T14:44:18.165Z\",\n  \"endDate\": \"2024-04-23T14:44:18.165Z\",\n  \"precision\": 7\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service unavailable\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "API root.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://localhost:443",
+      "key": "apiRoot"
+    },
+    {
+      "description": {
+        "content": "Base path for the Application Endpoint Discovery.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "application-endpoint-discovery/vwip",
+      "key": "basePath"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/{{basePath}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "5fabdb65-189c-44de-b068-c5698384afd8",
+    "name": "Global System for Mobile Communications GSMA Camara Project Endpoint Discovery Application Population Density Data API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Application Discovery API extends beyond the capabilities of the Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone but also directly linking to the application endpoints within those Edge Cloud Zones.\n\nContact Support:\n Email: sp-edc@lists.camaraproject.org",
+      "type": "text/plain"
+    }
+  }
+}

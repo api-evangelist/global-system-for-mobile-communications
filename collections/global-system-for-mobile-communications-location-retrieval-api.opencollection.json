@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Global System for Mobile Communications GSMA Camara Project Endpoint Discovery Application Location Retrieval API",
+    "version": "0.1.0-wip"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Location Retrieval",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Global System for Mobile Communications Execute location retrieval for a user equipment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/{basePath}/retrieve",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Retrieve the area where a certain user device is localized."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

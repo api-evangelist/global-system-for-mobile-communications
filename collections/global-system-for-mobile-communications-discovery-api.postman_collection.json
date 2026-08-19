@@ -1,0 +1,2599 @@
+{
+  "item": [
+    {
+      "id": "3971c134-a122-4ce7-84e4-dff161ef1a31",
+      "name": "Discovery",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "722136f5-3fb6-438f-afd9-a6cea2bfbe5e",
+          "name": "Global System for Mobile Communications Returns the Endpoint of the closest App Instance to user device\nidentified in the request.",
+          "request": {
+            "name": "Global System for Mobile Communications Returns the Endpoint of the closest App Instance to user device\nidentified in the request.",
+            "description": {
+              "content": "On receiving this request, the network will return the name\nof the App Instance with the shortest network path to the end user\ndevice identified in the request.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "app-endpoints"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "(Required) Filter the Edge Cloud Zones according to the parameter value.\nFor this API the only supported value is `closest`.\n"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "API root.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                },
+                {
+                  "description": "Base path for the Application Endpoint Discovery.",
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "The public IPv4 address allocated to the device.",
+                "key": "IPv4-Address",
+                "value": "<ipv4>"
+              },
+              {
+                "disabled": false,
+                "description": "The public IPv6 address allocated to the device.",
+                "key": "IPv6-Address",
+                "value": "<ipv6>"
+              },
+              {
+                "disabled": false,
+                "description": "3GPP network access identifier for the subscription\nbeing used by the device.\n",
+                "key": "Network-Access-Identifier",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) MSISDN in E.164 format (starting with country code) of\nthe mobile subscription being used by the device. Optionally\nprefixed with '+'.\n",
+                "key": "Phone-Number",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) A globally unique identifier associated with the application.\nOP generates this identifier when the application is submitted over\nNBI.\n",
+                "key": "AppId",
+                "value": "<uuid>"
+              },
+              {
+                "disabled": false,
+                "description": "When the API Consumer includes the \"X-Correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"X-Correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n",
+                "key": "X-Correlator",
+                "value": "<uuid>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "58015048-a221-4343-9960-a438c1982b30",
+              "name": "Successful response, returning the closest App Instance Endpoint\nZone to the user device identified in the request header.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "app-endpoints"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "The public IPv4 address allocated to the device.",
+                    "key": "IPv4-Address",
+                    "value": "84.125.93.10"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public IPv6 address allocated to the device.",
+                    "key": "IPv6-Address",
+                    "value": "2001:db8:85a3:8d3:1319:8a2e:370:7348"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "3GPP network access identifier for the subscription\nbeing used by the device.\n",
+                    "key": "Network-Access-Identifier",
+                    "value": "4d596ac1-7822-4927-a3c5-d72e1f922c94@domain.com"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) MSISDN in E.164 format (starting with country code) of\nthe mobile subscription being used by the device. Optionally\nprefixed with '+'.\n",
+                    "key": "Phone-Number",
+                    "value": "+441234567890"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) A globally unique identifier associated with the application.\nOP generates this identifier when the application is submitted over\nNBI.\n",
+                    "key": "AppId",
+                    "value": "<uuid>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "When the API Consumer includes the \"X-Correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"X-Correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n",
+                    "key": "X-Correlator",
+                    "value": "<uuid>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "baaf8a1b-0bbf-4160-9e2c-a975ac7c9419",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "app-endpoints"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "The public IPv4 address allocated to the device.",
+                    "key": "IPv4-Address",
+                    "value": "84.125.93.10"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public IPv6 address allocated to the device.",
+                    "key": "IPv6-Address",
+                    "value": "2001:db8:85a3:8d3:1319:8a2e:370:7348"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "3GPP network access identifier for the subscription\nbeing used by the device.\n",
+                    "key": "Network-Access-Identifier",
+                    "value": "4d596ac1-7822-4927-a3c5-d72e1f922c94@domain.com"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) MSISDN in E.164 format (starting with country code) of\nthe mobile subscription being used by the device. Optionally\nprefixed with '+'.\n",
+                    "key": "Phone-Number",
+                    "value": "+441234567890"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) A globally unique identifier associated with the application.\nOP generates this identifier when the application is submitted over\nNBI.\n",
+                    "key": "AppId",
+                    "value": "<uuid>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "When the API Consumer includes the \"X-Correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"X-Correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n",
+                    "key": "X-Correlator",
+                    "value": "<uuid>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "When the API Consumer includes the \"X-Correlator\" header in the request,\n the API provider must include it in the response with the same value t\n hat was used in the request. Otherwise, it is optional to include the\n \"X-Correlator\" header in the response with any valid value.\n Recommendation is to use UUID for values.\n",
+                  "key": "X-Correlator",
+                  "value": "06ea2162-b9d0-a1f6-b2ad-9cef6c68fd8e"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"INVALID_ARGUMENT\",\n  \"status\": 400,\n  \"message\": \"Insufficient parameters: At least one of Network-Access-Identifier, Phone-Number or IP-Address must be specified, or, the API must be called by a client on a network-attached device (hence passing the source IP in the request header).\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "039c419b-92b5-4a44-8484-30c69bfc0918",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "app-endpoints"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "The public IPv4 address allocated to the device.",
+                    "key": "IPv4-Address",
+                    "value": "84.125.93.10"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public IPv6 address allocated to the device.",
+                    "key": "IPv6-Address",
+                    "value": "2001:db8:85a3:8d3:1319:8a2e:370:7348"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "3GPP network access identifier for the subscription\nbeing used by the device.\n",
+                    "key": "Network-Access-Identifier",
+                    "value": "4d596ac1-7822-4927-a3c5-d72e1f922c94@domain.com"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) MSISDN in E.164 format (starting with country code) of\nthe mobile subscription being used by the device. Optionally\nprefixed with '+'.\n",
+                    "key": "Phone-Number",
+                    "value": "+441234567890"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) A globally unique identifier associated with the application.\nOP generates this identifier when the application is submitted over\nNBI.\n",
+                    "key": "AppId",
+                    "value": "<uuid>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "When the API Consumer includes the \"X-Correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"X-Correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n",
+                    "key": "X-Correlator",
+                    "value": "<uuid>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "When the API Consumer includes the \"X-Correlator\" header in the request,\n the API provider must include it in the response with the same value t\n hat was used in the request. Otherwise, it is optional to include the\n \"X-Correlator\" header in the response with any valid value.\n Recommendation is to use UUID for values.\n",
+                  "key": "X-Correlator",
+                  "value": "06ea2162-b9d0-a1f6-b2ad-9cef6c68fd8e"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"UNAUTHENTICATED\",\n  \"status\": 401,\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "02c6d48b-68c7-4c68-b83c-0205e2ff0323",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "app-endpoints"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "The public IPv4 address allocated to the device.",
+                    "key": "IPv4-Address",
+                    "value": "84.125.93.10"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public IPv6 address allocated to the device.",
+                    "key": "IPv6-Address",
+                    "value": "2001:db8:85a3:8d3:1319:8a2e:370:7348"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "3GPP network access identifier for the subscription\nbeing used by the device.\n",
+                    "key": "Network-Access-Identifier",
+                    "value": "4d596ac1-7822-4927-a3c5-d72e1f922c94@domain.com"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) MSISDN in E.164 format (starting with country code) of\nthe mobile subscription being used by the device. Optionally\nprefixed with '+'.\n",
+                    "key": "Phone-Number",
+                    "value": "+441234567890"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) A globally unique identifier associated with the application.\nOP generates this identifier when the application is submitted over\nNBI.\n",
+                    "key": "AppId",
+                    "value": "<uuid>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "When the API Consumer includes the \"X-Correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"X-Correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n",
+                    "key": "X-Correlator",
+                    "value": "<uuid>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "When the API Consumer includes the \"X-Correlator\" header in the request,\n the API provider must include it in the response with the same value t\n hat was used in the request. Otherwise, it is optional to include the\n \"X-Correlator\" header in the response with any valid value.\n Recommendation is to use UUID for values.\n",
+                  "key": "X-Correlator",
+                  "value": "06ea2162-b9d0-a1f6-b2ad-9cef6c68fd8e"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"PERMISSION_DENIED\",\n  \"status\": 403,\n  \"message\": \"Client does not have sufficient permissions to perform this action\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "21c86f9f-0b39-45a0-b899-7521896da772",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "app-endpoints"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "The public IPv4 address allocated to the device.",
+                    "key": "IPv4-Address",
+                    "value": "84.125.93.10"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public IPv6 address allocated to the device.",
+                    "key": "IPv6-Address",
+                    "value": "2001:db8:85a3:8d3:1319:8a2e:370:7348"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "3GPP network access identifier for the subscription\nbeing used by the device.\n",
+                    "key": "Network-Access-Identifier",
+                    "value": "4d596ac1-7822-4927-a3c5-d72e1f922c94@domain.com"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) MSISDN in E.164 format (starting with country code) of\nthe mobile subscription being used by the device. Optionally\nprefixed with '+'.\n",
+                    "key": "Phone-Number",
+                    "value": "+441234567890"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) A globally unique identifier associated with the application.\nOP generates this identifier when the application is submitted over\nNBI.\n",
+                    "key": "AppId",
+                    "value": "<uuid>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "When the API Consumer includes the \"X-Correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"X-Correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n",
+                    "key": "X-Correlator",
+                    "value": "<uuid>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "When the API Consumer includes the \"X-Correlator\" header in the request,\n the API provider must include it in the response with the same value t\n hat was used in the request. Otherwise, it is optional to include the\n \"X-Correlator\" header in the response with any valid value.\n Recommendation is to use UUID for values.\n",
+                  "key": "X-Correlator",
+                  "value": "06ea2162-b9d0-a1f6-b2ad-9cef6c68fd8e"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"NOT_FOUND\",\n  \"status\": 404,\n  \"message\": \"No device found for the specified parameters\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d262d252-dc57-4afd-ba89-ff37a49eeb82",
+              "name": "Method Not Allowed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "app-endpoints"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "The public IPv4 address allocated to the device.",
+                    "key": "IPv4-Address",
+                    "value": "84.125.93.10"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public IPv6 address allocated to the device.",
+                    "key": "IPv6-Address",
+                    "value": "2001:db8:85a3:8d3:1319:8a2e:370:7348"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "3GPP network access identifier for the subscription\nbeing used by the device.\n",
+                    "key": "Network-Access-Identifier",
+                    "value": "4d596ac1-7822-4927-a3c5-d72e1f922c94@domain.com"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) MSISDN in E.164 format (starting with country code) of\nthe mobile subscription being used by the device. Optionally\nprefixed with '+'.\n",
+                    "key": "Phone-Number",
+                    "value": "+441234567890"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) A globally unique identifier associated with the application.\nOP generates this identifier when the application is submitted over\nNBI.\n",
+                    "key": "AppId",
+                    "value": "<uuid>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "When the API Consumer includes the \"X-Correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"X-Correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n",
+                    "key": "X-Correlator",
+                    "value": "<uuid>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Method Not Allowed",
+              "code": 405,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "When the API Consumer includes the \"X-Correlator\" header in the request,\n the API provider must include it in the response with the same value t\n hat was used in the request. Otherwise, it is optional to include the\n \"X-Correlator\" header in the response with any valid value.\n Recommendation is to use UUID for values.\n",
+                  "key": "X-Correlator",
+                  "value": "06ea2162-b9d0-a1f6-b2ad-9cef6c68fd8e"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"METHOD_NOT_ALLOWED\",\n  \"status\": 405,\n  \"message\": \"The request method is not supported by this resource\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7ecd45a0-da38-4eb9-9181-13988b5f44b7",
+              "name": "Not Acceptable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "app-endpoints"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "The public IPv4 address allocated to the device.",
+                    "key": "IPv4-Address",
+                    "value": "84.125.93.10"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public IPv6 address allocated to the device.",
+                    "key": "IPv6-Address",
+                    "value": "2001:db8:85a3:8d3:1319:8a2e:370:7348"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "3GPP network access identifier for the subscription\nbeing used by the device.\n",
+                    "key": "Network-Access-Identifier",
+                    "value": "4d596ac1-7822-4927-a3c5-d72e1f922c94@domain.com"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) MSISDN in E.164 format (starting with country code) of\nthe mobile subscription being used by the device. Optionally\nprefixed with '+'.\n",
+                    "key": "Phone-Number",
+                    "value": "+441234567890"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) A globally unique identifier associated with the application.\nOP generates this identifier when the application is submitted over\nNBI.\n",
+                    "key": "AppId",
+                    "value": "<uuid>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "When the API Consumer includes the \"X-Correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"X-Correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n",
+                    "key": "X-Correlator",
+                    "value": "<uuid>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "When the API Consumer includes the \"X-Correlator\" header in the request,\n the API provider must include it in the response with the same value t\n hat was used in the request. Otherwise, it is optional to include the\n \"X-Correlator\" header in the response with any valid value.\n Recommendation is to use UUID for values.\n",
+                  "key": "X-Correlator",
+                  "value": "06ea2162-b9d0-a1f6-b2ad-9cef6c68fd8e"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"NOT_ACCEPTABLE\",\n  \"status\": 406,\n  \"message\": \"The server cannot produce a response matching the content requested by the client through Accept-* headers\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "84b5df15-e381-4fba-9e5d-94be5fa695ee",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "app-endpoints"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "The public IPv4 address allocated to the device.",
+                    "key": "IPv4-Address",
+                    "value": "84.125.93.10"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public IPv6 address allocated to the device.",
+                    "key": "IPv6-Address",
+                    "value": "2001:db8:85a3:8d3:1319:8a2e:370:7348"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "3GPP network access identifier for the subscription\nbeing used by the device.\n",
+                    "key": "Network-Access-Identifier",
+                    "value": "4d596ac1-7822-4927-a3c5-d72e1f922c94@domain.com"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) MSISDN in E.164 format (starting with country code) of\nthe mobile subscription being used by the device. Optionally\nprefixed with '+'.\n",
+                    "key": "Phone-Number",
+                    "value": "+441234567890"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) A globally unique identifier associated with the application.\nOP generates this identifier when the application is submitted over\nNBI.\n",
+                    "key": "AppId",
+                    "value": "<uuid>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "When the API Consumer includes the \"X-Correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"X-Correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n",
+                    "key": "X-Correlator",
+                    "value": "<uuid>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "When the API Consumer includes the \"X-Correlator\" header in the request,\n the API provider must include it in the response with the same value t\n hat was used in the request. Otherwise, it is optional to include the\n \"X-Correlator\" header in the response with any valid value.\n Recommendation is to use UUID for values.\n",
+                  "key": "X-Correlator",
+                  "value": "06ea2162-b9d0-a1f6-b2ad-9cef6c68fd8e"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"TOO_MANY_REQUESTS\",\n  \"status\": 429,\n  \"message\": \"Either out of resource quota or reaching rate limiting\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "09e18c9a-b6bd-40a6-b338-88405361825a",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "app-endpoints"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "The public IPv4 address allocated to the device.",
+                    "key": "IPv4-Address",
+                    "value": "84.125.93.10"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public IPv6 address allocated to the device.",
+                    "key": "IPv6-Address",
+                    "value": "2001:db8:85a3:8d3:1319:8a2e:370:7348"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "3GPP network access identifier for the subscription\nbeing used by the device.\n",
+                    "key": "Network-Access-Identifier",
+                    "value": "4d596ac1-7822-4927-a3c5-d72e1f922c94@domain.com"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) MSISDN in E.164 format (starting with country code) of\nthe mobile subscription being used by the device. Optionally\nprefixed with '+'.\n",
+                    "key": "Phone-Number",
+                    "value": "+441234567890"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) A globally unique identifier associated with the application.\nOP generates this identifier when the application is submitted over\nNBI.\n",
+                    "key": "AppId",
+                    "value": "<uuid>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "When the API Consumer includes the \"X-Correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"X-Correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n",
+                    "key": "X-Correlator",
+                    "value": "<uuid>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "When the API Consumer includes the \"X-Correlator\" header in the request,\n the API provider must include it in the response with the same value t\n hat was used in the request. Otherwise, it is optional to include the\n \"X-Correlator\" header in the response with any valid value.\n Recommendation is to use UUID for values.\n",
+                  "key": "X-Correlator",
+                  "value": "06ea2162-b9d0-a1f6-b2ad-9cef6c68fd8e"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"INTERNAL\",\n  \"status\": 500,\n  \"message\": \"The service is currently not available\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1a6fe874-ecd3-4540-af00-5e4ed7d5ab72",
+              "name": "Bad Gateway",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "app-endpoints"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "The public IPv4 address allocated to the device.",
+                    "key": "IPv4-Address",
+                    "value": "84.125.93.10"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public IPv6 address allocated to the device.",
+                    "key": "IPv6-Address",
+                    "value": "2001:db8:85a3:8d3:1319:8a2e:370:7348"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "3GPP network access identifier for the subscription\nbeing used by the device.\n",
+                    "key": "Network-Access-Identifier",
+                    "value": "4d596ac1-7822-4927-a3c5-d72e1f922c94@domain.com"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) MSISDN in E.164 format (starting with country code) of\nthe mobile subscription being used by the device. Optionally\nprefixed with '+'.\n",
+                    "key": "Phone-Number",
+                    "value": "+441234567890"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) A globally unique identifier associated with the application.\nOP generates this identifier when the application is submitted over\nNBI.\n",
+                    "key": "AppId",
+                    "value": "<uuid>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "When the API Consumer includes the \"X-Correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"X-Correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n",
+                    "key": "X-Correlator",
+                    "value": "<uuid>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Gateway",
+              "code": 502,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "When the API Consumer includes the \"X-Correlator\" header in the request,\n the API provider must include it in the response with the same value t\n hat was used in the request. Otherwise, it is optional to include the\n \"X-Correlator\" header in the response with any valid value.\n Recommendation is to use UUID for values.\n",
+                  "key": "X-Correlator",
+                  "value": "06ea2162-b9d0-a1f6-b2ad-9cef6c68fd8e"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"BAD_GATEWAY\",\n  \"status\": 502,\n  \"message\": \"The service is currently not available\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c64648bc-09d5-4fa9-b6d4-dde130bb09b4",
+              "name": "Service Unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "app-endpoints"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "The public IPv4 address allocated to the device.",
+                    "key": "IPv4-Address",
+                    "value": "84.125.93.10"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public IPv6 address allocated to the device.",
+                    "key": "IPv6-Address",
+                    "value": "2001:db8:85a3:8d3:1319:8a2e:370:7348"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "3GPP network access identifier for the subscription\nbeing used by the device.\n",
+                    "key": "Network-Access-Identifier",
+                    "value": "4d596ac1-7822-4927-a3c5-d72e1f922c94@domain.com"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) MSISDN in E.164 format (starting with country code) of\nthe mobile subscription being used by the device. Optionally\nprefixed with '+'.\n",
+                    "key": "Phone-Number",
+                    "value": "+441234567890"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) A globally unique identifier associated with the application.\nOP generates this identifier when the application is submitted over\nNBI.\n",
+                    "key": "AppId",
+                    "value": "<uuid>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "When the API Consumer includes the \"X-Correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"X-Correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n",
+                    "key": "X-Correlator",
+                    "value": "<uuid>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "When the API Consumer includes the \"X-Correlator\" header in the request,\n the API provider must include it in the response with the same value t\n hat was used in the request. Otherwise, it is optional to include the\n \"X-Correlator\" header in the response with any valid value.\n Recommendation is to use UUID for values.\n",
+                  "key": "X-Correlator",
+                  "value": "06ea2162-b9d0-a1f6-b2ad-9cef6c68fd8e"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"UNAVAILABLE\",\n  \"status\": 503,\n  \"message\": \"The service is currently not available\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fde7e1e4-c2d9-4097-acca-41715208cbf9",
+              "name": "Gateway Time-Out",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "app-endpoints"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "The public IPv4 address allocated to the device.",
+                    "key": "IPv4-Address",
+                    "value": "84.125.93.10"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public IPv6 address allocated to the device.",
+                    "key": "IPv6-Address",
+                    "value": "2001:db8:85a3:8d3:1319:8a2e:370:7348"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "3GPP network access identifier for the subscription\nbeing used by the device.\n",
+                    "key": "Network-Access-Identifier",
+                    "value": "4d596ac1-7822-4927-a3c5-d72e1f922c94@domain.com"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) MSISDN in E.164 format (starting with country code) of\nthe mobile subscription being used by the device. Optionally\nprefixed with '+'.\n",
+                    "key": "Phone-Number",
+                    "value": "+441234567890"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) A globally unique identifier associated with the application.\nOP generates this identifier when the application is submitted over\nNBI.\n",
+                    "key": "AppId",
+                    "value": "<uuid>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "When the API Consumer includes the \"X-Correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"X-Correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n",
+                    "key": "X-Correlator",
+                    "value": "<uuid>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Gateway Timeout",
+              "code": 504,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "When the API Consumer includes the \"X-Correlator\" header in the request,\n the API provider must include it in the response with the same value t\n hat was used in the request. Otherwise, it is optional to include the\n \"X-Correlator\" header in the response with any valid value.\n Recommendation is to use UUID for values.\n",
+                  "key": "X-Correlator",
+                  "value": "06ea2162-b9d0-a1f6-b2ad-9cef6c68fd8e"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"TIMEOUT\",\n  \"status\": 504,\n  \"message\": \"The service is currently not available\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "841495a5-34e9-4491-b892-1e5657c85991",
+          "name": "Global System for Mobile Communications Returns the name of the Edge Cloud Zone closest to user device\nidentified in the request.",
+          "request": {
+            "name": "Global System for Mobile Communications Returns the name of the Edge Cloud Zone closest to user device\nidentified in the request.",
+            "description": {
+              "content": "On receiving this request, the network will return the name\nof the Edge Cloud Zone with the shortest network path to the end user\ndevice identified in the request.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "edge-cloud-zones"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "(Required) Filter the Edge Cloud Zones according to the parameter value.\nFor this API the only supported value is `closest`.\n"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "API root.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                },
+                {
+                  "description": "Base path for the Application Endpoint Discovery.",
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "The public IPv4 address allocated to the device by the network operator.",
+                "key": "IPv4-Address",
+                "value": "<ipv4>"
+              },
+              {
+                "disabled": false,
+                "description": "The public TCP or UDP port allocated to the device by the network operator.",
+                "key": "Public-port",
+                "value": "<integer>"
+              },
+              {
+                "disabled": false,
+                "description": "The public IPv6 address allocated to the device by the network operator.",
+                "key": "IPv6-Address",
+                "value": "<ipv6>"
+              },
+              {
+                "disabled": false,
+                "description": "3GPP network access identifier for the subscription\nbeing used by the device.\n",
+                "key": "Network-Access-Identifier",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "MSISDN in E.164 format (starting with country code) of\nthe mobile subscription being used by the device. Optionally\nprefixed with '+'.\n",
+                "key": "Phone-Number",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "When the API Consumer includes the \"x-correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"x-correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "c6d6fe75-b0e6-42c4-b072-dd646b264270",
+              "name": "Successful response, returning the closest Edge Cloud\nZone to the user device identified in the request header.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "edge-cloud-zones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "The public IPv4 address allocated to the device by the network operator.",
+                    "key": "IPv4-Address",
+                    "value": "84.125.93.10"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public TCP or UDP port allocated to the device by the network operator.",
+                    "key": "Public-port",
+                    "value": "123"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public IPv6 address allocated to the device by the network operator.",
+                    "key": "IPv6-Address",
+                    "value": "2001:db8:85a3:8d3:1319:8a2e:370:7348"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "3GPP network access identifier for the subscription\nbeing used by the device.\n",
+                    "key": "Network-Access-Identifier",
+                    "value": "123456789@domain.com"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "MSISDN in E.164 format (starting with country code) of\nthe mobile subscription being used by the device. Optionally\nprefixed with '+'.\n",
+                    "key": "Phone-Number",
+                    "value": "+441234567890"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "When the API Consumer includes the \"x-correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"x-correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "When the API Consumer includes the \"x-correlator\" header in the request,\n the API provider must include it in the response with the same value t\n hat was used in the request. Otherwise, it is optional to include the\n \"x-correlator\" header in the response with any valid value.\n Recommendation is to use UUID for values.\n",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"edgeCloudZoneId\": \"fa9ba5ba-a1ed-0573-67a2-df22c466886d\",\n    \"edgeCloudZoneName\": \"string\",\n    \"edgeCloudProvider\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ee4376dd-ff7a-4f36-a168-b94781484ed0",
+              "name": "Client eror - the required querystring was not provided\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "edge-cloud-zones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "The public IPv4 address allocated to the device by the network operator.",
+                    "key": "IPv4-Address",
+                    "value": "84.125.93.10"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public TCP or UDP port allocated to the device by the network operator.",
+                    "key": "Public-port",
+                    "value": "123"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public IPv6 address allocated to the device by the network operator.",
+                    "key": "IPv6-Address",
+                    "value": "2001:db8:85a3:8d3:1319:8a2e:370:7348"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "3GPP network access identifier for the subscription\nbeing used by the device.\n",
+                    "key": "Network-Access-Identifier",
+                    "value": "123456789@domain.com"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "MSISDN in E.164 format (starting with country code) of\nthe mobile subscription being used by the device. Optionally\nprefixed with '+'.\n",
+                    "key": "Phone-Number",
+                    "value": "+441234567890"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "When the API Consumer includes the \"x-correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"x-correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "When the API Consumer includes the \"x-correlator\" header in the request,\n the API provider must include it in the response with the same value t\n hat was used in the request. Otherwise, it is optional to include the\n \"x-correlator\" header in the response with any valid value.\n Recommendation is to use UUID for values.\n",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_QUERYSTRING\",\n  \"message\": \"Querystring must be provided: filter=closest\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "95e4b7b4-04ba-4945-b0be-5bc26c874e7a",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "edge-cloud-zones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "The public IPv4 address allocated to the device by the network operator.",
+                    "key": "IPv4-Address",
+                    "value": "84.125.93.10"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public TCP or UDP port allocated to the device by the network operator.",
+                    "key": "Public-port",
+                    "value": "123"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public IPv6 address allocated to the device by the network operator.",
+                    "key": "IPv6-Address",
+                    "value": "2001:db8:85a3:8d3:1319:8a2e:370:7348"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "3GPP network access identifier for the subscription\nbeing used by the device.\n",
+                    "key": "Network-Access-Identifier",
+                    "value": "123456789@domain.com"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "MSISDN in E.164 format (starting with country code) of\nthe mobile subscription being used by the device. Optionally\nprefixed with '+'.\n",
+                    "key": "Phone-Number",
+                    "value": "+441234567890"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "When the API Consumer includes the \"x-correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"x-correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "When the API Consumer includes the \"x-correlator\" header in the request,\n the API provider must include it in the response with the same value t\n hat was used in the request. Otherwise, it is optional to include the\n \"x-correlator\" header in the response with any valid value.\n Recommendation is to use UUID for values.\n",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0a3dbda5-9a55-48b9-8cc3-23cb6aed4f42",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "edge-cloud-zones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "The public IPv4 address allocated to the device by the network operator.",
+                    "key": "IPv4-Address",
+                    "value": "84.125.93.10"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public TCP or UDP port allocated to the device by the network operator.",
+                    "key": "Public-port",
+                    "value": "123"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public IPv6 address allocated to the device by the network operator.",
+                    "key": "IPv6-Address",
+                    "value": "2001:db8:85a3:8d3:1319:8a2e:370:7348"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "3GPP network access identifier for the subscription\nbeing used by the device.\n",
+                    "key": "Network-Access-Identifier",
+                    "value": "123456789@domain.com"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "MSISDN in E.164 format (starting with country code) of\nthe mobile subscription being used by the device. Optionally\nprefixed with '+'.\n",
+                    "key": "Phone-Number",
+                    "value": "+441234567890"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "When the API Consumer includes the \"x-correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"x-correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "When the API Consumer includes the \"x-correlator\" header in the request,\n the API provider must include it in the response with the same value t\n hat was used in the request. Otherwise, it is optional to include the\n \"x-correlator\" header in the response with any valid value.\n Recommendation is to use UUID for values.\n",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a10b0735-c29a-4a6a-a5b4-798d6aad1c29",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "edge-cloud-zones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "The public IPv4 address allocated to the device by the network operator.",
+                    "key": "IPv4-Address",
+                    "value": "84.125.93.10"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public TCP or UDP port allocated to the device by the network operator.",
+                    "key": "Public-port",
+                    "value": "123"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public IPv6 address allocated to the device by the network operator.",
+                    "key": "IPv6-Address",
+                    "value": "2001:db8:85a3:8d3:1319:8a2e:370:7348"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "3GPP network access identifier for the subscription\nbeing used by the device.\n",
+                    "key": "Network-Access-Identifier",
+                    "value": "123456789@domain.com"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "MSISDN in E.164 format (starting with country code) of\nthe mobile subscription being used by the device. Optionally\nprefixed with '+'.\n",
+                    "key": "Phone-Number",
+                    "value": "+441234567890"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "When the API Consumer includes the \"x-correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"x-correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "When the API Consumer includes the \"x-correlator\" header in the request,\n the API provider must include it in the response with the same value t\n hat was used in the request. Otherwise, it is optional to include the\n \"x-correlator\" header in the response with any valid value.\n Recommendation is to use UUID for values.\n",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"NOT_FOUND\",\n  \"message\": \"The specified resource is not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4df26de5-549a-4f30-84b5-25154e8994d4",
+              "name": "Not Acceptable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "edge-cloud-zones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "The public IPv4 address allocated to the device by the network operator.",
+                    "key": "IPv4-Address",
+                    "value": "84.125.93.10"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public TCP or UDP port allocated to the device by the network operator.",
+                    "key": "Public-port",
+                    "value": "123"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public IPv6 address allocated to the device by the network operator.",
+                    "key": "IPv6-Address",
+                    "value": "2001:db8:85a3:8d3:1319:8a2e:370:7348"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "3GPP network access identifier for the subscription\nbeing used by the device.\n",
+                    "key": "Network-Access-Identifier",
+                    "value": "123456789@domain.com"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "MSISDN in E.164 format (starting with country code) of\nthe mobile subscription being used by the device. Optionally\nprefixed with '+'.\n",
+                    "key": "Phone-Number",
+                    "value": "+441234567890"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "When the API Consumer includes the \"x-correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"x-correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "When the API Consumer includes the \"x-correlator\" header in the request,\n the API provider must include it in the response with the same value t\n hat was used in the request. Otherwise, it is optional to include the\n \"x-correlator\" header in the response with any valid value.\n Recommendation is to use UUID for values.\n",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 406,\n  \"code\": \"NOT_ACCEPTABLE\",\n  \"message\": \"The server cannot produce a response matching the content requested by the client\\nthrough `Accept-*` headers.\\n\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "74b63590-3a92-47ee-9b12-79ad02c5c08e",
+              "name": "Unprocessable Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "edge-cloud-zones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "The public IPv4 address allocated to the device by the network operator.",
+                    "key": "IPv4-Address",
+                    "value": "84.125.93.10"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public TCP or UDP port allocated to the device by the network operator.",
+                    "key": "Public-port",
+                    "value": "123"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public IPv6 address allocated to the device by the network operator.",
+                    "key": "IPv6-Address",
+                    "value": "2001:db8:85a3:8d3:1319:8a2e:370:7348"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "3GPP network access identifier for the subscription\nbeing used by the device.\n",
+                    "key": "Network-Access-Identifier",
+                    "value": "123456789@domain.com"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "MSISDN in E.164 format (starting with country code) of\nthe mobile subscription being used by the device. Optionally\nprefixed with '+'.\n",
+                    "key": "Phone-Number",
+                    "value": "+441234567890"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "When the API Consumer includes the \"x-correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"x-correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "When the API Consumer includes the \"x-correlator\" header in the request,\n the API provider must include it in the response with the same value t\n hat was used in the request. Otherwise, it is optional to include the\n \"x-correlator\" header in the response with any valid value.\n Recommendation is to use UUID for values.\n",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 422,\n  \"code\": \"DEVICE_IDENTIFIERS_MISMATCH\",\n  \"message\": \"Provided device identifiers are not consistent.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "770caaa8-b67f-4f87-a73d-01102619b962",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "edge-cloud-zones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "The public IPv4 address allocated to the device by the network operator.",
+                    "key": "IPv4-Address",
+                    "value": "84.125.93.10"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public TCP or UDP port allocated to the device by the network operator.",
+                    "key": "Public-port",
+                    "value": "123"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public IPv6 address allocated to the device by the network operator.",
+                    "key": "IPv6-Address",
+                    "value": "2001:db8:85a3:8d3:1319:8a2e:370:7348"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "3GPP network access identifier for the subscription\nbeing used by the device.\n",
+                    "key": "Network-Access-Identifier",
+                    "value": "123456789@domain.com"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "MSISDN in E.164 format (starting with country code) of\nthe mobile subscription being used by the device. Optionally\nprefixed with '+'.\n",
+                    "key": "Phone-Number",
+                    "value": "+441234567890"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "When the API Consumer includes the \"x-correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"x-correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "When the API Consumer includes the \"x-correlator\" header in the request,\n the API provider must include it in the response with the same value t\n hat was used in the request. Otherwise, it is optional to include the\n \"x-correlator\" header in the response with any valid value.\n Recommendation is to use UUID for values.\n",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 429,\n  \"code\": \"QUOTA_EXCEEDED\",\n  \"message\": \"Either out of resource quota or reaching rate limiting.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "21c32c6b-f33d-4e5c-a6a6-dd17aa2d6b6f",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "edge-cloud-zones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "The public IPv4 address allocated to the device by the network operator.",
+                    "key": "IPv4-Address",
+                    "value": "84.125.93.10"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public TCP or UDP port allocated to the device by the network operator.",
+                    "key": "Public-port",
+                    "value": "123"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public IPv6 address allocated to the device by the network operator.",
+                    "key": "IPv6-Address",
+                    "value": "2001:db8:85a3:8d3:1319:8a2e:370:7348"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "3GPP network access identifier for the subscription\nbeing used by the device.\n",
+                    "key": "Network-Access-Identifier",
+                    "value": "123456789@domain.com"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "MSISDN in E.164 format (starting with country code) of\nthe mobile subscription being used by the device. Optionally\nprefixed with '+'.\n",
+                    "key": "Phone-Number",
+                    "value": "+441234567890"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "When the API Consumer includes the \"x-correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"x-correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "When the API Consumer includes the \"x-correlator\" header in the request,\n the API provider must include it in the response with the same value t\n hat was used in the request. Otherwise, it is optional to include the\n \"x-correlator\" header in the response with any valid value.\n Recommendation is to use UUID for values.\n",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 500,\n  \"code\": \"INTERNAL\",\n  \"message\": \"Unknown server error. Typically a server bug.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "72c3f8e8-f21d-47cd-8fef-226635ec403b",
+              "name": "Not Implemented",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "edge-cloud-zones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "The public IPv4 address allocated to the device by the network operator.",
+                    "key": "IPv4-Address",
+                    "value": "84.125.93.10"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public TCP or UDP port allocated to the device by the network operator.",
+                    "key": "Public-port",
+                    "value": "123"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public IPv6 address allocated to the device by the network operator.",
+                    "key": "IPv6-Address",
+                    "value": "2001:db8:85a3:8d3:1319:8a2e:370:7348"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "3GPP network access identifier for the subscription\nbeing used by the device.\n",
+                    "key": "Network-Access-Identifier",
+                    "value": "123456789@domain.com"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "MSISDN in E.164 format (starting with country code) of\nthe mobile subscription being used by the device. Optionally\nprefixed with '+'.\n",
+                    "key": "Phone-Number",
+                    "value": "+441234567890"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "When the API Consumer includes the \"x-correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"x-correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Implemented",
+              "code": 501,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "When the API Consumer includes the \"x-correlator\" header in the request,\n the API provider must include it in the response with the same value t\n hat was used in the request. Otherwise, it is optional to include the\n \"x-correlator\" header in the response with any valid value.\n Recommendation is to use UUID for values.\n",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 501,\n  \"code\": \"NOT_IMPLEMENTED\",\n  \"message\": \"This functionality is not implemented yet.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "84febcf2-b866-4ade-a4f6-2e7b8cf96781",
+              "name": "Bad Gateway",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "edge-cloud-zones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "The public IPv4 address allocated to the device by the network operator.",
+                    "key": "IPv4-Address",
+                    "value": "84.125.93.10"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public TCP or UDP port allocated to the device by the network operator.",
+                    "key": "Public-port",
+                    "value": "123"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public IPv6 address allocated to the device by the network operator.",
+                    "key": "IPv6-Address",
+                    "value": "2001:db8:85a3:8d3:1319:8a2e:370:7348"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "3GPP network access identifier for the subscription\nbeing used by the device.\n",
+                    "key": "Network-Access-Identifier",
+                    "value": "123456789@domain.com"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "MSISDN in E.164 format (starting with country code) of\nthe mobile subscription being used by the device. Optionally\nprefixed with '+'.\n",
+                    "key": "Phone-Number",
+                    "value": "+441234567890"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "When the API Consumer includes the \"x-correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"x-correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Gateway",
+              "code": 502,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "When the API Consumer includes the \"x-correlator\" header in the request,\n the API provider must include it in the response with the same value t\n hat was used in the request. Otherwise, it is optional to include the\n \"x-correlator\" header in the response with any valid value.\n Recommendation is to use UUID for values.\n",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 502,\n  \"code\": \"BAD_GATEWAY\",\n  \"message\": \"An upstream internal service cannot be reached.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "79899059-84bc-4b44-a2ed-27f67d94ec94",
+              "name": "Service Unavailable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "edge-cloud-zones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "The public IPv4 address allocated to the device by the network operator.",
+                    "key": "IPv4-Address",
+                    "value": "84.125.93.10"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public TCP or UDP port allocated to the device by the network operator.",
+                    "key": "Public-port",
+                    "value": "123"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public IPv6 address allocated to the device by the network operator.",
+                    "key": "IPv6-Address",
+                    "value": "2001:db8:85a3:8d3:1319:8a2e:370:7348"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "3GPP network access identifier for the subscription\nbeing used by the device.\n",
+                    "key": "Network-Access-Identifier",
+                    "value": "123456789@domain.com"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "MSISDN in E.164 format (starting with country code) of\nthe mobile subscription being used by the device. Optionally\nprefixed with '+'.\n",
+                    "key": "Phone-Number",
+                    "value": "+441234567890"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "When the API Consumer includes the \"x-correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"x-correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "When the API Consumer includes the \"x-correlator\" header in the request,\n the API provider must include it in the response with the same value t\n hat was used in the request. Otherwise, it is optional to include the\n \"x-correlator\" header in the response with any valid value.\n Recommendation is to use UUID for values.\n",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service Unavailable.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a032b543-0e61-4736-b537-3b5a977cfb62",
+              "name": "Gateway Timeout",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "edge-cloud-zones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "The public IPv4 address allocated to the device by the network operator.",
+                    "key": "IPv4-Address",
+                    "value": "84.125.93.10"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public TCP or UDP port allocated to the device by the network operator.",
+                    "key": "Public-port",
+                    "value": "123"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The public IPv6 address allocated to the device by the network operator.",
+                    "key": "IPv6-Address",
+                    "value": "2001:db8:85a3:8d3:1319:8a2e:370:7348"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "3GPP network access identifier for the subscription\nbeing used by the device.\n",
+                    "key": "Network-Access-Identifier",
+                    "value": "123456789@domain.com"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "MSISDN in E.164 format (starting with country code) of\nthe mobile subscription being used by the device. Optionally\nprefixed with '+'.\n",
+                    "key": "Phone-Number",
+                    "value": "+441234567890"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "When the API Consumer includes the \"x-correlator\" header in the\nrequest, the API provider must include it in the response with\nthe same value that was used in the request. Otherwise, it is\noptional to include the \"x-correlator\" header in the response with\n any valid value. Recommendation is to use UUID for values.\n",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Gateway Timeout",
+              "code": 504,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "When the API Consumer includes the \"x-correlator\" header in the request,\n the API provider must include it in the response with the same value t\n hat was used in the request. Otherwise, it is optional to include the\n \"x-correlator\" header in the response with any valid value.\n Recommendation is to use UUID for values.\n",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 504,\n  \"code\": \"TIMEOUT\",\n  \"message\": \"Request timeout exceeded.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "API root.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://localhost:443",
+      "key": "apiRoot"
+    },
+    {
+      "description": {
+        "content": "Base path for the Application Endpoint Discovery.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "application-endpoint-discovery/vwip",
+      "key": "basePath"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/{{basePath}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b3abc403-aa8c-4a64-a4f0-acb69c76894b",
+    "name": "Global System for Mobile Communications GSMA Camara Project Endpoint Application Discovery API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Application Discovery API extends beyond the capabilities of the Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone but also directly linking to the application endpoints within those Edge Cloud Zones.\n\nContact Support:\n Email: sp-edc@lists.camaraproject.org",
+      "type": "text/plain"
+    }
+  }
+}

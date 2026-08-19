@@ -1,0 +1,68 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Global System for Mobile Communications GSMA Camara Project Endpoint Discovery Application Traffic Influence API Read API",
+    "version": "0.1.0-wip"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Traffic Influence API Read",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Global System for Mobile Communications Retries existing TrafficInfluence Resources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/{basePath}/traffic-influences",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "appId",
+                "value": "",
+                "type": "query",
+                "description": "Used to select traffic influence resources filtered by appId"
+              }
+            ]
+          },
+          "docs": "Reads all of the active TrafficInfluence resources owned by the same API Consumer"
+        },
+        {
+          "info": {
+            "name": "Global System for Mobile Communications Reads a specific TrafficInfluence resource identified by the trafficInfluenceID value.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/{basePath}/traffic-influences/:trafficInfluenceID",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "trafficInfluenceID",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+              }
+            ]
+          },
+          "docs": "Returns a specific TrafficInfluence resources owned by the same API Consumer."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,1037 @@
+{
+  "item": [
+    {
+      "id": "b6ee681f-c980-4956-a240-20aca30a3c6f",
+      "name": "Traffic Influence API Read",
+      "description": {
+        "content": "Reads existing TrafficInfluence resources",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f1a96032-1f49-48a8-9407-ddeeea408f02",
+          "name": "Global System for Mobile Communications Retries existing TrafficInfluence Resources",
+          "request": {
+            "name": "Global System for Mobile Communications Retries existing TrafficInfluence Resources",
+            "description": {
+              "content": "Reads all of the active TrafficInfluence resources owned by the same API Consumer",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "traffic-influences"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "appId",
+                  "value": "<uuid>",
+                  "description": "Used to select traffic influence resources filtered by appId"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "API root.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                },
+                {
+                  "description": "Base path for the Application Endpoint Discovery.",
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services.",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "f0bc3a2c-1c39-4d5c-af16-fc7c9dfec4b4",
+              "name": "Returns the information about existing TrafficInfluence resources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "6B29FC40-CA47-1067-B31D-00DD010662DA"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"apiConsumerId\": \"string\",\n    \"appId\": \"6B29FC40-CA47-1067-B31D-00DD010662DA\",\n    \"trafficInfluenceID\": \"string\",\n    \"appInstanceId\": \"cec7f6ad-4876-11b6-d405-b56829adabc1\",\n    \"edgeCloudRegion\": \"string\",\n    \"edgeCloudZoneId\": \"577937ac-9a2b-3829-a90f-6a972b988364\",\n    \"device\": {\n      \"phoneNumber\": \"+123456789\",\n      \"networkAccessIdentifier\": \"123456789@domain.com\",\n      \"ipv4Address\": {},\n      \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n    },\n    \"state\": \"created\",\n    \"sourceTrafficFilters\": {\n      \"sourcePort\": 58759\n    },\n    \"destinationTrafficFilters\": {\n      \"destinationPort\": 62701,\n      \"destinationProtocol\": \"TCP\"\n    },\n    \"notificationUri\": \"string\",\n    \"notificationAuthToken\": \"string\"\n  },\n  {\n    \"apiConsumerId\": \"string\",\n    \"appId\": \"6B29FC40-CA47-1067-B31D-00DD010662DA\",\n    \"trafficInfluenceID\": \"string\",\n    \"appInstanceId\": \"3cde97f7-726a-a20d-e844-9f526bc7d4f0\",\n    \"edgeCloudRegion\": \"string\",\n    \"edgeCloudZoneId\": \"3a9f1439-e634-e8c0-ed65-f8525822b087\",\n    \"device\": {\n      \"phoneNumber\": \"+123456789\",\n      \"networkAccessIdentifier\": \"123456789@domain.com\",\n      \"ipv4Address\": {},\n      \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n    },\n    \"state\": \"error\",\n    \"sourceTrafficFilters\": {\n      \"sourcePort\": 7578\n    },\n    \"destinationTrafficFilters\": {\n      \"destinationPort\": 37346,\n      \"destinationProtocol\": \"TCP\"\n    },\n    \"notificationUri\": \"string\",\n    \"notificationAuthToken\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "52c44ee2-4dc3-4174-94d2-e8b79a80454a",
+              "name": "Authentication problem with the client request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "6B29FC40-CA47-1067-B31D-00DD010662DA"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dd9287c3-011a-4c5f-b306-5d2782704c2c",
+              "name": "Client does not have sufficient permission",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "6B29FC40-CA47-1067-B31D-00DD010662DA"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e1e43b72-fb1f-4697-8db5-b26c11dd1bb4",
+              "name": "An unknow error has occurred",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "6B29FC40-CA47-1067-B31D-00DD010662DA"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"Generic error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2e674738-b2f4-4e0f-ab8e-86563b70b984",
+              "name": "Service unavailable. Typically the server is down",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "6B29FC40-CA47-1067-B31D-00DD010662DA"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service unavailable\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9694b993-be70-4da9-8e1f-eb83e7bec1b7",
+              "name": "Connection timeout towards backend service has occurred",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "6B29FC40-CA47-1067-B31D-00DD010662DA"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Gateway Timeout",
+              "code": 504,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"Backend connection timeout\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "536b55ca-0b0a-4bc1-88f6-f3fbd3914c4d",
+          "name": "Global System for Mobile Communications Reads a specific TrafficInfluence resource identified by the trafficInfluenceID value.",
+          "request": {
+            "name": "Global System for Mobile Communications Reads a specific TrafficInfluence resource identified by the trafficInfluenceID value.",
+            "description": {
+              "content": "Returns a specific TrafficInfluence resources owned by the same API Consumer.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "traffic-influences",
+                ":trafficInfluenceID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "trafficInfluenceID",
+                  "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                },
+                {
+                  "description": "API root.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                },
+                {
+                  "description": "Base path for the Application Endpoint Discovery.",
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Correlation id for the different services.",
+                "key": "x-correlator",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "d44fe0dd-3418-4e18-a1d1-7bf7c131c441",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"apiConsumerId\": \"string\",\n  \"appId\": \"6B29FC40-CA47-1067-B31D-00DD010662DA\",\n  \"trafficInfluenceID\": \"string\",\n  \"appInstanceId\": \"27f9dbfe-dd61-336c-7cb0-2a089ebec4b3\",\n  \"edgeCloudRegion\": \"string\",\n  \"edgeCloudZoneId\": \"efb2c37f-7bc4-1e3a-e25d-bef3bfec7ced\",\n  \"device\": {\n    \"phoneNumber\": \"+123456789\",\n    \"networkAccessIdentifier\": \"123456789@domain.com\",\n    \"ipv4Address\": {},\n    \"ipv6Address\": \"2001:db8:85a3:8d3:1319:8a2e:370:7344\"\n  },\n  \"state\": \"ordered\",\n  \"sourceTrafficFilters\": {\n    \"sourcePort\": 29711\n  },\n  \"destinationTrafficFilters\": {\n    \"destinationPort\": 63150,\n    \"destinationProtocol\": \"TCP\"\n  },\n  \"notificationUri\": \"string\",\n  \"notificationAuthToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "628c6828-66bb-4570-b283-5797a93c8f61",
+              "name": "Authentication problem with the client request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "36283e33-9a95-49fb-8af6-e45b2b4278d8",
+              "name": "Client does not have sufficient permission",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8f26dfcd-001d-41ab-8973-1d6dc598cd5f",
+              "name": "The specified resource was not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b66d1760-e70d-466e-820b-18da7349a9c0",
+              "name": "An unknow error has occurred",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"Generic error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b95855d0-194a-450a-91c4-bf6349518569",
+              "name": "Service unavailable. Typically the server is down",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 503,\n  \"code\": \"UNAVAILABLE\",\n  \"message\": \"Service unavailable\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b468bfbb-11ee-441b-85e0-2c2290d44077",
+              "name": "Connection timeout towards backend service has occurred",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "traffic-influences",
+                    ":trafficInfluenceID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trafficInfluenceID",
+                      "description": "(Required) Identifier of the specific TrafficInfluence resource to be retrieved, modified or deleted. It is the value used to fill trafficInfluenceID parameter."
+                    },
+                    {
+                      "description": "API root.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    },
+                    {
+                      "description": "Base path for the Application Endpoint Discovery.",
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Correlation id for the different services.",
+                    "key": "x-correlator",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Gateway Timeout",
+              "code": 504,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Correlation id for the different services.",
+                  "key": "x-correlator",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"ERROR\",\n  \"message\": \"Backend connection timeout\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "API root.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://localhost:443",
+      "key": "apiRoot"
+    },
+    {
+      "description": {
+        "content": "Base path for the Application Endpoint Discovery.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "application-endpoint-discovery/vwip",
+      "key": "basePath"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/{{basePath}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "aacb1d78-db0f-43e4-b1ed-0b7f2eb6b4a9",
+    "name": "Global System for Mobile Communications GSMA Camara Project Endpoint Discovery Application Traffic Influence API Read API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Application Discovery API extends beyond the capabilities of the Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone but also directly linking to the application endpoints within those Edge Cloud Zones.\n\nContact Support:\n Email: sp-edc@lists.camaraproject.org",
+      "type": "text/plain"
+    }
+  }
+}

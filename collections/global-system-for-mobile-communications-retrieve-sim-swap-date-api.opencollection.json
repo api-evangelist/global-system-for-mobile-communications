@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Global System for Mobile Communications GSMA Camara Project Endpoint Discovery Application Retrieve SIM Swap Date API",
+    "version": "0.1.0-wip"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Retrieve SIM Swap Date",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "retrieveSimSwapDate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/{basePath}/retrieve-date",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get timestamp of last SIM swap event for a mobile user account provided with phone number."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

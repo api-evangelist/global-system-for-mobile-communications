@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Global System for Mobile Communications GSMA Camara Project Endpoint Discovery Application Edge Cloud API",
+    "version": "0.1.0-wip"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Edge Cloud",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Global System for Mobile Communications Retrieve a list of the operators Edge Cloud Zones and their status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/{basePath}/edge-cloud-zones",
+            "headers": [
+              {
+                "name": "x-correlator",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "region",
+                "value": "",
+                "type": "query",
+                "description": "Human readable name of the geographical Edge Cloud Region of\nthe Edge Cloud. Defined by the Edge Cloud Provider.\n"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "Human readable status of the Edge Cloud Zone"
+              }
+            ]
+          },
+          "docs": "List of the operators Edge Cloud Zones and their\nstatus, ordering the results by location and filtering by\nstatus (active/inactive/unknown)\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
