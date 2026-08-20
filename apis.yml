@@ -4,6 +4,11 @@ apis:
 - aid: global-system-for-mobile-communications:scam-signal-api
   name: GSMA Camara Project Scam Signal API
   tags:
+  - Anti-Fraud
+  - Scams
+  - Signals
+  - Subscribers
+  tags_raw:
   - Anti Fraud
   - Scams
   - Signals
@@ -631,6 +636,8 @@ apis:
   humanURL: >-
     https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
   tags:
+  - Check SIM swap
+  tags_raw:
   - Check SIM Swap
   properties:
   - type: OpenAPI
@@ -1441,6 +1448,8 @@ apis:
   humanURL: >-
     https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
   tags:
+  - Geofencing subscriptions
+  tags_raw:
   - Geofencing Subscriptions
   properties:
   - type: OpenAPI
@@ -1843,6 +1852,8 @@ apis:
   humanURL: >-
     https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
   tags:
+  - Location retrieval
+  tags_raw:
   - Location Retrieval
   properties:
   - type: OpenAPI
@@ -3254,6 +3265,8 @@ apis:
   humanURL: >-
     https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
   tags:
+  - Phone number share
+  tags_raw:
   - Phone Number Share
   properties:
   - type: OpenAPI
@@ -3457,6 +3470,8 @@ apis:
   humanURL: >-
     https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
   tags:
+  - Phone number verify
+  tags_raw:
   - Phone Number Verify
   properties:
   - type: OpenAPI
@@ -4062,6 +4077,8 @@ apis:
   humanURL: >-
     https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
   tags:
+  - Retrieve SIM swap date
+  tags_raw:
   - Retrieve SIM Swap Date
   properties:
   - type: OpenAPI
@@ -4264,6 +4281,8 @@ apis:
   humanURL: >-
     https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
   tags:
+  - Roaming status retrieval
+  tags_raw:
   - Roaming Status Retrieval
   properties:
   - type: OpenAPI
