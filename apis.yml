@@ -5700,6 +5700,9 @@ tags:
   - Telecommunications
 type: Index
 common:
+  - type: CapabilityMap
+    url: capabilities/global-system-for-mobile-communications-capability-edges.yml
+    name: Global System for Mobile Communications Business Capability Map
   - type: IssueTracker
     url: https://github.com/camaraproject/CallForwardingSignal/issues
   - type: License
