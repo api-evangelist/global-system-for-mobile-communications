@@ -4,7 +4,7 @@ apis:
 - aid: global-system-for-mobile-communications:scam-signal-api
   name: GSMA Camara Project Scam Signal API
   tags:
-  - Anti Fraud
+  - Anti-Fraud
   - Scams
   - Signals
   - Subscribers
@@ -432,6 +432,8 @@ apis:
   humanURL: >-
     https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
   tags:
+  - Call Forwarding information retrieval
+  tags_raw:
   - Call Forwarding Information Retrieval
   properties:
   - type: OpenAPI
@@ -1448,7 +1450,7 @@ apis:
   humanURL: >-
     https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
   tags:
-  - Geofencing Subscriptions
+  - Geofencing subscriptions
   tags_raw:
   - Geofencing Subscriptions
   properties:
@@ -4281,7 +4283,7 @@ apis:
   humanURL: >-
     https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
   tags:
-  - Roaming Status Retrieval
+  - Roaming status retrieval
   tags_raw:
   - Roaming Status Retrieval
   properties:
@@ -5495,6 +5497,8 @@ apis:
   humanURL: >-
     https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
   tags:
+  - Unconditional Call Forwarding information retrieval
+  tags_raw:
   - Unconditional Call Forwarding Information Retrieval
   properties:
   - type: OpenAPI
