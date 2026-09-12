@@ -5704,6 +5704,8 @@ tags:
   - Telecommunications
 type: Index
 common:
+  - type: Website
+    url: https://www.gsma.com/
   - type: CapabilityMap
     url: capabilities/global-system-for-mobile-communications-capability-edges.yml
     name: Global System for Mobile Communications Business Capability Map
