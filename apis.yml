@@ -2661,6 +2661,8 @@ apis:
   humanURL: >-
     https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-api-descriptions/
   tags:
+  - Payments
+  tags_raw:
   - Payment
   properties:
   - type: OpenAPI
