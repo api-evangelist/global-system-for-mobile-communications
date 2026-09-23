@@ -1,22 +1,18 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Global System for Mobile Communications GSMA Camara Project Endpoint Discovery Application Retrieve SIM Swap Date API
-  version: 0.1.0-wip
-  description: The Application Discovery API extends beyond the capabilities of the Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone but also directly linking to the application endpoints within those Edge Cloud Zones.
-  contact:
-    email: sp-edc@lists.camaraproject.org
+  title: Global System for Mobile Communications GSMA Camara Project…
+  description: SIM Swap API checks the last date that the SIM card associated with a mobile phone number has changed. The response may be a timestamp or a yes/no for a defined period (e.g. last 24h).
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+  x-camara-commonalities: 0.4.0
 servers:
-- url: '{apiRoot}/{basePath}'
+- url: '{apiRoot}/sim-swap/v1'
   variables:
     apiRoot:
-      default: https://localhost:443
-      description: API root.
-    basePath:
-      default: application-endpoint-discovery/vwip
-      description: Base path for the Application Endpoint Discovery.
+      default: http://localhost:9091
+      description: API root, defined by the service provider, e.g. `api.example.com` or `api.example.com/somepath`
 tags:
 - name: Retrieve SIM Swap Date
 paths:
@@ -68,8 +64,58 @@ paths:
           $ref: '#/components/responses/Generic503'
         '504':
           $ref: '#/components/responses/Generic504'
+      summary: Retrieve sim swap date
+      x-summary-source: derived
 components:
   responses:
+    Generic500:
+      description: Internal Server Error
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_500_INTERNAL:
+              description: Problem in Server side. Regular Server Exception
+              value:
+                status: 500
+                code: INTERNAL
+                message: Unknown server error. Typically a server bug.
+    Generic400:
+      description: Bad Request
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_400_INVALID_ARGUMENT:
+              description: Invalid Argument. Generic Syntax Exception
+              value:
+                status: 400
+                code: INVALID_ARGUMENT
+                message: Client specified an invalid argument, request body or query param.
+    Generic401:
+      description: Unauthorized
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_401_UNAUTHENTICATED:
+              description: Request cannot be authenticated
+              value:
+                status: 401
+                code: UNAUTHENTICATED
+                message: Request not authenticated due to missing, invalid, or expired credentials.
     Generic503:
       description: Service Unavailable
       headers:
@@ -86,6 +132,22 @@ components:
                 status: 503
                 code: UNAVAILABLE
                 message: Service Unavailable.
+    Generic504:
+      description: Gateway Timeout
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_504_TIMEOUT:
+              description: API Server Timeout
+              value:
+                status: 504
+                code: TIMEOUT
+                message: Request timeout exceeded.
     Generic422:
       description: Unprocessable Content
       headers:
@@ -124,38 +186,6 @@ components:
                 status: 404
                 code: NOT_FOUND
                 message: The specified resource is not found.
-    Generic500:
-      description: Internal Server Error
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          examples:
-            GENERIC_500_INTERNAL:
-              description: Problem in Server side. Regular Server Exception
-              value:
-                status: 500
-                code: INTERNAL
-                message: Unknown server error. Typically a server bug.
-    Generic401:
-      description: Unauthorized
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          examples:
-            GENERIC_401_UNAUTHENTICATED:
-              description: Request cannot be authenticated
-              value:
-                status: 401
-                code: UNAUTHENTICATED
-                message: Request not authenticated due to missing, invalid, or expired credentials.
     Generic403:
       description: Forbidden
       headers:
@@ -178,51 +208,29 @@ components:
                 status: 403
                 code: INVALID_TOKEN_CONTEXT
                 message: phoneNumber is not consistent with access token
-    Generic400:
-      description: Bad Request
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          examples:
-            GENERIC_400_INVALID_ARGUMENT:
-              description: Invalid Argument. Generic Syntax Exception
-              value:
-                status: 400
-                code: INVALID_ARGUMENT
-                message: Client specified an invalid argument, request body or query param.
-    Generic504:
-      description: Gateway Timeout
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          examples:
-            GENERIC_504_TIMEOUT:
-              description: API Server Timeout
-              value:
-                status: 504
-                code: TIMEOUT
-                message: Request timeout exceeded.
-  headers:
-    x-correlator:
-      description: Correlation id for the different services
-      schema:
-        type: string
-  parameters:
-    x-correlator:
-      name: x-correlator
-      in: header
-      description: Correlation id for the different services
-      schema:
-        type: string
   schemas:
+    PhoneNumber:
+      type: string
+      pattern: ^\+[1-9][0-9]{4,14}$
+      example: '+346661113334'
+      description: A public identifier addressing a telephone subscription. In mobile networks it corresponds to the MSISDN (Mobile Station International Subscriber Directory Number). In order to be globally unique it has to be formatted in international format, according to E.164 standard, prefixed with '+'.
+    SimSwapInfo:
+      type: object
+      required:
+      - latestSimChange
+      properties:
+        latestSimChange:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: Timestamp of latest SIM swap performed. It must follow [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.6) and must have time zone. Recommended format is yyyy-MM-dd'T'HH:mm:ss.SSSZ (i.e. which allows 2023-07-03T14:27:08.312+02:00 or 2023-07-03T12:27:08.312Z)
+          example: '2023-07-03T14:27:08.312+02:00'
+    CreateSimSwapDate:
+      type: object
+      properties:
+        phoneNumber:
+          $ref: '#/components/schemas/PhoneNumber'
     ErrorInfo:
       type: object
       required:
@@ -239,32 +247,22 @@ components:
         message:
           type: string
           description: Detailed error description
-    CreateSimSwapDate:
-      type: object
-      properties:
-        phoneNumber:
-          $ref: '#/components/schemas/PhoneNumber'
-    SimSwapInfo:
-      type: object
-      required:
-      - latestSimChange
-      properties:
-        latestSimChange:
-          type: string
-          format: date-time
-          description: Timestamp of latest SIM swap performed. It must follow [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.6) and must have time zone. Recommended format is yyyy-MM-dd'T'HH:mm:ss.SSSZ (i.e. which allows 2023-07-03T14:27:08.312+02:00 or 2023-07-03T12:27:08.312Z)
-          nullable: true
-          example: '2023-07-03T14:27:08.312+02:00'
-    PhoneNumber:
-      type: string
-      pattern: ^\+[1-9][0-9]{4,14}$
-      example: '+346661113334'
-      description: A public identifier addressing a telephone subscription. In mobile networks it corresponds to the MSISDN (Mobile Station International Subscriber Directory Number). In order to be globally unique it has to be formatted in international format, according to E.164 standard, prefixed with '+'.
+  parameters:
+    x-correlator:
+      name: x-correlator
+      in: header
+      description: Correlation id for the different services
+      schema:
+        type: string
+  headers:
+    x-correlator:
+      description: Correlation id for the different services
+      schema:
+        type: string
   securitySchemes:
     openId:
-      description: OpenID Provider Configuration Information.
       type: openIdConnect
-      openIdConnectUrl: .well-known/openid-configuration
+      openIdConnectUrl: https://example.com/.well-known/openid-configuration
 externalDocs:
-  description: Product documentation at CAMARA.
-  url: https://github.com/camaraproject/EdgeCloud
+  description: Product documentation at Camara
+  url: https://github.com/camaraproject/SimSwap

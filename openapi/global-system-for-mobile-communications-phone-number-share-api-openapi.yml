@@ -1,22 +1,18 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Global System for Mobile Communications GSMA Camara Project Endpoint Discovery Application Phone Number Share API
-  version: 0.1.0-wip
-  description: The Application Discovery API extends beyond the capabilities of the Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone but also directly linking to the application endpoints within those Edge Cloud Zones.
-  contact:
-    email: sp-edc@lists.camaraproject.org
+  title: Global System for Mobile Communications GSMA Camara Project…
+  description: Service Enabling Network Function API to verify that the provided **mobile phone number** is the one used in the device. It verifies that the user is using a device with the same *mobile phone number* as it is declared. It also makes it possible for a Service provider to verify the number itself by returning the phone number associated to the authenticated user's access token.
+  version: 1.0.0
+  x-camara-commonalities: 0.4.0
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
 servers:
-- url: '{apiRoot}/{basePath}'
+- url: '{apiRoot}/number-verification/v1'
   variables:
     apiRoot:
-      default: https://localhost:443
-      description: API root.
-    basePath:
-      default: application-endpoint-discovery/vwip
-      description: Base path for the Application Endpoint Discovery.
+      default: http://localhost:9091
+      description: API root, defined by the service provider, e.g. `api.example.com` or `api.example.com/somepath
 tags:
 - name: Phone Number Share
   description: API operation to return the phone number associated to the access token.
@@ -25,14 +21,12 @@ paths:
     get:
       tags:
       - Phone Number Share
-      summary: Global System for Mobile Communications Returns the phone number associated with the access token
+      summary: Global System for Mobile Communications Returns the phone number associated…
       description: 'Returns the phone number so the API clients can verify the number themselves:
 
         - It will be done for the user that has authenticated via mobile network
 
-        - It returns the authenticated user''s `device phone number` associated to the access token
-
-        '
+        - It returns the authenticated user''s `device phone number` associated to the access token'
       operationId: phoneNumberShare
       parameters:
       - in: header
@@ -70,19 +64,6 @@ paths:
         - number-verification:device-phone-number:read
 components:
   responses:
-    Generic503:
-      description: Service unavailable. Typically the server is down.
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          example:
-            status: 503
-            code: UNAVAILABLE
-            message: Service unavailable
     Generic500:
       description: Server error
       headers:
@@ -96,28 +77,6 @@ components:
             status: 500
             code: INTERNAL
             message: Server error
-    Generic401:
-      description: Unauthorized
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          examples:
-            GENERIC_401_UNAUTHENTICATED:
-              description: Request cannot be authenticated
-              value:
-                status: 401
-                code: UNAUTHENTICATED
-                message: Request not authenticated due to missing, invalid, or expired credentials.
-            GENERIC_401_AUTHENTICATION_REQUIRED:
-              description: New authentication is needed, authentication is no longer valid
-              value:
-                status: 401
-                code: AUTHENTICATION_REQUIRED
-                message: New authentication is required.
     Generic400:
       description: Problem with the client request
       headers:
@@ -131,19 +90,6 @@ components:
             status: 400
             code: INVALID_ARGUMENT
             message: Client specified an invalid argument, request body or query param
-    Generic504:
-      description: Request time exceeded. If it happens repeatedly, consider reducing the request complexity
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          example:
-            status: 504
-            code: TIMEOUT
-            message: Request timeout exceeded. Try later.
     PhoneNumberVerificationPermissionDenied403:
       description: "Client does not have sufficient permission.\nIn addition to regular scenario of `PERMISSION_DENIED`, other scenarios may exist:\n  - Client authentication was not via mobile network. In order to check the authentication method, AMR parameter value in the 3-legged user's access token can be used and make sure that the authentication was not either by SMS+OTP nor username/password (`{\"code\": \"NUMBER_VERIFICATION.USER_NOT_AUTHENTICATED_BY_MOBILE_NETWORK\",\"message\": \"Client must authenticate via the mobile network to use this service\"}`)\n  - Phone number cannot be deducted from access token context.(`{\"code\": \"INVALID_TOKEN_CONTEXT\",\"message\": \"Phone number cannot be deducted from access token context\"}`)\n"
       headers:
@@ -170,6 +116,54 @@ components:
                 status: 403
                 code: INVALID_TOKEN_CONTEXT
                 message: Phone number cannot be deducted from access token context
+    Generic401:
+      description: Unauthorized
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_401_UNAUTHENTICATED:
+              description: Request cannot be authenticated
+              value:
+                status: 401
+                code: UNAUTHENTICATED
+                message: Request not authenticated due to missing, invalid, or expired credentials.
+            GENERIC_401_AUTHENTICATION_REQUIRED:
+              description: New authentication is needed, authentication is no longer valid
+              value:
+                status: 401
+                code: AUTHENTICATION_REQUIRED
+                message: New authentication is required.
+    Generic503:
+      description: Service unavailable. Typically the server is down.
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 503
+            code: UNAVAILABLE
+            message: Service unavailable
+    Generic504:
+      description: Request time exceeded. If it happens repeatedly, consider reducing the request complexity
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 504
+            code: TIMEOUT
+            message: Request timeout exceeded. Try later.
   schemas:
     DevicePhoneNumber:
       type: string
@@ -207,9 +201,8 @@ components:
         type: string
   securitySchemes:
     openId:
-      description: OpenID Provider Configuration Information.
       type: openIdConnect
-      openIdConnectUrl: .well-known/openid-configuration
+      openIdConnectUrl: https://example.com/.well-known/openid-configuration
 externalDocs:
-  description: Product documentation at CAMARA.
-  url: https://github.com/camaraproject/EdgeCloud
+  description: Project documentation at CAMARA
+  url: https://github.com/camaraproject/NumberVerification

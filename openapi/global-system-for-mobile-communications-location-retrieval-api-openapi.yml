@@ -1,22 +1,18 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Global System for Mobile Communications GSMA Camara Project Endpoint Discovery Application Location Retrieval API
-  version: 0.1.0-wip
-  description: The Application Discovery API extends beyond the capabilities of the Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone but also directly linking to the application endpoints within those Edge Cloud Zones.
-  contact:
-    email: sp-edc@lists.camaraproject.org
+  title: Global System for Mobile Communications GSMA Camara Project…
+  description: Device Location Retrieval API provides the ability to retrieve the location of a device. The retrieved area depends on the network conditions at the subscribers location.
+  version: 0.3.0
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
+  x-camara-commonalities: 0.4.0
 servers:
-- url: '{apiRoot}/{basePath}'
+- url: '{apiRoot}/location-retrieval/v0.3'
   variables:
     apiRoot:
-      default: https://localhost:443
-      description: API root.
-    basePath:
-      default: application-endpoint-discovery/vwip
-      description: Base path for the Application Endpoint Discovery.
+      default: http://localhost:9091
+      description: API root
 tags:
 - name: Location Retrieval
   description: Retrieve the location of a device
@@ -25,7 +21,7 @@ paths:
     post:
       tags:
       - Location Retrieval
-      summary: Global System for Mobile Communications Execute location retrieval for a user equipment
+      summary: Global System for Mobile Communications Execute location retrieval for a user…
       description: Retrieve the area where a certain user device is localized.
       operationId: retrieveLocation
       parameters:
@@ -91,40 +87,6 @@ paths:
         - location-retrieval:read
 components:
   responses:
-    Generic503:
-      description: Service Unavailable
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          examples:
-            GENERIC_503_UNAVAILABLE:
-              summary: Generic Unavailable
-              description: Service is not available. Temporary situation usually related to maintenance process in the server side
-              value:
-                status: 503
-                code: UNAVAILABLE
-                message: Service Unavailable.
-    Generic500:
-      description: Internal server error
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          examples:
-            GENERIC_500_INTERNAL:
-              summary: Generic Internal
-              description: Problem in Server side. Regular Server Exception
-              value:
-                status: 500
-                code: INTERNAL
-                message: Internal server error
     Generic400:
       description: Bad Request
       headers:
@@ -178,6 +140,23 @@ components:
                 status: 401
                 code: AUTHENTICATION_REQUIRED
                 message: New authentication is required.
+    Generic503:
+      description: Service Unavailable
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_503_UNAVAILABLE:
+              summary: Generic Unavailable
+              description: Service is not available. Temporary situation usually related to maintenance process in the server side
+              value:
+                status: 503
+                code: UNAVAILABLE
+                message: Service Unavailable.
     RetrieveLocationNotFound404:
       description: Not found
       headers:
@@ -202,6 +181,47 @@ components:
                 status: 404
                 code: DEVICE_NOT_FOUND
                 message: No device found for a provided identifier
+    Generic403:
+      description: Forbidden
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_403_PERMISSION_DENIED:
+              summary: Generic Permission Denied
+              description: Permission denied. OAuth2 token access does not have the required scope or when the user fails operational security
+              value:
+                status: 403
+                code: PERMISSION_DENIED
+                message: Client does not have sufficient permissions to perform this action.
+            GENERIC_403_INVALID_TOKEN_CONTEXT:
+              summary: Invalid access token context
+              description: Reflects some inconsistency between information in some field of the API and the related OAuth2 Token
+              value:
+                status: 403
+                code: INVALID_TOKEN_CONTEXT
+                message: '{{field}} is not consistent with access token.'
+    Generic500:
+      description: Internal server error
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_500_INTERNAL:
+              summary: Generic Internal
+              description: Problem in Server side. Regular Server Exception
+              value:
+                status: 500
+                code: INTERNAL
+                message: Internal server error
     RetrieveLocationUnprocessableEntity422:
       description: Unprocessable Entity
       headers:
@@ -254,67 +274,6 @@ components:
                 status: 422
                 code: UNIDENTIFIABLE_DEVICE
                 message: A device must be provided
-    Generic403:
-      description: Forbidden
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          examples:
-            GENERIC_403_PERMISSION_DENIED:
-              summary: Generic Permission Denied
-              description: Permission denied. OAuth2 token access does not have the required scope or when the user fails operational security
-              value:
-                status: 403
-                code: PERMISSION_DENIED
-                message: Client does not have sufficient permissions to perform this action.
-            GENERIC_403_INVALID_TOKEN_CONTEXT:
-              summary: Invalid access token context
-              description: Reflects some inconsistency between information in some field of the API and the related OAuth2 Token
-              value:
-                status: 403
-                code: INVALID_TOKEN_CONTEXT
-                message: '{{field}} is not consistent with access token.'
-  examples:
-    RETRIEVAL_POLYGON:
-      summary: polygon-based device location retrieval
-      description: The device is localized within a polygon delimited by the provided coordinates.
-      value:
-        lastLocationTime: '2023-10-17T13:18:23.682Z'
-        area:
-          areaType: POLYGON
-          boundary:
-          - latitude: 45.754114
-            longitude: 4.860374
-          - latitude: 45.753845
-            longitude: 4.863185
-          - latitude: 45.75249
-            longitude: 4.861876
-          - latitude: 45.751224
-            longitude: 4.861125
-          - latitude: 45.751442
-            longitude: 4.859827
-    RETRIEVAL_CIRCLE:
-      summary: circle-based device location retrieval
-      description: The device is localized within a circle with a center at the specified coordinates and a radius of 800 meters.
-      value:
-        lastLocationTime: '2023-10-17T13:18:23.682Z'
-        area:
-          areaType: CIRCLE
-          center:
-            latitude: 45.754114
-            longitude: 4.860374
-          radius: 800
-  parameters:
-    x-correlator:
-      name: x-correlator
-      in: header
-      description: Correlation id for the different services
-      schema:
-        type: string
   schemas:
     RetrievalLocationRequest:
       description: Request to retrieve the location of a device. Device is not required when using a 3-legged access token, following the rules in the description.
@@ -325,11 +284,10 @@ components:
         maxAge:
           type: integer
           description: Maximum age of the location information which is accepted for the location retrieval (in seconds). Absence of maxAge means "any age" and maxAge=0 means a fresh calculation.
-    SingleIpv4Addr:
-      description: A single IPv4 address with no subnet mask
+    NetworkAccessIdentifier:
+      description: A public identifier addressing a subscription in a mobile network. In 3GPP terminology, it corresponds to the GPSI formatted with the External Identifier ({Local Identifier}@{Domain Identifier}). Unlike the telephone number, the network access identifier is not subjected to portability ruling in force, and is individually managed by each operator.
       type: string
-      format: ipv4
-      example: 84.125.93.10
+      example: 123456789@domain.com
     Location:
       type: object
       description: Device location
@@ -355,11 +313,23 @@ components:
       enum:
       - CIRCLE
       - POLYGON
-    PhoneNumber:
-      description: A public identifier addressing a telephone subscription. In mobile networks it corresponds to the MSISDN (Mobile Station International Subscriber Directory Number). In order to be globally unique it has to be formatted in international format, according to E.164 standard, prefixed with '+'.
-      type: string
-      pattern: ^\+[1-9][0-9]{4,14}$
-      example: '+123456789'
+    ErrorInfo:
+      description: Common schema for errors
+      type: object
+      required:
+      - status
+      - code
+      - message
+      properties:
+        status:
+          type: integer
+          description: HTTP status code returned along with this error response
+        code:
+          type: string
+          description: Code given to this error
+        message:
+          type: string
+          description: Detailed error description
     DeviceIpv4Addr:
       type: object
       description: 'The device should be identified by either the public (observed) IP address and port as seen by the application server, or the private (local) and any public (observed) IP addresses in use by the device (this information can be obtained by various means, for example from some DNS servers).
@@ -391,6 +361,13 @@ components:
       example:
         publicAddress: 84.125.93.10
         publicPort: 59765
+    DeviceIpv6Address:
+      description: 'The device should be identified by the observed IPv6 address, or by any single IPv6 address from within the subnet allocated to the device (e.g. adding ::0 to the /64 prefix).
+
+        '
+      type: string
+      format: ipv6
+      example: 2001:db8:85a3:8d3:1319:8a2e:370:7344
     Area:
       description: Base schema for all areas
       type: object
@@ -404,35 +381,6 @@ components:
         mapping:
           CIRCLE: '#/components/schemas/Circle'
           POLYGON: '#/components/schemas/Polygon'
-    ErrorInfo:
-      description: Common schema for errors
-      type: object
-      required:
-      - status
-      - code
-      - message
-      properties:
-        status:
-          type: integer
-          description: HTTP status code returned along with this error response
-        code:
-          type: string
-          description: Code given to this error
-        message:
-          type: string
-          description: Detailed error description
-    DeviceIpv6Address:
-      description: 'The device should be identified by the observed IPv6 address, or by any single IPv6 address from within the subnet allocated to the device (e.g. adding ::0 to the /64 prefix).
-
-        '
-      type: string
-      format: ipv6
-      example: 2001:db8:85a3:8d3:1319:8a2e:370:7344
-    Port:
-      description: TCP or UDP port number
-      type: integer
-      minimum: 0
-      maximum: 65535
     Device:
       description: 'End-user equipment able to connect to a mobile network. Examples of devices include smartphones or IoT sensors/actuators.
 
@@ -465,10 +413,58 @@ components:
         ipv6Address:
           $ref: '#/components/schemas/DeviceIpv6Address'
       minProperties: 1
-    NetworkAccessIdentifier:
-      description: A public identifier addressing a subscription in a mobile network. In 3GPP terminology, it corresponds to the GPSI formatted with the External Identifier ({Local Identifier}@{Domain Identifier}). Unlike the telephone number, the network access identifier is not subjected to portability ruling in force, and is individually managed by each operator.
+    SingleIpv4Addr:
+      description: A single IPv4 address with no subnet mask
       type: string
-      example: 123456789@domain.com
+      format: ipv4
+      example: 84.125.93.10
+    Port:
+      description: TCP or UDP port number
+      type: integer
+      minimum: 0
+      maximum: 65535
+    PhoneNumber:
+      description: A public identifier addressing a telephone subscription. In mobile networks it corresponds to the MSISDN (Mobile Station International Subscriber Directory Number). In order to be globally unique it has to be formatted in international format, according to E.164 standard, prefixed with '+'.
+      type: string
+      pattern: ^\+[1-9][0-9]{4,14}$
+      example: '+123456789'
+  examples:
+    RETRIEVAL_CIRCLE:
+      summary: circle-based device location retrieval
+      description: The device is localized within a circle with a center at the specified coordinates and a radius of 800 meters.
+      value:
+        lastLocationTime: '2023-10-17T13:18:23.682Z'
+        area:
+          areaType: CIRCLE
+          center:
+            latitude: 45.754114
+            longitude: 4.860374
+          radius: 800
+    RETRIEVAL_POLYGON:
+      summary: polygon-based device location retrieval
+      description: The device is localized within a polygon delimited by the provided coordinates.
+      value:
+        lastLocationTime: '2023-10-17T13:18:23.682Z'
+        area:
+          areaType: POLYGON
+          boundary:
+          - latitude: 45.754114
+            longitude: 4.860374
+          - latitude: 45.753845
+            longitude: 4.863185
+          - latitude: 45.75249
+            longitude: 4.861876
+          - latitude: 45.751224
+            longitude: 4.861125
+          - latitude: 45.751442
+            longitude: 4.859827
+  parameters:
+    x-correlator:
+      name: x-correlator
+      in: header
+      description: Correlation id for the different services
+      schema:
+        type: string
   headers:
     x-correlator:
       description: Correlation id for the different services
@@ -476,9 +472,9 @@ components:
         type: string
   securitySchemes:
     openId:
-      description: OpenID Provider Configuration Information.
+      description: OpenID Connect authentication
       type: openIdConnect
-      openIdConnectUrl: .well-known/openid-configuration
+      openIdConnectUrl: https://example.com/.well-known/openid-configuration
 externalDocs:
-  description: Product documentation at CAMARA.
-  url: https://github.com/camaraproject/EdgeCloud
+  description: Project documentation at Camara
+  url: https://github.com/camaraproject/DeviceLocation

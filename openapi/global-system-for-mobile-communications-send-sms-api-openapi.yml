@@ -1,10 +1,13 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Global System for Mobile Communications GSMA Camara Project Endpoint Discovery Application Send SMS API
-  version: 0.1.0-wip
-  description: The Application Discovery API extends beyond the capabilities of the Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone but also directly linking to the application endpoints within those Edge Cloud Zones.
+  title: Global System for Mobile Communications GSMA Camara Project…
+  description: SMS API provides the customer with the ability to send an SMS to a mobile phone number in use on a mobile phone device. There are 3 different categories of SMS, namely Service SMS, Promotional SMS and Transactional SMS. The SMS API can also be used to send a binary message to a mobile phone number which is being used on an (IoT) device.
+  version: 0.1.0-alpha.1
+  termsOfService: http://example.com/terms/
   contact:
-    email: sp-edc@lists.camaraproject.org
+    name: API Support
+    url: http://www.example.com/support
+    email: support@example.com
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
@@ -12,11 +15,11 @@ servers:
 - url: '{apiRoot}/{basePath}'
   variables:
     apiRoot:
-      default: https://localhost:443
-      description: API root.
+      default: http://localhost:9091
+      description: API root
     basePath:
-      default: application-endpoint-discovery/vwip
-      description: Base path for the Application Endpoint Discovery.
+      default: sms/v0alpha1
+      description: Base path for the Short Message Service
 tags:
 - name: Send SMS
 paths:
@@ -28,9 +31,7 @@ paths:
       tags:
       - Send SMS
       summary: Global System for Mobile Communications Send SMS
-      description: 'The customer application server makes a request to the SMS API to send SMS message to the destination address.
-
-        '
+      description: The customer application server makes a request to the SMS API to send SMS message to the destination address.
       operationId: send-sms
       parameters:
       - $ref: '#/components/parameters/x-correlator'
@@ -68,6 +69,51 @@ paths:
           $ref: '#/components/responses/Generic503'
 components:
   responses:
+    Generic500:
+      description: Server error
+      headers:
+        x-correlator:
+          description: Correlation id for the different services
+          schema:
+            type: string
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 500
+            code: INTERNAL
+            detail: Server error
+    Generic400:
+      description: Problem with the client request
+      headers:
+        x-correlator:
+          description: Correlation id for the different services
+          schema:
+            type: string
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 400
+            code: INVALID_ARGUMENT
+            detail: Client specified an invalid argument, request body or query param
+    Generic401:
+      description: Authentication problem with the client request
+      headers:
+        x-correlator:
+          description: Correlation id for the different services
+          schema:
+            type: string
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 401
+            code: UNAUTHENTICATED
+            detail: Request not authenticated due to missing, invalid, or expired credentials
     Generic503:
       description: Service unavailable. Typically the server is down.
       headers:
@@ -97,8 +143,8 @@ components:
           example:
             msgId: 56647d96-b3e6-48d2-b93f-ab0d56bdd965
             timestamp: '2024-03-19T12:33:27.070Z'
-    Generic401:
-      description: Authentication problem with the client request
+    Generic404:
+      description: Resource Not Found
       headers:
         x-correlator:
           description: Correlation id for the different services
@@ -109,9 +155,9 @@ components:
           schema:
             $ref: '#/components/schemas/ErrorInfo'
           example:
-            status: 401
-            code: UNAUTHENTICATED
-            detail: Request not authenticated due to missing, invalid, or expired credentials
+            status: 404
+            code: NOT_FOUND
+            detail: A specified resource is not found
     Generic403:
       description: Client does not have sufficient permission
       headers:
@@ -134,65 +180,14 @@ components:
                 status: 403
                 code: INVALID_TOKEN_CONTEXT
                 detail: Phone number cannot be deducted from access token context
-    Generic400:
-      description: Problem with the client request
-      headers:
-        x-correlator:
-          description: Correlation id for the different services
-          schema:
-            type: string
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          example:
-            status: 400
-            code: INVALID_ARGUMENT
-            detail: Client specified an invalid argument, request body or query param
-    Generic500:
-      description: Server error
-      headers:
-        x-correlator:
-          description: Correlation id for the different services
-          schema:
-            type: string
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          example:
-            status: 500
-            code: INTERNAL
-            detail: Server error
-    Generic404:
-      description: Resource Not Found
-      headers:
-        x-correlator:
-          description: Correlation id for the different services
-          schema:
-            type: string
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          example:
-            status: 404
-            code: NOT_FOUND
-            detail: A specified resource is not found
+  parameters:
+    x-correlator:
+      name: x-correlator
+      in: header
+      description: Correlation id for the different services
+      schema:
+        type: string
   schemas:
-    MessageResponse:
-      type: object
-      required:
-      - msgId
-      - timestamp
-      properties:
-        msgId:
-          type: string
-          description: The SMS messages sent to the recipients are identified by smsnumber are identified.
-        timestamp:
-          type: string
-          format: date-time
-          description: Timestamp when SMS was delivered. It must follow [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.6) and must have time zone. Recommended format is yyyy-MM-dd'T'HH:mm:ss.SSSZ (i.e. which allows 2023-07-03T14:27:08.312+02:00 or 2023-07-03T12:27:08.312Z)
     MessageRequest:
       type: object
       required:
@@ -233,18 +228,23 @@ components:
         detail:
           type: string
           description: Detailed error description
-  parameters:
-    x-correlator:
-      name: x-correlator
-      in: header
-      description: Correlation id for the different services
-      schema:
-        type: string
+    MessageResponse:
+      type: object
+      required:
+      - msgId
+      - timestamp
+      properties:
+        msgId:
+          type: string
+          description: The SMS messages sent to the recipients are identified by smsnumber are identified.
+        timestamp:
+          type: string
+          format: date-time
+          description: Timestamp when SMS was delivered. It must follow [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.6) and must have time zone. Recommended format is yyyy-MM-dd'T'HH:mm:ss.SSSZ (i.e. which allows 2023-07-03T14:27:08.312+02:00 or 2023-07-03T12:27:08.312Z)
   securitySchemes:
     openId:
-      description: OpenID Provider Configuration Information.
       type: openIdConnect
-      openIdConnectUrl: .well-known/openid-configuration
+      openIdConnectUrl: https://example.com/.well-known/openid-configuration
 externalDocs:
-  description: Product documentation at CAMARA.
-  url: https://github.com/camaraproject/EdgeCloud
+  description: Product documentation at Camara
+  url: https://github.com/camaraproject/ShortMessageService

@@ -1,8 +1,10 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Global System for Mobile Communications GSMA Camara Project Endpoint Discovery Application API
-  version: 0.1.0-wip
-  description: The Application Discovery API extends beyond the capabilities of the Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone but also directly linking to the application endpoints within those Edge Cloud Zones.
+  title: Global System for Mobile Communications GSMA Camara Project…
+  version: 0.9.3-wip
+  description: 'Edge Application Management API allows API consumers to manage the Life Cycle of an Application and to Discover Edge Cloud Zones. The reference scenario foresees a distributed Telco Edge Cloud where any Application Delevoper, known as an Application Provider, can host and deploy their application according to their specifications and operational criteria (e.g. within an specific geographical zone for data protection
+
+    purposes, ensure a minimum QoS for the application clients, etc).'
   contact:
     email: sp-edc@lists.camaraproject.org
   license:
@@ -12,11 +14,11 @@ servers:
 - url: '{apiRoot}/{basePath}'
   variables:
     apiRoot:
-      default: https://localhost:443
-      description: API root.
+      default: http://localhost:443
+      description: API root
     basePath:
-      default: application-endpoint-discovery/vwip
-      description: Base path for the Application Endpoint Discovery.
+      default: edge-application-management/vwip
+      description: Base path for the Edge Application Management API
 tags:
 - name: Application
   description: Application and Application Instance Lice Cycle Management
@@ -28,12 +30,10 @@ paths:
         - edge-application-management:apps:write
       tags:
       - Application
-      summary: Global System for Mobile Communications Submit application metadata to the Edge Cloud Provider.
+      summary: Global System for Mobile Communications Submit application metadata to the Edge…
       description: 'Contains the information about the application to be
 
-        instantiated in the Edge Cloud
-
-        '
+        instantiated in the Edge Cloud'
       operationId: submitApp
       parameters:
       - $ref: '#/components/parameters/x-correlator'
@@ -91,9 +91,7 @@ paths:
       summary: Global System for Mobile Communications Retrieve a list of existing Applications
       description: 'Get the list of all existing Application definitions from the
 
-        Edge Cloud Provider that the user has permission to view.
-
-        '
+        Edge Cloud Provider that the user has permission to view.'
       operationId: getApps
       parameters:
       - $ref: '#/components/parameters/x-correlator'
@@ -126,10 +124,8 @@ paths:
         - edge-application-management:apps:read
       tags:
       - Application
-      summary: Global System for Mobile Communications Retrieve the information of an Application
-      description: 'Ask the Edge Cloud Provider the information for a given application
-
-        '
+      summary: Global System for Mobile Communications Retrieve the information of an…
+      description: Ask the Edge Cloud Provider the information for a given application
       operationId: getApp
       parameters:
       - $ref: '#/components/parameters/x-correlator'
@@ -176,7 +172,7 @@ paths:
         - edge-application-management:apps:delete
       tags:
       - Application
-      summary: Global System for Mobile Communications Delete an Application from an Edge Cloud Provider
+      summary: Global System for Mobile Communications Delete an Application from an Edge…
       description: Delete all the information and content related to an Application
       operationId: deleteApp
       parameters:
@@ -235,9 +231,7 @@ paths:
 
         or several Edge Cloud Zones with an Application as an input and an
 
-        Application Instance as the output.
-
-        '
+        Application Instance as the output.'
       operationId: createAppInstance
       parameters:
       - $ref: '#/components/parameters/x-correlator'
@@ -309,12 +303,10 @@ paths:
         - edge-application-management:instances:read
       tags:
       - Application
-      summary: Global System for Mobile Communications Retrieve the information of Application Instances for a given App
+      summary: Global System for Mobile Communications Retrieve the information of Application…
       description: 'Ask the Edge Cloud Provider the information of the instances for a
 
-        given application
-
-        '
+        given application'
       operationId: getAppInstance
       parameters:
       - $ref: '#/components/parameters/x-correlator'
@@ -390,9 +382,7 @@ paths:
       summary: Global System for Mobile Communications Terminate an Application Instance
       description: 'Terminate a running instance of an application within
 
-        an Edge Cloud Zone
-
-        '
+        an Edge Cloud Zone'
       operationId: deleteAppInstance
       parameters:
       - $ref: '#/components/parameters/x-correlator'
@@ -432,6 +422,136 @@ paths:
           $ref: '#/components/responses/503'
 components:
   schemas:
+    ContainerResources:
+      description: Container Infrastructure Definition
+      type: object
+      required:
+      - infraKind
+      - numCPU
+      - memory
+      properties:
+        infraKind:
+          description: Type of infrastructure for the application.
+          type: string
+          example: container
+          enum:
+          - container
+        numCPU:
+          $ref: '#/components/schemas/Vcpu'
+        memory:
+          type: integer
+          example: 1024
+          description: Memory in mega bytes
+        storage:
+          $ref: '#/components/schemas/AdditionalStorage'
+        gpu:
+          $ref: '#/components/schemas/GpuInfo'
+    EdgeCloudZoneStatus:
+      description: Status of the Edge Cloud Zone (default is 'unknown')
+      type: string
+      enum:
+      - active
+      - inactive
+      - unknown
+      default: unknown
+    EdgeCloudZoneName:
+      type: string
+      description: 'Human readable name of the geographical zone of
+
+        the Edge Cloud. Defined by the Edge Cloud Provider.
+
+        '
+    OperatingSystem:
+      description: 'Information about the Operating System of the application image
+
+        '
+      type: object
+      required:
+      - architecture
+      - family
+      - version
+      - license
+      properties:
+        architecture:
+          description: Type of the OS Architecture
+          type: string
+          enum:
+          - x86_64
+          - x86
+          example: x86_64
+        family:
+          description: Family to which OS belongs
+          type: string
+          enum:
+          - RHEL
+          - UBUNTU
+          - COREOS
+          - WINDOWS
+          - OTHER
+        version:
+          description: Version of the OS
+          type: string
+          enum:
+          - OS_VERSION_UBUNTU_2204_LTS
+          - OS_VERSION_RHEL_8
+          - OS_MS_WINDOWS_2022
+          - OTHER
+        license:
+          description: License needed to activate the OS
+          type: string
+          enum:
+          - OS_LICENSE_TYPE_FREE
+          - OS_LICENSE_TYPE_ON_DEMAND
+          - OTHER
+    GpuInfo:
+      type: object
+      description: Information about the supported GPUs
+      required:
+      - gpuMemory
+      - numGPU
+      properties:
+        gpuMemory:
+          type: integer
+          description: GPU memory in mega bytes
+        numGPU:
+          type: integer
+          description: Number of GPUs
+    K8sAddons:
+      description: 'Addons for the Kubernetes cluster.
+
+        Additional addons should be defined in application the helm chart
+
+        (Service Mesh, Serverless, AI).
+
+        '
+      type: object
+      properties:
+        monitoring:
+          type: boolean
+          example: true
+          default: false
+          description: Enable monitoring for Kubernetes cluster.
+        ingress:
+          type: boolean
+          example: true
+          default: false
+          description: Enable ingress for Kubernetes cluster.
+    KubernetesClusterRef:
+      description: 'A global unique identifier associated with a Kubernetes cluster
+
+        infrastructure.
+
+        '
+      type: string
+      format: uuid
+      example: 642f6105-7015-4af1-a4d1-e1ecb8437abc
+    EdgeCloudRegion:
+      type: string
+      description: 'Human readable name of the geographical Edge Cloud Region of
+
+        the Edge Cloud. Defined by the Edge Cloud Provider.
+
+        '
     RequiredResources:
       description: 'Fundamental hardware requirements to be provisioned by the
 
@@ -450,6 +570,375 @@ components:
           virtualMachine: '#/components/schemas/VmResources'
           container: '#/components/schemas/ContainerResources'
           dockerCompose: '#/components/schemas/DockerComposeResources'
+    K8sNetworking:
+      description: 'Kubernetes networking definition
+
+        '
+      type: object
+      properties:
+        primaryNetwork:
+          description: Definition of Kubernetes primary Network
+          type: object
+          properties:
+            provider:
+              description: CNI provider name
+              type: string
+              example: cilium
+            version:
+              description: CNI provider version
+              type: string
+              example: '1.13'
+        additionalNetworks:
+          description: Additional Networks for the Kubernetes cluster.
+          type: array
+          items:
+            type: object
+            description: Additional network interface definition
+            properties:
+              name:
+                description: Additional Network Name
+                type: string
+                example: net1
+              interfaceType:
+                description: "Type of additional Interface:\nnetdevice: (SR-IOV) A regular kernel network device in the\n           Network Namespace (netns) of the container\nvfio-pci: (SR-IOV) A PCI network interface directly mounted\n          in the container\ninterface: Additional interface to be used by cni plugins\n           such as macvlan, ipvlan\nNote: The use of SR-IOV interfaces automatically\nconfigure the required kernel parameters for the nodes.\n"
+                type: string
+                example: vfio-pci
+                enum:
+                - netdevice
+                - vfio-pci
+                - interface
+    AccessEndpoint:
+      type: object
+      description: 'Application Endpoint for an especific instance that is
+
+        running in an specific Edge Cloud Zone.
+
+        '
+      required:
+      - port
+      anyOf:
+      - required:
+        - fqdn
+      - required:
+        - ipv4Addresses
+      - required:
+        - ipv6Addresses
+      properties:
+        port:
+          $ref: '#/components/schemas/Port'
+        fqdn:
+          $ref: '#/components/schemas/Fqdn'
+        ipv4Addresses:
+          description: IP version 4 of an application instance
+          type: array
+          items:
+            $ref: '#/components/schemas/Ipv4Addr'
+          minItems: 1
+        ipv6Addresses:
+          description: IP version 6 of an application instance.
+          type: array
+          items:
+            $ref: '#/components/schemas/Ipv6Addr'
+          minItems: 1
+    ErrorInfo:
+      type: object
+      description: Information about the error
+      properties:
+        status:
+          type: integer
+          description: HTTP status code returned along with this error response
+        code:
+          type: string
+          description: Code given to this error
+        message:
+          type: string
+          description: Detailed error description
+      required:
+      - status
+      - code
+      - message
+    Vcpu:
+      type: string
+      pattern: ^\d+((\.\d{1,3})|(m))?$
+      description: 'Number of vcpus in whole (i.e 1), decimal (i.e 0.500) up to
+
+        millivcpu, or millivcpu (i.e 500m) format.
+
+        '
+      example: 500m
+    Ipv6Addr:
+      type: string
+      format: ipv6
+      example: 2001:db8:85a3:8d3:1319:8a2e:370:7344
+      description: 'IP of the device. A single IPv6 address, following IETF 5952
+
+        format, may be specified like 2001:db8:85a3:8d3:1319:8a2e:370:7344
+
+        '
+    Ipv4Addr:
+      type: string
+      format: ipv4
+      example: 192.168.0.1
+      description: 'IP of the device. A single IPv4 address may be specified in
+
+        dotted-quad form 1.2.3.4. Only this exact IP number will match the flow
+
+        control rule.
+
+        '
+    AppInstanceId:
+      type: string
+      format: uuid
+      description: 'A globally unique identifier associated with a running
+
+        instance of an application.
+
+        Edge Cloud Platform generates this identifier when the
+
+        instantiation in the Edge Cloud Zone is successful.
+
+        '
+    EdgeCloudZone:
+      type: object
+      description: 'An Edge Cloud Zone, uniquely identified by a
+
+        combination of the value of the Edge Cloud Zone Id object
+
+        and the value of the Edge Cloud Provider
+
+        object. This value is used to identify an Edge Cloud zone
+
+        between Edge Clouds from different Edge Cloud Providers.
+
+        '
+      required:
+      - edgeCloudZoneId
+      - edgeCloudZoneName
+      - edgeCloudProvider
+      properties:
+        edgeCloudZoneId:
+          $ref: '#/components/schemas/EdgeCloudZoneId'
+        edgeCloudZoneName:
+          $ref: '#/components/schemas/EdgeCloudZoneName'
+        edgeCloudZoneStatus:
+          $ref: '#/components/schemas/EdgeCloudZoneStatus'
+        edgeCloudProvider:
+          $ref: '#/components/schemas/EdgeCloudProvider'
+        edgeCloudRegion:
+          $ref: '#/components/schemas/EdgeCloudRegion'
+      minItems: 1
+    SubmittedApp:
+      description: Information about the submitted app
+      type: object
+      properties:
+        appId:
+          $ref: '#/components/schemas/AppId'
+    KubernetesResources:
+      description: Definition of Kubernetes Cluster Infrastructure.
+      required:
+      - infraKind
+      - applicationResources
+      - isStandalone
+      properties:
+        infraKind:
+          description: Type of infrastructure for the application.
+          type: string
+          example: kubernetes
+          enum:
+          - kubernetes
+        applicationResources:
+          description: 'Application resources define the resources pool required
+
+            by the application to be executed in a Kubernetes clusters.
+
+            '
+          type: object
+          properties:
+            cpuPool:
+              required:
+              - numCPU
+              - memory
+              - topology
+              type: object
+              description: 'CPU Pool refers to the amount of application'' resources
+
+                that is executed in nodes with CPU only. That means the part
+
+                of application that doesn''t require GPU or other kind of
+
+                acceleration.
+
+                CPU pool is not mandatory when the application is executed
+
+                exclusively in a GPU pool.
+
+                A CPU pool is composed by CPU and memory.
+
+                '
+              properties:
+                numCPU:
+                  description: 'Total number of vcpus in whole (i.e 1) of CPU pool.
+
+                    '
+                  type: integer
+                  example: 1
+                memory:
+                  description: Total memory in mega bytes of CPU pool.
+                  type: integer
+                  example: 1024
+                topology:
+                  type: object
+                  description: 'CPU pool topology defines an application''s CPU-based
+
+                    architecture.
+
+                    When deploying for high availability or redundancy, it
+
+                    allows for clustering with a configurable number of nodes
+
+                    and minimum CPU/memory resource per Kubernetes node
+
+                    requirements.
+
+                    '
+                  required:
+                  - minNumberOfNodes
+                  - minNodeCpu
+                  - minNodeMemory
+                  properties:
+                    minNumberOfNodes:
+                      description: 'Minimum number of worker nodes required by the
+
+                        application.
+
+                        '
+                      type: integer
+                      example: 5
+                    minNodeCpu:
+                      description: 'Minimum number of vcpus in whole (i.e 1) per cluster
+
+                        node in CPU pool.
+
+                        '
+                      type: integer
+                      example: 2
+                    minNodeMemory:
+                      description: 'Minimum memory in mega bytes per cluster node in
+
+                        CPU pool.
+
+                        '
+                      type: integer
+                      example: 1024
+            gpuPool:
+              required:
+              - numCPU
+              - memory
+              - gpuMemory
+              - topology
+              type: object
+              description: 'GPU Pool refers to the amount of resources of the application
+
+                that is executed in nodes with GPU.
+
+                GPU Pool is not mandatory when the application is executed
+
+                exclusively in a CPU pool.
+
+                A GPU pool is composed by memory, CPU and GPU memory
+
+                '
+              properties:
+                numCPU:
+                  description: 'Total Number of vcpus in whole (i.e 1) of GPU pool.
+
+                    '
+                  type: integer
+                  example: 1
+                memory:
+                  description: Total memory in mega bytes of GPU pool.
+                  type: integer
+                  example: 1024
+                gpuMemory:
+                  description: Total GPU memory in giga bytes of GPU pool.
+                  type: integer
+                  example: 16
+                topology:
+                  type: object
+                  description: 'GPU pool topology defines an application''s GPU-based
+
+                    architecture.
+
+                    When deploying for high availability or redundancy, it
+
+                    allows for clustering with a configurable number of nodes
+
+                    and minimum CPU/memory/GPU memory resource per Kubernetes
+
+                    node requirements.
+
+                    '
+                  required:
+                  - minNumberOfNodes
+                  - minNodeCpu
+                  - minNodeMemory
+                  - minNodeGpuMemory
+                  properties:
+                    minNumberOfNodes:
+                      description: 'Minimum number of worker nodes with GPU required by
+
+                        the application.
+
+                        '
+                      type: integer
+                      example: 2
+                    minNodeCpu:
+                      description: 'Minimum number of vcpus in whole (i.e 1) per cluster
+
+                        node in GPU pool.
+
+                        '
+                      type: integer
+                      example: 2
+                    minNodeMemory:
+                      description: 'Minimum memory in mega bytes per cluster node in
+
+                        GPU pool.
+
+                        '
+                      type: integer
+                      example: 1024
+                    minNodeGpuMemory:
+                      description: Minimum memory in giga bytes per cluster node in GPU pool.
+                      type: integer
+                      example: 8
+        isStandalone:
+          description: 'Define if the Kubernetes clusters can be reused by other
+
+            applications.
+
+            '
+          type: boolean
+          example: false
+        version:
+          type: string
+          description: Minimum Kubernetes Version.
+          example: '1.29'
+        additionalStorage:
+          type: string
+          description: 'Amount of persistent storage allocated to the Kubernetes PVC.
+
+            '
+          example: 80GB
+          pattern: ^\d+(GB|MB)$
+        networking:
+          $ref: '#/components/schemas/K8sNetworking'
+        addons:
+          $ref: '#/components/schemas/K8sAddons'
+    AppProvider:
+      type: string
+      pattern: ^[A-Za-z][A-Za-z0-9_]{7,63}$
+      description: Human readable name of the Application Provider.
     Uri:
       type: string
       example: https://charts.bitnami.com/bitnami/helm/example-chart:0.1.0
@@ -460,13 +949,61 @@ components:
         equipment may connect to the selected application instance
 
         '
-    EdgeCloudRegion:
+    Fqdn:
       type: string
-      description: 'Human readable name of the geographical Edge Cloud Region of
-
-        the Edge Cloud. Defined by the Edge Cloud Provider.
+      description: 'Full qualified domain name of an application instance
 
         '
+    AppZones:
+      description: 'Collection of Edge Cloud Zones and/or Kubernetes cluster reference
+
+        where the Application Provider wants to instantiate the application.
+
+        '
+      type: array
+      items:
+        type: object
+        properties:
+          kubernetesClusterRef:
+            $ref: '#/components/schemas/KubernetesClusterRef'
+          EdgeCloudZone:
+            $ref: '#/components/schemas/EdgeCloudZone'
+      required:
+      - EdgeCloudZone
+      minItems: 1
+      additionalProperties: false
+    DockerComposeResources:
+      description: Definition of Docker Compose Infrastructure
+      type: object
+      required:
+      - infraKind
+      - numCPU
+      - memory
+      properties:
+        infraKind:
+          description: Type of infrastructure for the application.
+          type: string
+          example: dockerCompose
+          enum:
+          - dockerCompose
+        numCPU:
+          type: integer
+          description: 'Number of vcpus in whole (i.e 1)
+
+            '
+          example: 1
+        memory:
+          type: integer
+          example: 1024
+          description: Memory in mega bytes
+        storage:
+          $ref: '#/components/schemas/AdditionalStorage'
+        gpu:
+          $ref: '#/components/schemas/GpuInfo'
+    Port:
+      type: integer
+      description: Port to stablish the connection
+      minimum: 0
     EdgeCloudZoneId:
       type: string
       format: uuid
@@ -475,14 +1012,19 @@ components:
         Edge Cloud Zone within an Edge Cloud.
 
         '
+    AppId:
+      type: string
+      format: uuid
+      description: 'A globally unique identifier associated with the application.
+
+        Edge Cloud Platform generates this identifier when the
+
+        Application is submitted.
+
+        '
     EdgeCloudProvider:
       type: string
       description: Human readable name of the Edge Cloud Provider.
-    Fqdn:
-      type: string
-      description: 'Full qualified domain name of an application instance
-
-        '
     AppManifest:
       description: 'Application information and requirements provided by the
 
@@ -707,24 +1249,6 @@ components:
       - appRepo
       - requiredResources
       - componentSpec
-    AppZones:
-      description: 'Collection of Edge Cloud Zones and/or Kubernetes cluster reference
-
-        where the Application Provider wants to instantiate the application.
-
-        '
-      type: array
-      items:
-        type: object
-        properties:
-          kubernetesClusterRef:
-            $ref: '#/components/schemas/KubernetesClusterRef'
-          EdgeCloudZone:
-            $ref: '#/components/schemas/EdgeCloudZone'
-      required:
-      - EdgeCloudZone
-      minItems: 1
-      additionalProperties: false
     AppInstanceInfo:
       description: Information about the application instance.
       type: object
@@ -773,516 +1297,6 @@ components:
           $ref: '#/components/schemas/KubernetesClusterRef'
         edgeCloudZone:
           $ref: '#/components/schemas/EdgeCloudZone'
-    KubernetesClusterRef:
-      description: 'A global unique identifier associated with a Kubernetes cluster
-
-        infrastructure.
-
-        '
-      type: string
-      format: uuid
-      example: 642f6105-7015-4af1-a4d1-e1ecb8437abc
-    AccessEndpoint:
-      type: object
-      description: 'Application Endpoint for an especific instance that is
-
-        running in an specific Edge Cloud Zone.
-
-        '
-      required:
-      - port
-      anyOf:
-      - required:
-        - fqdn
-      - required:
-        - ipv4Addresses
-      - required:
-        - ipv6Addresses
-      properties:
-        port:
-          $ref: '#/components/schemas/Port'
-        fqdn:
-          $ref: '#/components/schemas/Fqdn'
-        ipv4Addresses:
-          description: IP version 4 of an application instance
-          type: array
-          items:
-            $ref: '#/components/schemas/Ipv4Addr'
-          minItems: 1
-        ipv6Addresses:
-          description: IP version 6 of an application instance.
-          type: array
-          items:
-            $ref: '#/components/schemas/Ipv6Addr'
-          minItems: 1
-    EdgeCloudZoneStatus:
-      description: Status of the Edge Cloud Zone (default is 'unknown')
-      type: string
-      enum:
-      - active
-      - inactive
-      - unknown
-      default: unknown
-    Vcpu:
-      type: string
-      pattern: ^\d+((\.\d{1,3})|(m))?$
-      description: 'Number of vcpus in whole (i.e 1), decimal (i.e 0.500) up to
-
-        millivcpu, or millivcpu (i.e 500m) format.
-
-        '
-      example: 500m
-    K8sNetworking:
-      description: 'Kubernetes networking definition
-
-        '
-      type: object
-      properties:
-        primaryNetwork:
-          description: Definition of Kubernetes primary Network
-          type: object
-          properties:
-            provider:
-              description: CNI provider name
-              type: string
-              example: cilium
-            version:
-              description: CNI provider version
-              type: string
-              example: '1.13'
-        additionalNetworks:
-          description: Additional Networks for the Kubernetes cluster.
-          type: array
-          items:
-            type: object
-            description: Additional network interface definition
-            properties:
-              name:
-                description: Additional Network Name
-                type: string
-                example: net1
-              interfaceType:
-                description: "Type of additional Interface:\nnetdevice: (SR-IOV) A regular kernel network device in the\n           Network Namespace (netns) of the container\nvfio-pci: (SR-IOV) A PCI network interface directly mounted\n          in the container\ninterface: Additional interface to be used by cni plugins\n           such as macvlan, ipvlan\nNote: The use of SR-IOV interfaces automatically\nconfigure the required kernel parameters for the nodes.\n"
-                type: string
-                example: vfio-pci
-                enum:
-                - netdevice
-                - vfio-pci
-                - interface
-    Ipv6Addr:
-      type: string
-      format: ipv6
-      example: 2001:db8:85a3:8d3:1319:8a2e:370:7344
-      description: 'IP of the device. A single IPv6 address, following IETF 5952
-
-        format, may be specified like 2001:db8:85a3:8d3:1319:8a2e:370:7344
-
-        '
-    AdditionalStorage:
-      description: Additional storage for the application.
-      type: array
-      items:
-        type: object
-        required:
-        - storageSize
-        - mountPoint
-        properties:
-          name:
-            type: string
-            description: Name of additional storage resource.
-            example: logs
-          storageSize:
-            type: string
-            description: Additional persistent volume for the application.
-            example: 80GB
-            pattern: ^\d+(GB|MB)$
-          mountPoint:
-            type: string
-            description: Location of additional storage resource.
-            example: /logs
-    EdgeCloudZoneName:
-      type: string
-      description: 'Human readable name of the geographical zone of
-
-        the Edge Cloud. Defined by the Edge Cloud Provider.
-
-        '
-    DockerComposeResources:
-      description: Definition of Docker Compose Infrastructure
-      type: object
-      required:
-      - infraKind
-      - numCPU
-      - memory
-      properties:
-        infraKind:
-          description: Type of infrastructure for the application.
-          type: string
-          example: dockerCompose
-          enum:
-          - dockerCompose
-        numCPU:
-          type: integer
-          description: 'Number of vcpus in whole (i.e 1)
-
-            '
-          example: 1
-        memory:
-          type: integer
-          example: 1024
-          description: Memory in mega bytes
-        storage:
-          $ref: '#/components/schemas/AdditionalStorage'
-        gpu:
-          $ref: '#/components/schemas/GpuInfo'
-    Ipv4Addr:
-      type: string
-      format: ipv4
-      example: 192.168.0.1
-      description: 'IP of the device. A single IPv4 address may be specified in
-
-        dotted-quad form 1.2.3.4. Only this exact IP number will match the flow
-
-        control rule.
-
-        '
-    K8sAddons:
-      description: 'Addons for the Kubernetes cluster.
-
-        Additional addons should be defined in application the helm chart
-
-        (Service Mesh, Serverless, AI).
-
-        '
-      type: object
-      properties:
-        monitoring:
-          type: boolean
-          example: true
-          default: false
-          description: Enable monitoring for Kubernetes cluster.
-        ingress:
-          type: boolean
-          example: true
-          default: false
-          description: Enable ingress for Kubernetes cluster.
-    ErrorInfo:
-      type: object
-      description: Information about the error
-      properties:
-        status:
-          type: integer
-          description: HTTP status code returned along with this error response
-        code:
-          type: string
-          description: Code given to this error
-        message:
-          type: string
-          description: Detailed error description
-      required:
-      - status
-      - code
-      - message
-    AppId:
-      type: string
-      format: uuid
-      description: 'A globally unique identifier associated with the application.
-
-        Edge Cloud Platform generates this identifier when the
-
-        Application is submitted.
-
-        '
-    AppInstanceId:
-      type: string
-      format: uuid
-      description: 'A globally unique identifier associated with a running
-
-        instance of an application.
-
-        Edge Cloud Platform generates this identifier when the
-
-        instantiation in the Edge Cloud Zone is successful.
-
-        '
-    GpuInfo:
-      type: object
-      description: Information about the supported GPUs
-      required:
-      - gpuMemory
-      - numGPU
-      properties:
-        gpuMemory:
-          type: integer
-          description: GPU memory in mega bytes
-        numGPU:
-          type: integer
-          description: Number of GPUs
-    EdgeCloudZone:
-      type: object
-      description: 'An Edge Cloud Zone, uniquely identified by a
-
-        combination of the value of the Edge Cloud Zone Id object
-
-        and the value of the Edge Cloud Provider
-
-        object. This value is used to identify an Edge Cloud zone
-
-        between Edge Clouds from different Edge Cloud Providers.
-
-        '
-      required:
-      - edgeCloudZoneId
-      - edgeCloudZoneName
-      - edgeCloudProvider
-      properties:
-        edgeCloudZoneId:
-          $ref: '#/components/schemas/EdgeCloudZoneId'
-        edgeCloudZoneName:
-          $ref: '#/components/schemas/EdgeCloudZoneName'
-        edgeCloudZoneStatus:
-          $ref: '#/components/schemas/EdgeCloudZoneStatus'
-        edgeCloudProvider:
-          $ref: '#/components/schemas/EdgeCloudProvider'
-        edgeCloudRegion:
-          $ref: '#/components/schemas/EdgeCloudRegion'
-      minItems: 1
-    ContainerResources:
-      description: Container Infrastructure Definition
-      type: object
-      required:
-      - infraKind
-      - numCPU
-      - memory
-      properties:
-        infraKind:
-          description: Type of infrastructure for the application.
-          type: string
-          example: container
-          enum:
-          - container
-        numCPU:
-          $ref: '#/components/schemas/Vcpu'
-        memory:
-          type: integer
-          example: 1024
-          description: Memory in mega bytes
-        storage:
-          $ref: '#/components/schemas/AdditionalStorage'
-        gpu:
-          $ref: '#/components/schemas/GpuInfo'
-    SubmittedApp:
-      description: Information about the submitted app
-      type: object
-      properties:
-        appId:
-          $ref: '#/components/schemas/AppId'
-    Port:
-      type: integer
-      description: Port to stablish the connection
-      minimum: 0
-    KubernetesResources:
-      description: Definition of Kubernetes Cluster Infrastructure.
-      required:
-      - infraKind
-      - applicationResources
-      - isStandalone
-      properties:
-        infraKind:
-          description: Type of infrastructure for the application.
-          type: string
-          example: kubernetes
-          enum:
-          - kubernetes
-        applicationResources:
-          description: 'Application resources define the resources pool required
-
-            by the application to be executed in a Kubernetes clusters.
-
-            '
-          type: object
-          properties:
-            cpuPool:
-              required:
-              - numCPU
-              - memory
-              - topology
-              type: object
-              description: 'CPU Pool refers to the amount of application'' resources
-
-                that is executed in nodes with CPU only. That means the part
-
-                of application that doesn''t require GPU or other kind of
-
-                acceleration.
-
-                CPU pool is not mandatory when the application is executed
-
-                exclusively in a GPU pool.
-
-                A CPU pool is composed by CPU and memory.
-
-                '
-              properties:
-                numCPU:
-                  description: 'Total number of vcpus in whole (i.e 1) of CPU pool.
-
-                    '
-                  type: integer
-                  example: 1
-                memory:
-                  description: Total memory in mega bytes of CPU pool.
-                  type: integer
-                  example: 1024
-                topology:
-                  type: object
-                  description: 'CPU pool topology defines an application''s CPU-based
-
-                    architecture.
-
-                    When deploying for high availability or redundancy, it
-
-                    allows for clustering with a configurable number of nodes
-
-                    and minimum CPU/memory resource per Kubernetes node
-
-                    requirements.
-
-                    '
-                  required:
-                  - minNumberOfNodes
-                  - minNodeCpu
-                  - minNodeMemory
-                  properties:
-                    minNumberOfNodes:
-                      description: 'Minimum number of worker nodes required by the
-
-                        application.
-
-                        '
-                      type: integer
-                      example: 5
-                    minNodeCpu:
-                      description: 'Minimum number of vcpus in whole (i.e 1) per cluster
-
-                        node in CPU pool.
-
-                        '
-                      type: integer
-                      example: 2
-                    minNodeMemory:
-                      description: 'Minimum memory in mega bytes per cluster node in
-
-                        CPU pool.
-
-                        '
-                      type: integer
-                      example: 1024
-            gpuPool:
-              required:
-              - numCPU
-              - memory
-              - gpuMemory
-              - topology
-              type: object
-              description: 'GPU Pool refers to the amount of resources of the application
-
-                that is executed in nodes with GPU.
-
-                GPU Pool is not mandatory when the application is executed
-
-                exclusively in a CPU pool.
-
-                A GPU pool is composed by memory, CPU and GPU memory
-
-                '
-              properties:
-                numCPU:
-                  description: 'Total Number of vcpus in whole (i.e 1) of GPU pool.
-
-                    '
-                  type: integer
-                  example: 1
-                memory:
-                  description: Total memory in mega bytes of GPU pool.
-                  type: integer
-                  example: 1024
-                gpuMemory:
-                  description: Total GPU memory in giga bytes of GPU pool.
-                  type: integer
-                  example: 16
-                topology:
-                  type: object
-                  description: 'GPU pool topology defines an application''s GPU-based
-
-                    architecture.
-
-                    When deploying for high availability or redundancy, it
-
-                    allows for clustering with a configurable number of nodes
-
-                    and minimum CPU/memory/GPU memory resource per Kubernetes
-
-                    node requirements.
-
-                    '
-                  required:
-                  - minNumberOfNodes
-                  - minNodeCpu
-                  - minNodeMemory
-                  - minNodeGpuMemory
-                  properties:
-                    minNumberOfNodes:
-                      description: 'Minimum number of worker nodes with GPU required by
-
-                        the application.
-
-                        '
-                      type: integer
-                      example: 2
-                    minNodeCpu:
-                      description: 'Minimum number of vcpus in whole (i.e 1) per cluster
-
-                        node in GPU pool.
-
-                        '
-                      type: integer
-                      example: 2
-                    minNodeMemory:
-                      description: 'Minimum memory in mega bytes per cluster node in
-
-                        GPU pool.
-
-                        '
-                      type: integer
-                      example: 1024
-                    minNodeGpuMemory:
-                      description: Minimum memory in giga bytes per cluster node in GPU pool.
-                      type: integer
-                      example: 8
-        isStandalone:
-          description: 'Define if the Kubernetes clusters can be reused by other
-
-            applications.
-
-            '
-          type: boolean
-          example: false
-        version:
-          type: string
-          description: Minimum Kubernetes Version.
-          example: '1.29'
-        additionalStorage:
-          type: string
-          description: 'Amount of persistent storage allocated to the Kubernetes PVC.
-
-            '
-          example: 80GB
-          pattern: ^\d+(GB|MB)$
-        networking:
-          $ref: '#/components/schemas/K8sNetworking'
-        addons:
-          $ref: '#/components/schemas/K8sAddons'
     VmResources:
       description: Definition of Virtual Machine Infrastructure
       type: object
@@ -1311,61 +1325,28 @@ components:
           $ref: '#/components/schemas/AdditionalStorage'
         gpu:
           $ref: '#/components/schemas/GpuInfo'
-    OperatingSystem:
-      description: 'Information about the Operating System of the application image
-
-        '
-      type: object
-      required:
-      - architecture
-      - family
-      - version
-      - license
-      properties:
-        architecture:
-          description: Type of the OS Architecture
-          type: string
-          enum:
-          - x86_64
-          - x86
-          example: x86_64
-        family:
-          description: Family to which OS belongs
-          type: string
-          enum:
-          - RHEL
-          - UBUNTU
-          - COREOS
-          - WINDOWS
-          - OTHER
-        version:
-          description: Version of the OS
-          type: string
-          enum:
-          - OS_VERSION_UBUNTU_2204_LTS
-          - OS_VERSION_RHEL_8
-          - OS_MS_WINDOWS_2022
-          - OTHER
-        license:
-          description: License needed to activate the OS
-          type: string
-          enum:
-          - OS_LICENSE_TYPE_FREE
-          - OS_LICENSE_TYPE_ON_DEMAND
-          - OTHER
-    AppProvider:
-      type: string
-      pattern: ^[A-Za-z][A-Za-z0-9_]{7,63}$
-      description: Human readable name of the Application Provider.
-  parameters:
-    x-correlator:
-      name: x-correlator
-      in: header
-      description: 'Correlation id for the different services
-
-        '
-      schema:
-        type: string
+    AdditionalStorage:
+      description: Additional storage for the application.
+      type: array
+      items:
+        type: object
+        required:
+        - storageSize
+        - mountPoint
+        properties:
+          name:
+            type: string
+            description: Name of additional storage resource.
+            example: logs
+          storageSize:
+            type: string
+            description: Additional persistent volume for the application.
+            example: 80GB
+            pattern: ^\d+(GB|MB)$
+          mountPoint:
+            type: string
+            description: Location of additional storage resource.
+            example: /logs
   responses:
     '400':
       description: Bad request
@@ -1380,19 +1361,6 @@ components:
             status: 400
             code: INVALID_ARGUMENT
             message: Schema validation failed at  ...
-    '500':
-      description: Internal Server Error
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          example:
-            status: 500
-            code: INTERNAL
-            message: 'Internal server error: ...'
     '501':
       description: Not Implemented
       headers:
@@ -1406,32 +1374,6 @@ components:
             status: 501
             code: NOT_IMPLEMENTED
             message: Service not implemented
-    '503':
-      description: Service Unavailable
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          example:
-            status: 503
-            code: UNAVAILABLE
-            message: Service unavailable
-    '403':
-      description: Unauthorized
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          example:
-            status: 403
-            code: PERMISSION_DENIED
-            message: 'Operation not allowed: ...'
     '404':
       description: Not Found
       headers:
@@ -1458,6 +1400,54 @@ components:
             status: 401
             code: UNAUTHENTICATED
             message: 'Authorization failed: ...'
+    '403':
+      description: Unauthorized
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 403
+            code: PERMISSION_DENIED
+            message: 'Operation not allowed: ...'
+    '503':
+      description: Service Unavailable
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 503
+            code: UNAVAILABLE
+            message: Service unavailable
+    '500':
+      description: Internal Server Error
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 500
+            code: INTERNAL
+            message: 'Internal server error: ...'
+  parameters:
+    x-correlator:
+      name: x-correlator
+      in: header
+      description: 'Correlation id for the different services
+
+        '
+      schema:
+        type: string
   headers:
     x-correlator:
       description: 'Correlation id for the different services
@@ -1471,7 +1461,7 @@ components:
     openId:
       description: OpenID Provider Configuration Information.
       type: openIdConnect
-      openIdConnectUrl: .well-known/openid-configuration
+      openIdConnectUrl: https://example.com/.well-known/openid-configuration
 externalDocs:
-  description: Product documentation at CAMARA.
+  description: Product documentation at Camara
   url: https://github.com/camaraproject/EdgeCloud

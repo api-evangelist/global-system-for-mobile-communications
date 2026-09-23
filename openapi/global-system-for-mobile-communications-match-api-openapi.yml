@@ -1,22 +1,18 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Global System for Mobile Communications GSMA Camara Project Endpoint Discovery Application Match API
-  version: 0.1.0-wip
-  description: The Application Discovery API extends beyond the capabilities of the Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone but also directly linking to the application endpoints within those Edge Cloud Zones.
-  contact:
-    email: sp-edc@lists.camaraproject.org
+  title: Global System for Mobile Communications GSMA Camara Project…
+  description: This API provides the customer with the ability to compare the information it (Service Provider, SP) has for a particular mobile phone user with that on file (and verified) by the mobile phone user's Operator in their own KYC records, in order for the SP to confirm the accuracy of the information and provide a specific service to the mobile phone user.
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 0.2.1
+  x-camara-commonalities: 0.4.0
 servers:
-- url: '{apiRoot}/{basePath}'
+- url: '{apiRoot}/kyc-match/v0.2'
   variables:
     apiRoot:
-      default: https://localhost:443
-      description: API root.
-    basePath:
-      default: application-endpoint-discovery/vwip
-      description: Base path for the Application Endpoint Discovery.
+      default: http://localhost:9091
+      description: API root, defined by the service provider, e.g. `api.example.com` or `api.example.com/somepath`
 tags:
 - name: Match
   description: Operations to match a customer identity against the account data bound to their phone number.
@@ -25,7 +21,7 @@ paths:
     post:
       tags:
       - Match
-      summary: Global System for Mobile Communications Matching a customer identity by checking a set of attributes related against the account data bound to their phone number.
+      summary: Global System for Mobile Communications Matching a customer identity by…
       description: Verify matching of a number of attributes related to a customer identity against the verified data bound to their phone number in the Operator systems. Regardless of whether the `phoneNumber` is explicitly stated in the request body, at least one of the other fields must be provided, otherwise a `HTTP 400 - KNOW_YOUR_CUSTOMER.INVALID_PARAM_COMBINATION` error will be returned.
       operationId: KYC_Match
       security:
@@ -112,21 +108,6 @@ paths:
           $ref: '#/components/responses/Generic504'
 components:
   responses:
-    Generic503:
-      description: Service unavailable. Typically the server is down.  Problem with MNO's server side.  Any unexpected error within MNO's servers.
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          examples:
-            ServiceUnavailable:
-              value:
-                status: 503
-                code: UNAVAILABLE
-                message: Service unavailable
     Generic500:
       description: Server error.  Problem with MNO's server side.  Some processing error within MNO's servers.
       headers:
@@ -142,6 +123,31 @@ components:
                 status: 500
                 code: INTERNAL
                 message: Server error
+    Generic400:
+      description: 'Problem with the client request.
+
+        In addition to regular scenario of `INVALID_ARGUMENT`, another scenario may exist.
+
+
+        - Indicated param combination is invalid (`"code": "KNOW_YOUR_CUSTOMER.INVALID_PARAM_COMBINATION","message": "Indicated parameter combination is invalid"`)'
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            InvalidArgument:
+              value:
+                status: 400
+                code: INVALID_ARGUMENT
+                message: Client specified an invalid argument, request body or query param
+            InvalidParamCombination:
+              value:
+                status: 400
+                code: KNOW_YOUR_CUSTOMER.INVALID_PARAM_COMBINATION
+                message: Indicated parameter combination is invalid
     Generic401:
       description: Authentication problem with the client request. Unauthorized error.  Access Token related errors.
       headers:
@@ -157,6 +163,51 @@ components:
                 status: 401
                 code: UNAUTHENTICATED
                 message: Request not authenticated due to missing, invalid, or expired credentials
+    Generic503:
+      description: Service unavailable. Typically the server is down.  Problem with MNO's server side.  Any unexpected error within MNO's servers.
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            ServiceUnavailable:
+              value:
+                status: 503
+                code: UNAVAILABLE
+                message: Service unavailable
+    Generic504:
+      description: Request time exceeded. If it happens repeatedly, consider reducing the request complexity
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 504
+            code: TIMEOUT
+            message: Request timeout exceeded. Try later.
+    Generic404:
+      description: 'Not Found error. Error if URL is wrong / user is not found.
+
+        '
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            NotFound:
+              value:
+                status: 404
+                code: NOT_FOUND
+                message: not_found_contractor/not_found
     Generic403:
       description: 'Client does not have sufficient permission.
 
@@ -198,61 +249,6 @@ components:
                 status: 403
                 code: KNOW_YOUR_CUSTOMER.ID_DOCUMENT_MISMATCH
                 message: The idDocument needs to match the one associated with the provided phoneNumber
-    Generic400:
-      description: 'Problem with the client request.
-
-        In addition to regular scenario of `INVALID_ARGUMENT`, another scenario may exist.
-
-
-        - Indicated param combination is invalid (`"code": "KNOW_YOUR_CUSTOMER.INVALID_PARAM_COMBINATION","message": "Indicated parameter combination is invalid"`)'
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          examples:
-            InvalidArgument:
-              value:
-                status: 400
-                code: INVALID_ARGUMENT
-                message: Client specified an invalid argument, request body or query param
-            InvalidParamCombination:
-              value:
-                status: 400
-                code: KNOW_YOUR_CUSTOMER.INVALID_PARAM_COMBINATION
-                message: Indicated parameter combination is invalid
-    Generic504:
-      description: Request time exceeded. If it happens repeatedly, consider reducing the request complexity
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          example:
-            status: 504
-            code: TIMEOUT
-            message: Request timeout exceeded. Try later.
-    Generic404:
-      description: 'Not Found error. Error if URL is wrong / user is not found.
-
-        '
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          examples:
-            NotFound:
-              value:
-                status: 404
-                code: NOT_FOUND
-                message: not_found_contractor/not_found
   schemas:
     KYC_MatchResponse:
       type: object
@@ -359,33 +355,6 @@ components:
           allOf:
           - $ref: '#/components/schemas/MatchResult'
           - description: Indicates whether the gender of the customer matches with the one on the Operator's system.
-    ErrorInfo:
-      type: object
-      required:
-      - status
-      - code
-      - message
-      properties:
-        status:
-          type: integer
-          description: HTTP response status code
-        code:
-          type: string
-          description: Code given to this error
-        message:
-          type: string
-          description: Detailed error description
-    MatchScoreResult:
-      type: integer
-      description: Indicates the similarity score assigned to the input value when it does not exactly match the value stored in the operator's system. This property shall only be returned when the value of the corresponding match field is `false`.
-      minimum: 0
-      maximum: 100
-    MatchResult:
-      type: string
-      enum:
-      - 'true'
-      - 'false'
-      - not_available
     KYC_MatchRequestBody:
       type: object
       description: Payload to validate the customer data.
@@ -454,11 +423,33 @@ components:
           - MALE
           - FEMALE
           - OTHER
-  headers:
-    x-correlator:
-      description: Correlation id for the different services
-      schema:
-        type: string
+    MatchScoreResult:
+      type: integer
+      description: Indicates the similarity score assigned to the input value when it does not exactly match the value stored in the operator's system. This property shall only be returned when the value of the corresponding match field is `false`.
+      minimum: 0
+      maximum: 100
+    MatchResult:
+      type: string
+      enum:
+      - 'true'
+      - 'false'
+      - not_available
+    ErrorInfo:
+      type: object
+      required:
+      - status
+      - code
+      - message
+      properties:
+        status:
+          type: integer
+          description: HTTP response status code
+        code:
+          type: string
+          description: Code given to this error
+        message:
+          type: string
+          description: Detailed error description
   parameters:
     x-correlator:
       name: x-correlator
@@ -466,11 +457,12 @@ components:
       description: Correlation id for the different services
       schema:
         type: string
+  headers:
+    x-correlator:
+      description: Correlation id for the different services
+      schema:
+        type: string
   securitySchemes:
     openId:
-      description: OpenID Provider Configuration Information.
       type: openIdConnect
-      openIdConnectUrl: .well-known/openid-configuration
-externalDocs:
-  description: Product documentation at CAMARA.
-  url: https://github.com/camaraproject/EdgeCloud
+      openIdConnectUrl: https://example.com/.well-known/openid-configuration

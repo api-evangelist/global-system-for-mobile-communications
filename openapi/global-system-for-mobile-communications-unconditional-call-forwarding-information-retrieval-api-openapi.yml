@@ -1,22 +1,18 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Global System for Mobile Communications GSMA Camara Project Endpoint Discovery Application Unconditional Call Forwarding Information Retrieval API
-  version: 0.1.0-wip
-  description: The Application Discovery API extends beyond the capabilities of the Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone but also directly linking to the application endpoints within those Edge Cloud Zones.
-  contact:
-    email: sp-edc@lists.camaraproject.org
+  title: Global System for Mobile Communications GSMA Camara Project…
+  description: The Call Forwarding Signal (CFS) API provides the API Consumer with information about the status of the Call Forwading Service on a specific phone number. The main scope of the CFS API is "anti Fraud" to avoid fraudsters to use the Call Forwarding Service to carry on a scam.
+  version: 0.2.0
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
+  x-camara-commonalities: 0.4.0
 servers:
-- url: '{apiRoot}/{basePath}'
+- url: '{apiRoot}/call-forwarding-signal/v0.2'
   variables:
     apiRoot:
-      default: https://localhost:443
-      description: API root.
-    basePath:
-      default: application-endpoint-discovery/vwip
-      description: Base path for the Application Endpoint Discovery.
+      default: http://localhost:9091
+      description: API root, defined by the service provider, e.g. `api.example.com` or `api.example.com/somepath`
 tags:
 - name: Unconditional Call Forwarding Information Retrieval
   description: Provides information on Unconditional Call Forwarding settings for the provided phone number (PhoneNumber)
@@ -28,7 +24,7 @@ paths:
       security:
       - openId:
         - call-forwarding-signal:unconditional-call-forwardings:read
-      summary: Global System for Mobile Communications Retrieve the information about the status of the unconditional call forwarding service on a phone number (PhoneNumber)
+      summary: Global System for Mobile Communications Retrieve the information about the…
       description: This endpoint provides information about the status of the unconditional call forwarding, beeing active or not.
       operationId: retrieveUnconditionalCallForwarding
       parameters:
@@ -73,6 +69,61 @@ paths:
           $ref: '#/components/responses/Generic504'
 components:
   responses:
+    Generic500:
+      description: Server error
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 500
+            code: INTERNAL
+            message: Server error
+    Generic400:
+      description: Problem with the client request
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 400
+            code: INVALID_ARGUMENT
+            message: Client specified an invalid argument, request body or query param
+    Generic415:
+      description: Unsupported Media Type
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_415_UNSUPPORTED_MEDIA_TYPE:
+              description: Payload format of the request is in an unsupported format by the Server.
+              value:
+                status: 415
+                code: UNSUPPORTED_MEDIA_TYPE
+                message: The server refuses to accept the request because the payload format is in an unsupported format.
+    Generic401:
+      description: Authentication problem with the client request
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 401
+            code: UNAUTHENTICATED
+            message: Request not authenticated due to missing, invalid, or expired credentials
     Generic503:
       description: Service unavailable. Typically the server is down
       headers:
@@ -86,6 +137,19 @@ components:
             status: 503
             code: UNAVAILABLE
             message: Service unavailable
+    Generic504:
+      description: Request time exceeded. If it happens repeatedly, consider reducing the request complexity
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 504
+            code: TIMEOUT
+            message: Request timeout exceeded. Try later
     Generic422:
       description: Unprocessable Content
       headers:
@@ -114,22 +178,6 @@ components:
                 status: 422
                 code: UNIDENTIFIABLE_DEVICE
                 message: phone number not defined
-    Generic415:
-      description: Unsupported Media Type
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          examples:
-            GENERIC_415_UNSUPPORTED_MEDIA_TYPE:
-              description: Payload format of the request is in an unsupported format by the Server.
-              value:
-                status: 415
-                code: UNSUPPORTED_MEDIA_TYPE
-                message: The server refuses to accept the request because the payload format is in an unsupported format.
     Generic409:
       description: Conflict
       headers:
@@ -158,52 +206,6 @@ components:
                 status: 409
                 code: CONFLICT
                 message: A specified resource duplicate entry found.
-    Generic500:
-      description: Server error
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          example:
-            status: 500
-            code: INTERNAL
-            message: Server error
-    Generic401:
-      description: Authentication problem with the client request
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          example:
-            status: 401
-            code: UNAUTHENTICATED
-            message: Request not authenticated due to missing, invalid, or expired credentials
-    Generic403:
-      description: Client does not have sufficient permission
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          examples:
-            PermissionDenied:
-              value:
-                status: 403
-                code: PERMISSION_DENIED
-                message: Client does not have sufficient permissions to perform this action
-            InvalidTokenContext:
-              value:
-                status: 403
-                code: INVALID_TOKEN_CONTEXT
-                message: PhoneNumber parameter doesn't match the value from the access token context
     Generic429:
       description: Too Many Requests
       headers:
@@ -226,32 +228,6 @@ components:
                 status: 429
                 code: TOO_MANY_REQUESTS
                 message: Either out of resource quota or reaching rate limiting.
-    Generic400:
-      description: Problem with the client request
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          example:
-            status: 400
-            code: INVALID_ARGUMENT
-            message: Client specified an invalid argument, request body or query param
-    Generic504:
-      description: Request time exceeded. If it happens repeatedly, consider reducing the request complexity
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          example:
-            status: 504
-            code: TIMEOUT
-            message: Request timeout exceeded. Try later
     Generic404:
       description: The specified resource was not found
       headers:
@@ -265,7 +241,32 @@ components:
             status: 404
             code: CALL_FORWARDING.UNKNOWN_PHONE_NUMBER
             message: Call forwarding check can't be done because the phone number is unknown
+    Generic403:
+      description: Client does not have sufficient permission
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            PermissionDenied:
+              value:
+                status: 403
+                code: PERMISSION_DENIED
+                message: Client does not have sufficient permissions to perform this action
+            InvalidTokenContext:
+              value:
+                status: 403
+                code: INVALID_TOKEN_CONTEXT
+                message: PhoneNumber parameter doesn't match the value from the access token context
   schemas:
+    PhoneNumber:
+      description: A public identifier addressing a telephone subscription. In mobile networks it corresponds to the MSISDN (Mobile Station International Subscriber Directory Number). In order to be globally unique it has to be formatted in international format, according to E.164 standard, prefixed with '+'.
+      type: string
+      pattern: ^\+[1-9][0-9]{4,14}$
+      example: '+123456789'
     UnconditionalCallForwardingSignal:
       description: resource containing the information about the Unconditional Call Forwarding Service for the given phone number (PhoneNumber)
       type: object
@@ -273,12 +274,6 @@ components:
         active:
           type: boolean
           description: Indicates if the unconditional call forwarding service is active.
-    CreateCallForwardingSignal:
-      description: resource containing the phone number (PhoneNumber) regarding which the Call Forwarding Service must be checked
-      type: object
-      properties:
-        phoneNumber:
-          $ref: '#/components/schemas/PhoneNumber'
     ErrorInfo:
       description: error information
       type: object
@@ -296,16 +291,12 @@ components:
         message:
           type: string
           description: Detailed error description
-    PhoneNumber:
-      description: A public identifier addressing a telephone subscription. In mobile networks it corresponds to the MSISDN (Mobile Station International Subscriber Directory Number). In order to be globally unique it has to be formatted in international format, according to E.164 standard, prefixed with '+'.
-      type: string
-      pattern: ^\+[1-9][0-9]{4,14}$
-      example: '+123456789'
-  headers:
-    x-correlator:
-      description: Correlation id for the different services
-      schema:
-        type: string
+    CreateCallForwardingSignal:
+      description: resource containing the phone number (PhoneNumber) regarding which the Call Forwarding Service must be checked
+      type: object
+      properties:
+        phoneNumber:
+          $ref: '#/components/schemas/PhoneNumber'
   parameters:
     x-correlator:
       name: x-correlator
@@ -313,11 +304,16 @@ components:
       description: Correlation id for the different services
       schema:
         type: string
+  headers:
+    x-correlator:
+      description: Correlation id for the different services
+      schema:
+        type: string
   securitySchemes:
     openId:
-      description: OpenID Provider Configuration Information.
+      description: to support Consent Management
       type: openIdConnect
-      openIdConnectUrl: .well-known/openid-configuration
+      openIdConnectUrl: https://example.com/.well-known/openid-configuration
 externalDocs:
-  description: Product documentation at CAMARA.
-  url: https://github.com/camaraproject/EdgeCloud
+  description: Product documentation at CAMARA
+  url: https://github.com/camaraproject/CallForwardingSignal

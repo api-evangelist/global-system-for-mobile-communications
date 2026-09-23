@@ -1,29 +1,27 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Global System for Mobile Communications GSMA Camara Project Endpoint Discovery Application Application Profiles API
-  version: 0.1.0-wip
-  description: The Application Discovery API extends beyond the capabilities of the Simple Edge Discovery API by not only locating the nearest Edge Cloud Zone but also directly linking to the application endpoints within those Edge Cloud Zones.
-  contact:
-    email: sp-edc@lists.camaraproject.org
+  title: Global System for Mobile Communications GSMA Camara Project…
+  version: 0.3.0
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
+  description: Application profiles allows application developers to share all the information about their application which would be relevant for network/ CAMARA APIs related decision making.
+  x-camara-commonalities: 0.4.0
 servers:
-- url: '{apiRoot}/{basePath}'
+- url: '{apiRoot}/application-profiles/v0.3'
   variables:
     apiRoot:
-      default: https://localhost:443
-      description: API root.
-    basePath:
-      default: application-endpoint-discovery/vwip
-      description: Base path for the Application Endpoint Discovery.
+      default: http://localhost:9091
+      description: 'API root, defined by service provider, e.g.
+
+        `api.example.com` or `api.example.com/somepath`
+
+        '
 tags:
 - name: Application Profiles
   description: 'Operations to define, read and manage an application''s thresholds
 
-    for network quality (latency, jitter, loss, throughput)
-
-    '
+    for network quality (latency, jitter, loss, throughput)'
 paths:
   /application-profiles:
     post:
@@ -32,12 +30,10 @@ paths:
         - application-profiles:create
       tags:
       - Application Profiles
-      summary: Global System for Mobile Communications create a profile which represents an application's networking demands.
+      summary: Global System for Mobile Communications create a profile which represents an…
       description: 'Define network monitoring intents for optimal end user application
 
-        experience.
-
-        '
+        experience.'
       operationId: createApplicationProfile
       requestBody:
         description: List of user-defined network quality thresholds
@@ -77,9 +73,7 @@ paths:
 
         application with the new set of thresholds to ensure good
 
-        end user experience
-
-        '
+        end user experience'
       operationId: updateApplicationProfile
       parameters:
       - name: applicationProfileId
@@ -121,6 +115,8 @@ paths:
           $ref: '#/components/responses/Generic500'
         '503':
           $ref: '#/components/responses/Generic503'
+      summary: Update application profile
+      x-summary-source: derived
     get:
       security:
       - openId:
@@ -158,6 +154,8 @@ paths:
           $ref: '#/components/responses/Generic500'
         '503':
           $ref: '#/components/responses/Generic503'
+      summary: Read application profile
+      x-summary-source: derived
     delete:
       security:
       - openId:
@@ -191,40 +189,10 @@ paths:
           $ref: '#/components/responses/Generic500'
         '503':
           $ref: '#/components/responses/Generic503'
+      summary: Delete application profile
+      x-summary-source: derived
 components:
   responses:
-    Generic503:
-      description: Service Unavailable
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          examples:
-            GENERIC_503_UNAVAILABLE:
-              description: Service is not available. Temporary situation usually related to maintenance process in the server side
-              value:
-                status: 503
-                code: UNAVAILABLE
-                message: Service Unavailable.
-    Generic500:
-      description: Internal Server Error
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorInfo'
-          examples:
-            GENERIC_500_INTERNAL:
-              description: Problem in Server side. Regular Server Exception
-              value:
-                status: 500
-                code: INTERNAL
-                message: Unknown server error. Typically a server bug.
     Generic400:
       description: Bad Request
       headers:
@@ -269,6 +237,22 @@ components:
                 status: 401
                 code: AUTHENTICATION_REQUIRED
                 message: New authentication is required.
+    Generic503:
+      description: Service Unavailable
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_503_UNAVAILABLE:
+              description: Service is not available. Temporary situation usually related to maintenance process in the server side
+              value:
+                status: 503
+                code: UNAVAILABLE
+                message: Service Unavailable.
     Generic403:
       description: Forbidden
       headers:
@@ -291,6 +275,22 @@ components:
                 status: 403
                 code: INVALID_TOKEN_CONTEXT
                 message: '{{field}} is not consistent with access token.'
+    Generic500:
+      description: Internal Server Error
+      headers:
+        x-correlator:
+          $ref: '#/components/headers/x-correlator'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            GENERIC_500_INTERNAL:
+              description: Problem in Server side. Regular Server Exception
+              value:
+                status: 500
+                code: INTERNAL
+                message: Unknown server error. Typically a server bug.
     Generic404:
       description: Not found
       headers:
@@ -314,24 +314,19 @@ components:
                 code: DEVICE_NOT_FOUND
                 message: Device identifier not found.
   schemas:
-    packetDelayBudget:
-      description: 'The packet delay budget is the maximum allowable one-way latency
-
-        between the customer''s device and the gateway from the operator''s
-
-        network to other networks. By limiting the delay, the network
-
-        can provide an acceptable level of performance for various services,
-
-        such as voice calls, video streaming, and data. The end-to-end or
-
-        round trip latency will be about two times this value plus the latency
-
-        not controlled by the operator
+    targetMinDownstreamRate:
+      description: 'This is the target minimum downstream rate.
 
         '
       allOf:
-      - $ref: '#/components/schemas/Duration'
+      - $ref: '#/components/schemas/Rate'
+    ApplicationProfileRequest:
+      type: object
+      required:
+      - networkQualityThresholds
+      properties:
+        networkQualityThresholds:
+          $ref: '#/components/schemas/NetworkQualityThresholds'
     RateUnitEnum:
       type: string
       enum:
@@ -340,24 +335,6 @@ components:
       - Mbps
       - Gbps
       - Tbps
-    jitter:
-      description: 'The jitter requirement aims to limit the maximum variation in
-
-        round-trip packet delay for the 99th percentile of traffic, following
-
-        ITU Y.1540 standards. It considers only acknowledged packets in a
-
-        session, which are packets that receive a confirmation of receipt from
-
-        the recipient (e.g., using TCP). This requirement helps maintain
-
-        consistent latency, essential for real-time applications such as VoIP,
-
-        video calls, and gaming.
-
-        '
-      allOf:
-      - $ref: '#/components/schemas/Duration'
     packetErrorLossRate:
       type: integer
       description: 'The exponential power of the allowable error loss rate 10^(-N).
@@ -393,25 +370,6 @@ components:
       minimum: 1
       maximum: 10
       example: 3
-    ApplicationProfileRequest:
-      type: object
-      required:
-      - networkQualityThresholds
-      properties:
-        networkQualityThresholds:
-          $ref: '#/components/schemas/NetworkQualityThresholds'
-    Duration:
-      type: object
-      properties:
-        value:
-          type: integer
-          example: 12
-          format: int32
-          minimum: 1
-        unit:
-          allOf:
-          - $ref: '#/components/schemas/TimeUnitEnum'
-          - example: Minutes
     TimeUnitEnum:
       type: string
       enum:
@@ -433,19 +391,6 @@ components:
           maximum: 1024
         unit:
           $ref: '#/components/schemas/RateUnitEnum'
-    NetworkQualityThresholds:
-      type: object
-      properties:
-        packetDelayBudget:
-          $ref: '#/components/schemas/packetDelayBudget'
-        targetMinDownstreamRate:
-          $ref: '#/components/schemas/targetMinDownstreamRate'
-        targetMinUpstreamRate:
-          $ref: '#/components/schemas/targetMinUpstreamRate'
-        packetlossErrorRate:
-          $ref: '#/components/schemas/packetErrorLossRate'
-        jitter:
-          $ref: '#/components/schemas/jitter'
     ErrorInfo:
       type: object
       description: Error information
@@ -463,18 +408,54 @@ components:
         message:
           type: string
           description: Detailed error description
-    targetMinDownstreamRate:
-      description: 'This is the target minimum downstream rate.
+    jitter:
+      description: 'The jitter requirement aims to limit the maximum variation in
+
+        round-trip packet delay for the 99th percentile of traffic, following
+
+        ITU Y.1540 standards. It considers only acknowledged packets in a
+
+        session, which are packets that receive a confirmation of receipt from
+
+        the recipient (e.g., using TCP). This requirement helps maintain
+
+        consistent latency, essential for real-time applications such as VoIP,
+
+        video calls, and gaming.
 
         '
       allOf:
-      - $ref: '#/components/schemas/Rate'
-    targetMinUpstreamRate:
-      description: 'This is the target minimum upstream rate.
+      - $ref: '#/components/schemas/Duration'
+    packetDelayBudget:
+      description: 'The packet delay budget is the maximum allowable one-way latency
+
+        between the customer''s device and the gateway from the operator''s
+
+        network to other networks. By limiting the delay, the network
+
+        can provide an acceptable level of performance for various services,
+
+        such as voice calls, video streaming, and data. The end-to-end or
+
+        round trip latency will be about two times this value plus the latency
+
+        not controlled by the operator
 
         '
       allOf:
-      - $ref: '#/components/schemas/Rate'
+      - $ref: '#/components/schemas/Duration'
+    Duration:
+      type: object
+      properties:
+        value:
+          type: integer
+          example: 12
+          format: int32
+          minimum: 1
+        unit:
+          allOf:
+          - $ref: '#/components/schemas/TimeUnitEnum'
+          - example: Minutes
     ApplicationProfile:
       type: object
       required:
@@ -486,6 +467,25 @@ components:
           format: uuid
         networkQualityThresholds:
           $ref: '#/components/schemas/NetworkQualityThresholds'
+    targetMinUpstreamRate:
+      description: 'This is the target minimum upstream rate.
+
+        '
+      allOf:
+      - $ref: '#/components/schemas/Rate'
+    NetworkQualityThresholds:
+      type: object
+      properties:
+        packetDelayBudget:
+          $ref: '#/components/schemas/packetDelayBudget'
+        targetMinDownstreamRate:
+          $ref: '#/components/schemas/targetMinDownstreamRate'
+        targetMinUpstreamRate:
+          $ref: '#/components/schemas/targetMinUpstreamRate'
+        packetlossErrorRate:
+          $ref: '#/components/schemas/packetErrorLossRate'
+        jitter:
+          $ref: '#/components/schemas/jitter'
   headers:
     x-correlator:
       description: Correlation id for the different services
@@ -493,9 +493,6 @@ components:
         type: string
   securitySchemes:
     openId:
-      description: OpenID Provider Configuration Information.
+      description: OpenID Provider Configuration Information
       type: openIdConnect
-      openIdConnectUrl: .well-known/openid-configuration
-externalDocs:
-  description: Product documentation at CAMARA.
-  url: https://github.com/camaraproject/EdgeCloud
+      openIdConnectUrl: https://example.com/.well-known/openid-configuration
